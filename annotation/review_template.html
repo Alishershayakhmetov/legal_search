@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Проверка разметки запросов</title>
+<style>
+  :root { --bg:#f7f7f5; --card:#fff; --ink:#1c1c1a; --mute:#6b6b66; --line:#dcdcd6; --acc:#2b5fd9; --ok:#1f8a4c; --warn:#b26a00; --bad:#b3261e; --chip:#eeeeea; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#161615; --card:#201f1e; --ink:#ecebe7; --mute:#a3a29b; --line:#37363a; --acc:#8fb0ff; --ok:#5fcf8b; --warn:#e0a24a; --bad:#ff8b82; --chip:#2b2a2c; } }
+  :root[data-theme="dark"] { --bg:#161615; --card:#201f1e; --ink:#ecebe7; --mute:#a3a29b; --line:#37363a; --acc:#8fb0ff; --ok:#5fcf8b; --warn:#e0a24a; --bad:#ff8b82; --chip:#2b2a2c; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif; }
+  header { position:sticky; top:0; z-index:5; background:var(--bg); border-bottom:1px solid var(--line); padding:10px 16px; display:flex; flex-wrap:wrap; gap:10px 16px; align-items:center; }
+  header h1 { font-size:16px; margin:0; font-weight:650; }
+  .bar { flex:1 1 180px; min-width:140px; height:8px; background:var(--chip); border-radius:4px; overflow:hidden; }
+  .bar > i { display:block; height:100%; width:0; background:var(--ok); transition:width .2s; }
+  button, select, input, textarea { font:inherit; color:inherit; }
+  button { background:var(--card); border:1px solid var(--line); border-radius:6px; padding:5px 11px; cursor:pointer; }
+  button.primary { background:var(--acc); color:#fff; border-color:var(--acc); }
+  label.f { display:flex; gap:6px; align-items:center; color:var(--mute); font-size:13px; }
+  main { max-width:980px; margin:0 auto; padding:14px 16px 80px; }
+  .need { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin:14px 0; }
+  .need.done { border-left:4px solid var(--ok); }
+  .need h2 { margin:0 0 8px; font-size:15px; display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+  .chip { background:var(--chip); border-radius:999px; padding:1px 9px; font-size:12px; color:var(--mute); }
+  .q { display:grid; grid-template-columns:34px 1fr; gap:6px 8px; align-items:start; margin:4px 0; }
+  .q b { color:var(--mute); font-weight:600; padding-top:5px; }
+  .q textarea { width:100%; resize:vertical; min-height:34px; background:transparent; border:1px solid var(--line); border-radius:6px; padding:5px 8px; }
+  .j { border-top:1px solid var(--line); padding:10px 0 4px; }
+  .jh { display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+  .jh .title { flex:1 1 260px; font-weight:600; }
+  .basis-read { color:var(--ok); } .basis-heading { color:var(--warn); } .basis-title { color:var(--mute); }
+  select.g { padding:4px 6px; border:1px solid var(--line); border-radius:6px; background:var(--card); }
+  .j.removed { opacity:.45; }
+  details { margin:6px 0 2px; } summary { cursor:pointer; color:var(--acc); font-size:13px; }
+  pre { white-space:pre-wrap; word-break:break-word; font:13px/1.5 inherit; margin:6px 0; padding:8px 10px; background:var(--chip); border-radius:6px; }
+  .note { width:100%; margin-top:6px; background:transparent; border:1px solid var(--line); border-radius:6px; padding:5px 8px; }
+  .hint { color:var(--mute); font-size:13px; margin:2px 0 10px; }
+  @media (max-width:560px) { .q { grid-template-columns:1fr; } .q b { padding-top:0; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Проверка разметки</h1>
+  <div class="bar" title="Проверено потребностей"><i id="bar"></i></div>
+  <span id="count" class="chip"></span>
+  <label class="f"><input type="checkbox" id="onlyOpen"> только непроверенные</label>
+  <label class="f"><input type="checkbox" id="onlyHeading"> только по заголовку</label>
+  <button class="primary" id="export">Скачать результат (JSON)</button>
+  <button id="reset" title="Стереть сохранённую в браузере работу">Сбросить</button>
+</header>
+<main>
+  <p class="hint">Оценка 2 — статья прямо отвечает на вопрос, 1 — связана с темой, 0 — не подходит, «убрать» — удалить из эталона. Отметка «Проверено» подтверждает всю потребность. Раунд 2 — статьи, найденные системами и не входившие в первый набор; по умолчанию их оценки только предложены мной. Прогресс сохраняется в браузере; итог скачивается кнопкой выше. Тексты казахских запросов нужно проверить носителю языка.</p>
+  <div id="list"></div>
+</main>
+<script>
+const DATA = /*DATA*/[];
+const KEY = "legal_search_review_v1";
+const LABEL = {TK:"ТК", GK_OB:"ГК (Общая)", GK_OS:"ГК (Особенная)", SEM:"Кодекс о браке и семье", NK:"НК", KOAP:"КоАП", UK:"УК", UPK:"УПК", GPK:"ГПК", ZK:"ЗК", JIL:"Закон о жилищных отношениях", PK:"Предпринимательский кодекс", TOO:"Закон о ТОО", BANKR:"Закон о банкротстве граждан", SOC:"Социальный кодекс", ZDR:"Кодекс о здоровье народа", OBR:"Закон об образовании", PD:"Закон о персональных данных", MIGR:"Закон о миграции", ISP:"Закон об исполнительном производстве", POTR:"Закон о защите прав потребителей", VYBORY:"Закон о выборах", ADV:"Закон об адвокатской деятельности"};
+let state = {};
+try { state = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { state = {}; }
+function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
+const el = (t, a = {}, ...kids) => { const n = document.createElement(t); for (const [k, v] of Object.entries(a)) { if (k === "class") n.className = v; else if (k.startsWith("on")) n.addEventListener(k.slice(2), v); else n[k] = v; } kids.flat().forEach(c => n.append(c)); return n; };
+const nstate = id => (state[id] = state[id] || {done:false, queries:{}, grades:{}, notes:{}});
+const jkey = j => j.alias + ":" + (j.article_no ?? "*");
+
+function render() {
+  const list = document.getElementById("list"); list.replaceChildren();
+  const onlyOpen = document.getElementById("onlyOpen").checked, onlyHeading = document.getElementById("onlyHeading").checked;
+  let done = 0;
+  for (const n of DATA) {
+    const s = nstate(n.id); if (s.done) done++;
+    if (onlyOpen && s.done) continue;
+    if (onlyHeading && !n.judgments.some(j => j.basis === "heading")) continue;
+    const card = el("section", {class: "need" + (s.done ? " done" : "")});
+    card.append(el("h2", {}, n.id, el("span", {class:"chip"}, n.type), el("span", {class:"chip"}, n.topic),
+      el("label", {class:"f", style:"margin-left:auto"}, el("input", {type:"checkbox", checked:s.done, onchange: e => { s.done = e.target.checked; save(); render(); }}), "Проверено")));
+    for (const lang of ["ru", "kk", "en"]) {
+      const ta = el("textarea", {rows:1, value: s.queries[lang] ?? n[lang], oninput: e => { s.queries[lang] = e.target.value; save(); }});
+      card.append(el("div", {class:"q"}, el("b", {}, lang), ta));
+    }
+    const zeroBox = el("details", {class:"zero"}); let zeros = 0;
+    for (const j of n.judgments) {
+      const k = jkey(j), g = s.grades[k] ?? String(j.grade);
+      const row = el("div", {class:"j" + (g === "x" ? " removed" : "")});
+      const sel = el("select", {class:"g", onchange: e => { s.grades[k] = e.target.value; save(); render(); }},
+        ...[["2","2 — отвечает"],["1","1 — связана"],["0","0 — не подходит"],["x","убрать"]].map(([v, t]) => el("option", {value:v, selected: g === v}, t)));
+      const title = j.article_no === null ? (LABEL[j.alias] || j.alias) + " (акт целиком)" : (LABEL[j.alias] || j.alias) + ", ст. " + j.article_no + " — " + (j.heading_ru || "");
+      row.append(el("div", {class:"jh"}, el("span", {class:"title"}, title), el("span", {class:"chip basis-" + j.basis}, (j.round === 2 ? "раунд 2 · " : "") + (j.basis === "read" ? "текст прочитан" : j.basis === "heading" ? "только заголовок" : j.basis === "pooled" ? "из выдачи систем, начало текста прочитано" : "по названию акта")), sel));
+      if (j.article_no !== null) {
+        row.append(el("details", {}, el("summary", {}, "русский текст"), el("pre", {}, j.text_ru || "—")));
+        row.append(el("details", {}, el("summary", {}, "казахский текст" + (j.heading_kk ? " — " + j.heading_kk : "")), el("pre", {}, j.text_kk || "—")));
+      }
+      row.append(el("input", {class:"note", placeholder:"заметка", value:s.notes[k] || "", oninput: e => { s.notes[k] = e.target.value; save(); }}));
+      if (j.round === 2 && g === "0") { zeros++; zeroBox.append(row); } else { card.append(row); }
+    }
+    if (zeros) { zeroBox.prepend(el("summary", {}, "Раунд 2: прочитано и признано неподходящим (" + zeros + ")")); card.append(zeroBox); }
+    list.append(card);
+  }
+  document.getElementById("bar").style.width = (100 * done / DATA.length) + "%";
+  document.getElementById("count").textContent = done + " / " + DATA.length;
+}
+
+document.getElementById("onlyOpen").onchange = render;
+document.getElementById("onlyHeading").onchange = render;
+document.getElementById("reset").onclick = () => { if (confirm("Стереть всю сохранённую работу в этом браузере?")) { state = {}; save(); render(); } };
+document.getElementById("export").onclick = () => {
+  const out = DATA.map(n => { const s = nstate(n.id);
+    return {need_id:n.id, type:n.type, reviewed:!!s.done, queries:{ru:s.queries.ru ?? n.ru, kk:s.queries.kk ?? n.kk, en:s.queries.en ?? n.en},
+      judgments:n.judgments.map(j => { const k = jkey(j); const g = s.grades[k] ?? String(j.grade);
+        return {alias:j.alias, family:j.family, article_no:j.article_no, grade_draft:j.grade, grade_final:g === "x" ? null : Number(g), removed:g === "x", basis:j.basis, note:s.notes[k] || ""}; })}; });
+  const blob = new Blob([JSON.stringify(out, null, 1)], {type:"application/json"});
+  const a = el("a", {href:URL.createObjectURL(blob), download:"qrels_reviewed.json"}); document.body.append(a); a.click(); a.remove();
+};
+render();
+</script>
+</body>
+</html>

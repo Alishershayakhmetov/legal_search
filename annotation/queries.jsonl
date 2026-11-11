@@ -1,0 +1,159 @@
+{"query_id": "L01-ru", "need_id": "L01", "lang": "ru", "type": "situation", "topic": "labour", "text": "Работодатель сообщил, что мою должность сокращают. На какие выплаты и гарантии я могу рассчитывать?"}
+{"query_id": "L01-kk", "need_id": "L01", "lang": "kk", "type": "situation", "topic": "labour", "text": "Жұмыс беруші менің қызметімді қысқартатынын айтты. Маған қандай төлемдер мен кепілдіктер тиесілі?"}
+{"query_id": "L01-en", "need_id": "L01", "lang": "en", "type": "situation", "topic": "labour", "text": "My employer says my position is being eliminated. What payments and protections am I entitled to?"}
+{"query_id": "L02-ru", "need_id": "L02", "lang": "ru", "type": "situation", "topic": "labour", "text": "Сколько дней оплачиваемого отпуска мне положено в год?"}
+{"query_id": "L02-kk", "need_id": "L02", "lang": "kk", "type": "situation", "topic": "labour", "text": "Жылына қанша күн ақылы демалыс беріледі?"}
+{"query_id": "L02-en", "need_id": "L02", "lang": "en", "type": "situation", "topic": "labour", "text": "How many days of paid annual leave am I entitled to each year?"}
+{"query_id": "L03-ru", "need_id": "L03", "lang": "ru", "type": "situation", "topic": "labour", "text": "Начальник уже второй месяц не платит зарплату. Что делать и какая ответственность у работодателя?"}
+{"query_id": "L03-kk", "need_id": "L03", "lang": "kk", "type": "situation", "topic": "labour", "text": "Бастығым екінші ай жалақы төлемей жүр. Не істеуге болады және жұмыс берушінің жауапкершілігі қандай?"}
+{"query_id": "L03-en", "need_id": "L03", "lang": "en", "type": "situation", "topic": "labour", "text": "My boss has not paid my salary for two months. What can I do and what is the employer liable for?"}
+{"query_id": "L04-ru", "need_id": "L04", "lang": "ru", "type": "concept", "topic": "labour", "text": "Какой максимальный испытательный срок можно установить при приёме на работу?"}
+{"query_id": "L04-kk", "need_id": "L04", "lang": "kk", "type": "concept", "topic": "labour", "text": "Жұмысқа қабылдау кезінде сынақ мерзімі ең көбі қанша болуы мүмкін?"}
+{"query_id": "L04-en", "need_id": "L04", "lang": "en", "type": "concept", "topic": "labour", "text": "What is the longest probation period an employer can set when hiring?"}
+{"query_id": "L05-ru", "need_id": "L05", "lang": "ru", "type": "situation", "topic": "labour", "text": "Меня заставляют работать сверхурочно. Как это оплачивается и есть ли ограничения?"}
+{"query_id": "L05-kk", "need_id": "L05", "lang": "kk", "type": "situation", "topic": "labour", "text": "Мені жұмыс уақытынан тыс жұмыс істеуге мәжбүрлейді. Бұл қалай төленеді және шектеулер бар ма?"}
+{"query_id": "L05-en", "need_id": "L05", "lang": "en", "type": "situation", "topic": "labour", "text": "I am forced to work overtime. How is it paid and are there limits?"}
+{"query_id": "L06-ru", "need_id": "L06", "lang": "ru", "type": "situation", "topic": "labour", "text": "Сколько длится декретный отпуск и кто его оплачивает?"}
+{"query_id": "L06-kk", "need_id": "L06", "lang": "kk", "type": "situation", "topic": "labour", "text": "Декреттік демалыс қанша уақытқа созылады және оны кім төлейді?"}
+{"query_id": "L06-en", "need_id": "L06", "lang": "en", "type": "situation", "topic": "labour", "text": "How long is maternity leave and who pays for it?"}
+{"query_id": "L07-ru", "need_id": "L07", "lang": "ru", "type": "situation", "topic": "labour", "text": "Я работаю в праздничные и выходные дни. Положена ли за это доплата?"}
+{"query_id": "L07-kk", "need_id": "L07", "lang": "kk", "type": "situation", "topic": "labour", "text": "Мен мерекелік және демалыс күндері жұмыс істеймін. Бұл үшін қосымша ақы төленуге тиіс пе?"}
+{"query_id": "L07-en", "need_id": "L07", "lang": "en", "type": "situation", "topic": "labour", "text": "I work on public holidays and weekends. Am I owed extra pay?"}
+{"query_id": "C01-ru", "need_id": "C01", "lang": "ru", "type": "concept", "topic": "civil", "text": "В течение какого времени можно подать в суд, чтобы вернуть долг?"}
+{"query_id": "C01-kk", "need_id": "C01", "lang": "kk", "type": "concept", "topic": "civil", "text": "Қарызды қайтару үшін сотқа қанша уақыт ішінде жүгінуге болады?"}
+{"query_id": "C01-en", "need_id": "C01", "lang": "en", "type": "concept", "topic": "civil", "text": "How long do I have to go to court to recover a debt?"}
+{"query_id": "C02-ru", "need_id": "C02", "lang": "ru", "type": "situation", "topic": "civil", "text": "Арендодатель хочет в середине срока повысить плату за квартиру. Имеет ли он на это право?"}
+{"query_id": "C02-kk", "need_id": "C02", "lang": "kk", "type": "situation", "topic": "civil", "text": "Пәтер иесі жалдау мерзімінің ортасында ақыны көтергісі келеді. Оның бұған құқығы бар ма?"}
+{"query_id": "C02-en", "need_id": "C02", "lang": "en", "type": "situation", "topic": "civil", "text": "My landlord wants to raise the rent in the middle of the lease. Can he do that?"}
+{"query_id": "C03-ru", "need_id": "C03", "lang": "ru", "type": "situation", "topic": "civil", "text": "Я дал знакомому деньги в долг по расписке. Как закон регулирует возврат займа?"}
+{"query_id": "C03-kk", "need_id": "C03", "lang": "kk", "type": "situation", "topic": "civil", "text": "Таныс адамға қарызға ақша бердім, қолхат бар. Қарызды қайтаруды заң қалай реттейді?"}
+{"query_id": "C03-en", "need_id": "C03", "lang": "en", "type": "situation", "topic": "civil", "text": "I lent money to an acquaintance with a written receipt. How does the law regulate repayment?"}
+{"query_id": "C04-ru", "need_id": "C04", "lang": "ru", "type": "situation", "topic": "civil", "text": "Кто имеет право на наследство, если человек умер без завещания?"}
+{"query_id": "C04-kk", "need_id": "C04", "lang": "kk", "type": "situation", "topic": "civil", "text": "Адам өсиет қалдырмай қайтыс болса, мұраға кімнің құқығы бар?"}
+{"query_id": "C04-en", "need_id": "C04", "lang": "en", "type": "situation", "topic": "civil", "text": "Who inherits when a person dies without leaving a will?"}
+{"query_id": "C06-ru", "need_id": "C06", "lang": "ru", "type": "situation", "topic": "consumer", "text": "Я купил телефон, а он оказался неисправным. Могу ли я вернуть деньги?"}
+{"query_id": "C06-kk", "need_id": "C06", "lang": "kk", "type": "situation", "topic": "consumer", "text": "Телефон сатып алдым, ол ақаулы болып шықты. Ақшамды қайтарып алуға бола ма?"}
+{"query_id": "C06-en", "need_id": "C06", "lang": "en", "type": "situation", "topic": "consumer", "text": "I bought a phone and it turned out to be defective. Can I get a refund?"}
+{"query_id": "F01-ru", "need_id": "F01", "lang": "ru", "type": "situation", "topic": "family", "text": "Какой размер алиментов на одного ребёнка и как их взыскать?"}
+{"query_id": "F01-kk", "need_id": "F01", "lang": "kk", "type": "situation", "topic": "family", "text": "Бір балаға алименттің мөлшері қандай және оны қалай өндіріп алуға болады?"}
+{"query_id": "F01-en", "need_id": "F01", "lang": "en", "type": "situation", "topic": "family", "text": "How much child support is owed for one child and how is it collected?"}
+{"query_id": "F02-ru", "need_id": "F02", "lang": "ru", "type": "situation", "topic": "family", "text": "Как расторгнуть брак, если есть общие несовершеннолетние дети?"}
+{"query_id": "F02-kk", "need_id": "F02", "lang": "kk", "type": "situation", "topic": "family", "text": "Кәмелетке толмаған ортақ балалар болса, некені қалай бұзуға болады?"}
+{"query_id": "F02-en", "need_id": "F02", "lang": "en", "type": "situation", "topic": "family", "text": "How do we divorce when we have minor children together?"}
+{"query_id": "F03-ru", "need_id": "F03", "lang": "ru", "type": "situation", "topic": "family", "text": "Как делится имущество супругов при разводе?"}
+{"query_id": "F03-kk", "need_id": "F03", "lang": "kk", "type": "situation", "topic": "family", "text": "Ажырасқан кезде жұбайлардың мүлкі қалай бөлінеді?"}
+{"query_id": "F03-en", "need_id": "F03", "lang": "en", "type": "situation", "topic": "family", "text": "How is property divided between spouses in a divorce?"}
+{"query_id": "F04-ru", "need_id": "F04", "lang": "ru", "type": "concept", "topic": "family", "text": "Какие условия нужны, чтобы усыновить ребёнка?"}
+{"query_id": "F04-kk", "need_id": "F04", "lang": "kk", "type": "concept", "topic": "family", "text": "Баланы асырап алу үшін қандай шарттар қажет?"}
+{"query_id": "F04-en", "need_id": "F04", "lang": "en", "type": "concept", "topic": "family", "text": "What conditions must be met to adopt a child?"}
+{"query_id": "T01-ru", "need_id": "T01", "lang": "ru", "type": "situation", "topic": "tax", "text": "Какой процент подоходного налога удерживают с зарплаты?"}
+{"query_id": "T01-kk", "need_id": "T01", "lang": "kk", "type": "situation", "topic": "tax", "text": "Жалақыдан табыс салығының қандай пайызы ұсталады?"}
+{"query_id": "T01-en", "need_id": "T01", "lang": "en", "type": "situation", "topic": "tax", "text": "What percentage of income tax is withheld from a salary?"}
+{"query_id": "T02-ru", "need_id": "T02", "lang": "ru", "type": "concept", "topic": "tax", "text": "Какая ставка НДС в Казахстане?"}
+{"query_id": "T02-kk", "need_id": "T02", "lang": "kk", "type": "concept", "topic": "tax", "text": "Қазақстанда ҚҚС мөлшерлемесі қандай?"}
+{"query_id": "T02-en", "need_id": "T02", "lang": "en", "type": "concept", "topic": "tax", "text": "What is the VAT rate in Kazakhstan?"}
+{"query_id": "T03-ru", "need_id": "T03", "lang": "ru", "type": "situation", "topic": "tax", "text": "Нужно ли платить налог на квартиру и машину, которыми я владею?"}
+{"query_id": "T03-kk", "need_id": "T03", "lang": "kk", "type": "situation", "topic": "tax", "text": "Менің пәтерім мен көлігім үшін салық төлеу керек пе?"}
+{"query_id": "T03-en", "need_id": "T03", "lang": "en", "type": "situation", "topic": "tax", "text": "Do I have to pay tax on an apartment and a car that I own?"}
+{"query_id": "T05-ru", "need_id": "T05", "lang": "ru", "type": "concept", "topic": "tax", "text": "Сколько нужно заплатить государственной пошлины, чтобы подать иск в суд?"}
+{"query_id": "T05-kk", "need_id": "T05", "lang": "kk", "type": "concept", "topic": "tax", "text": "Сотқа талап арыз беру үшін мемлекеттік баж қанша төленеді?"}
+{"query_id": "T05-en", "need_id": "T05", "lang": "en", "type": "concept", "topic": "tax", "text": "How much state duty must I pay to file a lawsuit?"}
+{"query_id": "A01-ru", "need_id": "A01", "lang": "ru", "type": "situation", "topic": "admin", "text": "Какой штраф за превышение скорости на дороге?"}
+{"query_id": "A01-kk", "need_id": "A01", "lang": "kk", "type": "situation", "topic": "admin", "text": "Жолда жылдамдықты асырғаны үшін қандай айыппұл бар?"}
+{"query_id": "A01-en", "need_id": "A01", "lang": "en", "type": "situation", "topic": "admin", "text": "What is the fine for speeding?"}
+{"query_id": "A02-ru", "need_id": "A02", "lang": "ru", "type": "situation", "topic": "admin", "text": "Какое наказание за вождение автомобиля в нетрезвом состоянии?"}
+{"query_id": "A02-kk", "need_id": "A02", "lang": "kk", "type": "situation", "topic": "admin", "text": "Мас күйінде көлік жүргізгені үшін қандай жаза бар?"}
+{"query_id": "A02-en", "need_id": "A02", "lang": "en", "type": "situation", "topic": "admin", "text": "What is the penalty for drunk driving?"}
+{"query_id": "A03-ru", "need_id": "A03", "lang": "ru", "type": "situation", "topic": "admin", "text": "Штрафуют ли за курение в общественных местах?"}
+{"query_id": "A03-kk", "need_id": "A03", "lang": "kk", "type": "situation", "topic": "admin", "text": "Қоғамдық орындарда темекі шекқені үшін айыппұл салына ма?"}
+{"query_id": "A03-en", "need_id": "A03", "lang": "en", "type": "situation", "topic": "admin", "text": "Can I be fined for smoking in public places?"}
+{"query_id": "A04-ru", "need_id": "A04", "lang": "ru", "type": "concept", "topic": "admin", "text": "Что считается мелким хулиганством и какое за это наказание?"}
+{"query_id": "A04-kk", "need_id": "A04", "lang": "kk", "type": "concept", "topic": "admin", "text": "Ұсақ бұзақылық деп нені айтады және ол үшін қандай жаза бар?"}
+{"query_id": "A04-en", "need_id": "A04", "lang": "en", "type": "concept", "topic": "admin", "text": "What counts as petty hooliganism and what is the punishment?"}
+{"query_id": "K01-ru", "need_id": "K01", "lang": "ru", "type": "concept", "topic": "criminal", "text": "Какое наказание грозит за кражу?"}
+{"query_id": "K01-kk", "need_id": "K01", "lang": "kk", "type": "concept", "topic": "criminal", "text": "Ұрлық үшін қандай жаза қарастырылған?"}
+{"query_id": "K01-en", "need_id": "K01", "lang": "en", "type": "concept", "topic": "criminal", "text": "What punishment is provided for theft?"}
+{"query_id": "K02-ru", "need_id": "K02", "lang": "ru", "type": "concept", "topic": "criminal", "text": "Что считается мошенничеством и какая за него ответственность?"}
+{"query_id": "K02-kk", "need_id": "K02", "lang": "kk", "type": "concept", "topic": "criminal", "text": "Алаяқтық деп нені айтады және ол үшін қандай жауапкершілік бар?"}
+{"query_id": "K02-en", "need_id": "K02", "lang": "en", "type": "concept", "topic": "criminal", "text": "What counts as fraud and what is the criminal liability?"}
+{"query_id": "K03-ru", "need_id": "K03", "lang": "ru", "type": "situation", "topic": "criminal", "text": "Можно ли защищаться от нападавшего, если он угрожает жизни, и не нести за это ответственность?"}
+{"query_id": "K03-kk", "need_id": "K03", "lang": "kk", "type": "situation", "topic": "criminal", "text": "Өмірге қауіп төндірген шабуылдаушыдан қорғанып, сол үшін жауап бермеуге бола ма?"}
+{"query_id": "K03-en", "need_id": "K03", "lang": "en", "type": "situation", "topic": "criminal", "text": "Can I defend myself against an attacker threatening my life without being liable?"}
+{"query_id": "K04-ru", "need_id": "K04", "lang": "ru", "type": "concept", "topic": "criminal", "text": "С какого возраста наступает уголовная ответственность?"}
+{"query_id": "K04-kk", "need_id": "K04", "lang": "kk", "type": "concept", "topic": "criminal", "text": "Қылмыстық жауапкершілік қай жастан басталады?"}
+{"query_id": "K04-en", "need_id": "K04", "lang": "en", "type": "concept", "topic": "criminal", "text": "From what age does criminal liability begin?"}
+{"query_id": "P01-ru", "need_id": "P01", "lang": "ru", "type": "concept", "topic": "procedure", "text": "В какой срок можно обжаловать решение суда по гражданскому делу?"}
+{"query_id": "P01-kk", "need_id": "P01", "lang": "kk", "type": "concept", "topic": "procedure", "text": "Азаматтық іс бойынша сот шешіміне қанша мерзімде шағымдануға болады?"}
+{"query_id": "P01-en", "need_id": "P01", "lang": "en", "type": "concept", "topic": "procedure", "text": "Within what period can a court decision in a civil case be appealed?"}
+{"query_id": "P02-ru", "need_id": "P02", "lang": "ru", "type": "situation", "topic": "procedure", "text": "Как подать иск о взыскании долга в суд и что должно быть в заявлении?"}
+{"query_id": "P02-kk", "need_id": "P02", "lang": "kk", "type": "situation", "topic": "procedure", "text": "Қарызды өндіру туралы талап арызды сотқа қалай беруге болады және онда не болуы керек?"}
+{"query_id": "P02-en", "need_id": "P02", "lang": "en", "type": "situation", "topic": "procedure", "text": "How do I file a claim to recover a debt and what must the claim contain?"}
+{"query_id": "P03-ru", "need_id": "P03", "lang": "ru", "type": "situation", "topic": "procedure", "text": "Какие права у человека, которого задержала полиция?"}
+{"query_id": "P03-kk", "need_id": "P03", "lang": "kk", "type": "situation", "topic": "procedure", "text": "Полиция ұстаған адамның қандай құқықтары бар?"}
+{"query_id": "P03-en", "need_id": "P03", "lang": "en", "type": "situation", "topic": "procedure", "text": "What rights does a person detained by the police have?"}
+{"query_id": "H01-ru", "need_id": "H01", "lang": "ru", "type": "situation", "topic": "land", "text": "На какой срок и на каких условиях можно взять земельный участок в аренду у государства?"}
+{"query_id": "H01-kk", "need_id": "H01", "lang": "kk", "type": "situation", "topic": "land", "text": "Мемлекеттен жер учаскесін қандай мерзімге және қандай шартпен жалға алуға болады?"}
+{"query_id": "H01-en", "need_id": "H01", "lang": "en", "type": "situation", "topic": "land", "text": "For how long and on what terms can I lease a plot of land from the state?"}
+{"query_id": "H02-ru", "need_id": "H02", "lang": "ru", "type": "situation", "topic": "land", "text": "Государство хочет изъять мой земельный участок. Какие у меня права?"}
+{"query_id": "H02-kk", "need_id": "H02", "lang": "kk", "type": "situation", "topic": "land", "text": "Мемлекет менің жер учаскемді тартып алғысы келеді. Менің қандай құқықтарым бар?"}
+{"query_id": "H02-en", "need_id": "H02", "lang": "en", "type": "situation", "topic": "land", "text": "The state wants to take my land. What are my rights?"}
+{"query_id": "H03-ru", "need_id": "H03", "lang": "ru", "type": "situation", "topic": "housing", "text": "Кто обязан платить за содержание общего имущества многоквартирного дома?"}
+{"query_id": "H03-kk", "need_id": "H03", "lang": "kk", "type": "situation", "topic": "housing", "text": "Көпқабатты үйдің ортақ мүлкін ұстауға кім төлеуге міндетті?"}
+{"query_id": "H03-en", "need_id": "H03", "lang": "en", "type": "situation", "topic": "housing", "text": "Who must pay for maintaining the shared property of an apartment building?"}
+{"query_id": "B01-ru", "need_id": "B01", "lang": "ru", "type": "situation", "topic": "business", "text": "Как стать индивидуальным предпринимателем и какие для этого нужны документы?"}
+{"query_id": "B01-kk", "need_id": "B01", "lang": "kk", "type": "situation", "topic": "business", "text": "Жеке кәсіпкер болу үшін не істеу керек және қандай құжаттар қажет?"}
+{"query_id": "B01-en", "need_id": "B01", "lang": "en", "type": "situation", "topic": "business", "text": "How do I become a sole proprietor and what documents are needed?"}
+{"query_id": "B02-ru", "need_id": "B02", "lang": "ru", "type": "concept", "topic": "business", "text": "Какой минимальный уставный капитал нужен для ТОО и кто за него отвечает?"}
+{"query_id": "B02-kk", "need_id": "B02", "lang": "kk", "type": "concept", "topic": "business", "text": "ЖШС үшін ең төменгі жарғылық капитал қанша және оған кім жауап береді?"}
+{"query_id": "B02-en", "need_id": "B02", "lang": "en", "type": "concept", "topic": "business", "text": "What is the minimum charter capital for an LLP and who is liable?"}
+{"query_id": "B03-ru", "need_id": "B03", "lang": "ru", "type": "situation", "topic": "business", "text": "Я не могу выплатить кредиты. Можно ли признать себя банкротом?"}
+{"query_id": "B03-kk", "need_id": "B03", "lang": "kk", "type": "situation", "topic": "business", "text": "Несиелерімді төлей алмаймын. Өзімді банкрот деп тануға бола ма?"}
+{"query_id": "B03-en", "need_id": "B03", "lang": "en", "type": "situation", "topic": "business", "text": "I cannot repay my loans. Can I declare personal bankruptcy?"}
+{"query_id": "S01-ru", "need_id": "S01", "lang": "ru", "type": "concept", "topic": "social", "text": "В каком возрасте можно выйти на пенсию?"}
+{"query_id": "S01-kk", "need_id": "S01", "lang": "kk", "type": "concept", "topic": "social", "text": "Зейнеткерлікке қай жаста шығуға болады?"}
+{"query_id": "S01-en", "need_id": "S01", "lang": "en", "type": "concept", "topic": "social", "text": "At what age can I retire?"}
+{"query_id": "S02-ru", "need_id": "S02", "lang": "ru", "type": "situation", "topic": "social", "text": "Какие пособия положены при рождении ребёнка?"}
+{"query_id": "S02-kk", "need_id": "S02", "lang": "kk", "type": "situation", "topic": "social", "text": "Бала туғанда қандай жәрдемақылар тағайындалады?"}
+{"query_id": "S02-en", "need_id": "S02", "lang": "en", "type": "situation", "topic": "social", "text": "What benefits are paid when a child is born?"}
+{"query_id": "S03-ru", "need_id": "S03", "lang": "ru", "type": "concept", "topic": "health", "text": "Какую медицинскую помощь государство оказывает бесплатно?"}
+{"query_id": "S03-kk", "need_id": "S03", "lang": "kk", "type": "concept", "topic": "health", "text": "Мемлекет қандай медициналық көмекті тегін көрсетеді?"}
+{"query_id": "S03-en", "need_id": "S03", "lang": "en", "type": "concept", "topic": "health", "text": "What medical care does the state provide free of charge?"}
+{"query_id": "S04-ru", "need_id": "S04", "lang": "ru", "type": "concept", "topic": "education", "text": "С какого возраста ребёнок обязан идти в школу и бесплатное ли обучение?"}
+{"query_id": "S04-kk", "need_id": "S04", "lang": "kk", "type": "concept", "topic": "education", "text": "Бала мектепке қай жастан барады және оқу тегін бе?"}
+{"query_id": "S04-en", "need_id": "S04", "lang": "en", "type": "concept", "topic": "education", "text": "At what age must a child start school and is education free?"}
+{"query_id": "O01-ru", "need_id": "O01", "lang": "ru", "type": "situation", "topic": "privacy", "text": "Могут ли у меня без моего согласия собирать и передавать персональные данные?"}
+{"query_id": "O01-kk", "need_id": "O01", "lang": "kk", "type": "situation", "topic": "privacy", "text": "Менің келісімімсіз жеке деректерімді жинап, басқаларға бере ала ма?"}
+{"query_id": "O01-en", "need_id": "O01", "lang": "en", "type": "situation", "topic": "privacy", "text": "Can my personal data be collected and passed on without my consent?"}
+{"query_id": "O03-ru", "need_id": "O03", "lang": "ru", "type": "situation", "topic": "enforcement", "text": "Судебный исполнитель хочет списать деньги с моей зарплаты. Какую часть могут удержать?"}
+{"query_id": "O03-kk", "need_id": "O03", "lang": "kk", "type": "situation", "topic": "enforcement", "text": "Сот орындаушысы жалақымнан ақша ұстағысы келеді. Қандай бөлігін ұстауға болады?"}
+{"query_id": "O03-en", "need_id": "O03", "lang": "en", "type": "situation", "topic": "enforcement", "text": "A bailiff wants to deduct money from my salary. How much can be withheld?"}
+{"query_id": "O04-ru", "need_id": "O04", "lang": "ru", "type": "concept", "topic": "elections", "text": "С какого возраста гражданин может голосовать и быть избранным?"}
+{"query_id": "O04-kk", "need_id": "O04", "lang": "kk", "type": "concept", "topic": "elections", "text": "Азамат қай жастан бастап дауыс бере алады және сайлана алады?"}
+{"query_id": "O04-en", "need_id": "O04", "lang": "en", "type": "concept", "topic": "elections", "text": "From what age may a citizen vote and stand for election?"}
+{"query_id": "O05-ru", "need_id": "O05", "lang": "ru", "type": "situation", "topic": "legal-aid", "text": "Кто имеет право на бесплатную юридическую помощь от государства?"}
+{"query_id": "O05-kk", "need_id": "O05", "lang": "kk", "type": "situation", "topic": "legal-aid", "text": "Мемлекеттен тегін заң көмегін алуға кімнің құқығы бар?"}
+{"query_id": "O05-en", "need_id": "O05", "lang": "en", "type": "situation", "topic": "legal-aid", "text": "Who is entitled to free legal aid from the state?"}
+{"query_id": "N01-ru", "need_id": "N01", "lang": "ru", "type": "title", "topic": "title", "text": "закон о защите персональных данных"}
+{"query_id": "N01-kk", "need_id": "N01", "lang": "kk", "type": "title", "topic": "title", "text": "жеке деректер және оларды қорғау туралы заң"}
+{"query_id": "N01-en", "need_id": "N01", "lang": "en", "type": "title", "topic": "title", "text": "law on personal data protection"}
+{"query_id": "N02-ru", "need_id": "N02", "lang": "ru", "type": "title", "topic": "title", "text": "Трудовой кодекс"}
+{"query_id": "N02-kk", "need_id": "N02", "lang": "kk", "type": "title", "topic": "title", "text": "Еңбек кодексі"}
+{"query_id": "N02-en", "need_id": "N02", "lang": "en", "type": "title", "topic": "title", "text": "Labor Code of Kazakhstan"}
+{"query_id": "N03-ru", "need_id": "N03", "lang": "ru", "type": "title", "topic": "title", "text": "Налоговый кодекс"}
+{"query_id": "N03-kk", "need_id": "N03", "lang": "kk", "type": "title", "topic": "title", "text": "Салық кодексі"}
+{"query_id": "N03-en", "need_id": "N03", "lang": "en", "type": "title", "topic": "title", "text": "Tax Code"}
+{"query_id": "N04-ru", "need_id": "N04", "lang": "ru", "type": "title", "topic": "title", "text": "кодекс об административных правонарушениях"}
+{"query_id": "N04-kk", "need_id": "N04", "lang": "kk", "type": "title", "topic": "title", "text": "әкімшілік құқық бұзушылық туралы кодекс"}
+{"query_id": "N04-en", "need_id": "N04", "lang": "en", "type": "title", "topic": "title", "text": "Code of Administrative Offences"}
+{"query_id": "N05-ru", "need_id": "N05", "lang": "ru", "type": "title", "topic": "title", "text": "Земельный кодекс"}
+{"query_id": "N05-kk", "need_id": "N05", "lang": "kk", "type": "title", "topic": "title", "text": "Жер кодексі"}
+{"query_id": "N05-en", "need_id": "N05", "lang": "en", "type": "title", "topic": "title", "text": "Land Code"}
+{"query_id": "N06-ru", "need_id": "N06", "lang": "ru", "type": "title", "topic": "title", "text": "закон о защите прав потребителей"}
+{"query_id": "N06-kk", "need_id": "N06", "lang": "kk", "type": "title", "topic": "title", "text": "тұтынушылардың құқықтарын қорғау туралы заң"}
+{"query_id": "N06-en", "need_id": "N06", "lang": "en", "type": "title", "topic": "title", "text": "consumer protection law"}
+{"query_id": "N07-ru", "need_id": "N07", "lang": "ru", "type": "title", "topic": "title", "text": "кодекс о браке и семье"}
+{"query_id": "N07-kk", "need_id": "N07", "lang": "kk", "type": "title", "topic": "title", "text": "неке және отбасы туралы кодекс"}
+{"query_id": "N07-en", "need_id": "N07", "lang": "en", "type": "title", "topic": "title", "text": "Marriage and Family Code"}
+{"query_id": "N08-ru", "need_id": "N08", "lang": "ru", "type": "title", "topic": "title", "text": "Социальный кодекс"}
+{"query_id": "N08-kk", "need_id": "N08", "lang": "kk", "type": "title", "topic": "title", "text": "Әлеуметтік кодекс"}
+{"query_id": "N08-en", "need_id": "N08", "lang": "en", "type": "title", "topic": "title", "text": "Social Code"}
