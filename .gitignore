@@ -1,0 +1,12 @@
+# environment and caches
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.claude/
+
+# data and indexes are rebuilt from the sources (see README.md); only small result files are kept
+data/
+logs/
+*.log
+report/figures/_*.png

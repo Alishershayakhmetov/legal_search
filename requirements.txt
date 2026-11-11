@@ -1,0 +1,25 @@
+# Python 3.12. Versions are the ones the results in docs/ and report/ were produced with.
+#
+# GPU build of PyTorch (CUDA 13) comes from the PyTorch index. CPU only: delete the next two lines and
+# run `pip install torch` instead (encoding is then several times slower).
+--extra-index-url https://download.pytorch.org/whl/cu130
+torch==2.14.0+cu130
+
+# models and text processing
+sentence-transformers==6.2.0
+transformers==5.22.1
+sentencepiece==0.2.2
+sacremoses==0.2.0
+nltk==3.10.4
+
+# data and search
+numpy==2.5.4
+pandas==3.1.0
+pyarrow==26.0.1
+scipy==1.18.1
+scikit-learn==1.9.1
+joblib==1.6.0
+
+# plots, tests
+matplotlib==3.11.2
+pytest==9.2.0
