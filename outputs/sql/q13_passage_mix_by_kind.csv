@@ -1,0 +1,7 @@
+lang,kind,passages,pct_of_lang,avg_chars
+kk,other prose,776185,52.6,1293.0
+kk,table-like,581876,39.4,1380.0
+kk,article,117742,8.0,1045.0
+ru,other prose,838300,52.1,1289.0
+ru,table-like,637853,39.7,1375.0
+ru,article,132283,8.2,1066.0
