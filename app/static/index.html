@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Поиск по законодательству РК</title>
+<style>
+  :root { --bg:#F7F7F2; --panel:#E9EEE6; --card:#FFFFFF; --ink:#1F2A30; --mute:#5E6C70; --line:#C9D3CA; --acc:#1F7A6D; --acc-ink:#FFFFFF; --warn-bg:#FBF6D5; --warn-ink:#7A5B00; --info-bg:#E1ECF4; --info-ink:#1B4E72; --bad:#9B2C2C; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.55 "Source Sans Pro","Segoe UI",system-ui,sans-serif; }
+  .layout { display:grid; grid-template-columns:minmax(0,1fr) 300px; gap:36px; max-width:1360px; margin:0 auto; padding:32px 28px 60px; }
+  h1 { font-size:34px; line-height:1.15; margin:0 0 8px; }
+  .sub { color:var(--mute); font-size:14px; margin:0 0 16px; }
+  .note { border-radius:8px; padding:12px 16px; margin:12px 0; font-size:15px; }
+  .warn { background:var(--warn-bg); color:var(--warn-ink); } .info { background:var(--info-bg); color:var(--info-ink); } .err { background:#F8E0E0; color:var(--bad); }
+  details.ex { background:var(--card); border:1px solid var(--line); border-radius:8px; margin:12px 0; }
+  details.ex > summary { cursor:pointer; padding:10px 14px; font-size:15px; }
+  .tabs { display:flex; gap:18px; padding:0 14px; border-bottom:1px solid var(--line); }
+  .tab { background:none; border:0; padding:8px 2px; font:inherit; font-size:15px; color:var(--mute); cursor:pointer; border-bottom:2px solid transparent; }
+  .tab.on { color:var(--acc); border-bottom-color:var(--acc); }
+  .exlist { max-height:330px; overflow:auto; padding:10px 14px; display:flex; flex-direction:column; gap:6px; }
+  .exbtn { text-align:left; background:var(--bg); border:1px solid var(--line); border-radius:8px; padding:7px 12px; font:inherit; font-size:14px; color:var(--ink); cursor:pointer; }
+  .exbtn:hover { border-color:var(--acc); }
+  .qrow { display:flex; gap:10px; margin:8px 0 4px; }
+  .qrow input { flex:1; padding:11px 14px; font:inherit; background:var(--panel); border:1px solid transparent; border-radius:8px; color:var(--ink); }
+  .qrow input:focus { outline:2px solid var(--acc); background:#fff; }
+  button.go { background:var(--acc); color:var(--acc-ink); border:0; border-radius:8px; padding:0 22px; font:inherit; font-weight:600; cursor:pointer; }
+  .meta { color:var(--mute); font-size:13px; margin:10px 0; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 18px; margin:12px 0; }
+  .card h3 { font-size:16px; margin:0 0 4px; } .card .chips { color:var(--mute); font-size:13px; margin-bottom:8px; }
+  .card p.body { margin:6px 0 10px; white-space:pre-wrap; }
+  .actions { display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+  .actions button { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:4px 12px; cursor:pointer; font-size:15px; }
+  .actions a { color:var(--acc); margin-left:auto; font-size:14px; }
+  details.full { margin-top:10px; } details.full summary { cursor:pointer; color:var(--acc); font-size:14px; }
+  details.full pre { white-space:pre-wrap; font:14px/1.5 inherit; background:var(--bg); padding:10px 12px; border-radius:8px; max-height:420px; overflow:auto; }
+  .cols { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; }
+  .cols h3 { font-size:20px; margin:0 0 2px; } .cols ol { padding-left:20px; } .cols li { margin-bottom:10px; } .cols em { color:var(--mute); }
+  aside { position:sticky; top:16px; align-self:start; background:var(--card); border:1px solid var(--line); border-radius:10px; padding:16px 18px; font-size:14.5px; }
+  aside h2 { font-size:16px; margin:0 0 10px; } aside h4 { margin:16px 0 8px; font-size:15px; }
+  aside label.row { display:flex; align-items:flex-start; gap:8px; margin:7px 0; cursor:pointer; }
+  aside input[type=radio], aside input[type=checkbox] { accent-color:var(--acc); margin-top:4px; }
+  aside select, aside input[type=number] { width:100%; padding:8px 10px; font:inherit; background:var(--panel); border:1px solid transparent; border-radius:8px; color:var(--ink); }
+  aside .field { margin:10px 0 4px; color:var(--mute); } aside input[type=range] { width:100%; accent-color:var(--acc); }
+  .years { display:flex; gap:8px; } .kinds { max-height:150px; overflow:auto; background:var(--panel); border-radius:8px; padding:4px 10px; }
+  @media (max-width: 960px) { .layout { grid-template-columns:1fr; } aside { position:static; order:-1; } .cols { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<div class="layout">
+  <main>
+    <h1>⚖️ Поиск по законодательству Республики Казахстан</h1>
+    <p class="sub">Задайте вопрос своими словами на казахском, русском или английском: система найдёт подходящие статьи кодексов и законов. Можно и сослаться на статью: «статья 1 Конституции РК», «ст. 188 УК».</p>
+    <div class="note warn">⚠️ Справочная информация, а не юридическая консультация. Тексты актов — на 01.04.2024; законы меняются, проверяйте действующую редакцию на adilet.zan.kz. Оценка качества поиска предварительная.</div>
+    <details class="ex" id="exbox"><summary id="exsummary">Примеры запросов</summary>
+      <div class="tabs" id="extabs"></div><div class="exlist" id="exlist"></div></details>
+    <form class="qrow" id="form"><input id="q" autocomplete="off" placeholder="Например: сколько дней оплачиваемого отпуска мне положено?" aria-label="Ваш вопрос"><button class="go" type="submit">Найти</button></form>
+    <div id="out"><div class="note info">Введите вопрос или выберите пример.</div></div>
+  </main>
+  <aside>
+    <h2>Настройки</h2>
+    <label class="row"><input type="radio" name="mode" value="articles" checked>Поиск по статьям</label>
+    <label class="row"><input type="radio" name="mode" value="titles">Найти акт по названию</label>
+    <label class="row"><input type="radio" name="mode" value="compare">Сравнить методы</label>
+    <div class="field">Метод</div>
+    <select id="method"><option value="dense">Смысловой (bge-m3)</option><option value="bm25">По словам (BM25)</option><option value="hybrid">Гибрид (смысл + слова)</option></select>
+    <div class="field">Сколько результатов: <b id="kval">8</b></div><input type="range" id="k" min="3" max="20" value="8">
+    <h4>Фильтры</h4>
+    <label class="row"><input type="checkbox" id="only_in_force" checked>Только действующие акты</label>
+    <label class="row"><input type="checkbox" id="hide_drafts" checked title="Акты «О проекте …», «Компиляция …» и казахские «жоба»">Скрыть проекты и компиляции</label>
+    <label class="row"><input type="checkbox" id="hide_amending" checked>Скрыть акты о внесении изменений</label>
+    <label class="row"><input type="checkbox" id="include_unlinked" checked title="Для ~6% статей акт в базе метаданных не найден">Включать тексты с неопределённым актом</label>
+    <div class="field">Вид акта (пусто — любой)</div><div class="kinds" id="kinds"></div>
+    <h4>Приватность</h4>
+    <label class="row"><input type="checkbox" id="consent" title="По умолчанию в файл отметок записывается только короткий хеш запроса и язык">Сохранять текст моих запросов вместе с отметками 👍/👎, чтобы улучшать поиск</label>
+    <div class="field">Год принятия</div><div class="years"><input type="number" id="year_from" value="1990" min="1900" max="2026"><input type="number" id="year_to" value="2026" min="1900" max="2026"></div>
+  </aside>
+</div>
+<script>
+const $ = s => document.querySelector(s);
+const LANG = {ru: 'русский', kk: 'казахский', en: 'английский'};
+const MODES = ['articles', 'titles', 'compare'];
+const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text !== undefined) e.textContent = text; return e; };
+const mode = () => document.querySelector('input[name=mode]:checked').value;
+const kinds = () => [...document.querySelectorAll('#kinds input:checked')].map(i => i.value);
+const filters = () => ({only_in_force: $('#only_in_force').checked, hide_drafts: $('#hide_drafts').checked, hide_amending: $('#hide_amending').checked,
+  include_unlinked: $('#include_unlinked').checked, kinds: kinds(), year_from: +$('#year_from').value || 1990, year_to: +$('#year_to').value || 2026});
+const status = v => v === null ? 'статус не определён' : (v ? 'действует' : 'утратил силу');
+
+function syncPanel() { $('#method').disabled = mode() !== 'articles'; $('#kval').textContent = $('#k').value; }
+document.querySelectorAll('input[name=mode]').forEach(r => r.addEventListener('change', () => { syncPanel(); if ($('#q').value.trim()) run(); }));
+$('#k').addEventListener('input', syncPanel);
+
+async function post(url, body) {
+  const r = await fetch(url, {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(body)});
+  return r.json();
+}
+
+function chips(parts) { return parts.filter(Boolean).join(' · '); }
+function articleCard(i, h, query) {
+  const c = el('div', 'card');
+  c.appendChild(el('h3', '', `${i}. ${h.title} · ст. ${h.article_no}` + (h.heading ? ` — ${h.heading}` : '')));
+  c.appendChild(el('div', 'chips', chips([h.kind, h.year, status(h.in_force), h.methods.length ? 'найдено: ' + h.methods.join('+') : ''])));
+  c.appendChild(el('p', 'body', h.snippet));
+  const act = el('div', 'actions');
+  for (const [label, text, tip] of [['up', '👍', 'Эта статья отвечает на запрос'], ['down', '👎', 'Эта статья не подходит']]) {
+    const b = el('button', '', text); b.title = tip;
+    b.onclick = async () => { const r = await post('/api/feedback', {query, title: h.title, article_no: h.article_no, label, consent: $('#consent').checked}); b.textContent = r.saved ? '✓' : '✗'; };
+    act.appendChild(b);
+  }
+  if (h.url) { const a = el('a', '', 'Открыть акт на adilet.zan.kz'); a.href = h.url; a.target = '_blank'; a.rel = 'noopener'; act.appendChild(a); }
+  c.appendChild(act);
+  const d = el('details', 'full'); d.appendChild(el('summary', '', 'Полный текст статьи'));
+  for (const [lg, name] of [['ru', 'русский'], ['kk', 'қазақша']]) if (h.texts[lg]) { d.appendChild(el('b', '', name)); d.appendChild(el('pre', '', h.texts[lg])); }
+  c.appendChild(d);
+  return c;
+}
+
+async function run() {
+  const query = $('#q').value.trim(), m = mode();
+  const out = $('#out');
+  if (!query) { out.replaceChildren(el('div', 'note info', 'Введите вопрос или выберите пример.')); return; }
+  out.replaceChildren(el('div', 'note info', 'Идёт поиск…'));
+  history.replaceState(null, '', '?q=' + encodeURIComponent(query) + '&mode=' + m);
+  const res = await post('/api/search', {query, mode: m, method: $('#method').value, k: +$('#k').value, filters: filters()});
+  const frag = document.createDocumentFragment();
+  if (res.error) { frag.appendChild(el('div', 'note err', 'Ошибка поиска: ' + res.error)); }
+  else if (res.mode === 'titles') {
+    frag.appendChild(el('div', 'meta', `Язык запроса: ${LANG[res.lang]} · ${res.seconds.toFixed(2)} с`));
+    res.results.forEach((r, i) => {
+      const c = el('div', 'card'); c.appendChild(el('h3', '', `${i + 1}. ${r.title}`));
+      if (r.title_kk) c.appendChild(el('div', 'chips', r.title_kk));
+      c.appendChild(el('div', 'chips', chips([r.kind, r.year, r.in_force ? 'действует' : 'утратил силу'])));
+      if (r.url) { const a = el('a', '', 'Открыть акт на adilet.zan.kz'); a.href = r.url; a.target = '_blank'; a.rel = 'noopener'; c.appendChild(a); }
+      frag.appendChild(c);
+    });
+    if (!res.results.length) frag.appendChild(el('div', 'note info', 'Ничего не найдено: попробуйте ослабить фильтры.'));
+  } else if (res.mode === 'compare') {
+    const cols = el('div', 'cols');
+    res.columns.forEach(col => {
+      const d = el('div'); d.appendChild(el('h3', '', col.label)); d.appendChild(el('div', 'meta', col.seconds.toFixed(2) + ' с'));
+      col.notes.forEach(n => d.appendChild(el('div', 'meta', n)));
+      const ol = el('ol'); col.hits.forEach(h => { const li = el('li'); li.appendChild(el('b', '', `${h.title}, ст. ${h.article_no}`)); li.appendChild(el('br')); li.appendChild(el('em', '', h.heading)); ol.appendChild(li); });
+      d.appendChild(ol); cols.appendChild(d);
+    });
+    frag.appendChild(cols);
+  } else {
+    frag.appendChild(el('div', 'meta', `Язык запроса: ${LANG[res.lang]} · просмотрено ${res.searched.toLocaleString('ru-RU')} фрагментов · ${res.seconds.toFixed(2)} с`));
+    if (res.direct) frag.appendChild(el('div', 'note info', 'Запрос содержит номер статьи: сначала показана найденная по номеру статья, затем результаты смыслового поиска.'));
+    res.notes.forEach(n => frag.appendChild(el('div', 'note info', n)));
+    res.hits.forEach((h, i) => frag.appendChild(articleCard(i + 1, h, query)));
+    if (!res.hits.length && !res.notes.length) frag.appendChild(el('div', 'note info', 'Ничего не найдено: попробуйте ослабить фильтры.'));
+  }
+  out.replaceChildren(frag);
+}
+$('#form').addEventListener('submit', e => { e.preventDefault(); run(); });
+
+async function init() {
+  const ex = await (await fetch('/api/examples')).json();
+  const names = {ru: 'Русский', kk: 'Қазақша', en: 'English'};
+  const tabs = $('#extabs'), list = $('#exlist');
+  $('#exsummary').textContent = `Примеры запросов: ${(ex.ru || []).length} вопроса тестового набора на каждом языке`;
+  const show = lang => {
+    tabs.querySelectorAll('.tab').forEach(t => t.classList.toggle('on', t.dataset.lang === lang));
+    list.replaceChildren(...(ex[lang] || []).map(text => { const b = el('button', 'exbtn', text); b.type = 'button'; b.onclick = () => { $('#q').value = text; run(); }; return b; }));
+  };
+  for (const lang of ['ru', 'kk', 'en']) { const t = el('button', 'tab', names[lang]); t.type = 'button'; t.dataset.lang = lang; t.onclick = () => show(lang); tabs.appendChild(t); }
+  show('ru');
+  const ks = await (await fetch('/api/kinds')).json();
+  $('#kinds').replaceChildren(...ks.map(k => { const l = el('label', 'row'); const i = el('input'); i.type = 'checkbox'; i.value = k; l.append(i, document.createTextNode(k)); return l; }));
+  const p = new URLSearchParams(location.search);
+  if (MODES.includes(p.get('mode'))) document.querySelector(`input[name=mode][value=${p.get('mode')}]`).checked = true;
+  syncPanel();
+  if (p.get('q')) { $('#q').value = p.get('q'); run(); }
+}
+init();
+</script>
+</body>
+</html>
