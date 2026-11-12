@@ -1,0 +1,362 @@
+[
+ {
+  "scope": "articles",
+  "lang": "ru",
+  "analyzer": "word",
+  "scheme": "bm25",
+  "n_docs": 118725,
+  "ms_per_query": 1.0,
+  "index_mb": 102,
+  "success@1": 0.022,
+  "success@5": 0.133,
+  "success@10": 0.222,
+  "recall@10": 0.185,
+  "recall@50": 0.281,
+  "mrr@10": 0.075,
+  "ndcg@10": 0.091,
+  "mrr_ci": [
+   0.026,
+   0.133
+  ]
+ },
+ {
+  "scope": "articles",
+  "lang": "ru",
+  "analyzer": "word",
+  "scheme": "tfidf",
+  "n_docs": 118725,
+  "ms_per_query": 0.8,
+  "index_mb": 102,
+  "success@1": 0.0,
+  "success@5": 0.044,
+  "success@10": 0.156,
+  "recall@10": 0.13,
+  "recall@50": 0.226,
+  "mrr@10": 0.032,
+  "ndcg@10": 0.051,
+  "mrr_ci": [
+   0.009,
+   0.063
+  ]
+ },
+ {
+  "scope": "articles",
+  "lang": "ru",
+  "analyzer": "word",
+  "scheme": "overlap",
+  "n_docs": 118725,
+  "ms_per_query": 0.6,
+  "index_mb": 102,
+  "success@1": 0.022,
+  "success@5": 0.089,
+  "success@10": 0.2,
+  "recall@10": 0.152,
+  "recall@50": 0.23,
+  "mrr@10": 0.065,
+  "ndcg@10": 0.076,
+  "mrr_ci": [
+   0.017,
+   0.12
+  ]
+ },
+ {
+  "scope": "articles",
+  "lang": "ru",
+  "analyzer": "p5",
+  "scheme": "bm25",
+  "n_docs": 118725,
+  "ms_per_query": 0.7,
+  "index_mb": 91,
+  "success@1": 0.044,
+  "success@5": 0.178,
+  "success@10": 0.244,
+  "recall@10": 0.222,
+  "recall@50": 0.433,
+  "mrr@10": 0.092,
+  "ndcg@10": 0.124,
+  "mrr_ci": [
+   0.033,
+   0.163
+  ]
+ },
+ {
+  "scope": "articles",
+  "lang": "ru",
+  "analyzer": "p5",
+  "scheme": "tfidf",
+  "n_docs": 118725,
+  "ms_per_query": 1.2,
+  "index_mb": 91,
+  "success@1": 0.022,
+  "success@5": 0.067,
+  "success@10": 0.178,
+  "recall@10": 0.144,
+  "recall@50": 0.344,
+  "mrr@10": 0.053,
+  "ndcg@10": 0.093,
+  "mrr_ci": [
+   0.014,
+   0.109
+  ]
+ },
+ {
+  "scope": "articles",
+  "lang": "ru",
+  "analyzer": "p5",
+  "scheme": "overlap",
+  "n_docs": 118725,
+  "ms_per_query": 1.2,
+  "index_mb": 91,
+  "success@1": 0.044,
+  "success@5": 0.044,
+  "success@10": 0.067,
+  "recall@10": 0.067,
+  "recall@50": 0.344,
+  "mrr@10": 0.047,
+  "ndcg@10": 0.051,
+  "mrr_ci": [
+   0.0,
+   0.114
+  ]
+ },
+ {
+  "scope": "articles",
+  "lang": "ru",
+  "analyzer": "stem",
+  "scheme": "bm25",
+  "n_docs": 118725,
+  "ms_per_query": 8.7,
+  "index_mb": 92,
+  "success@1": 0.044,
+  "success@5": 0.267,
+  "success@10": 0.378,
+  "recall@10": 0.333,
+  "recall@50": 0.511,
+  "mrr@10": 0.139,
+  "ndcg@10": 0.176,
+  "mrr_ci": [
+   0.077,
+   0.211
+  ]
+ },
+ {
+  "scope": "articles",
+  "lang": "ru",
+  "analyzer": "stem",
+  "scheme": "tfidf",
+  "n_docs": 118725,
+  "ms_per_query": 0.7,
+  "index_mb": 92,
+  "success@1": 0.0,
+  "success@5": 0.2,
+  "success@10": 0.289,
+  "recall@10": 0.256,
+  "recall@50": 0.444,
+  "mrr@10": 0.075,
+  "ndcg@10": 0.119,
+  "mrr_ci": [
+   0.038,
+   0.113
+  ]
+ },
+ {
+  "scope": "articles",
+  "lang": "ru",
+  "analyzer": "stem",
+  "scheme": "overlap",
+  "n_docs": 118725,
+  "ms_per_query": 0.9,
+  "index_mb": 92,
+  "success@1": 0.022,
+  "success@5": 0.089,
+  "success@10": 0.133,
+  "recall@10": 0.111,
+  "recall@50": 0.333,
+  "mrr@10": 0.048,
+  "ndcg@10": 0.064,
+  "mrr_ci": [
+   0.007,
+   0.105
+  ]
+ },
+ {
+  "scope": "articles",
+  "lang": "kk",
+  "analyzer": "word",
+  "scheme": "bm25",
+  "n_docs": 111820,
+  "ms_per_query": 2.2,
+  "index_mb": 103,
+  "success@1": 0.044,
+  "success@5": 0.178,
+  "success@10": 0.267,
+  "recall@10": 0.256,
+  "recall@50": 0.341,
+  "mrr@10": 0.098,
+  "ndcg@10": 0.125,
+  "mrr_ci": [
+   0.041,
+   0.179
+  ]
+ },
+ {
+  "scope": "articles",
+  "lang": "kk",
+  "analyzer": "word",
+  "scheme": "tfidf",
+  "n_docs": 111820,
+  "ms_per_query": 0.6,
+  "index_mb": 103,
+  "success@1": 0.022,
+  "success@5": 0.156,
+  "success@10": 0.222,
+  "recall@10": 0.211,
+  "recall@50": 0.267,
+  "mrr@10": 0.077,
+  "ndcg@10": 0.109,
+  "mrr_ci": [
+   0.029,
+   0.138
+  ]
+ },
+ {
+  "scope": "articles",
+  "lang": "kk",
+  "analyzer": "word",
+  "scheme": "overlap",
+  "n_docs": 111820,
+  "ms_per_query": 1.0,
+  "index_mb": 103,
+  "success@1": 0.022,
+  "success@5": 0.089,
+  "success@10": 0.133,
+  "recall@10": 0.122,
+  "recall@50": 0.278,
+  "mrr@10": 0.042,
+  "ndcg@10": 0.057,
+  "mrr_ci": [
+   0.009,
+   0.099
+  ]
+ },
+ {
+  "scope": "articles",
+  "lang": "kk",
+  "analyzer": "p5",
+  "scheme": "bm25",
+  "n_docs": 111820,
+  "ms_per_query": 0.9,
+  "index_mb": 93,
+  "success@1": 0.133,
+  "success@5": 0.2,
+  "success@10": 0.289,
+  "recall@10": 0.252,
+  "recall@50": 0.393,
+  "mrr@10": 0.165,
+  "ndcg@10": 0.163,
+  "mrr_ci": [
+   0.075,
+   0.269
+  ]
+ },
+ {
+  "scope": "articles",
+  "lang": "kk",
+  "analyzer": "p5",
+  "scheme": "tfidf",
+  "n_docs": 111820,
+  "ms_per_query": 1.0,
+  "index_mb": 93,
+  "success@1": 0.022,
+  "success@5": 0.133,
+  "success@10": 0.2,
+  "recall@10": 0.2,
+  "recall@50": 0.296,
+  "mrr@10": 0.061,
+  "ndcg@10": 0.094,
+  "mrr_ci": [
+   0.019,
+   0.112
+  ]
+ },
+ {
+  "scope": "articles",
+  "lang": "kk",
+  "analyzer": "p5",
+  "scheme": "overlap",
+  "n_docs": 111820,
+  "ms_per_query": 1.4,
+  "index_mb": 93,
+  "success@1": 0.0,
+  "success@5": 0.111,
+  "success@10": 0.178,
+  "recall@10": 0.156,
+  "recall@50": 0.241,
+  "mrr@10": 0.041,
+  "ndcg@10": 0.068,
+  "mrr_ci": [
+   0.015,
+   0.073
+  ]
+ },
+ {
+  "scope": "articles",
+  "lang": "kk",
+  "analyzer": "stem",
+  "scheme": "bm25",
+  "n_docs": 111820,
+  "ms_per_query": 1.4,
+  "index_mb": 95,
+  "success@1": 0.044,
+  "success@5": 0.178,
+  "success@10": 0.267,
+  "recall@10": 0.244,
+  "recall@50": 0.411,
+  "mrr@10": 0.097,
+  "ndcg@10": 0.131,
+  "mrr_ci": [
+   0.04,
+   0.165
+  ]
+ },
+ {
+  "scope": "articles",
+  "lang": "kk",
+  "analyzer": "stem",
+  "scheme": "tfidf",
+  "n_docs": 111820,
+  "ms_per_query": 0.8,
+  "index_mb": 95,
+  "success@1": 0.022,
+  "success@5": 0.133,
+  "success@10": 0.178,
+  "recall@10": 0.167,
+  "recall@50": 0.344,
+  "mrr@10": 0.064,
+  "ndcg@10": 0.099,
+  "mrr_ci": [
+   0.018,
+   0.117
+  ]
+ },
+ {
+  "scope": "articles",
+  "lang": "kk",
+  "analyzer": "stem",
+  "scheme": "overlap",
+  "n_docs": 111820,
+  "ms_per_query": 1.2,
+  "index_mb": 95,
+  "success@1": 0.022,
+  "success@5": 0.111,
+  "success@10": 0.111,
+  "recall@10": 0.089,
+  "recall@50": 0.211,
+  "mrr@10": 0.048,
+  "ndcg@10": 0.058,
+  "mrr_ci": [
+   0.009,
+   0.103
+  ]
+ }
+]
