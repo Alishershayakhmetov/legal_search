@@ -1,0 +1,75 @@
+# Project state (2026-11-05)
+
+Nothing is running.
+
+## Embeddings (all finished, nothing running)
+
+| Model | Scope | Docs | Evaluated |
+|---|---|---|---|
+| multilingual-e5-small | articles | 230,545 | yes |
+| multilingual-e5-base | articles | 230,545 | yes |
+| bge-m3 | articles | 230,545 | yes |
+| multilingual-e5-small | all prose | 1,699,070 | yes |
+
+`bge-m3` over all passages was not run (about 9 hours on the RTX 3050). To resume or rebuild any shard set:
+`bash src/resume_embeddings.sh` (edit the model and scope in it); shards are atomic and `meta.json` guards against a changed
+`index_docs.parquet`, which must not be rebuilt while shard folders exist.
+
+## Other results already on disk
+
+* BM25/TF-IDF/overlap, three analyzers, article scope and full corpus: `outputs/sparse_results_*.json`
+* e5-small and e5-base dense/hybrid, English strategies: `outputs/dense_results_*.json`
+* Title layer: `outputs/title_results.json`
+* Report: `docs/results_retrieval.md`
+
+## Repository hygiene (2026-11-06)
+
+`README.md` (install, data, pipeline order with timings, app, tests, structure, limits), `requirements.txt` (pinned, PyTorch CUDA 13 from the
+PyTorch index), `requirements-report.txt`, `.gitignore` (data/, logs/, caches). `src/00_download_data.py` downloads, checks (SHA-256) and unpacks
+the raw data; checked on the existing files and on a small 7z archive, the `unrar` branch and the real download path were not run. Work logs
+moved to `logs/`. The folder is still NOT a git repository.
+
+## Report and presentation (2026-11-05)
+
+`report/Отчёт_Поиск_по_законодательству_РК.docx` (+ PDF, 16 pages) and `report/Презентация_Поиск_по_законодательству_РК.pptx` (+ PDF, 15 slides,
+speaker notes with likely questions), in Russian. Built by `report/build_report.py`, `report/build_slides.py` and `report/make_figures.py` from
+`outputs/*.json` (judgments v1), so rebuilding after new results updates every number. Placeholders to fill: author, teacher, repository link
+(title page and slide 1). References were written from memory except [1] and [2]; check their details before submitting.
+
+## Report and slides refreshed (2026-11-09)
+
+Screenshots now show the new light UI (`report/capture_screens.py`: headless Edge over the DevTools protocol, uses `?q=...&mode=...` URL parameters of the app);
+report has 3 app figures and 17 pages, slide 13 has three screenshots. Text mentions the right-hand panel, the 53 example questions, article lookup, the
+88,119-article supplement and that metrics predate it.
+
+## Demo app changes of 2026-11-08
+
+* Chunker accepts headings without a period ("Статья 1", "1-бап"): the Constitution and ~2,700 files per language (mostly treaties) had no articles.
+  The research indexes and all reported metrics predate this fix; the app gets the missed articles as a supplement
+  (`src/36_build_extra_articles.py` -> `data/app/extra_articles.parquet`, `src/37_embed_extra.py` -> `data/app/extra_emb/`, 88,119 passages, BM25 rebuilt
+  by `33`). A full re-run of the pipeline would change chunk ids and require re-embedding everything.
+* Exact reference lookup ("статья 1 Конституции РК"): `parse_reference` + `SearchEngine.lookup_reference` in `app/engine.py`.
+* UI: settings panel on the right, all 53 test questions per language in the examples block, light palette, no framework.
+
+## Demo app
+
+`app/server.py` + `app/static/index.html` (engine in `app/engine.py`, guide in `app/README.md`). Run: `python app/server.py`. Streamlit was removed completely on 2026-11-09 (code, config, requirement, venv package); the page is plain HTML on the standard-library HTTP server.
+Data for it is in `data/app/` (articles.parquet, acts.parquet, titles.parquet, bm25_*.npz, title_emb/) built by `src/33_build_app_data.py`
+and `src/34_embed_titles.py`; article embeddings come from `data/index/emb_bge-m3_articles/`. A preview entry `legal-search`
+(port 8610) was added to the shared `E:/project/.claude/launch.json`. Thumbs up/down are appended to `data/app/feedback.jsonl`.
+Checked in the browser: article search in ru, kk and en, method comparison, act search by title. Not checked: filters other than the
+defaults, CPU-only mode, the thumbs buttons.
+
+## Judgments
+
+`annotation/qrels_v1.json` = round 1 (hand-checked) + round 2 (pooled from eight system runs, 270 candidates read): 376 articles judged, 67 answer a need, 100 related, 209 rejected. Built by `30_pool_candidates.py` -> `32_merge_round2.py`; evaluation picks the version with `QRELS_VERSION=v1` (result files end in `_v1.json`; v0 files are kept for comparison). `annotation/review.html` now shows round 2 too.
+
+## Waiting on the author
+
+* Review of the query set in `annotation/review.html` (53 needs, 102 judgments, Kazakh queries need a native speaker).
+* After that: a second round of judgments pooled from the systems' top results, because the first set is incomplete.
+
+## Rebuild order if the data folder is lost
+
+`01_csv_to_parquet` -> `05_link_texts` -> `08_build_db` -> `12_build_chunks` -> `14_load_passages` ->
+`21_build_index_docs` -> `24_embed` (per model and scope). Raw archives are in `data/archives/`.
