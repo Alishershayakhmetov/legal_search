@@ -19,6 +19,12 @@ Decision needed before Stage 4: is an LLM available (API key or local model)? It
 | X5 do not store raw queries in `feedback.jsonl` without consent | privacy |
 | X1 CI (tests on every push); E12 golden queries (20) | safety net for the next stages |
 
+**Status 2026-11-15: done except C2.**
+* C1: local repository with 8 commits by stage; nothing pushed, no GitHub repository created.
+* C4: all references found by web search; [12] (Sparck Jones & van Rijsbergen, BL R&D Report 5266) is dated 1975 or 1976 depending on the source.
+* U9, X5, X1, E12 done: `tidy_metadata` in `app/engine.py`; feedback stores a query hash unless the consent box is ticked; `.github/workflows/tests.yml` (clean Python 3.12 venv, no torch: 23 passed, 23 skipped); `annotation/golden_queries.json` with 23 cases (`RUN_GOLDEN=1 python -m pytest tests/test_golden.py`: 23 passed in about 42 s with the real engine).
+* C2 waits for the author: licence, author, teacher and repository fields in the report and on slide 1.
+
 **Gate:** tests and golden queries pass on a clean clone.
 
 ## Stage 1: trust in the numbers (1–2 days, mostly waiting)

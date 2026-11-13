@@ -64,7 +64,13 @@ defaults, CPU-only mode, the thumbs buttons.
 
 `annotation/qrels_v1.json` = round 1 (hand-checked) + round 2 (pooled from eight system runs, 270 candidates read): 376 articles judged, 67 answer a need, 100 related, 209 rejected. Built by `30_pool_candidates.py` -> `32_merge_round2.py`; evaluation picks the version with `QRELS_VERSION=v1` (result files end in `_v1.json`; v0 files are kept for comparison). `annotation/review.html` now shows round 2 too.
 
+## Repository and tests
+
+Git repository in this folder (branch `main`, 8 local commits by stage, not pushed). `python -m pytest tests -q` runs 23 tests; `RUN_GOLDEN=1` adds 23 golden queries that need the real indexes and GPU. CI: `.github/workflows/tests.yml`.
+
 ## Waiting on the author
+
+* Licence, author, teacher and repository link for the report and slide 1 (roadmap C2); instructor approval of the extension (C3).
 
 * Review of the query set in `annotation/review.html` (53 needs, 102 judgments, Kazakh queries need a native speaker).
 * After that: a second round of judgments pooled from the systems' top results, because the first set is incomplete.

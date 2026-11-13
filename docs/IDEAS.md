@@ -60,16 +60,16 @@ keep the "Log" at the bottom up to date. Every search idea should be measured be
 | U6 | Docker image or a one-script installer | Runs on another computer without manual steps | 0.5 day | idea |
 | U7 | Telegram bot on top of the same engine | Reach; reuse of bot experience | 1 day | idea |
 | U8 | Show the article number prominently, deep link to the article text | Link now opens the whole act | 1 day, site renders by JavaScript | idea |
-| U9 | Fix small things: Constitution shown as kind "Другое"; amending acts titled «Закон … о внесении изменений» are not hidden | Polish | 1 h | next |
+| U9 | Fix small things: Constitution shown as kind "Другое"; amending acts titled «Закон … о внесении изменений» are not hidden | Polish | 1 h | done 2026-11-15 |
 
 ## Course deliverables
 
 | # | Idea | Status |
 |---|---|---|
-| C1 | `git init`, commits by stage, push to GitHub (by the author) | next |
+| C1 | `git init`, commits by stage, push to GitHub (by the author) | local commits done 2026-11-15; push is up to the author |
 | C2 | Choose a code licence; fill author, teacher and repository link in the report and slide 1 | next |
 | C3 | Agree the extension with the instructor (bonus up to 5 points) | next |
-| C4 | Verify the references typed from memory ([3]–[12]) | next |
+| C4 | Verify the references typed from memory ([3]–[12]) | done 2026-11-15 (all found; [12] year 1975/1976 varies by source) |
 | C5 | Bigger screenshots on the demo slide; rehearse the answers in the speaker notes | idea |
 
 ## Third batch (2026-11-15)
@@ -108,11 +108,11 @@ keep the "Log" at the bottom up to date. Every search idea should be measured be
 
 | # | Idea | Why | Effort | Status |
 |---|---|---|---|---|
-| X1 | GitHub Actions: run the tests and a lint on every push | Part of "code quality"; cheap | 1 h | idea |
+| X1 | GitHub Actions: run the tests and a lint on every push | Part of "code quality"; cheap | 1 h | done 2026-11-15 (tests only, no lint) |
 | X2 | CPU-only mode: ONNX/int8 encoder and an approximate index (HNSW) | Runs on a laptop without a GPU; latency measurement for the report | 1 day | idea |
 | X3 | Smaller index: truncate embeddings to 256–512 dimensions or int8 and measure the quality loss | Memory and disk cost table for the report | 0.5 day | idea |
-| X4 | Cache query embeddings and results of repeated queries | Faster repeats, simpler load test | 1 h | idea |
-| X5 | Privacy: do not store query text in `feedback.jsonl` unless the user agrees; document what is stored | The file currently keeps raw queries | 1 h | idea |
+| X4 | Cache query embeddings and results of repeated queries | Faster repeats, simpler load test | 1 h | done 2026-11-15 |
+| X5 | Privacy: do not store query text in `feedback.jsonl` unless the user agrees; document what is stored | The file currently keeps raw queries | 1 h | done 2026-11-15 (hash by default, text only with the checkbox) |
 | X6 | If the server is ever exposed beyond localhost: rate limit, request size limits (partly present), no directory listing | Basic safety | 2 h | idea |
 | U10 | Accessibility: keyboard navigation, labels for screen readers, contrast check of the palette | Quality, low effort | 3 h | idea |
 | U11 | Usage statistics page (questions per language, share of 👍/👎, slow queries) | Evidence for the report and for tuning | 0.5 day | idea |
@@ -148,7 +148,7 @@ keep the "Log" at the bottom up to date. Every search idea should be measured be
 | D10 | Kazakh–Russian legal term glossary mined from the parallel article corpus (D8) | Useful to translators; by-product with value of its own | 1–2 days | idea |
 | D11 | Classifier of article role (definition, right, duty, liability, procedure, deadline) as a filter and a ranking hint | "What is the punishment" wants liability articles | 2 days | idea |
 | E11 | Retrievability audit: which articles are never returned for any question (index health, hubness) | Finds dead zones of the index | 0.5 day | idea |
-| E12 | Golden queries: 20 fixed questions with the expected top article, run in the tests/CI after every change | Catches regressions when the index or ranking changes | 3 h | idea |
+| E12 | Golden queries: 20 fixed questions with the expected top article, run in the tests/CI after every change | Catches regressions when the index or ranking changes | 3 h | done 2026-11-15 (23 cases, RUN_GOLDEN=1) |
 | E13 | Small user study: 5–10 people, task completion and SUS usability score | Strong evidence for the defense | 1–2 days, needs people | idea |
 | E14 | Manual comparison with the official site search on 20 questions (no scraping, by hand) | A real-world baseline for the report | 3 h | idea |
 | U15 | Side-by-side Russian/Kazakh view of an article, aligned by paragraph | Helps verify translations and learn terms | 1 day | idea |
