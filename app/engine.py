@@ -23,6 +23,10 @@ RRF_K = 60
 MODEL_NAME = "BAAI/bge-m3"
 
 
+# legal force of an act kind, used by the experimental prior (src/40_rank_experiments.py)
+FORCE_LEVEL = {"Конституция": 5, "Конституционный закон": 4, "Кодекс": 3, "Закон": 2, "Указ": 1}
+
+
 @dataclass(frozen=True)
 class Filters:
     only_in_force: bool = True
@@ -32,6 +36,7 @@ class Filters:
     kinds: tuple = ()  # empty = every kind
     year_from: int = 1990
     year_to: int = 2026
+    force_prior: float = 0.0  # experimental: bonus added to the semantic score by legal force of the act kind (see FORCE_LEVEL)
 
 
 @dataclass
@@ -156,6 +161,7 @@ class SearchEngine:
         self.emb = torch.from_numpy(emb).to(self.device)
         if self.device == "cpu":
             self.emb = self.emb.float()
+        self._force = self.torch.from_numpy(self.df.kind.map(FORCE_LEVEL).fillna(0).to_numpy(dtype=np.float32)).to(self.device)
         self._by_law = None
         self._model = None
         self._bm25 = {}
@@ -229,9 +235,11 @@ class SearchEngine:
         return hits
 
     # -- article search ----------------------------------------------------------------------------------
-    def _dense_rows(self, query, mask, k):
-        scores = self.emb @ self.encode(query)
-        scores = scores.float().masked_fill(~self.torch.from_numpy(mask).to(self.device), -1e4)
+    def _dense_rows(self, query, mask, k, prior=0.0):
+        scores = (self.emb @ self.encode(query)).float()
+        if prior:
+            scores = scores + prior * self._force
+        scores = scores.masked_fill(~self.torch.from_numpy(mask).to(self.device), -1e4)
         top = self.torch.topk(scores, k)
         return top.indices.cpu().numpy(), top.values.cpu().numpy()
 
@@ -250,7 +258,7 @@ class SearchEngine:
         notes = []
         rankings = {}
         if method in ("dense", "hybrid"):
-            rows, sc = self._dense_rows(query, mask, pool)
+            rows, sc = self._dense_rows(query, mask, pool, filters.force_prior)
             rankings["dense"] = (list(rows), list(sc))
         if method in ("bm25", "hybrid"):
             if lang == "en":

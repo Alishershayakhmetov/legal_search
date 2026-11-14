@@ -70,6 +70,7 @@
     <label class="row"><input type="checkbox" id="hide_drafts" checked title="Акты «О проекте …», «Компиляция …» и казахские «жоба»">Скрыть проекты и компиляции</label>
     <label class="row"><input type="checkbox" id="hide_amending" checked>Скрыть акты о внесении изменений</label>
     <label class="row"><input type="checkbox" id="include_unlinked" checked title="Для ~6% статей акт в базе метаданных не найден">Включать тексты с неопределённым актом</label>
+    <label class="row"><input type="checkbox" id="force_prior" title="Экспериментально: небольшая надбавка Конституции, кодексам и законам перед подзаконными актами. На тестовом наборе улучшает поиск, но набор состоит в основном из статей кодексов; независимая проверка ещё не проведена.">Приоритет кодексов и законов (экспериментально)</label>
     <div class="field">Вид акта (пусто — любой)</div><div class="kinds" id="kinds"></div>
     <h4>Приватность</h4>
     <label class="row"><input type="checkbox" id="consent" title="По умолчанию в файл отметок записывается только короткий хеш запроса и язык">Сохранять текст моих запросов вместе с отметками 👍/👎, чтобы улучшать поиск</label>
@@ -84,7 +85,8 @@ const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls)
 const mode = () => document.querySelector('input[name=mode]:checked').value;
 const kinds = () => [...document.querySelectorAll('#kinds input:checked')].map(i => i.value);
 const filters = () => ({only_in_force: $('#only_in_force').checked, hide_drafts: $('#hide_drafts').checked, hide_amending: $('#hide_amending').checked,
-  include_unlinked: $('#include_unlinked').checked, kinds: kinds(), year_from: +$('#year_from').value || 1990, year_to: +$('#year_to').value || 2026});
+  include_unlinked: $('#include_unlinked').checked, kinds: kinds(), year_from: +$('#year_from').value || 1990, year_to: +$('#year_to').value || 2026,
+  force_prior: $('#force_prior').checked ? 0.02 : 0});
 const status = v => v === null ? 'статус не определён' : (v ? 'действует' : 'утратил силу');
 
 function syncPanel() { $('#method').disabled = mode() !== 'articles'; $('#kval').textContent = $('#k').value; }

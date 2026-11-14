@@ -31,3 +31,8 @@ def test_filters_default_and_override():
     assert f.only_in_force and f.hide_drafts and f.kinds == ()
     g = make_filters({"only_in_force": False, "kinds": ["Кодекс"], "year_from": "2000"})
     assert not g.only_in_force and g.kinds == ("Кодекс",) and g.year_from == 2000
+
+
+def test_legal_force_prior_is_off_unless_requested():
+    assert make_filters({}).force_prior == 0.0
+    assert make_filters({"force_prior": 0.02}).force_prior == 0.02

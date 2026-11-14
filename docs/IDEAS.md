@@ -8,8 +8,8 @@ keep the "Log" at the bottom up to date. Every search idea should be measured be
 | # | Idea | Why | Effort | Status |
 |---|---|---|---|---|
 | S1 | Put the act title into the text that is embedded ("Трудовой кодекс, ст. 113: …") | The encoder does not see which act an article belongs to | re-embed, 1–1.5 h | idea |
-| S2 | Re-rank the top 30 with bge-reranker-v2-m3 | Removes near-miss articles; usually the biggest gain | 0.5 day, +0.3–1 s per query | idea |
-| S3 | Penalty for bills, old editions and special regimes; bonus for codes | Fixes errors from the error analysis (police-service law above the Labour Code) | 2–3 h | idea |
+| S2 | Re-rank the top 30 with bge-reranker-v2-m3 | Removes near-miss articles; usually the biggest gain | 0.5 day, +0.3–1 s per query | done 2026-11-15: no gain on top of filters, +650 ms, not added |
+| S3 | Penalty for bills, old editions and special regimes; bonus for codes | Fixes errors from the error analysis (police-service law above the Labour Code) | 2–3 h | done 2026-11-15 as the default filters (big gain) |
 | S4 | Detect the user's category ("я госслужащий", "ИП", "пенсионер") and filter by it | General vs special regulation | 1 day | idea |
 | S5 | LLM query rewriting (everyday words → legal terms) | Bridges the vocabulary gap | 0.5 day, needs an LLM | idea |
 | S6 | Hybrid with weights tuned on a held-out part of the questions | Equal-weight RRF hurt; BM25 may still help on names and numbers | 2 h, needs more questions | idea |
@@ -138,7 +138,7 @@ keep the "Log" at the bottom up to date. Every search idea should be measured be
 | # | Idea | Why | Effort | Status |
 |---|---|---|---|---|
 | S21 | Autocomplete from the test questions and act titles; "did you mean" for typos using the corpus vocabulary | Fewer empty or poor searches | 0.5 day | idea |
-| S22 | Prior from legal force (Constitution > codes > laws > by-laws; the `legal_force` field exists) | Higher-ranking norms first when texts compete | 3 h, measure on the test set | idea |
+| S22 | Prior from legal force (Constitution > codes > laws > by-laws; the `legal_force` field exists) | Higher-ranking norms first when texts compete | 3 h, measure on the test set | done 2026-11-15: helps on the test set, off by default until the held-out set |
 | S23 | Ablation of passage size and overlap (1 500 / 800 chars, with and without overlap) | Never tested; may change every number | 1 day (re-chunk, re-embed) | idea |
 | S24 | Ablation of the encoder input length (256 / 384 / 512 tokens) | 8% of passages are cut at 384; shows what that costs | 0.5 day | idea |
 | A10 | Amendment timeline of an article from the footnotes in the text ("Сноска. … с изменениями, внесенными законами РК от …") | History without the missing history file; the data is already in the passages | 1–2 days | idea |
@@ -160,7 +160,7 @@ keep the "Log" at the bottom up to date. Every search idea should be measured be
 | # | Idea | Why | Effort | Status |
 |---|---|---|---|---|
 | S25 | Model sweep on the article index: multilingual-e5-large, Qwen3-Embedding, jina-embeddings-v3, gte-multilingual, LaBSE | Only three models were compared; a bigger or newer one may beat bge-m3 on Kazakh | 0.5–1 day per large model (encoding hours) | idea |
-| S26 | Query instructions ("Represent this legal question for retrieving articles of Kazakh law") for models that support them | Free quality change, never tried | 3 h | idea |
+| S26 | Query instructions ("Represent this legal question for retrieving articles of Kazakh law") for models that support them | Free quality change, never tried | 3 h | done 2026-11-15: hurts bge-m3, dropped |
 | S27 | Document expansion: generate the questions each article answers (doc2query) and embed them next to the article | Attacks the everyday-vs-legal vocabulary gap from the document side | 2 days, needs an LLM, big index growth | idea |
 | S28 | HyDE: let an LLM write a short hypothetical answer, embed it instead of the question | Often helps vague situational questions | 0.5 day, needs an LLM | idea |
 | S29 | Distil bge-m3 rankings into a small fast encoder (e5-small size) | Near bge-m3 quality on CPU | 3 days | idea |

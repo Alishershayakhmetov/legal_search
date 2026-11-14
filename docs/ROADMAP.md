@@ -54,7 +54,13 @@ Run in this order, each measured against the baseline; keep only what helps on t
 | 5 | S6 hybrid weights tuned on the held-out part | 2 h |
 | 6 | S23 and S24 ablations (passage size, input length) | GPU in the background; these may change every number, so report them even if they do not help |
 
-**Gate:** one chosen configuration; a before/after table for the report; latency per query measured.
+**Status 2026-11-15 (no held-out set exists, so every variant had fixed settings and is reported with a paired test):** `src/40_rank_experiments.py` -> `outputs/rank_experiments.json`, report section 5.9, one new slide.
+* S26 instructions: hurt bge-m3 on all languages (ru S@10 0.80 -> 0.62-0.71, kk 0.73 -> 0.53-0.62). Dropped.
+* S3: the demo's default filters (no repealed acts, drafts, amending acts) are the biggest gain: ru MRR@10 0.383 -> 0.680, S@1 0.18 -> 0.56; kk 0.354 -> 0.565; en 0.321 -> 0.519. Already on in the app; the unfiltered numbers of Stage 1 understate what the user sees.
+* S22 legal-force prior (Constitution > constitutional law > code > law > decree), +0.02 on the cosine score, on top of filters: ru S@1 0.69, MRR 0.765; kk MRR 0.660; en 0.671; weight 0.1 is too much (ru MRR 0.599). Gold articles are 52 of 67 codes, so the test set favours this prior; **added to the app as an off-by-default switch** ("experimental") until the held-out set confirms it.
+* S2 re-ranker bge-reranker-v2-m3 on the top 30 (act title + text): +about 650 ms per query; alone raises MRR (ru 0.383 -> 0.512) but on top of filters it does not help (ru MRR 0.680 -> 0.666). **Not added.**
+* S12 dictionary: cannot be measured (one test question has an abbreviation); moved to the Stage 3 robustness set. S6, S23, S24 not run (S6 needs the held-out set, S23/S24 need re-chunking and re-embedding).
+* **Gate not met:** the chosen configuration (filters on, prior off) is the current default; the prior waits for E3.
 
 ## Stage 3: honest behaviour and usability (2 days)
 

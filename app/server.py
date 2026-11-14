@@ -26,7 +26,8 @@ def make_filters(d):
     d = d or {}
     return Filters(only_in_force=bool(d.get("only_in_force", True)), hide_drafts=bool(d.get("hide_drafts", True)),
                    hide_amending=bool(d.get("hide_amending", True)), include_unlinked=bool(d.get("include_unlinked", True)),
-                   kinds=tuple(d.get("kinds") or ()), year_from=int(d.get("year_from", 1990)), year_to=int(d.get("year_to", 2026)))
+                   kinds=tuple(d.get("kinds") or ()), year_from=int(d.get("year_from", 1990)), year_to=int(d.get("year_to", 2026)),
+                   force_prior=float(d.get("force_prior", 0.0)))
 
 
 def hit_to_dict(hit, lang):
