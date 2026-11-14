@@ -1,0 +1,62 @@
+[
+ {
+  "scope": "all",
+  "lang": "ru",
+  "analyzer": "stem",
+  "scheme": "bm25",
+  "n_docs": 888356,
+  "ms_per_query": 41.4,
+  "index_mb": 565,
+  "success@1": 0.044,
+  "success@5": 0.133,
+  "success@10": 0.178,
+  "recall@10": 0.107,
+  "recall@50": 0.426,
+  "mrr@10": 0.08,
+  "ndcg@10": 0.082,
+  "mrr_ci": [
+   0.024,
+   0.151
+  ]
+ },
+ {
+  "scope": "all",
+  "lang": "ru",
+  "analyzer": "stem",
+  "scheme": "tfidf",
+  "n_docs": 888356,
+  "ms_per_query": 7.8,
+  "index_mb": 565,
+  "success@1": 0.022,
+  "success@5": 0.089,
+  "success@10": 0.2,
+  "recall@10": 0.148,
+  "recall@50": 0.326,
+  "mrr@10": 0.056,
+  "ndcg@10": 0.087,
+  "mrr_ci": [
+   0.016,
+   0.111
+  ]
+ },
+ {
+  "scope": "all",
+  "lang": "ru",
+  "analyzer": "stem",
+  "scheme": "overlap",
+  "n_docs": 888356,
+  "ms_per_query": 9.4,
+  "index_mb": 565,
+  "success@1": 0.022,
+  "success@5": 0.044,
+  "success@10": 0.089,
+  "recall@10": 0.067,
+  "recall@50": 0.159,
+  "mrr@10": 0.033,
+  "ndcg@10": 0.031,
+  "mrr_ci": [
+   0.002,
+   0.083
+  ]
+ }
+]

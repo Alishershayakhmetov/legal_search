@@ -15,8 +15,6 @@ It needs the files in `data/app/` and `data/index/emb_bge-m3_articles/`. To rebu
 
 ```bash
 cd src
-../.venv/Scripts/python.exe -X utf8 36_build_extra_articles.py # articles whose headings have no period (Constitution, treaties)
-../.venv/Scripts/python.exe -X utf8 37_embed_extra.py          # their embeddings (about 17 minutes)
 ../.venv/Scripts/python.exe -X utf8 33_build_app_data.py      # tables and BM25 indexes (needs data/index/emb_bge-m3_articles)
 ../.venv/Scripts/python.exe -X utf8 34_embed_titles.py        # title embeddings for the "find an act" mode (about 20 minutes)
 ```
@@ -34,7 +32,7 @@ The page is plain HTML served by the Python standard library (`app/server.py`, `
 
 | Mode | What you get |
 |---|---|
-| Search articles | bge-m3 semantic search (default), BM25, or a hybrid of both over 318,664 article passages (230,545 from the research index plus 88,119 supplementary ones) |
+| Search articles | bge-m3 semantic search (default), BM25, or a hybrid of both over 319,377 article passages |
 | Find an act by name | acts whose Russian or Kazakh title is closest in meaning to the query |
 | Compare methods | the three methods side by side for the same question |
 

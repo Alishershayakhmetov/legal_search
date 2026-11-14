@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parent.parent
 ANN = ROOT / "annotation"
 CUTOFFS = (1, 5, 10, 20, 50)
 QRELS_VERSION = os.environ.get("QRELS_VERSION", "v0")
-SUFFIX = "" if QRELS_VERSION == "v0" else f"_{QRELS_VERSION}"
+SUFFIX = "" if QRELS_VERSION == "v0" else f"_{QRELS_VERSION}_c2"  # c2 = corpus after the chunker fix (88k more articles); *_v1_c1.json are the earlier runs
 
 
 def load_queries(types=None, langs=None):

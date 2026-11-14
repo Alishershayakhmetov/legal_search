@@ -1,0 +1,362 @@
+[
+ {
+  "scope": "articles",
+  "lang": "ru",
+  "analyzer": "word",
+  "scheme": "bm25",
+  "n_docs": 160962,
+  "ms_per_query": 1.9,
+  "index_mb": 121,
+  "success@1": 0.044,
+  "success@5": 0.156,
+  "success@10": 0.2,
+  "recall@10": 0.137,
+  "recall@50": 0.278,
+  "mrr@10": 0.092,
+  "ndcg@10": 0.105,
+  "mrr_ci": [
+   0.027,
+   0.166
+  ]
+ },
+ {
+  "scope": "articles",
+  "lang": "ru",
+  "analyzer": "word",
+  "scheme": "tfidf",
+  "n_docs": 160962,
+  "ms_per_query": 0.9,
+  "index_mb": 121,
+  "success@1": 0.0,
+  "success@5": 0.044,
+  "success@10": 0.156,
+  "recall@10": 0.133,
+  "recall@50": 0.226,
+  "mrr@10": 0.032,
+  "ndcg@10": 0.064,
+  "mrr_ci": [
+   0.01,
+   0.064
+  ]
+ },
+ {
+  "scope": "articles",
+  "lang": "ru",
+  "analyzer": "word",
+  "scheme": "overlap",
+  "n_docs": 160962,
+  "ms_per_query": 1.0,
+  "index_mb": 121,
+  "success@1": 0.022,
+  "success@5": 0.089,
+  "success@10": 0.178,
+  "recall@10": 0.126,
+  "recall@50": 0.233,
+  "mrr@10": 0.061,
+  "ndcg@10": 0.065,
+  "mrr_ci": [
+   0.014,
+   0.115
+  ]
+ },
+ {
+  "scope": "articles",
+  "lang": "ru",
+  "analyzer": "p5",
+  "scheme": "bm25",
+  "n_docs": 160962,
+  "ms_per_query": 2.0,
+  "index_mb": 107,
+  "success@1": 0.044,
+  "success@5": 0.2,
+  "success@10": 0.289,
+  "recall@10": 0.237,
+  "recall@50": 0.456,
+  "mrr@10": 0.109,
+  "ndcg@10": 0.149,
+  "mrr_ci": [
+   0.044,
+   0.184
+  ]
+ },
+ {
+  "scope": "articles",
+  "lang": "ru",
+  "analyzer": "p5",
+  "scheme": "tfidf",
+  "n_docs": 160962,
+  "ms_per_query": 1.9,
+  "index_mb": 107,
+  "success@1": 0.022,
+  "success@5": 0.089,
+  "success@10": 0.2,
+  "recall@10": 0.137,
+  "recall@50": 0.37,
+  "mrr@10": 0.062,
+  "ndcg@10": 0.102,
+  "mrr_ci": [
+   0.018,
+   0.12
+  ]
+ },
+ {
+  "scope": "articles",
+  "lang": "ru",
+  "analyzer": "p5",
+  "scheme": "overlap",
+  "n_docs": 160962,
+  "ms_per_query": 1.2,
+  "index_mb": 107,
+  "success@1": 0.022,
+  "success@5": 0.067,
+  "success@10": 0.067,
+  "recall@10": 0.056,
+  "recall@50": 0.293,
+  "mrr@10": 0.039,
+  "ndcg@10": 0.043,
+  "mrr_ci": [
+   0.0,
+   0.092
+  ]
+ },
+ {
+  "scope": "articles",
+  "lang": "ru",
+  "analyzer": "stem",
+  "scheme": "bm25",
+  "n_docs": 160962,
+  "ms_per_query": 13.5,
+  "index_mb": 109,
+  "success@1": 0.044,
+  "success@5": 0.289,
+  "success@10": 0.422,
+  "recall@10": 0.359,
+  "recall@50": 0.522,
+  "mrr@10": 0.153,
+  "ndcg@10": 0.189,
+  "mrr_ci": [
+   0.083,
+   0.223
+  ]
+ },
+ {
+  "scope": "articles",
+  "lang": "ru",
+  "analyzer": "stem",
+  "scheme": "tfidf",
+  "n_docs": 160962,
+  "ms_per_query": 1.1,
+  "index_mb": 109,
+  "success@1": 0.022,
+  "success@5": 0.222,
+  "success@10": 0.333,
+  "recall@10": 0.259,
+  "recall@50": 0.415,
+  "mrr@10": 0.097,
+  "ndcg@10": 0.134,
+  "mrr_ci": [
+   0.043,
+   0.153
+  ]
+ },
+ {
+  "scope": "articles",
+  "lang": "ru",
+  "analyzer": "stem",
+  "scheme": "overlap",
+  "n_docs": 160962,
+  "ms_per_query": 1.8,
+  "index_mb": 109,
+  "success@1": 0.044,
+  "success@5": 0.067,
+  "success@10": 0.156,
+  "recall@10": 0.122,
+  "recall@50": 0.27,
+  "mrr@10": 0.063,
+  "ndcg@10": 0.066,
+  "mrr_ci": [
+   0.01,
+   0.134
+  ]
+ },
+ {
+  "scope": "articles",
+  "lang": "kk",
+  "analyzer": "word",
+  "scheme": "bm25",
+  "n_docs": 158415,
+  "ms_per_query": 2.4,
+  "index_mb": 125,
+  "success@1": 0.089,
+  "success@5": 0.222,
+  "success@10": 0.289,
+  "recall@10": 0.248,
+  "recall@50": 0.363,
+  "mrr@10": 0.132,
+  "ndcg@10": 0.13,
+  "mrr_ci": [
+   0.052,
+   0.23
+  ]
+ },
+ {
+  "scope": "articles",
+  "lang": "kk",
+  "analyzer": "word",
+  "scheme": "tfidf",
+  "n_docs": 158415,
+  "ms_per_query": 1.8,
+  "index_mb": 125,
+  "success@1": 0.044,
+  "success@5": 0.156,
+  "success@10": 0.222,
+  "recall@10": 0.193,
+  "recall@50": 0.267,
+  "mrr@10": 0.096,
+  "ndcg@10": 0.11,
+  "mrr_ci": [
+   0.036,
+   0.169
+  ]
+ },
+ {
+  "scope": "articles",
+  "lang": "kk",
+  "analyzer": "word",
+  "scheme": "overlap",
+  "n_docs": 158415,
+  "ms_per_query": 1.3,
+  "index_mb": 125,
+  "success@1": 0.022,
+  "success@5": 0.111,
+  "success@10": 0.133,
+  "recall@10": 0.107,
+  "recall@50": 0.226,
+  "mrr@10": 0.044,
+  "ndcg@10": 0.056,
+  "mrr_ci": [
+   0.01,
+   0.102
+  ]
+ },
+ {
+  "scope": "articles",
+  "lang": "kk",
+  "analyzer": "p5",
+  "scheme": "bm25",
+  "n_docs": 158415,
+  "ms_per_query": 2.2,
+  "index_mb": 113,
+  "success@1": 0.111,
+  "success@5": 0.222,
+  "success@10": 0.311,
+  "recall@10": 0.259,
+  "recall@50": 0.393,
+  "mrr@10": 0.166,
+  "ndcg@10": 0.167,
+  "mrr_ci": [
+   0.079,
+   0.252
+  ]
+ },
+ {
+  "scope": "articles",
+  "lang": "kk",
+  "analyzer": "p5",
+  "scheme": "tfidf",
+  "n_docs": 158415,
+  "ms_per_query": 2.1,
+  "index_mb": 113,
+  "success@1": 0.044,
+  "success@5": 0.133,
+  "success@10": 0.156,
+  "recall@10": 0.148,
+  "recall@50": 0.285,
+  "mrr@10": 0.075,
+  "ndcg@10": 0.101,
+  "mrr_ci": [
+   0.017,
+   0.145
+  ]
+ },
+ {
+  "scope": "articles",
+  "lang": "kk",
+  "analyzer": "p5",
+  "scheme": "overlap",
+  "n_docs": 158415,
+  "ms_per_query": 2.4,
+  "index_mb": 113,
+  "success@1": 0.0,
+  "success@5": 0.089,
+  "success@10": 0.178,
+  "recall@10": 0.13,
+  "recall@50": 0.233,
+  "mrr@10": 0.035,
+  "ndcg@10": 0.062,
+  "mrr_ci": [
+   0.014,
+   0.059
+  ]
+ },
+ {
+  "scope": "articles",
+  "lang": "kk",
+  "analyzer": "stem",
+  "scheme": "bm25",
+  "n_docs": 158415,
+  "ms_per_query": 1.8,
+  "index_mb": 115,
+  "success@1": 0.067,
+  "success@5": 0.178,
+  "success@10": 0.267,
+  "recall@10": 0.215,
+  "recall@50": 0.389,
+  "mrr@10": 0.118,
+  "ndcg@10": 0.127,
+  "mrr_ci": [
+   0.049,
+   0.202
+  ]
+ },
+ {
+  "scope": "articles",
+  "lang": "kk",
+  "analyzer": "stem",
+  "scheme": "tfidf",
+  "n_docs": 158415,
+  "ms_per_query": 1.4,
+  "index_mb": 115,
+  "success@1": 0.044,
+  "success@5": 0.133,
+  "success@10": 0.2,
+  "recall@10": 0.17,
+  "recall@50": 0.3,
+  "mrr@10": 0.078,
+  "ndcg@10": 0.099,
+  "mrr_ci": [
+   0.023,
+   0.145
+  ]
+ },
+ {
+  "scope": "articles",
+  "lang": "kk",
+  "analyzer": "stem",
+  "scheme": "overlap",
+  "n_docs": 158415,
+  "ms_per_query": 1.3,
+  "index_mb": 115,
+  "success@1": 0.022,
+  "success@5": 0.111,
+  "success@10": 0.133,
+  "recall@10": 0.085,
+  "recall@50": 0.2,
+  "mrr@10": 0.051,
+  "ndcg@10": 0.059,
+  "mrr_ci": [
+   0.011,
+   0.109
+  ]
+ }
+]

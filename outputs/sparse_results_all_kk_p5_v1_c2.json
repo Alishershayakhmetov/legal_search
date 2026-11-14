@@ -1,0 +1,62 @@
+[
+ {
+  "scope": "all",
+  "lang": "kk",
+  "analyzer": "p5",
+  "scheme": "bm25",
+  "n_docs": 840322,
+  "ms_per_query": 16.5,
+  "index_mb": 566,
+  "success@1": 0.067,
+  "success@5": 0.156,
+  "success@10": 0.244,
+  "recall@10": 0.185,
+  "recall@50": 0.296,
+  "mrr@10": 0.115,
+  "ndcg@10": 0.114,
+  "mrr_ci": [
+   0.04,
+   0.197
+  ]
+ },
+ {
+  "scope": "all",
+  "lang": "kk",
+  "analyzer": "p5",
+  "scheme": "tfidf",
+  "n_docs": 840322,
+  "ms_per_query": 11.2,
+  "index_mb": 566,
+  "success@1": 0.044,
+  "success@5": 0.111,
+  "success@10": 0.133,
+  "recall@10": 0.104,
+  "recall@50": 0.237,
+  "mrr@10": 0.061,
+  "ndcg@10": 0.071,
+  "mrr_ci": [
+   0.009,
+   0.131
+  ]
+ },
+ {
+  "scope": "all",
+  "lang": "kk",
+  "analyzer": "p5",
+  "scheme": "overlap",
+  "n_docs": 840322,
+  "ms_per_query": 16.3,
+  "index_mb": 566,
+  "success@1": 0.0,
+  "success@5": 0.0,
+  "success@10": 0.089,
+  "recall@10": 0.041,
+  "recall@50": 0.152,
+  "mrr@10": 0.011,
+  "ndcg@10": 0.028,
+  "mrr_ci": [
+   0.002,
+   0.024
+  ]
+ }
+]

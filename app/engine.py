@@ -151,15 +151,6 @@ class SearchEngine:
             raise RuntimeError("articles table and embeddings are out of step; rebuild with src/33_build_app_data.py")
         parts = sorted((ROOT / "data" / "index" / "emb_bge-m3_articles").glob("part_*.npy"))
         emb = np.concatenate([np.load(p) for p in parts])
-        extra_dir = data_dir / "extra_emb"
-        if (data_dir / "extra_articles.parquet").exists() and (extra_dir / "DONE").exists():
-            # articles missed by the first chunking run (headings without a period, e.g. the Constitution)
-            extra = pd.read_parquet(data_dir / "extra_articles.parquet")
-            extra_emb = np.concatenate([np.load(p) for p in sorted(extra_dir.glob("part_*.npy"))])
-            if len(extra) != len(extra_emb):
-                raise RuntimeError("supplement table and embeddings are out of step; run src/37_embed_extra.py")
-            self.df = pd.concat([self.df, extra], ignore_index=True)
-            emb = np.concatenate([emb, extra_emb])
         tidy_metadata(self.df, "display_title")
         tidy_metadata(self.acts, "title_ru")
         self.emb = torch.from_numpy(emb).to(self.device)

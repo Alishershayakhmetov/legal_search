@@ -75,10 +75,6 @@ def main():
     print(f"articles: {len(df):,} | linked {df.linked.mean():.1%} | drafts {df.is_draft.mean():.1%} | amending {df.is_amending.mean():.1%} | in force {(df.is_repealed == 0).mean():.1%}")
     print(df.kind.value_counts().head(8).to_dict())
 
-    extra_path = APP / "extra_articles.parquet"
-    if extra_path.exists():  # supplement from 36_build_extra_articles.py: its rows follow the base rows, as in the engine
-        df = pd.concat([df, pd.read_parquet(extra_path)], ignore_index=True)
-        print(f"BM25 also covers {len(df) - len(docs):,} supplementary articles")
     for lang, mode in (("ru", "stem"), ("kk", "p5")):
         sub = df[df.lang == lang]
         s = build_searchers(sub.text.tolist(), sub.index.to_numpy(), lang, mode, ("bm25",), log=lambda m: None)["bm25"]
