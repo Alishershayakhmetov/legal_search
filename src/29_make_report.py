@@ -8,10 +8,10 @@ OUT = ROOT / "outputs"
 
 
 def load(pattern, version="v1"):
-    """Result rows of one judgment version; v1 files carry the suffix _v1, v0 files do not."""
+    """Result rows of one judgment version; v1 files carry the suffix _v1_c2 (corpus after the chunker fix), v0 files do not."""
     rows = []
     for p in sorted(glob.glob(str(OUT / pattern))):
-        if p.endswith("_v1.json") == (version == "v1"):
+        if p.endswith("_v1_c2.json") == (version == "v1"):
             rows += json.loads(Path(p).read_text(encoding="utf-8"))
     return rows
 

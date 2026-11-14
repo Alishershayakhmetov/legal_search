@@ -36,7 +36,10 @@ Decision needed before Stage 4: is an LLM available (API key or local model)? It
 | E5 paired bootstrap tests; E6 metrics by query type and branch of law | claims with significance |
 | E3 start writing 100–150 more questions by other people, keep a held-out part | tuning data that does not overfit |
 
-**Gate:** baseline table (v2) in `docs/results_retrieval.md` with intervals; the held-out set exists.
+**Status 2026-11-15:** D5, E5, E6 done; E1 and E3 wait for people.
+* D5: chunker fix applied end to end (`12` -> `14` -> `21` -> `24` with vector reuse -> `22`/`25`/`35`), baseline "c2" in `outputs/*_v1_c2.json` and `docs/results_retrieval.md`; the earlier runs are kept as `*_v1_c1.json`. Result: Success@10 unchanged for bge-m3 (ru 0.80, kk 0.73), MRR@10 lower by 0.00-0.05 (more competing articles); e5-small ru 0.58 -> 0.53; BM25 and the ranking of systems unchanged. Paired counts bge-m3/BM25 identical to before. The app supplement is gone; 23 unit tests and 23 golden queries pass on the new index.
+* E5/E6: `src/39_significance.py` -> `outputs/significance.json` and a table plus text in section 5.2 of the report. bge-m3 beats BM25 (ru p=0.0002, kk p<0.001) and, on Kazakh, both e5 models; on Russian bge-m3 vs e5-base is not significant (p=0.18); equal-weight hybrid is significantly worse than bge-m3; the three English strategies are not distinguishable. Weak spots: procedure (ru 0.33), civil law in Kazakh (0.25) - groups of 1-7 needs.
+* Not done: E1 (author review), E3 (questions from other people, held-out split). **The gate is not met until the held-out set exists.**
 
 ## Stage 2: ranking improvements (2–3 days)
 

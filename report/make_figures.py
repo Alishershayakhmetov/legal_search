@@ -27,10 +27,10 @@ def get(rows, **kw):
 
 
 def main():
-    sparse = load("sparse_results_articles_rukk_wordp5stem_v1.json")
-    dense = load("dense_results_*_articles_v1.json")
-    all_dense = load("dense_results_multilingual-e5-small_all_v1.json")
-    all_sparse = load("sparse_results_all_*_v1.json")
+    sparse = load("sparse_results_articles_rukk_wordp5stem_v1_c2.json")
+    dense = load("dense_results_*_articles_v1_c2.json")
+    all_dense = load("dense_results_multilingual-e5-small_all_v1_c2.json")
+    all_sparse = load("sparse_results_all_*_v1_c2.json")
     plt.rcParams.update({"font.size": 10, "axes.spines.top": False, "axes.spines.right": False})
 
     # 1. Success@10 by system and language
@@ -63,7 +63,7 @@ def main():
         art.append(get(dense, model="multilingual-e5-small", lang=lang, system="dense")["success@10"])
         full.append(get(all_dense, lang=lang, system="dense")["success@10"])
     x = range(len(labels))
-    ax.bar([i - 0.2 for i in x], art, 0.4, label="только статьи (230 тыс.)", color="#4292c6")
+    ax.bar([i - 0.2 for i in x], art, 0.4, label="только статьи (319 тыс.)", color="#4292c6")
     ax.bar([i + 0.2 for i in x], full, 0.4, label="весь текст (1,7 млн)", color="#bdbdbd")
     for i, (a, f) in enumerate(zip(art, full)):
         ax.text(i - 0.2, a + 0.015, f"{a:.2f}", ha="center", fontsize=8)
@@ -91,7 +91,7 @@ def main():
     ax.axis("off"); ax.set_xlim(0, 11); ax.set_ylim(0, 2.9)
     steps = [("Kazakh-\nLawCorpus\nCSV 952 МБ\n223 тыс. актов", "#deebf7"), ("Parquet\n+ SQLite\n13 таблиц, ER", "#deebf7"),
              ("Тексты\nMendeley\n204 тыс. файлов\n7,1 ГБ", "#fff2cc"), ("Связка\nфайл → акт\n79,8% / 81,1%", "#fff2cc"),
-             ("Нарезка\n3,08 млн\nфрагментов", "#fff2cc"), ("Индексы\nBM25 и\nэмбеддинги", "#e2f0d9"), ("Поиск и\nприложение", "#e2f0d9")]
+             ("Нарезка\n3,12 млн\nфрагментов", "#fff2cc"), ("Индексы\nBM25 и\nэмбеддинги", "#e2f0d9"), ("Поиск и\nприложение", "#e2f0d9")]
     w, gap = 1.38, 0.13
     for i, (t, c) in enumerate(steps):
         x0 = 0.1 + i * (w + gap)

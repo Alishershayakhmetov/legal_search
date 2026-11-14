@@ -34,7 +34,7 @@ keep the "Log" at the bottom up to date. Every search idea should be measured be
 | D2 | English titles for acts (NLLB) and an English title index | Closes strategy C from the report | 0.5 day | idea |
 | D3 | Court practice (normative resolutions of the Supreme Court) as another layer | Interpretation next to the law | 2+ days | idea |
 | D4 | Script that detects new versions of the source data and rebuilds only what changed | Laws change | 1–2 days | idea |
-| D5 | Re-run the whole pipeline with the fixed chunker and recompute every metric | Metrics currently predate the fix (88 119 articles missing) | several hours of GPU | next |
+| D5 | Re-run the whole pipeline with the fixed chunker and recompute every metric | Metrics currently predate the fix (88 119 articles missing) | several hours of GPU | done 2026-11-15 (about 1 h with vector reuse) |
 | D6 | bge-m3 over all 1.7 M passages | Best model was only tested on articles (about 9 h) | 9 h GPU | idea |
 
 ## Evaluation and reliability
@@ -45,8 +45,8 @@ keep the "Log" at the bottom up to date. Every search idea should be measured be
 | E2 | Second annotator and Cohen's kappa | Shows the judgments are reliable | 1 day | idea |
 | E3 | 100–150 questions per language, written by other people, plus a held-out part | 45 per language gives intervals of about ±0.1 | 2–3 days | idea |
 | E4 | Turn `data/app/feedback.jsonl` into extra judgments automatically | Free relevance data from use | 2 h | idea |
-| E5 | Paired bootstrap significance test between methods | Stronger claims in the report | 2 h | idea |
-| E6 | Metrics by query type (situation / concept / title) and by branch of law | Shows where the system is weak | 2 h | idea |
+| E5 | Paired bootstrap significance test between methods | Stronger claims in the report | 2 h | done 2026-11-15 |
+| E6 | Metrics by query type (situation / concept / title) and by branch of law | Shows where the system is weak | 2 h | done 2026-11-15 (groups are tiny) |
 
 ## App and usability
 

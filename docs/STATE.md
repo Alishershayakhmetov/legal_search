@@ -1,18 +1,20 @@
-# Project state (2026-11-05)
+# Project state (2026-11-15)
 
-Nothing is running.
+Nothing is running. The corpus was re-chunked on 2026-11-15 (chunker fix, "c2"): 319,377 article passages instead of 230,545; everything below refers to c2 unless marked v1.
 
 ## Embeddings (all finished, nothing running)
 
 | Model | Scope | Docs | Evaluated |
 |---|---|---|---|
-| multilingual-e5-small | articles | 230,545 | yes |
-| multilingual-e5-base | articles | 230,545 | yes |
-| bge-m3 | articles | 230,545 | yes |
-| multilingual-e5-small | all prose | 1,699,070 | yes |
+| multilingual-e5-small | articles | 319,377 | yes |
+| multilingual-e5-base | articles | 319,377 | yes |
+| bge-m3 | articles | 319,377 | yes |
+| multilingual-e5-small | all prose | 1,728,678 | yes |
 
-`bge-m3` over all passages was not run (about 9 hours on the RTX 3050). To resume or rebuild any shard set:
-`bash src/resume_embeddings.sh` (edit the model and scope in it); shards are atomic and `meta.json` guards against a changed
+Vectors of texts that existed before the fix were copied from `data/index_v1/` (checked: re-encoding 150 reused and 150 new texts gives cosine >= 0.9995); only 66,538 new article texts were encoded. Backups of the earlier state: `data/index_v1/`, `data/processed/v1/` (chunks, index_docs, legal.db, article cache), `data/app/v1_backup/`, `data/app/v1_supplement/`.
+
+`bge-m3` over all passages was not run (about 9 hours on the RTX 3050). To resume or rebuild every shard set:
+`bash src/resume_embeddings.sh`; shards are atomic and `meta.json` guards against a changed
 `index_docs.parquet`, which must not be rebuilt while shard folders exist.
 
 ## Other results already on disk
@@ -41,6 +43,10 @@ speaker notes with likely questions), in Russian. Built by `report/build_report.
 Screenshots now show the new light UI (`report/capture_screens.py`: headless Edge over the DevTools protocol, uses `?q=...&mode=...` URL parameters of the app);
 report has 3 app figures and 17 pages, slide 13 has three screenshots. Text mentions the right-hand panel, the 53 example questions, article lookup, the
 88,119-article supplement and that metrics predate it.
+
+## Superseded: supplement layer (2026-11-08 to 2026-11-15)
+
+The supplement of 88,119 articles (`36_build_extra_articles.py`, `37_embed_extra.py`) was removed on 2026-11-15 because the re-run of the pipeline made it part of the main index. The text below is history.
 
 ## Demo app changes of 2026-11-08
 
