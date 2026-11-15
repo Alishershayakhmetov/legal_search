@@ -79,9 +79,9 @@ keep the "Log" at the bottom up to date. Every search idea should be measured be
 | # | Idea | Why | Effort | Status |
 |---|---|---|---|---|
 | S11 | Robustness test set: typos, Latin-letter Kazakh/Russian ("kak vzyskat alimenty"), Kazakh-Russian code-switching, very short queries | Real users do not type like the test set; measures failure modes | 0.5 day | done 2026-11-15 |
-| S12 | Dictionary of abbreviations and synonyms (ТК, ГК, КоАП, МРП, БИН, ИП, ТОО) used for query expansion | Cheap, deterministic; part of it exists for article references only | 3 h | idea |
+| S12 | Dictionary of abbreviations and synonyms (ТК, ГК, КоАП, МРП, БИН, ИП, ТОО) used for query expansion | Cheap, deterministic; part of it exists for article references only | 3 h | done 2026-11-15 (top-1 7/14 -> 12/14 on 14 own questions) |
 | S13 | "No reliable answer" signal: abstain when the score of the best result and its margin over the 10th are low; calibrate the threshold | Honest behaviour for out-of-scope questions ("как приготовить плов") | 3 h | done 2026-11-15 |
-| S14 | Query router: classify a query as article reference / act title / situation and pick the layer automatically | Removes the need to switch modes by hand | 0.5 day | idea |
+| S14 | Query router: classify a query as article reference / act title / situation and pick the layer automatically | Removes the need to switch modes by hand | 0.5 day | done 2026-11-15 (mode "Автоматически") |
 | S15 | Better Kazakh morphology for BM25 (proper analyzer instead of the home-made suffix stripper) | The stripper did not beat five letters; a real analyzer might | 1 day | idea |
 | S16 | Hard negatives from the error analysis and 👎 clicks for re-ranker or encoder training | Directly targets the four error types | 1 day | idea |
 | S17 | Show the same norm repeated in several laws as one result with "also in: …" | Fewer duplicates in the list | 0.5 day | idea |
@@ -90,8 +90,8 @@ keep the "Log" at the bottom up to date. Every search idea should be measured be
 
 | # | Idea | Why | Effort | Status |
 |---|---|---|---|---|
-| A4 | Convert fines and thresholds given in monthly calculation indices (МРП) to tenge using the current МРП value | "Штраф 10 МРП" means nothing to most readers; value must be entered and dated | 3 h | idea |
-| A5 | Extract and highlight deadlines, amounts, percentages and penalties in a result ("не позднее 10 дней", "до 80 МРП") | Quick scan of what matters | 0.5 day | idea |
+| A4 | Convert fines and thresholds given in monthly calculation indices (МРП) to tenge using the current МРП value | "Штраф 10 МРП" means nothing to most readers; value must be entered and dated | 3 h | done 2026-11-15 (app/mrp.json, update yearly) |
+| A5 | Extract and highlight deadlines, amounts, percentages and penalties in a result ("не позднее 10 дней", "до 80 МРП") | Quick scan of what matters | 0.5 day | done 2026-11-15 (highlight in the page) |
 | A6 | Penalty table for administrative and criminal articles (fine, arrest, imprisonment) in a fixed format | Makes "what is the punishment" answerable at a glance | 1 day | idea |
 | A7 | "Ситуация → пошаговый чек-лист" template for common cases (dismissal, divorce, loan) built from linked articles | High user value; needs legal review | 2+ days | idea |
 
@@ -164,10 +164,10 @@ keep the "Log" at the bottom up to date. Every search idea should be measured be
 | S27 | Document expansion: generate the questions each article answers (doc2query) and embed them next to the article | Attacks the everyday-vs-legal vocabulary gap from the document side | 2 days, needs an LLM, big index growth | idea |
 | S28 | HyDE: let an LLM write a short hypothetical answer, embed it instead of the question | Often helps vague situational questions | 0.5 day, needs an LLM | idea |
 | S29 | Distil bge-m3 rankings into a small fast encoder (e5-small size) | Near bge-m3 quality on CPU | 3 days | idea |
-| S30 | Year and place awareness in queries ("в 2015 году", "в Алматы") used as filters on year and region (both fields exist) | Local acts of akimats and maslikhats are 40% of the corpus | 1 day | idea |
+| S30 | Year and place awareness in queries ("в 2015 году", "в Алматы") used as filters on year and region (both fields exist) | Local acts of akimats and maslikhats are 40% of the corpus | 1 day | not implemented: regions too fine, year semantics unclear |
 | A14 | One-line plain-language summary above each result | Faster scanning; must be labelled as a summary, not the law | 1 day, needs an LLM | idea |
 | A15 | "Объясни простыми словами" button with a disclaimer | Readability for non-lawyers; risk of distortion, show the original next to it | 1 day, needs an LLM | idea |
-| A16 | Translate the shown snippet into the language of the question when only another language is available (English users now get Russian or Kazakh text) | Closes a visible gap of the English mode | 0.5 day (NLLB already installed) | idea |
+| A16 | Translate the shown snippet into the language of the question when only another language is available (English users now get Russian or Kazakh text) | Closes a visible gap of the English mode | 0.5 day (NLLB already installed) | done 2026-11-15 (on-demand button) |
 | A17 | Read-aloud of an article (text to speech) | Accessibility | 0.5 day | idea |
 | D12 | Personal-data scan of the texts before any release of the parallel corpus or the test set | Court-related texts may contain names; legal and ethical check | 0.5 day | idea |
 | E15 | Interleaving experiment to compare two rankings on live use of 👍/👎 | Online evaluation without new annotation | 1 day | idea |

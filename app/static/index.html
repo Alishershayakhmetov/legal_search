@@ -44,6 +44,9 @@
   aside .field { margin:10px 0 4px; color:var(--mute); } aside input[type=range] { width:100%; accent-color:var(--acc); }
   .years { display:flex; gap:8px; } .kinds { max-height:150px; overflow:auto; background:var(--panel); border-radius:8px; padding:4px 10px; }
   @media (max-width: 960px) { .layout { grid-template-columns:1fr; } aside { position:static; order:-1; } .cols { grid-template-columns:1fr; } }
+  button.tr { font:inherit; font-size:13px; padding:5px 10px; margin:4px 0 8px; border:1px solid var(--line); border-radius:8px; background:var(--bg); color:var(--ink); cursor:pointer; } button.tr:disabled { opacity:.6; }
+  mark.d { background:#fff1c2; border-radius:3px; padding:0 2px; } mark.a { background:#d7f0dc; border-radius:3px; padding:0 2px; }
+  .facts { font-size:13px; color:var(--mute); margin:0 0 8px; } .legend { font-size:12px; color:var(--mute); margin:6px 0; }
 </style>
 </head>
 <body>
@@ -59,7 +62,8 @@
   </main>
   <aside>
     <h2>Настройки</h2>
-    <label class="row"><input type="radio" name="mode" value="articles" checked>Поиск по статьям</label>
+    <label class="row"><input type="radio" name="mode" value="auto" checked title="Название акта («Трудовой кодекс») ищется как акт, вопрос — как статьи">Автоматически</label>
+    <label class="row"><input type="radio" name="mode" value="articles">Поиск по статьям</label>
     <label class="row"><input type="radio" name="mode" value="titles">Найти акт по названию</label>
     <label class="row"><input type="radio" name="mode" value="compare">Сравнить методы</label>
     <div class="field">Метод</div>
@@ -80,7 +84,7 @@
 <script>
 const $ = s => document.querySelector(s);
 const LANG = {ru: 'русский', kk: 'казахский', en: 'английский'};
-const MODES = ['articles', 'titles', 'compare'];
+const MODES = ['auto', 'articles', 'titles', 'compare'];
 const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text !== undefined) e.textContent = text; return e; };
 const mode = () => document.querySelector('input[name=mode]:checked').value;
 const kinds = () => [...document.querySelectorAll('#kinds input:checked')].map(i => i.value);
@@ -89,7 +93,7 @@ const filters = () => ({only_in_force: $('#only_in_force').checked, hide_drafts:
   force_prior: $('#force_prior').checked ? 0.02 : 0});
 const status = v => v === null ? 'статус не определён' : (v ? 'действует' : 'утратил силу');
 
-function syncPanel() { $('#method').disabled = mode() !== 'articles'; $('#kval').textContent = $('#k').value; }
+function syncPanel() { $('#method').disabled = !['auto', 'articles'].includes(mode()); $('#kval').textContent = $('#k').value; }
 document.querySelectorAll('input[name=mode]').forEach(r => r.addEventListener('change', () => { syncPanel(); if ($('#q').value.trim()) run(); }));
 $('#k').addEventListener('input', syncPanel);
 
@@ -99,11 +103,49 @@ async function post(url, body) {
 }
 
 function chips(parts) { return parts.filter(Boolean).join(' · '); }
-function articleCard(i, h, query) {
+
+// Deadlines (yellow) and amounts, percentages, penalties (green) are marked in the text; amounts in monthly calculation indices (МРП) are converted to tenge.
+const DEADLINE = String.raw`(?:не\s+позднее|не\s+ранее|в\s+течение|в\s+срок\s+до|не\s+более|не\s+менее)?\s*\d+(?:\s*\([^)]{1,40}\))?\s+(?:календарн\p{L}+\s+|рабоч\p{L}+\s+)?(?:дн(?:ей|я|ь)|месяц\p{L}*|недел\p{L}*|лет|года|год|часов|часа|күн\p{L}*|ай(?:дан|ға|дың)?|жыл\p{L}*)`;
+const AMOUNT = String.raw`\d+(?:[\s ]\d{3})*(?:[.,]\d+)?(?:\s*\([^)]{1,60}\))?\s*(?:МРП|месячн\p{L}+\s+расч[её]тн\p{L}+\s+показател\p{L}+|айлық\s+есептік\s+көрсеткіш\p{L}*|АЕК|процент\p{L}*|%|тенге|тыс\p{L}*\.?\s+тенге|ААЕ)`;
+const FACTS = new RegExp(`(?<d>${DEADLINE})|(?<a>${AMOUNT})`, 'giu');
+const MRP_RE = /(\d+(?:[\s ]\d{3})*(?:[.,]\d+)?)(?:\s*\([^)]{1,60}\))?\s*(?:МРП|месячн\p{L}+\s+расч[её]тн\p{L}+\s+показател\p{L}+|айлық\s+есептік\s+көрсеткіш\p{L}*|АЕК)/giu;
+let MRP = null;
+function marked(text) {
+  const frag = document.createDocumentFragment(); let last = 0;
+  for (const m of text.matchAll(FACTS)) {
+    if (!m[0].trim()) continue;
+    frag.appendChild(document.createTextNode(text.slice(last, m.index)));
+    const mk = el('mark', m.groups.d ? 'd' : 'a', m[0]); mk.title = m.groups.d ? 'срок' : 'сумма, доля или штраф';
+    frag.appendChild(mk); last = m.index + m[0].length;
+  }
+  frag.appendChild(document.createTextNode(text.slice(last)));
+  return frag;
+}
+const nf = new Intl.NumberFormat('ru-RU');
+function mrpLine(text) {
+  if (!MRP) return null;
+  const seen = new Map();
+  for (const m of text.matchAll(MRP_RE)) {
+    const n = parseFloat(m[1].replace(/[\s ]/g, '').replace(',', '.'));
+    if (isFinite(n) && !seen.has(n)) seen.set(n, `${nf.format(n)} МРП ≈ ${nf.format(Math.round(n * MRP.value))} ₸`);
+  }
+  if (!seen.size) return null;
+  const line = el('div', 'facts', [...seen.values()].slice(0, 6).join(' · ') + ` (МРП ${nf.format(MRP.value)} ₸ с ${MRP.from}, `);
+  const a = el('a', '', 'источник'); a.href = MRP.source; a.target = '_blank'; a.rel = 'noopener'; line.append(a, document.createTextNode('; справочно)'));
+  return line;
+}
+function articleCard(i, h, query, lang) {
   const c = el('div', 'card');
   c.appendChild(el('h3', '', `${i}. ${h.title} · ст. ${h.article_no}` + (h.heading ? ` — ${h.heading}` : '')));
   c.appendChild(el('div', 'chips', chips([h.kind, h.year, status(h.in_force), h.methods.length ? 'найдено: ' + h.methods.join('+') : ''])));
-  c.appendChild(el('p', 'body', h.snippet));
+  const body = el('p', 'body'); body.appendChild(marked(h.snippet)); c.appendChild(body);
+  if (lang === 'en' && h.snippet_lang !== 'en') {
+    const tb = el('button', 'tr', 'Translate to English (machine translation)'); tb.type = 'button';
+    tb.onclick = async () => { tb.disabled = true; tb.textContent = '…'; const r = await post('/api/translate', {text: h.texts[h.snippet_lang] || h.snippet, src: h.snippet_lang, tgt: 'en'});
+      const box = el('div', 'tr-out'); box.appendChild(el('div', 'meta', 'Unofficial machine translation (NLLB-200), may contain errors' + (r.cut ? '; only the beginning is translated' : '') + '; the legal text is the Russian/Kazakh original.')); box.appendChild(el('p', 'body', r.error ? r.error : r.text)); tb.replaceWith(box); };
+    c.appendChild(tb);
+  }
+  const conv = mrpLine(h.texts.ru || h.texts.kk || h.snippet); if (conv) c.appendChild(conv);
   const act = el('div', 'actions');
   for (const [label, text, tip] of [['up', '👍', 'Эта статья отвечает на запрос'], ['down', '👎', 'Эта статья не подходит']]) {
     const b = el('button', '', text); b.title = tip;
@@ -113,7 +155,7 @@ function articleCard(i, h, query) {
   if (h.url) { const a = el('a', '', 'Открыть акт на adilet.zan.kz'); a.href = h.url; a.target = '_blank'; a.rel = 'noopener'; act.appendChild(a); }
   c.appendChild(act);
   const d = el('details', 'full'); d.appendChild(el('summary', '', 'Полный текст статьи'));
-  for (const [lg, name] of [['ru', 'русский'], ['kk', 'қазақша']]) if (h.texts[lg]) { d.appendChild(el('b', '', name)); d.appendChild(el('pre', '', h.texts[lg])); }
+  for (const [lg, name] of [['ru', 'русский'], ['kk', 'қазақша']]) if (h.texts[lg]) { d.appendChild(el('b', '', name)); const pre = el('pre'); pre.appendChild(marked(h.texts[lg])); d.appendChild(pre); }
   c.appendChild(d);
   return c;
 }
@@ -128,6 +170,7 @@ async function run() {
   const frag = document.createDocumentFragment();
   if (res.error) { frag.appendChild(el('div', 'note err', 'Ошибка поиска: ' + res.error)); }
   else if (res.mode === 'titles') {
+    if (res.routed) frag.appendChild(el('div', 'note info', 'Запрос похож на название акта, поэтому показан поиск акта по названию. Чтобы искать по тексту статей, выберите «Поиск по статьям».'));
     frag.appendChild(el('div', 'meta', `Язык запроса: ${LANG[res.lang]} · ${res.seconds.toFixed(2)} с`));
     res.results.forEach((r, i) => {
       const c = el('div', 'card'); c.appendChild(el('h3', '', `${i + 1}. ${r.title}`));
@@ -148,9 +191,10 @@ async function run() {
     frag.appendChild(cols);
   } else {
     frag.appendChild(el('div', 'meta', `Язык запроса: ${LANG[res.lang]} · просмотрено ${res.searched.toLocaleString('ru-RU')} фрагментов · ${res.seconds.toFixed(2)} с`));
+    if (res.hits.length) frag.appendChild(el('div', 'legend', 'В тексте отмечены сроки (жёлтым) и суммы, доли, штрафы (зелёным); суммы в МРП пересчитаны в тенге.'));
     if (res.direct) frag.appendChild(el('div', 'note info', 'Запрос содержит номер статьи: сначала показана найденная по номеру статья, затем результаты смыслового поиска.'));
     res.notes.forEach(n => frag.appendChild(el('div', res.low_confidence && n.startsWith('Надёжной') ? 'note warn' : 'note info', n)));
-    res.hits.forEach((h, i) => frag.appendChild(articleCard(i + 1, h, query)));
+    res.hits.forEach((h, i) => frag.appendChild(articleCard(i + 1, h, query, res.lang)));
     if (!res.hits.length && !res.notes.length) frag.appendChild(el('div', 'note info', 'Ничего не найдено: попробуйте ослабить фильтры.'));
   }
   out.replaceChildren(frag);
@@ -168,6 +212,7 @@ async function init() {
   };
   for (const lang of ['ru', 'kk', 'en']) { const t = el('button', 'tab', names[lang]); t.type = 'button'; t.dataset.lang = lang; t.onclick = () => show(lang); tabs.appendChild(t); }
   show('ru');
+  try { MRP = (await (await fetch('/api/config')).json()).mrp; } catch (e) { MRP = null; }
   const ks = await (await fetch('/api/kinds')).json();
   $('#kinds').replaceChildren(...ks.map(k => { const l = el('label', 'row'); const i = el('input'); i.type = 'checkbox'; i.value = k; l.append(i, document.createTextNode(k)); return l; }));
   const p = new URLSearchParams(location.search);

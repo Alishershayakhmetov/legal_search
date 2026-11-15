@@ -1,0 +1,1150 @@
+{
+ "auc": {
+  "t_score": 0.936,
+  "a_score": 0.757,
+  "words": 0.983,
+  "t_minus_a": 0.998
+ },
+ "accuracy": {
+  "ru": {
+   "n": 53,
+   "correct": 53,
+   "title_recall": 1.0,
+   "question_to_articles": 1.0
+  },
+  "kk": {
+   "n": 53,
+   "correct": 53,
+   "title_recall": 1.0,
+   "question_to_articles": 1.0
+  },
+  "en": {
+   "n": 53,
+   "correct": 53,
+   "title_recall": 1.0,
+   "question_to_articles": 1.0
+  },
+  "all": {
+   "n": 159,
+   "correct": 159,
+   "title_recall": 1.0,
+   "question_to_articles": 1.0
+  }
+ },
+ "errors": [],
+ "rows": [
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.6113,
+   "a_score": 0.6533,
+   "words": 14
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.6118,
+   "a_score": 0.6655,
+   "words": 12
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.5962,
+   "a_score": 0.6191,
+   "words": 16
+  },
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.6602,
+   "a_score": 0.7241,
+   "words": 8
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.6216,
+   "a_score": 0.6807,
+   "words": 6
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.6138,
+   "a_score": 0.6562,
+   "words": 13
+  },
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.5776,
+   "a_score": 0.6445,
+   "words": 14
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.6157,
+   "a_score": 0.647,
+   "words": 14
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.5986,
+   "a_score": 0.6265,
+   "words": 21
+  },
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.5532,
+   "a_score": 0.6543,
+   "words": 10
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.627,
+   "a_score": 0.6919,
+   "words": 10
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.5259,
+   "a_score": 0.6011,
+   "words": 12
+  },
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.5859,
+   "a_score": 0.6929,
+   "words": 11
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.5972,
+   "a_score": 0.6499,
+   "words": 14
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.5771,
+   "a_score": 0.6489,
+   "words": 14
+  },
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.54,
+   "a_score": 0.6401,
+   "words": 8
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.5835,
+   "a_score": 0.6362,
+   "words": 9
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.5264,
+   "a_score": 0.6587,
+   "words": 10
+  },
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.6299,
+   "a_score": 0.6899,
+   "words": 12
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.6499,
+   "a_score": 0.6943,
+   "words": 14
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.627,
+   "a_score": 0.6519,
+   "words": 12
+  },
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.6172,
+   "a_score": 0.6685,
+   "words": 11
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.606,
+   "a_score": 0.6943,
+   "words": 9
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.6108,
+   "a_score": 0.6348,
+   "words": 13
+  },
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.6021,
+   "a_score": 0.6709,
+   "words": 15
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.5654,
+   "a_score": 0.6138,
+   "words": 13
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.5874,
+   "a_score": 0.6255,
+   "words": 17
+  },
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.6538,
+   "a_score": 0.6812,
+   "words": 13
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.6299,
+   "a_score": 0.6382,
+   "words": 12
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.6294,
+   "a_score": 0.6167,
+   "words": 16
+  },
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.5083,
+   "a_score": 0.6182,
+   "words": 10
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.499,
+   "a_score": 0.6611,
+   "words": 9
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.4822,
+   "a_score": 0.5762,
+   "words": 10
+  },
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.5713,
+   "a_score": 0.6475,
+   "words": 12
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.5605,
+   "a_score": 0.6221,
+   "words": 12
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.5557,
+   "a_score": 0.6113,
+   "words": 16
+  },
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.5967,
+   "a_score": 0.7173,
+   "words": 10
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.626,
+   "a_score": 0.7349,
+   "words": 11
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.5728,
+   "a_score": 0.6333,
+   "words": 14
+  },
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.6133,
+   "a_score": 0.7568,
+   "words": 8
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.5708,
+   "a_score": 0.7437,
+   "words": 9
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.5273,
+   "a_score": 0.6367,
+   "words": 10
+  },
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.5547,
+   "a_score": 0.6875,
+   "words": 6
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.5493,
+   "a_score": 0.6719,
+   "words": 6
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.5449,
+   "a_score": 0.6616,
+   "words": 9
+  },
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.5942,
+   "a_score": 0.6758,
+   "words": 6
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.6611,
+   "a_score": 0.7275,
+   "words": 7
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.6504,
+   "a_score": 0.6733,
+   "words": 9
+  },
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.6021,
+   "a_score": 0.625,
+   "words": 7
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.6099,
+   "a_score": 0.667,
+   "words": 6
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.5986,
+   "a_score": 0.6279,
+   "words": 10
+  },
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.6099,
+   "a_score": 0.6572,
+   "words": 5
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.5737,
+   "a_score": 0.6025,
+   "words": 4
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.5625,
+   "a_score": 0.5815,
+   "words": 7
+  },
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.5781,
+   "a_score": 0.624,
+   "words": 11
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.5957,
+   "a_score": 0.6309,
+   "words": 9
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.5527,
+   "a_score": 0.5869,
+   "words": 15
+  },
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.6372,
+   "a_score": 0.6934,
+   "words": 10
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.6392,
+   "a_score": 0.7451,
+   "words": 9
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.585,
+   "a_score": 0.5732,
+   "words": 11
+  },
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.582,
+   "a_score": 0.6846,
+   "words": 7
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.5962,
+   "a_score": 0.6807,
+   "words": 7
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.5562,
+   "a_score": 0.646,
+   "words": 6
+  },
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.5566,
+   "a_score": 0.687,
+   "words": 8
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.563,
+   "a_score": 0.6704,
+   "words": 8
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.5127,
+   "a_score": 0.6562,
+   "words": 7
+  },
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.5283,
+   "a_score": 0.6011,
+   "words": 7
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.582,
+   "a_score": 0.668,
+   "words": 8
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.5376,
+   "a_score": 0.6133,
+   "words": 9
+  },
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.603,
+   "a_score": 0.7305,
+   "words": 9
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.543,
+   "a_score": 0.6963,
+   "words": 11
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.5308,
+   "a_score": 0.583,
+   "words": 10
+  },
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.582,
+   "a_score": 0.707,
+   "words": 5
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.5195,
+   "a_score": 0.6377,
+   "words": 5
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.5718,
+   "a_score": 0.6504,
+   "words": 6
+  },
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.6284,
+   "a_score": 0.6885,
+   "words": 8
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.6426,
+   "a_score": 0.6963,
+   "words": 10
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.5161,
+   "a_score": 0.585,
+   "words": 10
+  },
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.5522,
+   "a_score": 0.6284,
+   "words": 15
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.5396,
+   "a_score": 0.6304,
+   "words": 11
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.5728,
+   "a_score": 0.5972,
+   "words": 13
+  },
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.5361,
+   "a_score": 0.6851,
+   "words": 6
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.5269,
+   "a_score": 0.6797,
+   "words": 5
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.4924,
+   "a_score": 0.6377,
+   "words": 7
+  },
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.6812,
+   "a_score": 0.6836,
+   "words": 10
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.6797,
+   "a_score": 0.6914,
+   "words": 9
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.6514,
+   "a_score": 0.6631,
+   "words": 13
+  },
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.6514,
+   "a_score": 0.6558,
+   "words": 14
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.6416,
+   "a_score": 0.6895,
+   "words": 14
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.6309,
+   "a_score": 0.6519,
+   "words": 16
+  },
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.5962,
+   "a_score": 0.6836,
+   "words": 7
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.625,
+   "a_score": 0.6772,
+   "words": 6
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.6016,
+   "a_score": 0.6792,
+   "words": 10
+  },
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.6533,
+   "a_score": 0.7085,
+   "words": 15
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.6475,
+   "a_score": 0.7188,
+   "words": 11
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.6147,
+   "a_score": 0.6328,
+   "words": 17
+  },
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.6689,
+   "a_score": 0.6846,
+   "words": 10
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.6074,
+   "a_score": 0.6318,
+   "words": 11
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.583,
+   "a_score": 0.6143,
+   "words": 11
+  },
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.603,
+   "a_score": 0.6963,
+   "words": 9
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.6025,
+   "a_score": 0.709,
+   "words": 8
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.6113,
+   "a_score": 0.6865,
+   "words": 12
+  },
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.5972,
+   "a_score": 0.6748,
+   "words": 10
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.6108,
+   "a_score": 0.6753,
+   "words": 11
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.6016,
+   "a_score": 0.6094,
+   "words": 12
+  },
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.6509,
+   "a_score": 0.6733,
+   "words": 12
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.7153,
+   "a_score": 0.6973,
+   "words": 12
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.6885,
+   "a_score": 0.6201,
+   "words": 13
+  },
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.6172,
+   "a_score": 0.6875,
+   "words": 10
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.6187,
+   "a_score": 0.6821,
+   "words": 9
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.5913,
+   "a_score": 0.5977,
+   "words": 10
+  },
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.5552,
+   "a_score": 0.6758,
+   "words": 7
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.5635,
+   "a_score": 0.6709,
+   "words": 5
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.5322,
+   "a_score": 0.623,
+   "words": 6
+  },
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.6353,
+   "a_score": 0.6899,
+   "words": 6
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.708,
+   "a_score": 0.7446,
+   "words": 5
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.6055,
+   "a_score": 0.6758,
+   "words": 9
+  },
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.6079,
+   "a_score": 0.646,
+   "words": 6
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.647,
+   "a_score": 0.6602,
+   "words": 6
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.5806,
+   "a_score": 0.6216,
+   "words": 10
+  },
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.5796,
+   "a_score": 0.627,
+   "words": 12
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.5713,
+   "a_score": 0.5977,
+   "words": 9
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.5605,
+   "a_score": 0.6187,
+   "words": 12
+  },
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.6162,
+   "a_score": 0.7046,
+   "words": 12
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.5767,
+   "a_score": 0.6597,
+   "words": 9
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.5957,
+   "a_score": 0.6685,
+   "words": 12
+  },
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.5845,
+   "a_score": 0.6675,
+   "words": 12
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.6533,
+   "a_score": 0.7144,
+   "words": 10
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.5444,
+   "a_score": 0.5781,
+   "words": 14
+  },
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.562,
+   "a_score": 0.6914,
+   "words": 9
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.5537,
+   "a_score": 0.6855,
+   "words": 10
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.5566,
+   "a_score": 0.6733,
+   "words": 11
+  },
+  {
+   "lang": "ru",
+   "title": false,
+   "t_score": 0.6011,
+   "a_score": 0.709,
+   "words": 9
+  },
+  {
+   "lang": "kk",
+   "title": false,
+   "t_score": 0.6216,
+   "a_score": 0.73,
+   "words": 8
+  },
+  {
+   "lang": "en",
+   "title": false,
+   "t_score": 0.6001,
+   "a_score": 0.6729,
+   "words": 10
+  },
+  {
+   "lang": "ru",
+   "title": true,
+   "t_score": 0.7646,
+   "a_score": 0.6577,
+   "words": 5
+  },
+  {
+   "lang": "kk",
+   "title": true,
+   "t_score": 0.8018,
+   "a_score": 0.6753,
+   "words": 7
+  },
+  {
+   "lang": "en",
+   "title": true,
+   "t_score": 0.7358,
+   "a_score": 0.6353,
+   "words": 5
+  },
+  {
+   "lang": "ru",
+   "title": true,
+   "t_score": 0.8091,
+   "a_score": 0.5996,
+   "words": 2
+  },
+  {
+   "lang": "kk",
+   "title": true,
+   "t_score": 0.875,
+   "a_score": 0.6245,
+   "words": 2
+  },
+  {
+   "lang": "en",
+   "title": true,
+   "t_score": 0.7559,
+   "a_score": 0.6182,
+   "words": 4
+  },
+  {
+   "lang": "ru",
+   "title": true,
+   "t_score": 0.7344,
+   "a_score": 0.5879,
+   "words": 2
+  },
+  {
+   "lang": "kk",
+   "title": true,
+   "t_score": 0.7788,
+   "a_score": 0.6582,
+   "words": 2
+  },
+  {
+   "lang": "en",
+   "title": true,
+   "t_score": 0.6348,
+   "a_score": 0.5645,
+   "words": 2
+  },
+  {
+   "lang": "ru",
+   "title": true,
+   "t_score": 0.7939,
+   "a_score": 0.6401,
+   "words": 4
+  },
+  {
+   "lang": "kk",
+   "title": true,
+   "t_score": 0.8213,
+   "a_score": 0.668,
+   "words": 5
+  },
+  {
+   "lang": "en",
+   "title": true,
+   "t_score": 0.7114,
+   "a_score": 0.6685,
+   "words": 4
+  },
+  {
+   "lang": "ru",
+   "title": true,
+   "t_score": 0.8228,
+   "a_score": 0.604,
+   "words": 2
+  },
+  {
+   "lang": "kk",
+   "title": true,
+   "t_score": 0.8574,
+   "a_score": 0.6099,
+   "words": 2
+  },
+  {
+   "lang": "en",
+   "title": true,
+   "t_score": 0.584,
+   "a_score": 0.5527,
+   "words": 2
+  },
+  {
+   "lang": "ru",
+   "title": true,
+   "t_score": 0.8613,
+   "a_score": 0.6553,
+   "words": 5
+  },
+  {
+   "lang": "kk",
+   "title": true,
+   "t_score": 0.9023,
+   "a_score": 0.6914,
+   "words": 5
+  },
+  {
+   "lang": "en",
+   "title": true,
+   "t_score": 0.7495,
+   "a_score": 0.5991,
+   "words": 3
+  },
+  {
+   "lang": "ru",
+   "title": true,
+   "t_score": 0.623,
+   "a_score": 0.605,
+   "words": 5
+  },
+  {
+   "lang": "kk",
+   "title": true,
+   "t_score": 0.6738,
+   "a_score": 0.6421,
+   "words": 5
+  },
+  {
+   "lang": "en",
+   "title": true,
+   "t_score": 0.6084,
+   "a_score": 0.5586,
+   "words": 4
+  },
+  {
+   "lang": "ru",
+   "title": true,
+   "t_score": 0.689,
+   "a_score": 0.582,
+   "words": 2
+  },
+  {
+   "lang": "kk",
+   "title": true,
+   "t_score": 0.7266,
+   "a_score": 0.6265,
+   "words": 2
+  },
+  {
+   "lang": "en",
+   "title": true,
+   "t_score": 0.6436,
+   "a_score": 0.5439,
+   "words": 2
+  }
+ ]
+}

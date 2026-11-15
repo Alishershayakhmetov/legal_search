@@ -119,3 +119,19 @@ def test_policy_notice_only_for_questions_about_evading_the_law():
 def test_confidence_thresholds_cover_every_language():
     from engine import CONFIDENCE_MIN
     assert set(CONFIDENCE_MIN) == {"ru", "kk", "en"} and all(0.4 < v < 0.8 for v in CONFIDENCE_MIN.values())
+
+
+def test_abbreviations_are_spelled_out_only_when_written_in_capitals():
+    from engine import expand_abbreviations
+    assert expand_abbreviations("Срок давности по ГК") == "Срок давности по ГК (Гражданский кодекс Республики Казахстан)"
+    assert "(индивидуальный предприниматель)" in expand_abbreviations("налоги для ИП")
+    assert expand_abbreviations("тк и гк в нижнем регистре") == "тк и гк в нижнем регистре"
+    assert expand_abbreviations("ТКАНИ") == "ТКАНИ"
+
+
+def test_router_sends_short_act_names_to_titles_and_everything_else_to_articles():
+    from engine import route_query
+    assert route_query("Трудовой кодекс", 0.75, 0.60) == "titles"
+    assert route_query("Сколько дней отпуска положено при увольнении по сокращению штатов в организации", 0.70, 0.66) == "articles"
+    assert route_query("Кого считают безработным?", 0.55, 0.66) == "articles"
+    assert route_query("статья 52 трудового кодекса", 0.80, 0.60) == "articles"

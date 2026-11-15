@@ -35,7 +35,7 @@ def hit_to_dict(hit, lang):
     show = "kk" if lang == "kk" and "kk" in hit.texts else "ru" if "ru" in hit.texts else next(iter(hit.texts), "ru")
     body = FIRST_LINE.sub("", hit.texts.get(show, ""), count=1)
     heading = hit.headings.get(show) or hit.heading
-    return {"title": hit.title, "article_no": hit.article_no, "heading": "" if heading == "None" else heading, "kind": hit.kind,
+    return {"snippet_lang": show, "title": hit.title, "article_no": hit.article_no, "heading": "" if heading == "None" else heading, "kind": hit.kind,
             "year": hit.year, "in_force": hit.in_force, "url": hit.url, "methods": list(hit.methods),
             "snippet": body[:600] + ("…" if len(body) > 600 else ""), "texts": hit.texts}
 
@@ -48,9 +48,12 @@ def run_search(req):
     if not query:
         return {"error": "empty query"}
     with LOCK:
+        routed = None
+        if mode == "auto":
+            mode = routed = ENGINE.route(query)
         if mode == "titles":
             results, info = ENGINE.search_titles(query, k, filters)
-            return {"mode": mode, "lang": info["lang"], "seconds": info["seconds"], "results": results}
+            return {"mode": mode, "routed": routed, "lang": info["lang"], "seconds": info["seconds"], "results": results}
         if mode == "compare":
             columns = []
             for method, label in METHODS.items():
@@ -60,7 +63,7 @@ def run_search(req):
             return {"mode": mode, "lang": info["lang"], "columns": columns}
         method = req.get("method", "dense")
         hits, info = ENGINE.search(query, k, method if method in METHODS else "dense", filters)
-        return {"mode": "articles", "lang": info["lang"], "seconds": info["seconds"], "searched": info["searched"], "notes": info["notes"],
+        return {"mode": "articles", "routed": routed, "lang": info["lang"], "seconds": info["seconds"], "searched": info["searched"], "notes": info["notes"],
                 "direct": info.get("direct", 0), "low_confidence": info.get("low_confidence", False), "hits": [hit_to_dict(h, info["lang"]) for h in hits]}
 
 
@@ -95,6 +98,8 @@ class Handler(BaseHTTPRequestHandler):
             self._send(200, (STATIC / "index.html").read_bytes(), "text/html; charset=utf-8")
         elif path == "/api/examples":
             self._json(examples())
+        elif path == "/api/config":
+            self._json({"mrp": json.loads((Path(__file__).resolve().parent / "mrp.json").read_text(encoding="utf-8"))})
         elif path == "/api/kinds":
             self._json(sorted(ENGINE.df.kind.dropna().unique().tolist()))
         else:
@@ -108,6 +113,12 @@ class Handler(BaseHTTPRequestHandler):
             req = json.loads(self.rfile.read(length) or b"{}")
             if self.path == "/api/search":
                 return self._json(run_search(req))
+            if self.path == "/api/translate":
+                src, tgt = str(req.get("src", "ru")), str(req.get("tgt", "en"))
+                if src not in ("ru", "kk", "en") or tgt not in ("ru", "kk", "en") or src == tgt:
+                    return self._json({"error": "unsupported language pair"}, 400)
+                with LOCK:
+                    return self._json(ENGINE.translate(str(req.get("text", ""))[:6000], src, tgt))
             if self.path == "/api/feedback":
                 ok = log_feedback(str(req.get("query", ""))[:500], "article", (str(req.get("title", ""))[:300], str(req.get("article_no", ""))[:20]),
                                   "up" if req.get("label") == "up" else "down", keep_query=bool(req.get("consent")))

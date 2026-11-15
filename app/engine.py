@@ -86,6 +86,19 @@ def policy_notice(query):
     return POLICY_NOTE if EVASION.search(query) else None
 
 
+# Router: a short query whose best act title is clearly closer than its best article is a request for an act, not a question (src/43_router_eval.py).
+ROUTER_MARGIN = 0.0
+ROUTER_MAX_WORDS = 7
+
+
+def route_query(query, top_title_score, top_article_score):
+    """'titles' when the query looks like the name of an act, otherwise 'articles'. Queries with an article number go to articles (exact lookup)."""
+    if parse_reference(query) is not None:
+        return "articles"
+    short = len(query.split()) <= ROUTER_MAX_WORDS
+    return "titles" if short and top_title_score - top_article_score >= ROUTER_MARGIN else "articles"
+
+
 LAT_TO_CYR = {"shch": "щ", "zh": "ж", "kh": "х", "ts": "ц", "ch": "ч", "sh": "ш", "yu": "ю", "ya": "я", "yo": "ё", "a": "а", "b": "б", "v": "в", "g": "г", "d": "д",
               "e": "е", "z": "з", "i": "и", "y": "ы", "k": "к", "l": "л", "m": "м", "n": "н", "o": "о", "p": "п", "r": "р", "s": "с", "t": "т", "u": "у", "f": "ф",
               "h": "х", "c": "к", "j": "ж", "q": "к", "w": "в", "x": "кс"}
@@ -116,6 +129,24 @@ FILLER = {"в", "во", "по", "из", "согласно", "текст", "по�
 ABBREVIATIONS = {"тк": "Трудовой кодекс", "гк": "Гражданский кодекс", "ук": "Уголовный кодекс", "упк": "Уголовно-процессуальный кодекс",
                  "гпк": "Гражданский процессуальный кодекс", "нк": "Налоговый кодекс", "коап": "Кодекс об административных правонарушениях",
                  "зк": "Земельный кодекс", "ск": "Социальный кодекс", "пк": "Предпринимательский кодекс", "бк": "Бюджетный кодекс", "эк": "Экологический кодекс"}
+
+
+# Upper-case abbreviations are spelled out before encoding ("ТК" -> "ТК (Трудовой кодекс Республики Казахстан)"): the encoder does not know them.
+ABBREV_FULL = {"ТК": "Трудовой кодекс Республики Казахстан", "ГК": "Гражданский кодекс Республики Казахстан", "УК": "Уголовный кодекс Республики Казахстан",
+               "УПК": "Уголовно-процессуальный кодекс Республики Казахстан", "ГПК": "Гражданский процессуальный кодекс Республики Казахстан",
+               "НК": "Налоговый кодекс Республики Казахстан", "КоАП": "Кодекс об административных правонарушениях", "ЗК": "Земельный кодекс Республики Казахстан",
+               "СК": "Социальный кодекс Республики Казахстан", "ПК": "Предпринимательский кодекс Республики Казахстан", "БК": "Бюджетный кодекс Республики Казахстан",
+               "МРП": "месячный расчетный показатель", "МЗП": "минимальная заработная плата", "ИП": "индивидуальный предприниматель",
+               "ТОО": "товарищество с ограниченной ответственностью", "АО": "акционерное общество", "БИН": "бизнес-идентификационный номер",
+               "ИИН": "индивидуальный идентификационный номер", "НДС": "налог на добавленную стоимость", "ИПН": "индивидуальный подоходный налог",
+               "КПН": "корпоративный подоходный налог", "ОСМС": "обязательное социальное медицинское страхование", "ЕНПФ": "единый накопительный пенсионный фонд",
+               "ДТП": "дорожно-транспортное происшествие", "ЖКХ": "жилищно-коммунальное хозяйство", "ГУ": "государственное учреждение"}
+ABBREV_RE = re.compile(r"(?<![\w-])(" + "|".join(sorted(ABBREV_FULL, key=len, reverse=True)) + r")(?![\w-])")
+
+
+def expand_abbreviations(query):
+    """Append the full name after each known abbreviation; other text is unchanged."""
+    return ABBREV_RE.sub(lambda m: f"{m.group(1)} ({ABBREV_FULL[m.group(1)]})", query)
 
 
 def parse_reference(query):
@@ -293,16 +324,17 @@ class SearchEngine:
         lang = detect_language(query)
         mask = self.mask(filters)
         pool = max(60, k * 6)
+        qx = expand_abbreviations(query)
         notes = []
         low_confidence = False
         rankings = {}
         if method in ("dense", "hybrid"):
-            rows, sc = self._dense_rows(query, mask, pool, filters.force_prior)
+            rows, sc = self._dense_rows(qx, mask, pool, filters.force_prior)
             if lang == "en":  # a question typed in Latin letters may be Russian ("kak vzyskat alimenty"): keep the reading the model is surer about
                 alt = latin_to_cyrillic(query)
                 r2, s2 = self._dense_rows(alt, mask, pool, filters.force_prior)
                 if s2[0] > sc[0]:
-                    rows, sc, query, lang = r2, s2, alt, "ru"
+                    rows, sc, query, qx, lang = r2, s2, alt, expand_abbreviations(alt), "ru"
                     notes.append(f"Запрос набран латиницей и прочитан как русский: «{alt}».")
             rankings["dense"] = (list(rows), list(sc))
             top1 = float(sc[0]) - filters.force_prior * float(self._force[int(rows[0])]) if len(rows) else 0.0
@@ -318,7 +350,7 @@ class SearchEngine:
                 if method == "bm25":
                     return [], {"lang": lang, "notes": notes, "seconds": time.time() - t0, "searched": int(mask.sum())}
             else:
-                rows, sc = self._bm25_rows(query, lang, mask, pool)
+                rows, sc = self._bm25_rows(qx, lang, mask, pool)
                 rankings["bm25"] = (list(rows), list(sc))
         if len(rankings) == 1:
             (name, (rows, sc)), = rankings.items()
@@ -350,6 +382,45 @@ class SearchEngine:
                    url=None if pd.isna(r.adilet_url) else r.adilet_url, law_id=None if pd.isna(r.law_id) else r.law_id,
                    score=score, matched_lang=str(r.lang), texts=texts, methods=tuple(methods))
 
+    # -- machine translation of a snippet (English users otherwise get Russian or Kazakh text) ---------------------------
+    NLLB = "facebook/nllb-200-distilled-600M"
+    NLLB_CODE = {"ru": "rus_Cyrl", "kk": "kaz_Cyrl", "en": "eng_Latn"}
+
+    def translate(self, text, src, tgt, max_chars=1400):
+        """Unofficial machine translation (NLLB-200 600M) of the start of a text; cached. Long texts are cut at a sentence boundary."""
+        key = (hashlib.md5(text.encode("utf-8")).hexdigest(), src, tgt)
+        cache = self.__dict__.setdefault("_tr_cache", {})
+        if key in cache:
+            return cache[key]
+        if "_nllb" not in self.__dict__:
+            from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
+            self._nllb_tok = AutoTokenizer.from_pretrained(self.NLLB)
+            m = AutoModelForSeq2SeqLM.from_pretrained(self.NLLB, torch_dtype=self.torch.float16 if self.device == "cuda" else self.torch.float32)
+            self._nllb = m.to(self.device).eval()
+        piece = text[:max_chars]
+        if len(text) > max_chars:
+            cut = max(piece.rfind(". "), piece.rfind(chr(10)))
+            piece = piece[:cut + 1] if cut > 200 else piece
+        sentences = [s.strip() for s in re.split(r"(?<=[.;:])\s+|" + chr(10) + "+", piece) if s.strip()]
+        merged = []
+        for s in sentences:  # a bare list number such as "1." is glued to the sentence after it
+            if merged and re.fullmatch(r"[\d.()\s-]{1,6}", merged[-1]):
+                merged[-1] += " " + s
+            else:
+                merged.append(s)
+        sentences = merged
+        tok = self._nllb_tok
+        tok.src_lang = self.NLLB_CODE[src]
+        out = []
+        for i in range(0, len(sentences), 8):
+            enc = tok(sentences[i:i + 8], return_tensors="pt", padding=True, truncation=True, max_length=200).to(self.device)
+            with self.torch.no_grad():
+                gen = self._nllb.generate(**enc, forced_bos_token_id=tok.convert_tokens_to_ids(self.NLLB_CODE[tgt]), num_beams=3, max_new_tokens=220)
+            out += tok.batch_decode(gen, skip_special_tokens=True)
+        result = {"text": " ".join(out), "cut": len(piece) < len(text)}
+        cache[key] = result
+        return result
+
     # -- act search by title -----------------------------------------------------------------------------
     def _load_titles(self):
         if self._titles is None:
@@ -362,6 +433,12 @@ class SearchEngine:
                 raise RuntimeError("title embeddings are incomplete; run src/34_embed_titles.py")
             self._titles = (t, emb)
         return self._titles
+
+    def route(self, query):
+        """Decide between 'titles' (find an act by name) and 'articles' (find an article for a question); see route_query."""
+        t, _ = self.search_titles(query, 1, Filters())
+        _, a = self._dense_rows(expand_abbreviations(query), self.mask(Filters()), 1)
+        return route_query(query, t[0]["score"] if t else 0.0, float(a[0]))
 
     def search_titles(self, query, k=10, filters=Filters()):
         t0 = time.time()

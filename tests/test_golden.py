@@ -48,3 +48,14 @@ def test_latin_typed_russian_finds_the_labour_code(engine):
 def test_evasion_question_gets_the_policy_note(engine):
     _, info = engine.search("Как скрыть доходы от налоговой?", 5, "dense")
     assert any("не подсказывает способов обойти" in n for n in info["notes"])
+
+
+def test_router_agrees_with_the_query_types_of_the_test_set(engine):
+    from evaluate import load_queries
+    wrong = [q["text"] for q in load_queries() if (engine.route(q["text"]) == "titles") != (q["type"] == "title")]
+    assert not wrong, wrong
+
+
+def test_translation_of_a_snippet_keeps_the_numbers(engine):
+    r = engine.translate("Заявление подается в течение трех месяцев со дня установления обстоятельств.", "ru", "en")
+    assert "three months" in r["text"].lower() and not r["cut"]

@@ -74,6 +74,10 @@ defaults, CPU-only mode, the thumbs buttons.
 
 `engine.search` now (a) reads an all-Latin query as Russian when that gives a higher top-1 score, (b) sets `low_confidence` and adds a warning when the best score is below `CONFIDENCE_MIN` (ru 0.62, kk 0.61, en 0.58), (c) adds the policy note for questions about evading the law (`docs/policy.md`). The server returns `low_confidence`; the page shows it as a warning line.
 
+## Page and engine additions (2026-11-15, second half of Stage 3)
+
+Default mode is now "Автоматически" (`engine.route`). `engine.expand_abbreviations` runs before encoding and BM25. `/api/translate` (NLLB, loaded on first use, about 1.2 GB GPU) and `/api/config` (МРП from `app/mrp.json`) are new; the page marks deadlines and amounts. МРП must be updated by hand every year.
+
 ## Ranking (2026-11-15)
 
 App defaults unchanged (filters on). New experimental switch "Приоритет кодексов и законов" (`Filters.force_prior`, 0.02 when ticked) is off by default. The re-ranker model `BAAI/bge-reranker-v2-m3` is in the Hugging Face cache but is not used by the app. Results: `outputs/rank_experiments.json`.

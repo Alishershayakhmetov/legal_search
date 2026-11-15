@@ -96,6 +96,7 @@ python src/00_download_data.py
 | Оценка BM25, TF-IDF, ключевых слов | `QRELS_VERSION=v1 python src/22_sparse_experiments.py --scope articles` (и `--scope all --modes stem --langs ru`, `--modes p5 --langs kk`) |
 | Оценка плотного поиска и гибрида | `QRELS_VERSION=v1 python src/25_dense_eval.py BAAI/bge-m3 articles` (аналогично для остальных моделей) |
 | Поиск акта по названию | `python src/27_title_eval.py` |
+| Расшифровка сокращений и автоматический выбор режима (описательные проверки) | `python src/42_abbreviations.py`, `python src/43_router_eval.py` |
 | Устойчивость к опечаткам, латинице и сигнал «статьи нет» | `python src/41_robustness.py` → `outputs/robustness.json` (нужны индексы и GPU; около 5 минут) |
 | Варианты ранжирования (фильтры, приоритет по силе акта, переранжирование bge-reranker, инструкции) | `python src/40_rank_experiments.py` → `outputs/rank_experiments.json` (одна модель переранжирования скачивается при первом запуске, ~2 ГБ) |
 | Парное сравнение BM25 и bge-m3, разбор ошибок | `python src/35_paired_analysis.py`, `python src/28_error_analysis.py` |
