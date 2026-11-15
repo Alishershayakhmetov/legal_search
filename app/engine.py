@@ -69,6 +69,44 @@ def detect_language(text):
     return "en" if latin / len(letters) > 0.6 else "ru"
 
 
+# Top-1 cosine score of bge-m3 below which a question most likely has no answer in the corpus (src/41_robustness.py: the 5% quantile of the
+# in-scope questions per language; every one of 20 clearly off-topic and 6 borderline questions per language scored below it).
+CONFIDENCE_MIN = {"ru": 0.62, "kk": 0.61, "en": 0.58}
+LOW_CONFIDENCE_NOTE = ("Надёжной статьи для этого вопроса не найдено: возможно, он не относится к законодательству РК или в базе нет подходящей нормы. "
+                       "Результаты ниже могут быть случайными.")
+EVASION = re.compile(
+    r"как\s+(?:можно\s+)?(?:обойти|обмануть|скрыть|утаить|подделать|избежать\s+(?:уплаты|ответственности|наказания))|уклониться\s+от\s+(?:уплаты|налог)|как\s+не\s+платить\s+налог"
+    r"|заңды\s+айналып\s+өт|салықтан\s+жалтар|жауапкершіліктен\s+құтыл|how\s+(?:to|can\s+i|do\s+i)\s+(?:evade|bypass|get\s+around|avoid\s+paying|hide\s+(?:my\s+)?income|forge)", re.I)
+POLICY_NOTE = ("Система справочная: она показывает, что говорит закон, в том числе об ответственности, и не подсказывает способов обойти закон или избежать ответственности. "
+               "При реальных затруднениях обратитесь к юристу.")
+
+
+def policy_notice(query):
+    """A short notice for questions that ask how to evade the law; the results are still the legal texts (liability articles)."""
+    return POLICY_NOTE if EVASION.search(query) else None
+
+
+LAT_TO_CYR = {"shch": "щ", "zh": "ж", "kh": "х", "ts": "ц", "ch": "ч", "sh": "ш", "yu": "ю", "ya": "я", "yo": "ё", "a": "а", "b": "б", "v": "в", "g": "г", "d": "д",
+              "e": "е", "z": "з", "i": "и", "y": "ы", "k": "к", "l": "л", "m": "м", "n": "н", "o": "о", "p": "п", "r": "р", "s": "с", "t": "т", "u": "у", "f": "ф",
+              "h": "х", "c": "к", "j": "ж", "q": "к", "w": "в", "x": "кс"}
+LAT_ORDER = sorted(LAT_TO_CYR, key=len, reverse=True)
+
+
+def latin_to_cyrillic(text):
+    """Back-transliterate a query typed with Latin letters ("kak vzyskat alimenty") into Russian letters; other characters stay."""
+    low, out, i = text.lower(), [], 0
+    while i < len(low):
+        for key in LAT_ORDER:
+            if low.startswith(key, i):
+                out.append(LAT_TO_CYR[key])
+                i += len(key)
+                break
+        else:
+            out.append(low[i])
+            i += 1
+    return "".join(out)
+
+
 MIN_TITLE_SCORE = 0.6  # cosine similarity between the act words of a query and an act title
 ARTICLE_WORD = r"(?:стать\w+|ст\.?|бап\w*|баб\w*|article|art\.?)"
 REF_BEFORE = re.compile(rf"(?<![\w-]){ARTICLE_WORD}\s*[№#]?\s*(\d+(?:-\d+)?)(?![\w-])", re.I)  # "статья 52", "ст. 52", "article 1"
@@ -256,10 +294,24 @@ class SearchEngine:
         mask = self.mask(filters)
         pool = max(60, k * 6)
         notes = []
+        low_confidence = False
         rankings = {}
         if method in ("dense", "hybrid"):
             rows, sc = self._dense_rows(query, mask, pool, filters.force_prior)
+            if lang == "en":  # a question typed in Latin letters may be Russian ("kak vzyskat alimenty"): keep the reading the model is surer about
+                alt = latin_to_cyrillic(query)
+                r2, s2 = self._dense_rows(alt, mask, pool, filters.force_prior)
+                if s2[0] > sc[0]:
+                    rows, sc, query, lang = r2, s2, alt, "ru"
+                    notes.append(f"Запрос набран латиницей и прочитан как русский: «{alt}».")
             rankings["dense"] = (list(rows), list(sc))
+            top1 = float(sc[0]) - filters.force_prior * float(self._force[int(rows[0])]) if len(rows) else 0.0
+            if top1 < CONFIDENCE_MIN.get(lang, 0.0):
+                low_confidence = True
+                notes.append(LOW_CONFIDENCE_NOTE)
+        policy = policy_notice(query)
+        if policy:
+            notes.append(policy)
         if method in ("bm25", "hybrid"):
             if lang == "en":
                 notes.append("BM25 ищет по словам и не работает с английским текстом: для английского запроса используется только смысловой поиск.")
@@ -282,7 +334,7 @@ class SearchEngine:
         if direct:
             seen = {(h.title, h.article_no) for h in direct}
             hits = (direct + [h for h in hits if (h.title, h.article_no) not in seen])[:k]
-        return hits, {"lang": lang, "notes": notes, "seconds": time.time() - t0, "searched": int(mask.sum()), "direct": len(direct)}
+        return hits, {"lang": lang, "notes": notes, "seconds": time.time() - t0, "searched": int(mask.sum()), "direct": len(direct), "low_confidence": low_confidence}
 
     def _hit(self, key, row, score, methods):
         r = self.df.iloc[row]

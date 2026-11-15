@@ -78,9 +78,9 @@ keep the "Log" at the bottom up to date. Every search idea should be measured be
 
 | # | Idea | Why | Effort | Status |
 |---|---|---|---|---|
-| S11 | Robustness test set: typos, Latin-letter Kazakh/Russian ("kak vzyskat alimenty"), Kazakh-Russian code-switching, very short queries | Real users do not type like the test set; measures failure modes | 0.5 day | idea |
+| S11 | Robustness test set: typos, Latin-letter Kazakh/Russian ("kak vzyskat alimenty"), Kazakh-Russian code-switching, very short queries | Real users do not type like the test set; measures failure modes | 0.5 day | done 2026-11-15 |
 | S12 | Dictionary of abbreviations and synonyms (ТК, ГК, КоАП, МРП, БИН, ИП, ТОО) used for query expansion | Cheap, deterministic; part of it exists for article references only | 3 h | idea |
-| S13 | "No reliable answer" signal: abstain when the score of the best result and its margin over the 10th are low; calibrate the threshold | Honest behaviour for out-of-scope questions ("как приготовить плов") | 3 h | idea |
+| S13 | "No reliable answer" signal: abstain when the score of the best result and its margin over the 10th are low; calibrate the threshold | Honest behaviour for out-of-scope questions ("как приготовить плов") | 3 h | done 2026-11-15 |
 | S14 | Query router: classify a query as article reference / act title / situation and pick the layer automatically | Removes the need to switch modes by hand | 0.5 day | idea |
 | S15 | Better Kazakh morphology for BM25 (proper analyzer instead of the home-made suffix stripper) | The stripper did not beat five letters; a real analyzer might | 1 day | idea |
 | S16 | Hard negatives from the error analysis and 👎 clicks for re-ranker or encoder training | Directly targets the four error types | 1 day | idea |
@@ -129,7 +129,7 @@ keep the "Log" at the bottom up to date. Every search idea should be measured be
 | D8 | Parallel Russian–Kazakh article corpus (68 111 acts have both texts): align by act and article number, check that the pair really matches (embedding similarity), release as a dataset | A by-product with value of its own; also tests cross-lingual retrieval (Kazakh query → Russian article) | 1–2 days | idea |
 | D9 | Publish the test set (needs, queries, judgments, guidelines) as a small dataset with a datasheet | Reusable benchmark; supports the extension bonus | 0.5 day | idea |
 | E10 | Second annotator: an LLM judges the same pairs; compare with the author and report agreement, never replace human review | Cheap check of the judgments; clearly labelled as a model | 0.5 day, needs an LLM | idea |
-| U12 | Filter by branch of law (351 areas already in the metadata) | Cheap facet; narrows results the way lawyers think | 3 h | idea |
+| U12 | Filter by branch of law (351 areas already in the metadata) | Cheap facet; narrows results the way lawyers think | 3 h | blocked 2026-11-15: area codes have no names in the data |
 | U13 | Browse by topic: clusters of articles or the area tree with counts | Exploration when the user does not know what to ask | 1–2 days | idea |
 | U14 | Phone-friendly layout and offline installable page (PWA) | The page is a plain HTML file, so this is cheap; the right panel already collapses under 960 px | 3 h | idea |
 
@@ -153,7 +153,7 @@ keep the "Log" at the bottom up to date. Every search idea should be measured be
 | E14 | Manual comparison with the official site search on 20 questions (no scraping, by hand) | A real-world baseline for the report | 3 h | idea |
 | U15 | Side-by-side Russian/Kazakh view of an article, aligned by paragraph | Helps verify translations and learn terms | 1 day | idea |
 | X7 | Load test (concurrent requests, latency percentiles) of the server | Numbers for the report; finds locking problems | 3 h | idea |
-| X8 | Policy for harmful or out-of-scope questions ("как обойти закон"): neutral answer, no advice on evasion | Responsible use; short written policy plus a test | 2 h | idea |
+| X8 | Policy for harmful or out-of-scope questions ("как обойти закон"): neutral answer, no advice on evasion | Responsible use; short written policy plus a test | 2 h | done 2026-11-15 |
 
 ## Sixth batch (2026-11-15)
 

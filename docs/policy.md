@@ -1,0 +1,9 @@
+# Policy for out-of-scope and harmful questions
+
+The system is a reference tool: it finds the articles of Kazakh legislation that are closest in meaning to a question and shows their text with a link to the official site. It is not legal advice and it does not write answers.
+
+1. **Questions about the law that ask how to evade it** ("как скрыть доходы от налоговой", "салықтан жалтару жолдары", "how can I evade taxes"). The search still returns what the law says (usually the liability articles), and the page adds a notice: the system shows the norms, including liability, and does not suggest ways around the law; see a lawyer. Detected by the patterns in `engine.EVASION`. A question about liability itself ("какая ответственность за уклонение от уплаты налогов") gets no notice.
+2. **Questions that are not about Kazakh law** ("как приготовить плов", "who won the World Cup"). If the best article's similarity is below a per-language threshold (`engine.CONFIDENCE_MIN`, ru 0.62, kk 0.61, en 0.58) the page says that no reliable article was found and that the results may be random. The results are still shown, so a wrong decision costs one line of text, not the answer.
+3. **Not covered:** questions about foreign law are treated like any other low-similarity question; personal data typed into the query is not detected (the query is only stored with explicit consent, see `docs/STATE.md`).
+
+Measured on 20 clearly off-topic and 6 borderline questions per language (`annotation/out_of_scope_queries.json`): all were flagged; about 5% of the in-scope questions are flagged by construction of the threshold (at most 3 of the 23 golden questions; the test allows no more). The threshold was set on the same 45 questions per language, so its false-flag rate on new questions is not yet confirmed.

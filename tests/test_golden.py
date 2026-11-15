@@ -29,3 +29,22 @@ def test_golden_query_returns_expected_article(engine, case):
     hits, _ = engine.search(case["query"], case["top"], "dense")
     found = [(h.title, h.article_no) for h in hits]
     assert (case["expect_title"], case["expect_article"]) in found, f"{case['query']!r} returned {found}"
+
+
+def test_off_topic_questions_are_flagged_and_few_legal_ones_are(engine):
+    off = json.loads((ROOT / "annotation" / "out_of_scope_queries.json").read_text(encoding="utf-8"))
+    for lang in ("ru", "kk", "en"):
+        flagged = sum(engine.search(q, 5, "dense")[1]["low_confidence"] for q in off[lang])
+        assert flagged == len(off[lang]), (lang, flagged)
+    wrongly = [c["query"] for c in GOLDEN if engine.search(c["query"], 5, "dense")[1]["low_confidence"]]
+    assert len(wrongly) <= 3, wrongly  # the threshold keeps about 95% of in-scope questions by construction
+
+
+def test_latin_typed_russian_finds_the_labour_code(engine):
+    hits, info = engine.search("kak rastorgnut trudovoy dogovor po initsiative rabotodatelya", 8, "dense")
+    assert info["lang"] == "ru" and any("Трудовой" in h.title for h in hits)
+
+
+def test_evasion_question_gets_the_policy_note(engine):
+    _, info = engine.search("Как скрыть доходы от налоговой?", 5, "dense")
+    assert any("не подсказывает способов обойти" in n for n in info["notes"])

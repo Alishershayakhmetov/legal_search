@@ -1,0 +1,395 @@
+{
+ "qrels": "v1",
+ "summary": [
+  {
+   "mode": "plain",
+   "lang": "ru",
+   "variant": "clean",
+   "n": 45,
+   "s1": 0.556,
+   "s10": 0.933,
+   "mrr": 0.679
+  },
+  {
+   "mode": "plain",
+   "lang": "ru",
+   "variant": "typo_light",
+   "n": 45,
+   "s1": 0.533,
+   "s10": 0.867,
+   "mrr": 0.647
+  },
+  {
+   "mode": "plain",
+   "lang": "ru",
+   "variant": "typo_heavy",
+   "n": 45,
+   "s1": 0.533,
+   "s10": 0.889,
+   "mrr": 0.663
+  },
+  {
+   "mode": "plain",
+   "lang": "ru",
+   "variant": "nopunct",
+   "n": 45,
+   "s1": 0.533,
+   "s10": 0.956,
+   "mrr": 0.669
+  },
+  {
+   "mode": "plain",
+   "lang": "ru",
+   "variant": "keywords",
+   "n": 45,
+   "s1": 0.333,
+   "s10": 0.733,
+   "mrr": 0.454
+  },
+  {
+   "mode": "plain",
+   "lang": "ru",
+   "variant": "translit",
+   "n": 45,
+   "s1": 0.267,
+   "s10": 0.578,
+   "mrr": 0.35
+  },
+  {
+   "mode": "plain",
+   "lang": "mix",
+   "variant": "mixed",
+   "n": 45,
+   "s1": 0.444,
+   "s10": 0.867,
+   "mrr": 0.599
+  },
+  {
+   "mode": "plain",
+   "lang": "kk",
+   "variant": "clean",
+   "n": 45,
+   "s1": 0.422,
+   "s10": 0.867,
+   "mrr": 0.555
+  },
+  {
+   "mode": "plain",
+   "lang": "kk",
+   "variant": "typo_light",
+   "n": 45,
+   "s1": 0.422,
+   "s10": 0.8,
+   "mrr": 0.542
+  },
+  {
+   "mode": "plain",
+   "lang": "kk",
+   "variant": "typo_heavy",
+   "n": 45,
+   "s1": 0.289,
+   "s10": 0.689,
+   "mrr": 0.411
+  },
+  {
+   "mode": "plain",
+   "lang": "kk",
+   "variant": "nopunct",
+   "n": 45,
+   "s1": 0.489,
+   "s10": 0.889,
+   "mrr": 0.597
+  },
+  {
+   "mode": "plain",
+   "lang": "kk",
+   "variant": "keywords",
+   "n": 45,
+   "s1": 0.267,
+   "s10": 0.667,
+   "mrr": 0.386
+  },
+  {
+   "mode": "plain",
+   "lang": "kk",
+   "variant": "translit",
+   "n": 45,
+   "s1": 0.0,
+   "s10": 0.022,
+   "mrr": 0.004
+  },
+  {
+   "mode": "plain",
+   "lang": "en",
+   "variant": "clean",
+   "n": 45,
+   "s1": 0.356,
+   "s10": 0.867,
+   "mrr": 0.524
+  },
+  {
+   "mode": "plain",
+   "lang": "en",
+   "variant": "typo_light",
+   "n": 45,
+   "s1": 0.289,
+   "s10": 0.8,
+   "mrr": 0.455
+  },
+  {
+   "mode": "plain",
+   "lang": "en",
+   "variant": "typo_heavy",
+   "n": 45,
+   "s1": 0.244,
+   "s10": 0.733,
+   "mrr": 0.404
+  },
+  {
+   "mode": "plain",
+   "lang": "en",
+   "variant": "nopunct",
+   "n": 45,
+   "s1": 0.378,
+   "s10": 0.889,
+   "mrr": 0.533
+  },
+  {
+   "mode": "plain",
+   "lang": "en",
+   "variant": "keywords",
+   "n": 45,
+   "s1": 0.111,
+   "s10": 0.578,
+   "mrr": 0.216
+  },
+  {
+   "mode": "fixed",
+   "lang": "ru",
+   "variant": "clean",
+   "n": 45,
+   "s1": 0.556,
+   "s10": 0.933,
+   "mrr": 0.679
+  },
+  {
+   "mode": "fixed",
+   "lang": "ru",
+   "variant": "typo_light",
+   "n": 45,
+   "s1": 0.533,
+   "s10": 0.867,
+   "mrr": 0.647
+  },
+  {
+   "mode": "fixed",
+   "lang": "ru",
+   "variant": "typo_heavy",
+   "n": 45,
+   "s1": 0.533,
+   "s10": 0.889,
+   "mrr": 0.663
+  },
+  {
+   "mode": "fixed",
+   "lang": "ru",
+   "variant": "nopunct",
+   "n": 45,
+   "s1": 0.533,
+   "s10": 0.956,
+   "mrr": 0.669
+  },
+  {
+   "mode": "fixed",
+   "lang": "ru",
+   "variant": "keywords",
+   "n": 45,
+   "s1": 0.333,
+   "s10": 0.733,
+   "mrr": 0.454
+  },
+  {
+   "mode": "fixed",
+   "lang": "ru",
+   "variant": "translit",
+   "n": 45,
+   "s1": 0.467,
+   "s10": 0.933,
+   "mrr": 0.62
+  },
+  {
+   "mode": "fixed",
+   "lang": "mix",
+   "variant": "mixed",
+   "n": 45,
+   "s1": 0.444,
+   "s10": 0.867,
+   "mrr": 0.599
+  },
+  {
+   "mode": "fixed",
+   "lang": "kk",
+   "variant": "clean",
+   "n": 45,
+   "s1": 0.422,
+   "s10": 0.867,
+   "mrr": 0.555
+  },
+  {
+   "mode": "fixed",
+   "lang": "kk",
+   "variant": "typo_light",
+   "n": 45,
+   "s1": 0.422,
+   "s10": 0.8,
+   "mrr": 0.542
+  },
+  {
+   "mode": "fixed",
+   "lang": "kk",
+   "variant": "typo_heavy",
+   "n": 45,
+   "s1": 0.289,
+   "s10": 0.689,
+   "mrr": 0.411
+  },
+  {
+   "mode": "fixed",
+   "lang": "kk",
+   "variant": "nopunct",
+   "n": 45,
+   "s1": 0.489,
+   "s10": 0.889,
+   "mrr": 0.597
+  },
+  {
+   "mode": "fixed",
+   "lang": "kk",
+   "variant": "keywords",
+   "n": 45,
+   "s1": 0.267,
+   "s10": 0.667,
+   "mrr": 0.386
+  },
+  {
+   "mode": "fixed",
+   "lang": "kk",
+   "variant": "translit",
+   "n": 45,
+   "s1": 0.2,
+   "s10": 0.467,
+   "mrr": 0.301
+  },
+  {
+   "mode": "fixed",
+   "lang": "en",
+   "variant": "clean",
+   "n": 45,
+   "s1": 0.356,
+   "s10": 0.867,
+   "mrr": 0.524
+  },
+  {
+   "mode": "fixed",
+   "lang": "en",
+   "variant": "typo_light",
+   "n": 45,
+   "s1": 0.289,
+   "s10": 0.8,
+   "mrr": 0.455
+  },
+  {
+   "mode": "fixed",
+   "lang": "en",
+   "variant": "typo_heavy",
+   "n": 45,
+   "s1": 0.244,
+   "s10": 0.733,
+   "mrr": 0.404
+  },
+  {
+   "mode": "fixed",
+   "lang": "en",
+   "variant": "nopunct",
+   "n": 45,
+   "s1": 0.378,
+   "s10": 0.889,
+   "mrr": 0.533
+  },
+  {
+   "mode": "fixed",
+   "lang": "en",
+   "variant": "keywords",
+   "n": 45,
+   "s1": 0.111,
+   "s10": 0.556,
+   "mrr": 0.209
+  }
+ ],
+ "signal": {
+  "ru": {
+   "n_in": 45,
+   "n_out": 20,
+   "auc_top1": 1.0,
+   "auc_margin": 0.569,
+   "threshold_top1_keep95": 0.624,
+   "out_rejected": 20,
+   "in_top1_min": 0.601,
+   "out_top1_max": 0.579,
+   "hard_top1": [
+    0.567,
+    0.576,
+    0.557,
+    0.532,
+    0.589,
+    0.602
+   ],
+   "hard_rejected": 6,
+   "in_top1_mean": 0.675,
+   "out_top1_mean": 0.481
+  },
+  "kk": {
+   "n_in": 45,
+   "n_out": 20,
+   "auc_top1": 1.0,
+   "auc_margin": 0.557,
+   "threshold_top1_keep95": 0.615,
+   "out_rejected": 20,
+   "in_top1_min": 0.598,
+   "out_top1_max": 0.562,
+   "hard_top1": [
+    0.566,
+    0.586,
+    0.591,
+    0.539,
+    0.595,
+    0.605
+   ],
+   "hard_rejected": 6,
+   "in_top1_mean": 0.676,
+   "out_top1_mean": 0.485
+  },
+  "en": {
+   "n_in": 45,
+   "n_out": 20,
+   "auc_top1": 1.0,
+   "auc_margin": 0.581,
+   "threshold_top1_keep95": 0.579,
+   "out_rejected": 20,
+   "in_top1_min": 0.573,
+   "out_top1_max": 0.563,
+   "hard_top1": [
+    0.529,
+    0.586,
+    0.528,
+    0.538,
+    0.573,
+    0.564
+   ],
+   "hard_rejected": 5,
+   "in_top1_mean": 0.63,
+   "out_top1_mean": 0.467
+  }
+ },
+ "out_of_scope_scores": {}
+}

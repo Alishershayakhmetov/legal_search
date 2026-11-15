@@ -97,3 +97,25 @@ def test_metadata_corrections_for_constitution_and_amending_titles():
     tidy_metadata(df, "display_title")
     assert df.kind.tolist() == ["Конституция", "Закон", "Кодекс", "Другое"]
     assert df.is_amending.tolist() == [False, True, False, False]
+
+
+def test_latin_typed_russian_is_read_back_into_cyrillic():
+    from engine import latin_to_cyrillic
+    assert latin_to_cyrillic("kak poluchit alimenty") == "как получит алименты"
+    assert latin_to_cyrillic("Shtraf za kuri") == "штраф за кури"
+    assert latin_to_cyrillic("№ 5, 2020") == "№ 5, 2020"
+
+
+def test_policy_notice_only_for_questions_about_evading_the_law():
+    from engine import policy_notice
+    assert policy_notice("Как обойти налог на имущество?")
+    assert policy_notice("как скрыть доходы от налоговой")
+    assert policy_notice("How can I evade taxes in Kazakhstan?")
+    assert policy_notice("Салықтан жалтару жолдары қандай?")
+    assert policy_notice("Какая ответственность за уклонение от уплаты налогов?") is None
+    assert policy_notice("Сколько дней отпуска положено?") is None
+
+
+def test_confidence_thresholds_cover_every_language():
+    from engine import CONFIDENCE_MIN
+    assert set(CONFIDENCE_MIN) == {"ru", "kk", "en"} and all(0.4 < v < 0.8 for v in CONFIDENCE_MIN.values())

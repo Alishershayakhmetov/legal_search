@@ -73,7 +73,12 @@ Run in this order, each measured against the baseline; keep only what helps on t
 | A4 monthly calculation index to tenge; A5 highlight deadlines and amounts | practical value, 3 h each |
 | X8 policy for harmful or out-of-scope questions | short written policy plus a test |
 
-**Gate:** robustness set results in the report; golden queries still pass; every new control checked in the browser.
+**Status 2026-11-15:** done S11, S13, X8 (+ the transliteration fix); not done S14, U12, S30, A16, A4, A5, S12.
+* S11: `src/41_robustness.py` makes 6 perturbed versions of the 45 needs per language (typos light/heavy, Latin letters, no punctuation, 4 keywords, ru+kk mixed) -> `annotation/robustness_queries.jsonl`, `outputs/robustness.json`, report 5.10, slide 14. Typos and missing punctuation cost little (ru S@10 0.93 -> 0.87-0.96); 4 keywords 0.73; Latin-letter Russian 0.58 -> 0.93 with the new back-transliteration (engine reads an all-Latin query both ways and keeps the more confident reading); Latin-letter Kazakh 0.02 -> 0.47 only; ru+kk mixed 0.87.
+* S13: top-1 cosine separates 45 in-scope from 20 off-topic questions per language with AUC 1.0 (margin to the 10th: 0.57, useless); thresholds ru 0.62 / kk 0.61 / en 0.58 (5% quantile of in-scope) flag all 20 off-topic and 6 borderline questions per language. The page shows a warning and still shows results. Threshold fitted on the same 45 questions per language: false-flag rate on new questions unconfirmed.
+* X8: `docs/policy.md`, `engine.policy_notice` (evasion questions get a reminder; liability questions do not), 3 unit tests plus 3 behaviour tests (`RUN_GOLDEN=1`). Checked in the browser (Latin query, off-topic query, evasion query; warning style).
+* Not done and why: U12 branch filter - the 351 legal-area codes in the metadata have no names (only classifier codes like 005022002000), so there is nothing to show; S12 dictionary unmeasurable; S14, S30, A4, A5, A16 not started (A4 needs a dated МРП value from the author).
+* Gate: robustness results are in the report; the 23 golden queries pass; the new warning style and the Latin reading were checked through the browser pane.
 
 ## Stage 4: answers and depth (3–4 days)
 

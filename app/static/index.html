@@ -149,7 +149,7 @@ async function run() {
   } else {
     frag.appendChild(el('div', 'meta', `Язык запроса: ${LANG[res.lang]} · просмотрено ${res.searched.toLocaleString('ru-RU')} фрагментов · ${res.seconds.toFixed(2)} с`));
     if (res.direct) frag.appendChild(el('div', 'note info', 'Запрос содержит номер статьи: сначала показана найденная по номеру статья, затем результаты смыслового поиска.'));
-    res.notes.forEach(n => frag.appendChild(el('div', 'note info', n)));
+    res.notes.forEach(n => frag.appendChild(el('div', res.low_confidence && n.startsWith('Надёжной') ? 'note warn' : 'note info', n)));
     res.hits.forEach((h, i) => frag.appendChild(articleCard(i + 1, h, query)));
     if (!res.hits.length && !res.notes.length) frag.appendChild(el('div', 'note info', 'Ничего не найдено: попробуйте ослабить фильтры.'));
   }

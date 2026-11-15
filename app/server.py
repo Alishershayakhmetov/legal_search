@@ -61,7 +61,7 @@ def run_search(req):
         method = req.get("method", "dense")
         hits, info = ENGINE.search(query, k, method if method in METHODS else "dense", filters)
         return {"mode": "articles", "lang": info["lang"], "seconds": info["seconds"], "searched": info["searched"], "notes": info["notes"],
-                "direct": info.get("direct", 0), "hits": [hit_to_dict(h, info["lang"]) for h in hits]}
+                "direct": info.get("direct", 0), "low_confidence": info.get("low_confidence", False), "hits": [hit_to_dict(h, info["lang"]) for h in hits]}
 
 
 def examples():

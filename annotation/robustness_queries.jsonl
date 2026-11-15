@@ -1,0 +1,810 @@
+{"query_id": "L01-ru:clean", "need_id": "L01", "lang": "ru", "variant": "clean", "text": "Работодатель сообщил, что мою должность сокращают. На какие выплаты и гарантии я могу рассчитывать?"}
+{"query_id": "L01-ru:typo_light", "need_id": "L01", "lang": "ru", "variant": "typo_light", "text": "Работодатель сообщил, что мою должность сокраащют. На какие вылпаты и гаратнии я могу рассчитывать?"}
+{"query_id": "L01-ru:typo_heavy", "need_id": "L01", "lang": "ru", "variant": "typo_heavy", "text": "Работодатель сообщли, что мою должность сокращают. На какие выплтаы и гарантии я могу расчитывать?"}
+{"query_id": "L01-ru:nopunct", "need_id": "L01", "lang": "ru", "variant": "nopunct", "text": "работодатель сообщил что мою должность сокращают на какие выплаты и гарантии я могу рассчитывать"}
+{"query_id": "L01-ru:keywords", "need_id": "L01", "lang": "ru", "variant": "keywords", "text": "Работодатель должность сокращают рассчитывать"}
+{"query_id": "L01-ru:translit", "need_id": "L01", "lang": "ru", "variant": "translit", "text": "rabotodatel soobshchil, chto moyu dolzhnost sokrashchayut. na kakie vyplaty i garantii ya mogu rasschityvat?"}
+{"query_id": "L01:mixed", "need_id": "L01", "lang": "mix", "variant": "mixed", "text": "Работодатель сообщил, что мою должность сокращают. На какие выплаты и гарантии я могу рассчитывать? / Жұмыс беруші менің қызметімді қысқартатынын айтты. Маған қандай төлемдер мен кепілдіктер тиесілі?"}
+{"query_id": "L01-kk:clean", "need_id": "L01", "lang": "kk", "variant": "clean", "text": "Жұмыс беруші менің қызметімді қысқартатынын айтты. Маған қандай төлемдер мен кепілдіктер тиесілі?"}
+{"query_id": "L01-kk:typo_light", "need_id": "L01", "lang": "kk", "variant": "typo_light", "text": "Жұмыс беруші менің қызметімді қысқартатынын айттты. Маған қанадй төлемдер мен кепілдіктер тиесілі?"}
+{"query_id": "L01-kk:typo_heavy", "need_id": "L01", "lang": "kk", "variant": "typo_heavy", "text": "Жұмыс беруші менің қызметімді қысқартатынын аййтты. Маған қанндай төлемдер мен кепілдіктер тиесілі?"}
+{"query_id": "L01-kk:nopunct", "need_id": "L01", "lang": "kk", "variant": "nopunct", "text": "жұмыс беруші менің қызметімді қысқартатынын айтты маған қандай төлемдер мен кепілдіктер тиесілі"}
+{"query_id": "L01-kk:keywords", "need_id": "L01", "lang": "kk", "variant": "keywords", "text": "қызметімді қысқартатынын төлемдер кепілдіктер"}
+{"query_id": "L01-kk:translit", "need_id": "L01", "lang": "kk", "variant": "translit", "text": "zhumys berushi menin kyzmetimdi kyskartatynyn aytty. magan kanday tolemder men kepildikter tiesili?"}
+{"query_id": "L01-en:clean", "need_id": "L01", "lang": "en", "variant": "clean", "text": "My employer says my position is being eliminated. What payments and protections am I entitled to?"}
+{"query_id": "L01-en:typo_light", "need_id": "L01", "lang": "en", "variant": "typo_light", "text": "My employer says my positon is being eliminated. What payments and protections am I entitled to?"}
+{"query_id": "L01-en:typo_heavy", "need_id": "L01", "lang": "en", "variant": "typo_heavy", "text": "My employyer says my position is being eliminated. What payments and protections am I entitled to?"}
+{"query_id": "L01-en:nopunct", "need_id": "L01", "lang": "en", "variant": "nopunct", "text": "my employer says my position is being eliminated what payments and protections am i entitled to"}
+{"query_id": "L01-en:keywords", "need_id": "L01", "lang": "en", "variant": "keywords", "text": "employer position eliminated protections"}
+{"query_id": "L02-ru:clean", "need_id": "L02", "lang": "ru", "variant": "clean", "text": "Сколько дней оплачиваемого отпуска мне положено в год?"}
+{"query_id": "L02-ru:typo_light", "need_id": "L02", "lang": "ru", "variant": "typo_light", "text": "Солько дней оплачиваемого отпуска мне полоожено в год?"}
+{"query_id": "L02-ru:typo_heavy", "need_id": "L02", "lang": "ru", "variant": "typo_heavy", "text": "Сколько дней оплачиваемого отпуска мне положено в год?"}
+{"query_id": "L02-ru:nopunct", "need_id": "L02", "lang": "ru", "variant": "nopunct", "text": "сколько дней оплачиваемого отпуска мне положено в год"}
+{"query_id": "L02-ru:keywords", "need_id": "L02", "lang": "ru", "variant": "keywords", "text": "Сколько оплачиваемого отпуска положено"}
+{"query_id": "L02-ru:translit", "need_id": "L02", "lang": "ru", "variant": "translit", "text": "skolko dney oplachivaemogo otpuska mne polozheno v god?"}
+{"query_id": "L02:mixed", "need_id": "L02", "lang": "mix", "variant": "mixed", "text": "Сколько дней оплачиваемого отпуска мне положено в год? / Жылына қанша күн ақылы демалыс беріледі?"}
+{"query_id": "L02-kk:clean", "need_id": "L02", "lang": "kk", "variant": "clean", "text": "Жылына қанша күн ақылы демалыс беріледі?"}
+{"query_id": "L02-kk:typo_light", "need_id": "L02", "lang": "kk", "variant": "typo_light", "text": "Жылына қанша күн ақылы демалыс беріледі?"}
+{"query_id": "L02-kk:typo_heavy", "need_id": "L02", "lang": "kk", "variant": "typo_heavy", "text": "Жылына қашна күн ақылы демалыс беріледі?"}
+{"query_id": "L02-kk:nopunct", "need_id": "L02", "lang": "kk", "variant": "nopunct", "text": "жылына қанша күн ақылы демалыс беріледі"}
+{"query_id": "L02-kk:keywords", "need_id": "L02", "lang": "kk", "variant": "keywords", "text": "Жылына қанша демалыс беріледі"}
+{"query_id": "L02-kk:translit", "need_id": "L02", "lang": "kk", "variant": "translit", "text": "zhylyna kansha kun akyly demalys beriledi?"}
+{"query_id": "L02-en:clean", "need_id": "L02", "lang": "en", "variant": "clean", "text": "How many days of paid annual leave am I entitled to each year?"}
+{"query_id": "L02-en:typo_light", "need_id": "L02", "lang": "en", "variant": "typo_light", "text": "How many days of paid annual leave am I entitled to each year?"}
+{"query_id": "L02-en:typo_heavy", "need_id": "L02", "lang": "en", "variant": "typo_heavy", "text": "How many days of paid annual leaave am I entitled to each year?"}
+{"query_id": "L02-en:nopunct", "need_id": "L02", "lang": "en", "variant": "nopunct", "text": "how many days of paid annual leave am i entitled to each year"}
+{"query_id": "L02-en:keywords", "need_id": "L02", "lang": "en", "variant": "keywords", "text": "many annual leave entitled"}
+{"query_id": "L03-ru:clean", "need_id": "L03", "lang": "ru", "variant": "clean", "text": "Начальник уже второй месяц не платит зарплату. Что делать и какая ответственность у работодателя?"}
+{"query_id": "L03-ru:typo_light", "need_id": "L03", "lang": "ru", "variant": "typo_light", "text": "Начальник уже второй месяц не платит зарплату. Что делать и какая ответственность у работодателя?"}
+{"query_id": "L03-ru:typo_heavy", "need_id": "L03", "lang": "ru", "variant": "typo_heavy", "text": "Начальник уже второй мессяц не платит зарплату. Что делать и какая ответственность у работодателя?"}
+{"query_id": "L03-ru:nopunct", "need_id": "L03", "lang": "ru", "variant": "nopunct", "text": "начальник уже второй месяц не платит зарплату что делать и какая ответственность у работодателя"}
+{"query_id": "L03-ru:keywords", "need_id": "L03", "lang": "ru", "variant": "keywords", "text": "Начальник зарплату ответственность работодателя"}
+{"query_id": "L03-ru:translit", "need_id": "L03", "lang": "ru", "variant": "translit", "text": "nachalnik uzhe vtoroy mesyats ne platit zarplatu. chto delat i kakaya otvetstvennost u rabotodatelya?"}
+{"query_id": "L03:mixed", "need_id": "L03", "lang": "mix", "variant": "mixed", "text": "Начальник уже второй месяц не платит зарплату. Что делать и какая ответственность у работодателя? / Бастығым екінші ай жалақы төлемей жүр. Не істеуге болады және жұмыс берушінің жауапкершілігі қандай?"}
+{"query_id": "L03-kk:clean", "need_id": "L03", "lang": "kk", "variant": "clean", "text": "Бастығым екінші ай жалақы төлемей жүр. Не істеуге болады және жұмыс берушінің жауапкершілігі қандай?"}
+{"query_id": "L03-kk:typo_light", "need_id": "L03", "lang": "kk", "variant": "typo_light", "text": "Бастығым екіннші ай жалақы төлемей жүр. Не істегуе болады және жұмыс берушінің жауапкершіілгі қанндай?"}
+{"query_id": "L03-kk:typo_heavy", "need_id": "L03", "lang": "kk", "variant": "typo_heavy", "text": "Басттығым еккінші ай жалақы төлемей жүр. Не істеуге болады және жұмыс беруінің жауапкершілігі қандай?"}
+{"query_id": "L03-kk:nopunct", "need_id": "L03", "lang": "kk", "variant": "nopunct", "text": "бастығым екінші ай жалақы төлемей жүр не істеуге болады және жұмыс берушінің жауапкершілігі қандай"}
+{"query_id": "L03-kk:keywords", "need_id": "L03", "lang": "kk", "variant": "keywords", "text": "Бастығым төлемей берушінің жауапкершілігі"}
+{"query_id": "L03-kk:translit", "need_id": "L03", "lang": "kk", "variant": "translit", "text": "bastygym ekinshi ay zhalaky tolemey zhur. ne isteuge bolady zhane zhumys berushinin zhauapkershiligi kanday?"}
+{"query_id": "L03-en:clean", "need_id": "L03", "lang": "en", "variant": "clean", "text": "My boss has not paid my salary for two months. What can I do and what is the employer liable for?"}
+{"query_id": "L03-en:typo_light", "need_id": "L03", "lang": "en", "variant": "typo_light", "text": "My boss has not paid my salary for two months. What can I do and what is the employer liable for?"}
+{"query_id": "L03-en:typo_heavy", "need_id": "L03", "lang": "en", "variant": "typo_heavy", "text": "My boss has not paid my salary for two months. What can I do and what is the emploer lialbe for?"}
+{"query_id": "L03-en:nopunct", "need_id": "L03", "lang": "en", "variant": "nopunct", "text": "my boss has not paid my salary for two months what can i do and what is the employer liable for"}
+{"query_id": "L03-en:keywords", "need_id": "L03", "lang": "en", "variant": "keywords", "text": "salary months employer liable"}
+{"query_id": "L04-ru:clean", "need_id": "L04", "lang": "ru", "variant": "clean", "text": "Какой максимальный испытательный срок можно установить при приёме на работу?"}
+{"query_id": "L04-ru:typo_light", "need_id": "L04", "lang": "ru", "variant": "typo_light", "text": "Какой максимальный испытательный срок можжно установить при приёме на работу?"}
+{"query_id": "L04-ru:typo_heavy", "need_id": "L04", "lang": "ru", "variant": "typo_heavy", "text": "Какой максимальный испытательный срок мжоно установить при приёме на рабоу?"}
+{"query_id": "L04-ru:nopunct", "need_id": "L04", "lang": "ru", "variant": "nopunct", "text": "какой максимальный испытательный срок можно установить при приёме на работу"}
+{"query_id": "L04-ru:keywords", "need_id": "L04", "lang": "ru", "variant": "keywords", "text": "максимальный испытательный установить приёме"}
+{"query_id": "L04-ru:translit", "need_id": "L04", "lang": "ru", "variant": "translit", "text": "kakoy maksimalnyy ispytatelnyy srok mozhno ustanovit pri prieme na rabotu?"}
+{"query_id": "L04:mixed", "need_id": "L04", "lang": "mix", "variant": "mixed", "text": "Какой максимальный испытательный срок можно установить при приёме на работу? / Жұмысқа қабылдау кезінде сынақ мерзімі ең көбі қанша болуы мүмкін?"}
+{"query_id": "L04-kk:clean", "need_id": "L04", "lang": "kk", "variant": "clean", "text": "Жұмысқа қабылдау кезінде сынақ мерзімі ең көбі қанша болуы мүмкін?"}
+{"query_id": "L04-kk:typo_light", "need_id": "L04", "lang": "kk", "variant": "typo_light", "text": "Жұмысқа қабылдау кезінде сынақ мерзімі ең көбі қанша болуы мүмкін?"}
+{"query_id": "L04-kk:typo_heavy", "need_id": "L04", "lang": "kk", "variant": "typo_heavy", "text": "Жұмысқа қабылдау кезінде сныақ мерзімі ең көбі қанша болуы мүмкін?"}
+{"query_id": "L04-kk:nopunct", "need_id": "L04", "lang": "kk", "variant": "nopunct", "text": "жұмысқа қабылдау кезінде сынақ мерзімі ең көбі қанша болуы мүмкін"}
+{"query_id": "L04-kk:keywords", "need_id": "L04", "lang": "kk", "variant": "keywords", "text": "Жұмысқа қабылдау кезінде мерзімі"}
+{"query_id": "L04-kk:translit", "need_id": "L04", "lang": "kk", "variant": "translit", "text": "zhumyska kabyldau kezinde synak merzimi en kobi kansha boluy mumkin?"}
+{"query_id": "L04-en:clean", "need_id": "L04", "lang": "en", "variant": "clean", "text": "What is the longest probation period an employer can set when hiring?"}
+{"query_id": "L04-en:typo_light", "need_id": "L04", "lang": "en", "variant": "typo_light", "text": "What is the longest probaton period an eployer can set when hiring?"}
+{"query_id": "L04-en:typo_heavy", "need_id": "L04", "lang": "en", "variant": "typo_heavy", "text": "What is the longest probation perod an emplyer can set when hiring?"}
+{"query_id": "L04-en:nopunct", "need_id": "L04", "lang": "en", "variant": "nopunct", "text": "what is the longest probation period an employer can set when hiring"}
+{"query_id": "L04-en:keywords", "need_id": "L04", "lang": "en", "variant": "keywords", "text": "longest probation period employer"}
+{"query_id": "L05-ru:clean", "need_id": "L05", "lang": "ru", "variant": "clean", "text": "Меня заставляют работать сверхурочно. Как это оплачивается и есть ли ограничения?"}
+{"query_id": "L05-ru:typo_light", "need_id": "L05", "lang": "ru", "variant": "typo_light", "text": "Меня заставляют работать сверхурочно. Как это оплачивается и есть ли ограничения?"}
+{"query_id": "L05-ru:typo_heavy", "need_id": "L05", "lang": "ru", "variant": "typo_heavy", "text": "Меня заставляют работать сверхуроччно. Как это оплачивается и есть ли ограниченяи?"}
+{"query_id": "L05-ru:nopunct", "need_id": "L05", "lang": "ru", "variant": "nopunct", "text": "меня заставляют работать сверхурочно как это оплачивается и есть ли ограничения"}
+{"query_id": "L05-ru:keywords", "need_id": "L05", "lang": "ru", "variant": "keywords", "text": "заставляют сверхурочно оплачивается ограничения"}
+{"query_id": "L05-ru:translit", "need_id": "L05", "lang": "ru", "variant": "translit", "text": "menya zastavlyayut rabotat sverkhurochno. kak eto oplachivaetsya i est li ogranicheniya?"}
+{"query_id": "L05:mixed", "need_id": "L05", "lang": "mix", "variant": "mixed", "text": "Меня заставляют работать сверхурочно. Как это оплачивается и есть ли ограничения? / Мені жұмыс уақытынан тыс жұмыс істеуге мәжбүрлейді. Бұл қалай төленеді және шектеулер бар ма?"}
+{"query_id": "L05-kk:clean", "need_id": "L05", "lang": "kk", "variant": "clean", "text": "Мені жұмыс уақытынан тыс жұмыс істеуге мәжбүрлейді. Бұл қалай төленеді және шектеулер бар ма?"}
+{"query_id": "L05-kk:typo_light", "need_id": "L05", "lang": "kk", "variant": "typo_light", "text": "Мені жұұмыс уақытынан тыс жұмыс істеуге мәжбүрлейді. Бұл қалай төенеді және шектеулер бар ма?"}
+{"query_id": "L05-kk:typo_heavy", "need_id": "L05", "lang": "kk", "variant": "typo_heavy", "text": "Мені жұмыс уақытынан тыс жұмыс істеуге мәжбүрейді. Бұл қалай төленеді және шектеулер бар ма?"}
+{"query_id": "L05-kk:nopunct", "need_id": "L05", "lang": "kk", "variant": "nopunct", "text": "мені жұмыс уақытынан тыс жұмыс істеуге мәжбүрлейді бұл қалай төленеді және шектеулер бар ма"}
+{"query_id": "L05-kk:keywords", "need_id": "L05", "lang": "kk", "variant": "keywords", "text": "уақытынан мәжбүрлейді төленеді шектеулер"}
+{"query_id": "L05-kk:translit", "need_id": "L05", "lang": "kk", "variant": "translit", "text": "meni zhumys uakytynan tys zhumys isteuge mazhburleydi. bul kalay tolenedi zhane shekteuler bar ma?"}
+{"query_id": "L05-en:clean", "need_id": "L05", "lang": "en", "variant": "clean", "text": "I am forced to work overtime. How is it paid and are there limits?"}
+{"query_id": "L05-en:typo_light", "need_id": "L05", "lang": "en", "variant": "typo_light", "text": "I am forced to work overtime. How is it paid and are there limits?"}
+{"query_id": "L05-en:typo_heavy", "need_id": "L05", "lang": "en", "variant": "typo_heavy", "text": "I am forced to work overtime. How is it paid and are there limits?"}
+{"query_id": "L05-en:nopunct", "need_id": "L05", "lang": "en", "variant": "nopunct", "text": "i am forced to work overtime how is it paid and are there limits"}
+{"query_id": "L05-en:keywords", "need_id": "L05", "lang": "en", "variant": "keywords", "text": "forced overtime there limits"}
+{"query_id": "L06-ru:clean", "need_id": "L06", "lang": "ru", "variant": "clean", "text": "Сколько длится декретный отпуск и кто его оплачивает?"}
+{"query_id": "L06-ru:typo_light", "need_id": "L06", "lang": "ru", "variant": "typo_light", "text": "Сколько длится декретный отпуск и кто его олачивает?"}
+{"query_id": "L06-ru:typo_heavy", "need_id": "L06", "lang": "ru", "variant": "typo_heavy", "text": "Сколько длится декретный отпуск и кто его оплачивает?"}
+{"query_id": "L06-ru:nopunct", "need_id": "L06", "lang": "ru", "variant": "nopunct", "text": "сколько длится декретный отпуск и кто его оплачивает"}
+{"query_id": "L06-ru:keywords", "need_id": "L06", "lang": "ru", "variant": "keywords", "text": "Сколько длится декретный оплачивает"}
+{"query_id": "L06-ru:translit", "need_id": "L06", "lang": "ru", "variant": "translit", "text": "skolko dlitsya dekretnyy otpusk i kto ego oplachivaet?"}
+{"query_id": "L06:mixed", "need_id": "L06", "lang": "mix", "variant": "mixed", "text": "Сколько длится декретный отпуск и кто его оплачивает? / Декреттік демалыс қанша уақытқа созылады және оны кім төлейді?"}
+{"query_id": "L06-kk:clean", "need_id": "L06", "lang": "kk", "variant": "clean", "text": "Декреттік демалыс қанша уақытқа созылады және оны кім төлейді?"}
+{"query_id": "L06-kk:typo_light", "need_id": "L06", "lang": "kk", "variant": "typo_light", "text": "Дереттік деемалыс қанша уқытқа созылады және оны кім төлейді?"}
+{"query_id": "L06-kk:typo_heavy", "need_id": "L06", "lang": "kk", "variant": "typo_heavy", "text": "Декреттік демлыс қанша уақытқа созылады және оны кім төлейі?"}
+{"query_id": "L06-kk:nopunct", "need_id": "L06", "lang": "kk", "variant": "nopunct", "text": "декреттік демалыс қанша уақытқа созылады және оны кім төлейді"}
+{"query_id": "L06-kk:keywords", "need_id": "L06", "lang": "kk", "variant": "keywords", "text": "Декреттік демалыс уақытқа созылады"}
+{"query_id": "L06-kk:translit", "need_id": "L06", "lang": "kk", "variant": "translit", "text": "dekrettik demalys kansha uakytka sozylady zhane ony kim toleydi?"}
+{"query_id": "L06-en:clean", "need_id": "L06", "lang": "en", "variant": "clean", "text": "How long is maternity leave and who pays for it?"}
+{"query_id": "L06-en:typo_light", "need_id": "L06", "lang": "en", "variant": "typo_light", "text": "How long is maternity leave and who pays for it?"}
+{"query_id": "L06-en:typo_heavy", "need_id": "L06", "lang": "en", "variant": "typo_heavy", "text": "How long is matenrity leave and who pays for it?"}
+{"query_id": "L06-en:nopunct", "need_id": "L06", "lang": "en", "variant": "nopunct", "text": "how long is maternity leave and who pays for it"}
+{"query_id": "L06-en:keywords", "need_id": "L06", "lang": "en", "variant": "keywords", "text": "long maternity leave pays"}
+{"query_id": "L07-ru:clean", "need_id": "L07", "lang": "ru", "variant": "clean", "text": "Я работаю в праздничные и выходные дни. Положена ли за это доплата?"}
+{"query_id": "L07-ru:typo_light", "need_id": "L07", "lang": "ru", "variant": "typo_light", "text": "Я работаю в праздничные и выходные дни. Положена ли за это доплата?"}
+{"query_id": "L07-ru:typo_heavy", "need_id": "L07", "lang": "ru", "variant": "typo_heavy", "text": "Я работаю в празздничные и выходные дни. Положена ли за это доплата?"}
+{"query_id": "L07-ru:nopunct", "need_id": "L07", "lang": "ru", "variant": "nopunct", "text": "я работаю в праздничные и выходные дни положена ли за это доплата"}
+{"query_id": "L07-ru:keywords", "need_id": "L07", "lang": "ru", "variant": "keywords", "text": "работаю праздничные выходные Положена"}
+{"query_id": "L07-ru:translit", "need_id": "L07", "lang": "ru", "variant": "translit", "text": "ya rabotayu v prazdnichnye i vykhodnye dni. polozhena li za eto doplata?"}
+{"query_id": "L07:mixed", "need_id": "L07", "lang": "mix", "variant": "mixed", "text": "Я работаю в праздничные и выходные дни. Положена ли за это доплата? / Мен мерекелік және демалыс күндері жұмыс істеймін. Бұл үшін қосымша ақы төленуге тиіс пе?"}
+{"query_id": "L07-kk:clean", "need_id": "L07", "lang": "kk", "variant": "clean", "text": "Мен мерекелік және демалыс күндері жұмыс істеймін. Бұл үшін қосымша ақы төленуге тиіс пе?"}
+{"query_id": "L07-kk:typo_light", "need_id": "L07", "lang": "kk", "variant": "typo_light", "text": "Мен мерекелік және демалыс күндері жұымс істеймін. Бұл үшін қосымша ақы төленуге тиіс пе?"}
+{"query_id": "L07-kk:typo_heavy", "need_id": "L07", "lang": "kk", "variant": "typo_heavy", "text": "Мен мерекелік және демалыс күндері жұымс істеймін. Бұл үшін қосыша ақы төленуге тиіс пе?"}
+{"query_id": "L07-kk:nopunct", "need_id": "L07", "lang": "kk", "variant": "nopunct", "text": "мен мерекелік және демалыс күндері жұмыс істеймін бұл үшін қосымша ақы төленуге тиіс пе"}
+{"query_id": "L07-kk:keywords", "need_id": "L07", "lang": "kk", "variant": "keywords", "text": "мерекелік демалыс істеймін төленуге"}
+{"query_id": "L07-kk:translit", "need_id": "L07", "lang": "kk", "variant": "translit", "text": "men merekelik zhane demalys kunderi zhumys isteymin. bul ushin kosymsha aky tolenuge tiis pe?"}
+{"query_id": "L07-en:clean", "need_id": "L07", "lang": "en", "variant": "clean", "text": "I work on public holidays and weekends. Am I owed extra pay?"}
+{"query_id": "L07-en:typo_light", "need_id": "L07", "lang": "en", "variant": "typo_light", "text": "I work on public holidays and weekends. Am I owed extra pay?"}
+{"query_id": "L07-en:typo_heavy", "need_id": "L07", "lang": "en", "variant": "typo_heavy", "text": "I work on pbulic holdiays and weekends. Am I owed etra pay?"}
+{"query_id": "L07-en:nopunct", "need_id": "L07", "lang": "en", "variant": "nopunct", "text": "i work on public holidays and weekends am i owed extra pay"}
+{"query_id": "L07-en:keywords", "need_id": "L07", "lang": "en", "variant": "keywords", "text": "public holidays weekends extra"}
+{"query_id": "C01-ru:clean", "need_id": "C01", "lang": "ru", "variant": "clean", "text": "В течение какого времени можно подать в суд, чтобы вернуть долг?"}
+{"query_id": "C01-ru:typo_light", "need_id": "C01", "lang": "ru", "variant": "typo_light", "text": "В течение какого времени можно подать в суд, чтобы вернуть долг?"}
+{"query_id": "C01-ru:typo_heavy", "need_id": "C01", "lang": "ru", "variant": "typo_heavy", "text": "В течение какого времени мжно подать в суд, чтобы вернуть долг?"}
+{"query_id": "C01-ru:nopunct", "need_id": "C01", "lang": "ru", "variant": "nopunct", "text": "в течение какого времени можно подать в суд чтобы вернуть долг"}
+{"query_id": "C01-ru:keywords", "need_id": "C01", "lang": "ru", "variant": "keywords", "text": "течение какого времени вернуть"}
+{"query_id": "C01-ru:translit", "need_id": "C01", "lang": "ru", "variant": "translit", "text": "v techenie kakogo vremeni mozhno podat v sud, chtoby vernut dolg?"}
+{"query_id": "C01:mixed", "need_id": "C01", "lang": "mix", "variant": "mixed", "text": "В течение какого времени можно подать в суд, чтобы вернуть долг? / Қарызды қайтару үшін сотқа қанша уақыт ішінде жүгінуге болады?"}
+{"query_id": "C01-kk:clean", "need_id": "C01", "lang": "kk", "variant": "clean", "text": "Қарызды қайтару үшін сотқа қанша уақыт ішінде жүгінуге болады?"}
+{"query_id": "C01-kk:typo_light", "need_id": "C01", "lang": "kk", "variant": "typo_light", "text": "Қаырзды қайтару үшін стқа қанша уақыт ішінде жүгінуге боалды?"}
+{"query_id": "C01-kk:typo_heavy", "need_id": "C01", "lang": "kk", "variant": "typo_heavy", "text": "Қарызды қайтару үшін соттқа қанша уақыт ішінде жүгінуге болдаы?"}
+{"query_id": "C01-kk:nopunct", "need_id": "C01", "lang": "kk", "variant": "nopunct", "text": "қарызды қайтару үшін сотқа қанша уақыт ішінде жүгінуге болады"}
+{"query_id": "C01-kk:keywords", "need_id": "C01", "lang": "kk", "variant": "keywords", "text": "Қарызды қайтару ішінде жүгінуге"}
+{"query_id": "C01-kk:translit", "need_id": "C01", "lang": "kk", "variant": "translit", "text": "karyzdy kaytaru ushin sotka kansha uakyt ishinde zhuginuge bolady?"}
+{"query_id": "C01-en:clean", "need_id": "C01", "lang": "en", "variant": "clean", "text": "How long do I have to go to court to recover a debt?"}
+{"query_id": "C01-en:typo_light", "need_id": "C01", "lang": "en", "variant": "typo_light", "text": "How long do I have to go to court to reecover a debt?"}
+{"query_id": "C01-en:typo_heavy", "need_id": "C01", "lang": "en", "variant": "typo_heavy", "text": "How long do I have to go to court to recover a debt?"}
+{"query_id": "C01-en:nopunct", "need_id": "C01", "lang": "en", "variant": "nopunct", "text": "how long do i have to go to court to recover a debt"}
+{"query_id": "C01-en:keywords", "need_id": "C01", "lang": "en", "variant": "keywords", "text": "long have court recover"}
+{"query_id": "C02-ru:clean", "need_id": "C02", "lang": "ru", "variant": "clean", "text": "Арендодатель хочет в середине срока повысить плату за квартиру. Имеет ли он на это право?"}
+{"query_id": "C02-ru:typo_light", "need_id": "C02", "lang": "ru", "variant": "typo_light", "text": "Арендодатель хочет в середине срока повысить плату за квартиру. Имеет ли он на это право?"}
+{"query_id": "C02-ru:typo_heavy", "need_id": "C02", "lang": "ru", "variant": "typo_heavy", "text": "Арендодатель хчет в сеедине срока повысить плату за квартирру. Имеет ли он на это право?"}
+{"query_id": "C02-ru:nopunct", "need_id": "C02", "lang": "ru", "variant": "nopunct", "text": "арендодатель хочет в середине срока повысить плату за квартиру имеет ли он на это право"}
+{"query_id": "C02-ru:keywords", "need_id": "C02", "lang": "ru", "variant": "keywords", "text": "Арендодатель середине повысить квартиру"}
+{"query_id": "C02-ru:translit", "need_id": "C02", "lang": "ru", "variant": "translit", "text": "arendodatel khochet v seredine sroka povysit platu za kvartiru. imeet li on na eto pravo?"}
+{"query_id": "C02:mixed", "need_id": "C02", "lang": "mix", "variant": "mixed", "text": "Арендодатель хочет в середине срока повысить плату за квартиру. Имеет ли он на это право? / Пәтер иесі жалдау мерзімінің ортасында ақыны көтергісі келеді. Оның бұған құқығы бар ма?"}
+{"query_id": "C02-kk:clean", "need_id": "C02", "lang": "kk", "variant": "clean", "text": "Пәтер иесі жалдау мерзімінің ортасында ақыны көтергісі келеді. Оның бұған құқығы бар ма?"}
+{"query_id": "C02-kk:typo_light", "need_id": "C02", "lang": "kk", "variant": "typo_light", "text": "Пәттер иесі жалдау мерзімінің ортасында ақыны көтергісі келеді. Оның бұған құқығы бар ма?"}
+{"query_id": "C02-kk:typo_heavy", "need_id": "C02", "lang": "kk", "variant": "typo_heavy", "text": "Пәтер иесі жалдау мерзімінің ортсаында ақыны көтегрісі келеді. Оның бұған құқғыы бар ма?"}
+{"query_id": "C02-kk:nopunct", "need_id": "C02", "lang": "kk", "variant": "nopunct", "text": "пәтер иесі жалдау мерзімінің ортасында ақыны көтергісі келеді оның бұған құқығы бар ма"}
+{"query_id": "C02-kk:keywords", "need_id": "C02", "lang": "kk", "variant": "keywords", "text": "жалдау мерзімінің ортасында көтергісі"}
+{"query_id": "C02-kk:translit", "need_id": "C02", "lang": "kk", "variant": "translit", "text": "pater iesi zhaldau merziminin ortasynda akyny kotergisi keledi. onyn bugan kukygy bar ma?"}
+{"query_id": "C02-en:clean", "need_id": "C02", "lang": "en", "variant": "clean", "text": "My landlord wants to raise the rent in the middle of the lease. Can he do that?"}
+{"query_id": "C02-en:typo_light", "need_id": "C02", "lang": "en", "variant": "typo_light", "text": "My lnadlord wants to rise the rent in the middle of the lease. Can he do that?"}
+{"query_id": "C02-en:typo_heavy", "need_id": "C02", "lang": "en", "variant": "typo_heavy", "text": "My landlord wants to raise the rent in the middle of the lease. Can he do that?"}
+{"query_id": "C02-en:nopunct", "need_id": "C02", "lang": "en", "variant": "nopunct", "text": "my landlord wants to raise the rent in the middle of the lease can he do that"}
+{"query_id": "C02-en:keywords", "need_id": "C02", "lang": "en", "variant": "keywords", "text": "landlord wants raise middle"}
+{"query_id": "C03-ru:clean", "need_id": "C03", "lang": "ru", "variant": "clean", "text": "Я дал знакомому деньги в долг по расписке. Как закон регулирует возврат займа?"}
+{"query_id": "C03-ru:typo_light", "need_id": "C03", "lang": "ru", "variant": "typo_light", "text": "Я дал знакомому деньги в долг по расписке. Как закон регулирует возврат займа?"}
+{"query_id": "C03-ru:typo_heavy", "need_id": "C03", "lang": "ru", "variant": "typo_heavy", "text": "Я дал знакомоому деньги в долг по расписке. Как закон регулиирует возврат займа?"}
+{"query_id": "C03-ru:nopunct", "need_id": "C03", "lang": "ru", "variant": "nopunct", "text": "я дал знакомому деньги в долг по расписке как закон регулирует возврат займа"}
+{"query_id": "C03-ru:keywords", "need_id": "C03", "lang": "ru", "variant": "keywords", "text": "знакомому расписке регулирует возврат"}
+{"query_id": "C03-ru:translit", "need_id": "C03", "lang": "ru", "variant": "translit", "text": "ya dal znakomomu dengi v dolg po raspiske. kak zakon reguliruet vozvrat zayma?"}
+{"query_id": "C03:mixed", "need_id": "C03", "lang": "mix", "variant": "mixed", "text": "Я дал знакомому деньги в долг по расписке. Как закон регулирует возврат займа? / Таныс адамға қарызға ақша бердім, қолхат бар. Қарызды қайтаруды заң қалай реттейді?"}
+{"query_id": "C03-kk:clean", "need_id": "C03", "lang": "kk", "variant": "clean", "text": "Таныс адамға қарызға ақша бердім, қолхат бар. Қарызды қайтаруды заң қалай реттейді?"}
+{"query_id": "C03-kk:typo_light", "need_id": "C03", "lang": "kk", "variant": "typo_light", "text": "Тнаыс аддамға қарызға ақша бердіім, қоолхат бар. Қарызды қайтаруды заң қалай реттейді?"}
+{"query_id": "C03-kk:typo_heavy", "need_id": "C03", "lang": "kk", "variant": "typo_heavy", "text": "Тааныс адамға қарызға ақша бердім, қолхат бар. Қарызды қатйаруды заң қалай реттейді?"}
+{"query_id": "C03-kk:nopunct", "need_id": "C03", "lang": "kk", "variant": "nopunct", "text": "таныс адамға қарызға ақша бердім қолхат бар қарызды қайтаруды заң қалай реттейді"}
+{"query_id": "C03-kk:keywords", "need_id": "C03", "lang": "kk", "variant": "keywords", "text": "қарызға Қарызды қайтаруды реттейді"}
+{"query_id": "C03-kk:translit", "need_id": "C03", "lang": "kk", "variant": "translit", "text": "tanys adamga karyzga aksha berdim, kolkhat bar. karyzdy kaytarudy zan kalay retteydi?"}
+{"query_id": "C03-en:clean", "need_id": "C03", "lang": "en", "variant": "clean", "text": "I lent money to an acquaintance with a written receipt. How does the law regulate repayment?"}
+{"query_id": "C03-en:typo_light", "need_id": "C03", "lang": "en", "variant": "typo_light", "text": "I lent money to an acquaintance with a written receipt. How does the law regulate repayment?"}
+{"query_id": "C03-en:typo_heavy", "need_id": "C03", "lang": "en", "variant": "typo_heavy", "text": "I lent money to an acqaintance with a written receipt. How does the law regulate repayment?"}
+{"query_id": "C03-en:nopunct", "need_id": "C03", "lang": "en", "variant": "nopunct", "text": "i lent money to an acquaintance with a written receipt how does the law regulate repayment"}
+{"query_id": "C03-en:keywords", "need_id": "C03", "lang": "en", "variant": "keywords", "text": "acquaintance written regulate repayment"}
+{"query_id": "C04-ru:clean", "need_id": "C04", "lang": "ru", "variant": "clean", "text": "Кто имеет право на наследство, если человек умер без завещания?"}
+{"query_id": "C04-ru:typo_light", "need_id": "C04", "lang": "ru", "variant": "typo_light", "text": "Кто иеет право на наследство, если человек умер без завещания?"}
+{"query_id": "C04-ru:typo_heavy", "need_id": "C04", "lang": "ru", "variant": "typo_heavy", "text": "Кто имеет право на наследство, если человек умер без завещнаия?"}
+{"query_id": "C04-ru:nopunct", "need_id": "C04", "lang": "ru", "variant": "nopunct", "text": "кто имеет право на наследство если человек умер без завещания"}
+{"query_id": "C04-ru:keywords", "need_id": "C04", "lang": "ru", "variant": "keywords", "text": "имеет наследство человек завещания"}
+{"query_id": "C04-ru:translit", "need_id": "C04", "lang": "ru", "variant": "translit", "text": "kto imeet pravo na nasledstvo, esli chelovek umer bez zaveshchaniya?"}
+{"query_id": "C04:mixed", "need_id": "C04", "lang": "mix", "variant": "mixed", "text": "Кто имеет право на наследство, если человек умер без завещания? / Адам өсиет қалдырмай қайтыс болса, мұраға кімнің құқығы бар?"}
+{"query_id": "C04-kk:clean", "need_id": "C04", "lang": "kk", "variant": "clean", "text": "Адам өсиет қалдырмай қайтыс болса, мұраға кімнің құқығы бар?"}
+{"query_id": "C04-kk:typo_light", "need_id": "C04", "lang": "kk", "variant": "typo_light", "text": "Адам өсиет қалдрымай қайтыс бола, мұраға кімнің құқығы бар?"}
+{"query_id": "C04-kk:typo_heavy", "need_id": "C04", "lang": "kk", "variant": "typo_heavy", "text": "Адам өсиет қладырмай қайтыс болса, мұраға кімнің құқығы бар?"}
+{"query_id": "C04-kk:nopunct", "need_id": "C04", "lang": "kk", "variant": "nopunct", "text": "адам өсиет қалдырмай қайтыс болса мұраға кімнің құқығы бар"}
+{"query_id": "C04-kk:keywords", "need_id": "C04", "lang": "kk", "variant": "keywords", "text": "қалдырмай қайтыс мұраға кімнің"}
+{"query_id": "C04-kk:translit", "need_id": "C04", "lang": "kk", "variant": "translit", "text": "adam osiet kaldyrmay kaytys bolsa, muraga kimnin kukygy bar?"}
+{"query_id": "C04-en:clean", "need_id": "C04", "lang": "en", "variant": "clean", "text": "Who inherits when a person dies without leaving a will?"}
+{"query_id": "C04-en:typo_light", "need_id": "C04", "lang": "en", "variant": "typo_light", "text": "Who inherits when a pesron dies without leaving a will?"}
+{"query_id": "C04-en:typo_heavy", "need_id": "C04", "lang": "en", "variant": "typo_heavy", "text": "Who inherits when a perrson dies without leaving a will?"}
+{"query_id": "C04-en:nopunct", "need_id": "C04", "lang": "en", "variant": "nopunct", "text": "who inherits when a person dies without leaving a will"}
+{"query_id": "C04-en:keywords", "need_id": "C04", "lang": "en", "variant": "keywords", "text": "inherits person without leaving"}
+{"query_id": "C06-ru:clean", "need_id": "C06", "lang": "ru", "variant": "clean", "text": "Я купил телефон, а он оказался неисправным. Могу ли я вернуть деньги?"}
+{"query_id": "C06-ru:typo_light", "need_id": "C06", "lang": "ru", "variant": "typo_light", "text": "Я купил телефон, а он оказался неисправным. Могу ли я веруть денньги?"}
+{"query_id": "C06-ru:typo_heavy", "need_id": "C06", "lang": "ru", "variant": "typo_heavy", "text": "Я куил телефон, а он оказался неисправным. Могу ли я вернуть деньги?"}
+{"query_id": "C06-ru:nopunct", "need_id": "C06", "lang": "ru", "variant": "nopunct", "text": "я купил телефон а он оказался неисправным могу ли я вернуть деньги"}
+{"query_id": "C06-ru:keywords", "need_id": "C06", "lang": "ru", "variant": "keywords", "text": "телефон оказался неисправным вернуть"}
+{"query_id": "C06-ru:translit", "need_id": "C06", "lang": "ru", "variant": "translit", "text": "ya kupil telefon, a on okazalsya neispravnym. mogu li ya vernut dengi?"}
+{"query_id": "C06:mixed", "need_id": "C06", "lang": "mix", "variant": "mixed", "text": "Я купил телефон, а он оказался неисправным. Могу ли я вернуть деньги? / Телефон сатып алдым, ол ақаулы болып шықты. Ақшамды қайтарып алуға бола ма?"}
+{"query_id": "C06-kk:clean", "need_id": "C06", "lang": "kk", "variant": "clean", "text": "Телефон сатып алдым, ол ақаулы болып шықты. Ақшамды қайтарып алуға бола ма?"}
+{"query_id": "C06-kk:typo_light", "need_id": "C06", "lang": "kk", "variant": "typo_light", "text": "Телефон сатып адлым, ол ақаулы болып шықты. Ақшамды қайтарып алуға бола ма?"}
+{"query_id": "C06-kk:typo_heavy", "need_id": "C06", "lang": "kk", "variant": "typo_heavy", "text": "Телфон сатып алдым, ол ақаулы болып шықты. Ақшамды қайтарып алға бола ма?"}
+{"query_id": "C06-kk:nopunct", "need_id": "C06", "lang": "kk", "variant": "nopunct", "text": "телефон сатып алдым ол ақаулы болып шықты ақшамды қайтарып алуға бола ма"}
+{"query_id": "C06-kk:keywords", "need_id": "C06", "lang": "kk", "variant": "keywords", "text": "Телефон ақаулы Ақшамды қайтарып"}
+{"query_id": "C06-kk:translit", "need_id": "C06", "lang": "kk", "variant": "translit", "text": "telefon satyp aldym, ol akauly bolyp shykty. akshamdy kaytaryp aluga bola ma?"}
+{"query_id": "C06-en:clean", "need_id": "C06", "lang": "en", "variant": "clean", "text": "I bought a phone and it turned out to be defective. Can I get a refund?"}
+{"query_id": "C06-en:typo_light", "need_id": "C06", "lang": "en", "variant": "typo_light", "text": "I bought a phone and it turned out to be defective. Can I get a refund?"}
+{"query_id": "C06-en:typo_heavy", "need_id": "C06", "lang": "en", "variant": "typo_heavy", "text": "I bought a phne and it turned out to be defective. Can I get a refund?"}
+{"query_id": "C06-en:nopunct", "need_id": "C06", "lang": "en", "variant": "nopunct", "text": "i bought a phone and it turned out to be defective can i get a refund"}
+{"query_id": "C06-en:keywords", "need_id": "C06", "lang": "en", "variant": "keywords", "text": "bought turned defective refund"}
+{"query_id": "F01-ru:clean", "need_id": "F01", "lang": "ru", "variant": "clean", "text": "Какой размер алиментов на одного ребёнка и как их взыскать?"}
+{"query_id": "F01-ru:typo_light", "need_id": "F01", "lang": "ru", "variant": "typo_light", "text": "Какой размер алиментов на одного ребёнка и как их взыскаьт?"}
+{"query_id": "F01-ru:typo_heavy", "need_id": "F01", "lang": "ru", "variant": "typo_heavy", "text": "Каккой рамер алиментов на одного реёнка и как их взыскать?"}
+{"query_id": "F01-ru:nopunct", "need_id": "F01", "lang": "ru", "variant": "nopunct", "text": "какой размер алиментов на одного ребёнка и как их взыскать"}
+{"query_id": "F01-ru:keywords", "need_id": "F01", "lang": "ru", "variant": "keywords", "text": "размер алиментов ребёнка взыскать"}
+{"query_id": "F01-ru:translit", "need_id": "F01", "lang": "ru", "variant": "translit", "text": "kakoy razmer alimentov na odnogo rebenka i kak ikh vzyskat?"}
+{"query_id": "F01:mixed", "need_id": "F01", "lang": "mix", "variant": "mixed", "text": "Какой размер алиментов на одного ребёнка и как их взыскать? / Бір балаға алименттің мөлшері қандай және оны қалай өндіріп алуға болады?"}
+{"query_id": "F01-kk:clean", "need_id": "F01", "lang": "kk", "variant": "clean", "text": "Бір балаға алименттің мөлшері қандай және оны қалай өндіріп алуға болады?"}
+{"query_id": "F01-kk:typo_light", "need_id": "F01", "lang": "kk", "variant": "typo_light", "text": "Бір балаға алименттің мөлшері қандай және оны қаай өндіріп алуға болады?"}
+{"query_id": "F01-kk:typo_heavy", "need_id": "F01", "lang": "kk", "variant": "typo_heavy", "text": "Бір балаға алимменттің мөлшері қанддай және оны қалай өндіріп алғуа болады?"}
+{"query_id": "F01-kk:nopunct", "need_id": "F01", "lang": "kk", "variant": "nopunct", "text": "бір балаға алименттің мөлшері қандай және оны қалай өндіріп алуға болады"}
+{"query_id": "F01-kk:keywords", "need_id": "F01", "lang": "kk", "variant": "keywords", "text": "балаға алименттің мөлшері өндіріп"}
+{"query_id": "F01-kk:translit", "need_id": "F01", "lang": "kk", "variant": "translit", "text": "bir balaga alimenttin molsheri kanday zhane ony kalay ondirip aluga bolady?"}
+{"query_id": "F01-en:clean", "need_id": "F01", "lang": "en", "variant": "clean", "text": "How much child support is owed for one child and how is it collected?"}
+{"query_id": "F01-en:typo_light", "need_id": "F01", "lang": "en", "variant": "typo_light", "text": "How much child support is owed for one child and how is it collected?"}
+{"query_id": "F01-en:typo_heavy", "need_id": "F01", "lang": "en", "variant": "typo_heavy", "text": "How much child suppoort is owed for one child and how is it collected?"}
+{"query_id": "F01-en:nopunct", "need_id": "F01", "lang": "en", "variant": "nopunct", "text": "how much child support is owed for one child and how is it collected"}
+{"query_id": "F01-en:keywords", "need_id": "F01", "lang": "en", "variant": "keywords", "text": "child support child collected"}
+{"query_id": "F02-ru:clean", "need_id": "F02", "lang": "ru", "variant": "clean", "text": "Как расторгнуть брак, если есть общие несовершеннолетние дети?"}
+{"query_id": "F02-ru:typo_light", "need_id": "F02", "lang": "ru", "variant": "typo_light", "text": "Как расторгнуть брак, если есть общие несовершеннолетнние дети?"}
+{"query_id": "F02-ru:typo_heavy", "need_id": "F02", "lang": "ru", "variant": "typo_heavy", "text": "Как расторгнуть брак, если есть общие неосвершеннолетние дети?"}
+{"query_id": "F02-ru:nopunct", "need_id": "F02", "lang": "ru", "variant": "nopunct", "text": "как расторгнуть брак если есть общие несовершеннолетние дети"}
+{"query_id": "F02-ru:keywords", "need_id": "F02", "lang": "ru", "variant": "keywords", "text": "расторгнуть брак общие несовершеннолетние"}
+{"query_id": "F02-ru:translit", "need_id": "F02", "lang": "ru", "variant": "translit", "text": "kak rastorgnut brak, esli est obshchie nesovershennoletnie deti?"}
+{"query_id": "F02:mixed", "need_id": "F02", "lang": "mix", "variant": "mixed", "text": "Как расторгнуть брак, если есть общие несовершеннолетние дети? / Кәмелетке толмаған ортақ балалар болса, некені қалай бұзуға болады?"}
+{"query_id": "F02-kk:clean", "need_id": "F02", "lang": "kk", "variant": "clean", "text": "Кәмелетке толмаған ортақ балалар болса, некені қалай бұзуға болады?"}
+{"query_id": "F02-kk:typo_light", "need_id": "F02", "lang": "kk", "variant": "typo_light", "text": "Кәмелетке толмаған ортақ балалар болса, некені қалай бұзуға болады?"}
+{"query_id": "F02-kk:typo_heavy", "need_id": "F02", "lang": "kk", "variant": "typo_heavy", "text": "Кәемлетке толмаған оратқ балалар болса, некені қалай бұззуға болады?"}
+{"query_id": "F02-kk:nopunct", "need_id": "F02", "lang": "kk", "variant": "nopunct", "text": "кәмелетке толмаған ортақ балалар болса некені қалай бұзуға болады"}
+{"query_id": "F02-kk:keywords", "need_id": "F02", "lang": "kk", "variant": "keywords", "text": "Кәмелетке толмаған балалар некені"}
+{"query_id": "F02-kk:translit", "need_id": "F02", "lang": "kk", "variant": "translit", "text": "kameletke tolmagan ortak balalar bolsa, nekeni kalay buzuga bolady?"}
+{"query_id": "F02-en:clean", "need_id": "F02", "lang": "en", "variant": "clean", "text": "How do we divorce when we have minor children together?"}
+{"query_id": "F02-en:typo_light", "need_id": "F02", "lang": "en", "variant": "typo_light", "text": "How do we divorce when we have minor children togeter?"}
+{"query_id": "F02-en:typo_heavy", "need_id": "F02", "lang": "en", "variant": "typo_heavy", "text": "How do we divorce when we have minor children together?"}
+{"query_id": "F02-en:nopunct", "need_id": "F02", "lang": "en", "variant": "nopunct", "text": "how do we divorce when we have minor children together"}
+{"query_id": "F02-en:keywords", "need_id": "F02", "lang": "en", "variant": "keywords", "text": "divorce minor children together"}
+{"query_id": "F03-ru:clean", "need_id": "F03", "lang": "ru", "variant": "clean", "text": "Как делится имущество супругов при разводе?"}
+{"query_id": "F03-ru:typo_light", "need_id": "F03", "lang": "ru", "variant": "typo_light", "text": "Как делится имущество супругов при развооде?"}
+{"query_id": "F03-ru:typo_heavy", "need_id": "F03", "lang": "ru", "variant": "typo_heavy", "text": "Как делится имщество супругов при разводе?"}
+{"query_id": "F03-ru:nopunct", "need_id": "F03", "lang": "ru", "variant": "nopunct", "text": "как делится имущество супругов при разводе"}
+{"query_id": "F03-ru:keywords", "need_id": "F03", "lang": "ru", "variant": "keywords", "text": "делится имущество супругов разводе"}
+{"query_id": "F03-ru:translit", "need_id": "F03", "lang": "ru", "variant": "translit", "text": "kak delitsya imushchestvo suprugov pri razvode?"}
+{"query_id": "F03:mixed", "need_id": "F03", "lang": "mix", "variant": "mixed", "text": "Как делится имущество супругов при разводе? / Ажырасқан кезде жұбайлардың мүлкі қалай бөлінеді?"}
+{"query_id": "F03-kk:clean", "need_id": "F03", "lang": "kk", "variant": "clean", "text": "Ажырасқан кезде жұбайлардың мүлкі қалай бөлінеді?"}
+{"query_id": "F03-kk:typo_light", "need_id": "F03", "lang": "kk", "variant": "typo_light", "text": "Ажыырасқан кезде жұбайлардың мүлкі қалай бөлінеді?"}
+{"query_id": "F03-kk:typo_heavy", "need_id": "F03", "lang": "kk", "variant": "typo_heavy", "text": "Ажырасқан кезде жұбайллардың мүлкі қаалй бөлінеді?"}
+{"query_id": "F03-kk:nopunct", "need_id": "F03", "lang": "kk", "variant": "nopunct", "text": "ажырасқан кезде жұбайлардың мүлкі қалай бөлінеді"}
+{"query_id": "F03-kk:keywords", "need_id": "F03", "lang": "kk", "variant": "keywords", "text": "Ажырасқан кезде жұбайлардың бөлінеді"}
+{"query_id": "F03-kk:translit", "need_id": "F03", "lang": "kk", "variant": "translit", "text": "azhyraskan kezde zhubaylardyn mulki kalay bolinedi?"}
+{"query_id": "F03-en:clean", "need_id": "F03", "lang": "en", "variant": "clean", "text": "How is property divided between spouses in a divorce?"}
+{"query_id": "F03-en:typo_light", "need_id": "F03", "lang": "en", "variant": "typo_light", "text": "How is property divided between spouses in a divorce?"}
+{"query_id": "F03-en:typo_heavy", "need_id": "F03", "lang": "en", "variant": "typo_heavy", "text": "How is property divided beween spouses in a divorce?"}
+{"query_id": "F03-en:nopunct", "need_id": "F03", "lang": "en", "variant": "nopunct", "text": "how is property divided between spouses in a divorce"}
+{"query_id": "F03-en:keywords", "need_id": "F03", "lang": "en", "variant": "keywords", "text": "property divided between spouses"}
+{"query_id": "F04-ru:clean", "need_id": "F04", "lang": "ru", "variant": "clean", "text": "Какие условия нужны, чтобы усыновить ребёнка?"}
+{"query_id": "F04-ru:typo_light", "need_id": "F04", "lang": "ru", "variant": "typo_light", "text": "Какие условия нужны, чтобы усыновить ребёнка?"}
+{"query_id": "F04-ru:typo_heavy", "need_id": "F04", "lang": "ru", "variant": "typo_heavy", "text": "Ккаие условия нужны, чтобы усыновить ребёнка?"}
+{"query_id": "F04-ru:nopunct", "need_id": "F04", "lang": "ru", "variant": "nopunct", "text": "какие условия нужны чтобы усыновить ребёнка"}
+{"query_id": "F04-ru:keywords", "need_id": "F04", "lang": "ru", "variant": "keywords", "text": "Какие условия усыновить ребёнка"}
+{"query_id": "F04-ru:translit", "need_id": "F04", "lang": "ru", "variant": "translit", "text": "kakie usloviya nuzhny, chtoby usynovit rebenka?"}
+{"query_id": "F04:mixed", "need_id": "F04", "lang": "mix", "variant": "mixed", "text": "Какие условия нужны, чтобы усыновить ребёнка? / Баланы асырап алу үшін қандай шарттар қажет?"}
+{"query_id": "F04-kk:clean", "need_id": "F04", "lang": "kk", "variant": "clean", "text": "Баланы асырап алу үшін қандай шарттар қажет?"}
+{"query_id": "F04-kk:typo_light", "need_id": "F04", "lang": "kk", "variant": "typo_light", "text": "Баланы асырап алу үшін қандай шарттар қажет?"}
+{"query_id": "F04-kk:typo_heavy", "need_id": "F04", "lang": "kk", "variant": "typo_heavy", "text": "Балааны асырап алу үшін қандай шарттар қжает?"}
+{"query_id": "F04-kk:nopunct", "need_id": "F04", "lang": "kk", "variant": "nopunct", "text": "баланы асырап алу үшін қандай шарттар қажет"}
+{"query_id": "F04-kk:keywords", "need_id": "F04", "lang": "kk", "variant": "keywords", "text": "Баланы асырап қандай шарттар"}
+{"query_id": "F04-kk:translit", "need_id": "F04", "lang": "kk", "variant": "translit", "text": "balany asyrap alu ushin kanday sharttar kazhet?"}
+{"query_id": "F04-en:clean", "need_id": "F04", "lang": "en", "variant": "clean", "text": "What conditions must be met to adopt a child?"}
+{"query_id": "F04-en:typo_light", "need_id": "F04", "lang": "en", "variant": "typo_light", "text": "What conditions must be met to adopt a child?"}
+{"query_id": "F04-en:typo_heavy", "need_id": "F04", "lang": "en", "variant": "typo_heavy", "text": "What conditinos must be met to adopt a child?"}
+{"query_id": "F04-en:nopunct", "need_id": "F04", "lang": "en", "variant": "nopunct", "text": "what conditions must be met to adopt a child"}
+{"query_id": "F04-en:keywords", "need_id": "F04", "lang": "en", "variant": "keywords", "text": "What conditions adopt child"}
+{"query_id": "T01-ru:clean", "need_id": "T01", "lang": "ru", "variant": "clean", "text": "Какой процент подоходного налога удерживают с зарплаты?"}
+{"query_id": "T01-ru:typo_light", "need_id": "T01", "lang": "ru", "variant": "typo_light", "text": "Какой процент подоходнгоо налога удерживают с зарплаты?"}
+{"query_id": "T01-ru:typo_heavy", "need_id": "T01", "lang": "ru", "variant": "typo_heavy", "text": "Какой процент подоходонго налога удерживают с зрплаты?"}
+{"query_id": "T01-ru:nopunct", "need_id": "T01", "lang": "ru", "variant": "nopunct", "text": "какой процент подоходного налога удерживают с зарплаты"}
+{"query_id": "T01-ru:keywords", "need_id": "T01", "lang": "ru", "variant": "keywords", "text": "процент подоходного удерживают зарплаты"}
+{"query_id": "T01-ru:translit", "need_id": "T01", "lang": "ru", "variant": "translit", "text": "kakoy protsent podokhodnogo naloga uderzhivayut s zarplaty?"}
+{"query_id": "T01:mixed", "need_id": "T01", "lang": "mix", "variant": "mixed", "text": "Какой процент подоходного налога удерживают с зарплаты? / Жалақыдан табыс салығының қандай пайызы ұсталады?"}
+{"query_id": "T01-kk:clean", "need_id": "T01", "lang": "kk", "variant": "clean", "text": "Жалақыдан табыс салығының қандай пайызы ұсталады?"}
+{"query_id": "T01-kk:typo_light", "need_id": "T01", "lang": "kk", "variant": "typo_light", "text": "Жлақыдан табыс салығның қандай пайызы ұсталады?"}
+{"query_id": "T01-kk:typo_heavy", "need_id": "T01", "lang": "kk", "variant": "typo_heavy", "text": "Жалақыддан табыс салығының қандай пайызы ұсталады?"}
+{"query_id": "T01-kk:nopunct", "need_id": "T01", "lang": "kk", "variant": "nopunct", "text": "жалақыдан табыс салығының қандай пайызы ұсталады"}
+{"query_id": "T01-kk:keywords", "need_id": "T01", "lang": "kk", "variant": "keywords", "text": "Жалақыдан салығының қандай ұсталады"}
+{"query_id": "T01-kk:translit", "need_id": "T01", "lang": "kk", "variant": "translit", "text": "zhalakydan tabys salygynyn kanday payyzy ustalady?"}
+{"query_id": "T01-en:clean", "need_id": "T01", "lang": "en", "variant": "clean", "text": "What percentage of income tax is withheld from a salary?"}
+{"query_id": "T01-en:typo_light", "need_id": "T01", "lang": "en", "variant": "typo_light", "text": "What percentage of income tax is wihtheld from a salary?"}
+{"query_id": "T01-en:typo_heavy", "need_id": "T01", "lang": "en", "variant": "typo_heavy", "text": "What percentage of income tax is withheld from a salary?"}
+{"query_id": "T01-en:nopunct", "need_id": "T01", "lang": "en", "variant": "nopunct", "text": "what percentage of income tax is withheld from a salary"}
+{"query_id": "T01-en:keywords", "need_id": "T01", "lang": "en", "variant": "keywords", "text": "percentage income withheld salary"}
+{"query_id": "T02-ru:clean", "need_id": "T02", "lang": "ru", "variant": "clean", "text": "Какая ставка НДС в Казахстане?"}
+{"query_id": "T02-ru:typo_light", "need_id": "T02", "lang": "ru", "variant": "typo_light", "text": "Какая ставка НДС в Казахстане?"}
+{"query_id": "T02-ru:typo_heavy", "need_id": "T02", "lang": "ru", "variant": "typo_heavy", "text": "Каккая ставка НДС в Казахстане?"}
+{"query_id": "T02-ru:nopunct", "need_id": "T02", "lang": "ru", "variant": "nopunct", "text": "какая ставка ндс в казахстане"}
+{"query_id": "T02-ru:keywords", "need_id": "T02", "lang": "ru", "variant": "keywords", "text": "Какая ставка НДС Казахстане"}
+{"query_id": "T02-ru:translit", "need_id": "T02", "lang": "ru", "variant": "translit", "text": "kakaya stavka nds v kazakhstane?"}
+{"query_id": "T02:mixed", "need_id": "T02", "lang": "mix", "variant": "mixed", "text": "Какая ставка НДС в Казахстане? / Қазақстанда ҚҚС мөлшерлемесі қандай?"}
+{"query_id": "T02-kk:clean", "need_id": "T02", "lang": "kk", "variant": "clean", "text": "Қазақстанда ҚҚС мөлшерлемесі қандай?"}
+{"query_id": "T02-kk:typo_light", "need_id": "T02", "lang": "kk", "variant": "typo_light", "text": "Қазақстанда ҚҚС мөлшерлемесі қандай?"}
+{"query_id": "T02-kk:typo_heavy", "need_id": "T02", "lang": "kk", "variant": "typo_heavy", "text": "Қазақстанда ҚҚС мөлшрлемесі қандай?"}
+{"query_id": "T02-kk:nopunct", "need_id": "T02", "lang": "kk", "variant": "nopunct", "text": "қазақстанда ққс мөлшерлемесі қандай"}
+{"query_id": "T02-kk:keywords", "need_id": "T02", "lang": "kk", "variant": "keywords", "text": "Қазақстанда ҚҚС мөлшерлемесі қандай"}
+{"query_id": "T02-kk:translit", "need_id": "T02", "lang": "kk", "variant": "translit", "text": "kazakstanda kks molsherlemesi kanday?"}
+{"query_id": "T02-en:clean", "need_id": "T02", "lang": "en", "variant": "clean", "text": "What is the VAT rate in Kazakhstan?"}
+{"query_id": "T02-en:typo_light", "need_id": "T02", "lang": "en", "variant": "typo_light", "text": "What is the VAT rate in Kazakhstan?"}
+{"query_id": "T02-en:typo_heavy", "need_id": "T02", "lang": "en", "variant": "typo_heavy", "text": "What is the VAT rate in Kzakhstan?"}
+{"query_id": "T02-en:nopunct", "need_id": "T02", "lang": "en", "variant": "nopunct", "text": "what is the vat rate in kazakhstan"}
+{"query_id": "T02-en:keywords", "need_id": "T02", "lang": "en", "variant": "keywords", "text": "What the rate Kazakhstan"}
+{"query_id": "T03-ru:clean", "need_id": "T03", "lang": "ru", "variant": "clean", "text": "Нужно ли платить налог на квартиру и машину, которыми я владею?"}
+{"query_id": "T03-ru:typo_light", "need_id": "T03", "lang": "ru", "variant": "typo_light", "text": "Нужно ли платить налог на квартиру и машину, которыми я вадею?"}
+{"query_id": "T03-ru:typo_heavy", "need_id": "T03", "lang": "ru", "variant": "typo_heavy", "text": "Нужно ли платить налог на квариру и машину, которыми я владею?"}
+{"query_id": "T03-ru:nopunct", "need_id": "T03", "lang": "ru", "variant": "nopunct", "text": "нужно ли платить налог на квартиру и машину которыми я владею"}
+{"query_id": "T03-ru:keywords", "need_id": "T03", "lang": "ru", "variant": "keywords", "text": "платить квартиру машину которыми"}
+{"query_id": "T03-ru:translit", "need_id": "T03", "lang": "ru", "variant": "translit", "text": "nuzhno li platit nalog na kvartiru i mashinu, kotorymi ya vladeyu?"}
+{"query_id": "T03:mixed", "need_id": "T03", "lang": "mix", "variant": "mixed", "text": "Нужно ли платить налог на квартиру и машину, которыми я владею? / Менің пәтерім мен көлігім үшін салық төлеу керек пе?"}
+{"query_id": "T03-kk:clean", "need_id": "T03", "lang": "kk", "variant": "clean", "text": "Менің пәтерім мен көлігім үшін салық төлеу керек пе?"}
+{"query_id": "T03-kk:typo_light", "need_id": "T03", "lang": "kk", "variant": "typo_light", "text": "Менің пәтерім мен көлгім үшін салық төлеу керек пе?"}
+{"query_id": "T03-kk:typo_heavy", "need_id": "T03", "lang": "kk", "variant": "typo_heavy", "text": "Менің пәтерім мен көілгім үшін салық төлеу крек пе?"}
+{"query_id": "T03-kk:nopunct", "need_id": "T03", "lang": "kk", "variant": "nopunct", "text": "менің пәтерім мен көлігім үшін салық төлеу керек пе"}
+{"query_id": "T03-kk:keywords", "need_id": "T03", "lang": "kk", "variant": "keywords", "text": "Менің пәтерім көлігім салық"}
+{"query_id": "T03-kk:translit", "need_id": "T03", "lang": "kk", "variant": "translit", "text": "menin paterim men koligim ushin salyk toleu kerek pe?"}
+{"query_id": "T03-en:clean", "need_id": "T03", "lang": "en", "variant": "clean", "text": "Do I have to pay tax on an apartment and a car that I own?"}
+{"query_id": "T03-en:typo_light", "need_id": "T03", "lang": "en", "variant": "typo_light", "text": "Do I have to pay tax on an apartment and a car that I own?"}
+{"query_id": "T03-en:typo_heavy", "need_id": "T03", "lang": "en", "variant": "typo_heavy", "text": "Do I have to pay tax on an apartemnt and a car that I own?"}
+{"query_id": "T03-en:nopunct", "need_id": "T03", "lang": "en", "variant": "nopunct", "text": "do i have to pay tax on an apartment and a car that i own"}
+{"query_id": "T03-en:keywords", "need_id": "T03", "lang": "en", "variant": "keywords", "text": "have pay apartment that"}
+{"query_id": "T05-ru:clean", "need_id": "T05", "lang": "ru", "variant": "clean", "text": "Сколько нужно заплатить государственной пошлины, чтобы подать иск в суд?"}
+{"query_id": "T05-ru:typo_light", "need_id": "T05", "lang": "ru", "variant": "typo_light", "text": "Сколько нунжо заплтаить государственной пошлины, чтбоы поодать иск в суд?"}
+{"query_id": "T05-ru:typo_heavy", "need_id": "T05", "lang": "ru", "variant": "typo_heavy", "text": "Сколько нужно заплатить государственной пошлины, чтобы подать иск в суд?"}
+{"query_id": "T05-ru:nopunct", "need_id": "T05", "lang": "ru", "variant": "nopunct", "text": "сколько нужно заплатить государственной пошлины чтобы подать иск в суд"}
+{"query_id": "T05-ru:keywords", "need_id": "T05", "lang": "ru", "variant": "keywords", "text": "Сколько заплатить государственной пошлины"}
+{"query_id": "T05-ru:translit", "need_id": "T05", "lang": "ru", "variant": "translit", "text": "skolko nuzhno zaplatit gosudarstvennoy poshliny, chtoby podat isk v sud?"}
+{"query_id": "T05:mixed", "need_id": "T05", "lang": "mix", "variant": "mixed", "text": "Сколько нужно заплатить государственной пошлины, чтобы подать иск в суд? / Сотқа талап арыз беру үшін мемлекеттік баж қанша төленеді?"}
+{"query_id": "T05-kk:clean", "need_id": "T05", "lang": "kk", "variant": "clean", "text": "Сотқа талап арыз беру үшін мемлекеттік баж қанша төленеді?"}
+{"query_id": "T05-kk:typo_light", "need_id": "T05", "lang": "kk", "variant": "typo_light", "text": "Сотқа талап арыз беру үшін мемлектетік баж қашна төлнееді?"}
+{"query_id": "T05-kk:typo_heavy", "need_id": "T05", "lang": "kk", "variant": "typo_heavy", "text": "Сотқа талап арыз беру үшін ммлекеттік баж қанша төленеді?"}
+{"query_id": "T05-kk:nopunct", "need_id": "T05", "lang": "kk", "variant": "nopunct", "text": "сотқа талап арыз беру үшін мемлекеттік баж қанша төленеді"}
+{"query_id": "T05-kk:keywords", "need_id": "T05", "lang": "kk", "variant": "keywords", "text": "Сотқа талап мемлекеттік төленеді"}
+{"query_id": "T05-kk:translit", "need_id": "T05", "lang": "kk", "variant": "translit", "text": "sotka talap aryz beru ushin memlekettik bazh kansha tolenedi?"}
+{"query_id": "T05-en:clean", "need_id": "T05", "lang": "en", "variant": "clean", "text": "How much state duty must I pay to file a lawsuit?"}
+{"query_id": "T05-en:typo_light", "need_id": "T05", "lang": "en", "variant": "typo_light", "text": "How much state duty must I pay to file a lwsuit?"}
+{"query_id": "T05-en:typo_heavy", "need_id": "T05", "lang": "en", "variant": "typo_heavy", "text": "How much state duty must I pay to file a lwsuit?"}
+{"query_id": "T05-en:nopunct", "need_id": "T05", "lang": "en", "variant": "nopunct", "text": "how much state duty must i pay to file a lawsuit"}
+{"query_id": "T05-en:keywords", "need_id": "T05", "lang": "en", "variant": "keywords", "text": "much state duty lawsuit"}
+{"query_id": "A01-ru:clean", "need_id": "A01", "lang": "ru", "variant": "clean", "text": "Какой штраф за превышение скорости на дороге?"}
+{"query_id": "A01-ru:typo_light", "need_id": "A01", "lang": "ru", "variant": "typo_light", "text": "Какой штраф за превышение скорости на дороге?"}
+{"query_id": "A01-ru:typo_heavy", "need_id": "A01", "lang": "ru", "variant": "typo_heavy", "text": "Какой штраф за превышение скорости на дорге?"}
+{"query_id": "A01-ru:nopunct", "need_id": "A01", "lang": "ru", "variant": "nopunct", "text": "какой штраф за превышение скорости на дороге"}
+{"query_id": "A01-ru:keywords", "need_id": "A01", "lang": "ru", "variant": "keywords", "text": "Какой превышение скорости дороге"}
+{"query_id": "A01-ru:translit", "need_id": "A01", "lang": "ru", "variant": "translit", "text": "kakoy shtraf za prevyshenie skorosti na doroge?"}
+{"query_id": "A01:mixed", "need_id": "A01", "lang": "mix", "variant": "mixed", "text": "Какой штраф за превышение скорости на дороге? / Жолда жылдамдықты асырғаны үшін қандай айыппұл бар?"}
+{"query_id": "A01-kk:clean", "need_id": "A01", "lang": "kk", "variant": "clean", "text": "Жолда жылдамдықты асырғаны үшін қандай айыппұл бар?"}
+{"query_id": "A01-kk:typo_light", "need_id": "A01", "lang": "kk", "variant": "typo_light", "text": "Жолда жылдамдықты асырғаны үшін қандай айыппұл бар?"}
+{"query_id": "A01-kk:typo_heavy", "need_id": "A01", "lang": "kk", "variant": "typo_heavy", "text": "Жолда жлдамдықты асырғаны үшін қандай айыппұл бар?"}
+{"query_id": "A01-kk:nopunct", "need_id": "A01", "lang": "kk", "variant": "nopunct", "text": "жолда жылдамдықты асырғаны үшін қандай айыппұл бар"}
+{"query_id": "A01-kk:keywords", "need_id": "A01", "lang": "kk", "variant": "keywords", "text": "жылдамдықты асырғаны қандай айыппұл"}
+{"query_id": "A01-kk:translit", "need_id": "A01", "lang": "kk", "variant": "translit", "text": "zholda zhyldamdykty asyrgany ushin kanday ayyppul bar?"}
+{"query_id": "A01-en:clean", "need_id": "A01", "lang": "en", "variant": "clean", "text": "What is the fine for speeding?"}
+{"query_id": "A01-en:typo_light", "need_id": "A01", "lang": "en", "variant": "typo_light", "text": "What is the fine for speeding?"}
+{"query_id": "A01-en:typo_heavy", "need_id": "A01", "lang": "en", "variant": "typo_heavy", "text": "What is the fine for speeding?"}
+{"query_id": "A01-en:nopunct", "need_id": "A01", "lang": "en", "variant": "nopunct", "text": "what is the fine for speeding"}
+{"query_id": "A01-en:keywords", "need_id": "A01", "lang": "en", "variant": "keywords", "text": "What the fine speeding"}
+{"query_id": "A02-ru:clean", "need_id": "A02", "lang": "ru", "variant": "clean", "text": "Какое наказание за вождение автомобиля в нетрезвом состоянии?"}
+{"query_id": "A02-ru:typo_light", "need_id": "A02", "lang": "ru", "variant": "typo_light", "text": "Какое наказание за вождеине автомобиля в нетрезвом состонии?"}
+{"query_id": "A02-ru:typo_heavy", "need_id": "A02", "lang": "ru", "variant": "typo_heavy", "text": "Какое накзание за воджение автоомбиля в нетрезвом состоянии?"}
+{"query_id": "A02-ru:nopunct", "need_id": "A02", "lang": "ru", "variant": "nopunct", "text": "какое наказание за вождение автомобиля в нетрезвом состоянии"}
+{"query_id": "A02-ru:keywords", "need_id": "A02", "lang": "ru", "variant": "keywords", "text": "наказание автомобиля нетрезвом состоянии"}
+{"query_id": "A02-ru:translit", "need_id": "A02", "lang": "ru", "variant": "translit", "text": "kakoe nakazanie za vozhdenie avtomobilya v netrezvom sostoyanii?"}
+{"query_id": "A02:mixed", "need_id": "A02", "lang": "mix", "variant": "mixed", "text": "Какое наказание за вождение автомобиля в нетрезвом состоянии? / Мас күйінде көлік жүргізгені үшін қандай жаза бар?"}
+{"query_id": "A02-kk:clean", "need_id": "A02", "lang": "kk", "variant": "clean", "text": "Мас күйінде көлік жүргізгені үшін қандай жаза бар?"}
+{"query_id": "A02-kk:typo_light", "need_id": "A02", "lang": "kk", "variant": "typo_light", "text": "Мас күйіде көілк жүргізгені үшін қандай жаза бар?"}
+{"query_id": "A02-kk:typo_heavy", "need_id": "A02", "lang": "kk", "variant": "typo_heavy", "text": "Мас күйінде көөлік жүргізгені үшін қандай жаза бар?"}
+{"query_id": "A02-kk:nopunct", "need_id": "A02", "lang": "kk", "variant": "nopunct", "text": "мас күйінде көлік жүргізгені үшін қандай жаза бар"}
+{"query_id": "A02-kk:keywords", "need_id": "A02", "lang": "kk", "variant": "keywords", "text": "күйінде көлік жүргізгені қандай"}
+{"query_id": "A02-kk:translit", "need_id": "A02", "lang": "kk", "variant": "translit", "text": "mas kuyinde kolik zhurgizgeni ushin kanday zhaza bar?"}
+{"query_id": "A02-en:clean", "need_id": "A02", "lang": "en", "variant": "clean", "text": "What is the penalty for drunk driving?"}
+{"query_id": "A02-en:typo_light", "need_id": "A02", "lang": "en", "variant": "typo_light", "text": "What is the penalty for drunk driving?"}
+{"query_id": "A02-en:typo_heavy", "need_id": "A02", "lang": "en", "variant": "typo_heavy", "text": "What is the penalty for drunk driving?"}
+{"query_id": "A02-en:nopunct", "need_id": "A02", "lang": "en", "variant": "nopunct", "text": "what is the penalty for drunk driving"}
+{"query_id": "A02-en:keywords", "need_id": "A02", "lang": "en", "variant": "keywords", "text": "What penalty drunk driving"}
+{"query_id": "A03-ru:clean", "need_id": "A03", "lang": "ru", "variant": "clean", "text": "Штрафуют ли за курение в общественных местах?"}
+{"query_id": "A03-ru:typo_light", "need_id": "A03", "lang": "ru", "variant": "typo_light", "text": "Штррафуют ли за курение в общественных местах?"}
+{"query_id": "A03-ru:typo_heavy", "need_id": "A03", "lang": "ru", "variant": "typo_heavy", "text": "Штрафуют ли за курение в общественных местах?"}
+{"query_id": "A03-ru:nopunct", "need_id": "A03", "lang": "ru", "variant": "nopunct", "text": "штрафуют ли за курение в общественных местах"}
+{"query_id": "A03-ru:keywords", "need_id": "A03", "lang": "ru", "variant": "keywords", "text": "Штрафуют курение общественных местах"}
+{"query_id": "A03-ru:translit", "need_id": "A03", "lang": "ru", "variant": "translit", "text": "shtrafuyut li za kurenie v obshchestvennykh mestakh?"}
+{"query_id": "A03:mixed", "need_id": "A03", "lang": "mix", "variant": "mixed", "text": "Штрафуют ли за курение в общественных местах? / Қоғамдық орындарда темекі шекқені үшін айыппұл салына ма?"}
+{"query_id": "A03-kk:clean", "need_id": "A03", "lang": "kk", "variant": "clean", "text": "Қоғамдық орындарда темекі шекқені үшін айыппұл салына ма?"}
+{"query_id": "A03-kk:typo_light", "need_id": "A03", "lang": "kk", "variant": "typo_light", "text": "Қоғамдық орындарда темекі шекқені үшін айыппұл салына ма?"}
+{"query_id": "A03-kk:typo_heavy", "need_id": "A03", "lang": "kk", "variant": "typo_heavy", "text": "Қоғаммдық орындарда темекі шеекқені үшін айыппұл салына ма?"}
+{"query_id": "A03-kk:nopunct", "need_id": "A03", "lang": "kk", "variant": "nopunct", "text": "қоғамдық орындарда темекі шекқені үшін айыппұл салына ма"}
+{"query_id": "A03-kk:keywords", "need_id": "A03", "lang": "kk", "variant": "keywords", "text": "Қоғамдық орындарда шекқені айыппұл"}
+{"query_id": "A03-kk:translit", "need_id": "A03", "lang": "kk", "variant": "translit", "text": "kogamdyk oryndarda temeki shekkeni ushin ayyppul salyna ma?"}
+{"query_id": "A03-en:clean", "need_id": "A03", "lang": "en", "variant": "clean", "text": "Can I be fined for smoking in public places?"}
+{"query_id": "A03-en:typo_light", "need_id": "A03", "lang": "en", "variant": "typo_light", "text": "Can I be fined for smoking in public places?"}
+{"query_id": "A03-en:typo_heavy", "need_id": "A03", "lang": "en", "variant": "typo_heavy", "text": "Can I be fined for smoking in pulic places?"}
+{"query_id": "A03-en:nopunct", "need_id": "A03", "lang": "en", "variant": "nopunct", "text": "can i be fined for smoking in public places"}
+{"query_id": "A03-en:keywords", "need_id": "A03", "lang": "en", "variant": "keywords", "text": "fined smoking public places"}
+{"query_id": "A04-ru:clean", "need_id": "A04", "lang": "ru", "variant": "clean", "text": "Что считается мелким хулиганством и какое за это наказание?"}
+{"query_id": "A04-ru:typo_light", "need_id": "A04", "lang": "ru", "variant": "typo_light", "text": "Что считается мелким хулиганством и ккаое за это наказание?"}
+{"query_id": "A04-ru:typo_heavy", "need_id": "A04", "lang": "ru", "variant": "typo_heavy", "text": "Что считается мелким хулиганстом и какое за это наказание?"}
+{"query_id": "A04-ru:nopunct", "need_id": "A04", "lang": "ru", "variant": "nopunct", "text": "что считается мелким хулиганством и какое за это наказание"}
+{"query_id": "A04-ru:keywords", "need_id": "A04", "lang": "ru", "variant": "keywords", "text": "считается мелким хулиганством наказание"}
+{"query_id": "A04-ru:translit", "need_id": "A04", "lang": "ru", "variant": "translit", "text": "chto schitaetsya melkim khuliganstvom i kakoe za eto nakazanie?"}
+{"query_id": "A04:mixed", "need_id": "A04", "lang": "mix", "variant": "mixed", "text": "Что считается мелким хулиганством и какое за это наказание? / Ұсақ бұзақылық деп нені айтады және ол үшін қандай жаза бар?"}
+{"query_id": "A04-kk:clean", "need_id": "A04", "lang": "kk", "variant": "clean", "text": "Ұсақ бұзақылық деп нені айтады және ол үшін қандай жаза бар?"}
+{"query_id": "A04-kk:typo_light", "need_id": "A04", "lang": "kk", "variant": "typo_light", "text": "Ұсақ бұұзақылық деп нені айтады және ол үшін қандай жаза бар?"}
+{"query_id": "A04-kk:typo_heavy", "need_id": "A04", "lang": "kk", "variant": "typo_heavy", "text": "Ұсақ бұзаылық деп нені айтады және ол үшін қандай жаза бар?"}
+{"query_id": "A04-kk:nopunct", "need_id": "A04", "lang": "kk", "variant": "nopunct", "text": "ұсақ бұзақылық деп нені айтады және ол үшін қандай жаза бар"}
+{"query_id": "A04-kk:keywords", "need_id": "A04", "lang": "kk", "variant": "keywords", "text": "Ұсақ бұзақылық айтады қандай"}
+{"query_id": "A04-kk:translit", "need_id": "A04", "lang": "kk", "variant": "translit", "text": "usak buzakylyk dep neni aytady zhane ol ushin kanday zhaza bar?"}
+{"query_id": "A04-en:clean", "need_id": "A04", "lang": "en", "variant": "clean", "text": "What counts as petty hooliganism and what is the punishment?"}
+{"query_id": "A04-en:typo_light", "need_id": "A04", "lang": "en", "variant": "typo_light", "text": "What counts as petty hooliganism and what is the punishmment?"}
+{"query_id": "A04-en:typo_heavy", "need_id": "A04", "lang": "en", "variant": "typo_heavy", "text": "What counts as pety hooligansim and what is the punishment?"}
+{"query_id": "A04-en:nopunct", "need_id": "A04", "lang": "en", "variant": "nopunct", "text": "what counts as petty hooliganism and what is the punishment"}
+{"query_id": "A04-en:keywords", "need_id": "A04", "lang": "en", "variant": "keywords", "text": "counts petty hooliganism punishment"}
+{"query_id": "K01-ru:clean", "need_id": "K01", "lang": "ru", "variant": "clean", "text": "Какое наказание грозит за кражу?"}
+{"query_id": "K01-ru:typo_light", "need_id": "K01", "lang": "ru", "variant": "typo_light", "text": "Какое наказание грозит за кражу?"}
+{"query_id": "K01-ru:typo_heavy", "need_id": "K01", "lang": "ru", "variant": "typo_heavy", "text": "Какое наказание грозит за кражу?"}
+{"query_id": "K01-ru:nopunct", "need_id": "K01", "lang": "ru", "variant": "nopunct", "text": "какое наказание грозит за кражу"}
+{"query_id": "K01-ru:keywords", "need_id": "K01", "lang": "ru", "variant": "keywords", "text": "Какое наказание грозит кражу"}
+{"query_id": "K01-ru:translit", "need_id": "K01", "lang": "ru", "variant": "translit", "text": "kakoe nakazanie grozit za krazhu?"}
+{"query_id": "K01:mixed", "need_id": "K01", "lang": "mix", "variant": "mixed", "text": "Какое наказание грозит за кражу? / Ұрлық үшін қандай жаза қарастырылған?"}
+{"query_id": "K01-kk:clean", "need_id": "K01", "lang": "kk", "variant": "clean", "text": "Ұрлық үшін қандай жаза қарастырылған?"}
+{"query_id": "K01-kk:typo_light", "need_id": "K01", "lang": "kk", "variant": "typo_light", "text": "Ұрлық үшін қандай жаза қарастырылған?"}
+{"query_id": "K01-kk:typo_heavy", "need_id": "K01", "lang": "kk", "variant": "typo_heavy", "text": "Ұрлық үшін қадай жаза қарастырылған?"}
+{"query_id": "K01-kk:nopunct", "need_id": "K01", "lang": "kk", "variant": "nopunct", "text": "ұрлық үшін қандай жаза қарастырылған"}
+{"query_id": "K01-kk:keywords", "need_id": "K01", "lang": "kk", "variant": "keywords", "text": "Ұрлық үшін қандай қарастырылған"}
+{"query_id": "K01-kk:translit", "need_id": "K01", "lang": "kk", "variant": "translit", "text": "urlyk ushin kanday zhaza karastyrylgan?"}
+{"query_id": "K01-en:clean", "need_id": "K01", "lang": "en", "variant": "clean", "text": "What punishment is provided for theft?"}
+{"query_id": "K01-en:typo_light", "need_id": "K01", "lang": "en", "variant": "typo_light", "text": "What punishment is provided for thefft?"}
+{"query_id": "K01-en:typo_heavy", "need_id": "K01", "lang": "en", "variant": "typo_heavy", "text": "What punishment is provided for theft?"}
+{"query_id": "K01-en:nopunct", "need_id": "K01", "lang": "en", "variant": "nopunct", "text": "what punishment is provided for theft"}
+{"query_id": "K01-en:keywords", "need_id": "K01", "lang": "en", "variant": "keywords", "text": "What punishment provided theft"}
+{"query_id": "K02-ru:clean", "need_id": "K02", "lang": "ru", "variant": "clean", "text": "Что считается мошенничеством и какая за него ответственность?"}
+{"query_id": "K02-ru:typo_light", "need_id": "K02", "lang": "ru", "variant": "typo_light", "text": "Что считается мошенничеством и какая за него ответственность?"}
+{"query_id": "K02-ru:typo_heavy", "need_id": "K02", "lang": "ru", "variant": "typo_heavy", "text": "Что счтиается мошенничеством и какая за него ответственность?"}
+{"query_id": "K02-ru:nopunct", "need_id": "K02", "lang": "ru", "variant": "nopunct", "text": "что считается мошенничеством и какая за него ответственность"}
+{"query_id": "K02-ru:keywords", "need_id": "K02", "lang": "ru", "variant": "keywords", "text": "считается мошенничеством какая ответственность"}
+{"query_id": "K02-ru:translit", "need_id": "K02", "lang": "ru", "variant": "translit", "text": "chto schitaetsya moshennichestvom i kakaya za nego otvetstvennost?"}
+{"query_id": "K02:mixed", "need_id": "K02", "lang": "mix", "variant": "mixed", "text": "Что считается мошенничеством и какая за него ответственность? / Алаяқтық деп нені айтады және ол үшін қандай жауапкершілік бар?"}
+{"query_id": "K02-kk:clean", "need_id": "K02", "lang": "kk", "variant": "clean", "text": "Алаяқтық деп нені айтады және ол үшін қандай жауапкершілік бар?"}
+{"query_id": "K02-kk:typo_light", "need_id": "K02", "lang": "kk", "variant": "typo_light", "text": "Алаяқтық деп нені айтады және ол үшін қандай жауапкершілік бар?"}
+{"query_id": "K02-kk:typo_heavy", "need_id": "K02", "lang": "kk", "variant": "typo_heavy", "text": "Алаяқтық деп нені айтады және ол үшін қандай жауапкершілік бар?"}
+{"query_id": "K02-kk:nopunct", "need_id": "K02", "lang": "kk", "variant": "nopunct", "text": "алаяқтық деп нені айтады және ол үшін қандай жауапкершілік бар"}
+{"query_id": "K02-kk:keywords", "need_id": "K02", "lang": "kk", "variant": "keywords", "text": "Алаяқтық айтады қандай жауапкершілік"}
+{"query_id": "K02-kk:translit", "need_id": "K02", "lang": "kk", "variant": "translit", "text": "alayaktyk dep neni aytady zhane ol ushin kanday zhauapkershilik bar?"}
+{"query_id": "K02-en:clean", "need_id": "K02", "lang": "en", "variant": "clean", "text": "What counts as fraud and what is the criminal liability?"}
+{"query_id": "K02-en:typo_light", "need_id": "K02", "lang": "en", "variant": "typo_light", "text": "What counts as fraud and what is the criminal liability?"}
+{"query_id": "K02-en:typo_heavy", "need_id": "K02", "lang": "en", "variant": "typo_heavy", "text": "What counts as fruad and what is the criminal laibility?"}
+{"query_id": "K02-en:nopunct", "need_id": "K02", "lang": "en", "variant": "nopunct", "text": "what counts as fraud and what is the criminal liability"}
+{"query_id": "K02-en:keywords", "need_id": "K02", "lang": "en", "variant": "keywords", "text": "counts fraud criminal liability"}
+{"query_id": "K03-ru:clean", "need_id": "K03", "lang": "ru", "variant": "clean", "text": "Можно ли защищаться от нападавшего, если он угрожает жизни, и не нести за это ответственность?"}
+{"query_id": "K03-ru:typo_light", "need_id": "K03", "lang": "ru", "variant": "typo_light", "text": "Можно ли защищаться от нападавшего, если он угрожает жизни, и не нести за это ответственность?"}
+{"query_id": "K03-ru:typo_heavy", "need_id": "K03", "lang": "ru", "variant": "typo_heavy", "text": "Можно ли защищаться от нпаадавшего, если он угрожает жизни, и не неести за это ответственность?"}
+{"query_id": "K03-ru:nopunct", "need_id": "K03", "lang": "ru", "variant": "nopunct", "text": "можно ли защищаться от нападавшего если он угрожает жизни и не нести за это ответственность"}
+{"query_id": "K03-ru:keywords", "need_id": "K03", "lang": "ru", "variant": "keywords", "text": "защищаться нападавшего угрожает ответственность"}
+{"query_id": "K03-ru:translit", "need_id": "K03", "lang": "ru", "variant": "translit", "text": "mozhno li zashchishchatsya ot napadavshego, esli on ugrozhaet zhizni, i ne nesti za eto otvetstvennost?"}
+{"query_id": "K03:mixed", "need_id": "K03", "lang": "mix", "variant": "mixed", "text": "Можно ли защищаться от нападавшего, если он угрожает жизни, и не нести за это ответственность? / Өмірге қауіп төндірген шабуылдаушыдан қорғанып, сол үшін жауап бермеуге бола ма?"}
+{"query_id": "K03-kk:clean", "need_id": "K03", "lang": "kk", "variant": "clean", "text": "Өмірге қауіп төндірген шабуылдаушыдан қорғанып, сол үшін жауап бермеуге бола ма?"}
+{"query_id": "K03-kk:typo_light", "need_id": "K03", "lang": "kk", "variant": "typo_light", "text": "Өмірге қауіп төндіргген шабуылдаушыдан қорғанып, сол үшін жауап бермеуге бола ма?"}
+{"query_id": "K03-kk:typo_heavy", "need_id": "K03", "lang": "kk", "variant": "typo_heavy", "text": "Өмірге қауіп тнөдірген шбуылдаушыдан қоғранып, сол үшін жауап бермеууге бола ма?"}
+{"query_id": "K03-kk:nopunct", "need_id": "K03", "lang": "kk", "variant": "nopunct", "text": "өмірге қауіп төндірген шабуылдаушыдан қорғанып сол үшін жауап бермеуге бола ма"}
+{"query_id": "K03-kk:keywords", "need_id": "K03", "lang": "kk", "variant": "keywords", "text": "төндірген шабуылдаушыдан қорғанып бермеуге"}
+{"query_id": "K03-kk:translit", "need_id": "K03", "lang": "kk", "variant": "translit", "text": "omirge kauip tondirgen shabuyldaushydan korganyp, sol ushin zhauap bermeuge bola ma?"}
+{"query_id": "K03-en:clean", "need_id": "K03", "lang": "en", "variant": "clean", "text": "Can I defend myself against an attacker threatening my life without being liable?"}
+{"query_id": "K03-en:typo_light", "need_id": "K03", "lang": "en", "variant": "typo_light", "text": "Can I defend myself against an attacker threatening my life without being liable?"}
+{"query_id": "K03-en:typo_heavy", "need_id": "K03", "lang": "en", "variant": "typo_heavy", "text": "Can I defend myslef against an attacker threatening my life without being liable?"}
+{"query_id": "K03-en:nopunct", "need_id": "K03", "lang": "en", "variant": "nopunct", "text": "can i defend myself against an attacker threatening my life without being liable"}
+{"query_id": "K03-en:keywords", "need_id": "K03", "lang": "en", "variant": "keywords", "text": "against attacker threatening without"}
+{"query_id": "K04-ru:clean", "need_id": "K04", "lang": "ru", "variant": "clean", "text": "С какого возраста наступает уголовная ответственность?"}
+{"query_id": "K04-ru:typo_light", "need_id": "K04", "lang": "ru", "variant": "typo_light", "text": "С какого возрсата наступает угооловная ответсттвенность?"}
+{"query_id": "K04-ru:typo_heavy", "need_id": "K04", "lang": "ru", "variant": "typo_heavy", "text": "С какого возраста наступает уголовнная ответственность?"}
+{"query_id": "K04-ru:nopunct", "need_id": "K04", "lang": "ru", "variant": "nopunct", "text": "с какого возраста наступает уголовная ответственность"}
+{"query_id": "K04-ru:keywords", "need_id": "K04", "lang": "ru", "variant": "keywords", "text": "возраста наступает уголовная ответственность"}
+{"query_id": "K04-ru:translit", "need_id": "K04", "lang": "ru", "variant": "translit", "text": "s kakogo vozrasta nastupaet ugolovnaya otvetstvennost?"}
+{"query_id": "K04:mixed", "need_id": "K04", "lang": "mix", "variant": "mixed", "text": "С какого возраста наступает уголовная ответственность? / Қылмыстық жауапкершілік қай жастан басталады?"}
+{"query_id": "K04-kk:clean", "need_id": "K04", "lang": "kk", "variant": "clean", "text": "Қылмыстық жауапкершілік қай жастан басталады?"}
+{"query_id": "K04-kk:typo_light", "need_id": "K04", "lang": "kk", "variant": "typo_light", "text": "Қылмыстық жауапкершілік қай жастан басталады?"}
+{"query_id": "K04-kk:typo_heavy", "need_id": "K04", "lang": "kk", "variant": "typo_heavy", "text": "Қылмыстық жауапкершілік қай жасатн бассталады?"}
+{"query_id": "K04-kk:nopunct", "need_id": "K04", "lang": "kk", "variant": "nopunct", "text": "қылмыстық жауапкершілік қай жастан басталады"}
+{"query_id": "K04-kk:keywords", "need_id": "K04", "lang": "kk", "variant": "keywords", "text": "Қылмыстық жауапкершілік жастан басталады"}
+{"query_id": "K04-kk:translit", "need_id": "K04", "lang": "kk", "variant": "translit", "text": "kylmystyk zhauapkershilik kay zhastan bastalady?"}
+{"query_id": "K04-en:clean", "need_id": "K04", "lang": "en", "variant": "clean", "text": "From what age does criminal liability begin?"}
+{"query_id": "K04-en:typo_light", "need_id": "K04", "lang": "en", "variant": "typo_light", "text": "From what age does criminal liability begin?"}
+{"query_id": "K04-en:typo_heavy", "need_id": "K04", "lang": "en", "variant": "typo_heavy", "text": "From what age does crimnal liability begin?"}
+{"query_id": "K04-en:nopunct", "need_id": "K04", "lang": "en", "variant": "nopunct", "text": "from what age does criminal liability begin"}
+{"query_id": "K04-en:keywords", "need_id": "K04", "lang": "en", "variant": "keywords", "text": "From criminal liability begin"}
+{"query_id": "P01-ru:clean", "need_id": "P01", "lang": "ru", "variant": "clean", "text": "В какой срок можно обжаловать решение суда по гражданскому делу?"}
+{"query_id": "P01-ru:typo_light", "need_id": "P01", "lang": "ru", "variant": "typo_light", "text": "В какой срок можно обжаловать решение суда по гражданскому делу?"}
+{"query_id": "P01-ru:typo_heavy", "need_id": "P01", "lang": "ru", "variant": "typo_heavy", "text": "В какой срок можно ожаловать решение суда по гражднаскому делу?"}
+{"query_id": "P01-ru:nopunct", "need_id": "P01", "lang": "ru", "variant": "nopunct", "text": "в какой срок можно обжаловать решение суда по гражданскому делу"}
+{"query_id": "P01-ru:keywords", "need_id": "P01", "lang": "ru", "variant": "keywords", "text": "какой обжаловать решение гражданскому"}
+{"query_id": "P01-ru:translit", "need_id": "P01", "lang": "ru", "variant": "translit", "text": "v kakoy srok mozhno obzhalovat reshenie suda po grazhdanskomu delu?"}
+{"query_id": "P01:mixed", "need_id": "P01", "lang": "mix", "variant": "mixed", "text": "В какой срок можно обжаловать решение суда по гражданскому делу? / Азаматтық іс бойынша сот шешіміне қанша мерзімде шағымдануға болады?"}
+{"query_id": "P01-kk:clean", "need_id": "P01", "lang": "kk", "variant": "clean", "text": "Азаматтық іс бойынша сот шешіміне қанша мерзімде шағымдануға болады?"}
+{"query_id": "P01-kk:typo_light", "need_id": "P01", "lang": "kk", "variant": "typo_light", "text": "Азаматтық іс бойынша сот шешіміне қанша мрезімде шағымдануға болады?"}
+{"query_id": "P01-kk:typo_heavy", "need_id": "P01", "lang": "kk", "variant": "typo_heavy", "text": "Азаматтық іс бойынша сот шешшіміне қанша меерзімде шағымднауға болады?"}
+{"query_id": "P01-kk:nopunct", "need_id": "P01", "lang": "kk", "variant": "nopunct", "text": "азаматтық іс бойынша сот шешіміне қанша мерзімде шағымдануға болады"}
+{"query_id": "P01-kk:keywords", "need_id": "P01", "lang": "kk", "variant": "keywords", "text": "Азаматтық шешіміне мерзімде шағымдануға"}
+{"query_id": "P01-kk:translit", "need_id": "P01", "lang": "kk", "variant": "translit", "text": "azamattyk is boyynsha sot sheshimine kansha merzimde shagymdanuga bolady?"}
+{"query_id": "P01-en:clean", "need_id": "P01", "lang": "en", "variant": "clean", "text": "Within what period can a court decision in a civil case be appealed?"}
+{"query_id": "P01-en:typo_light", "need_id": "P01", "lang": "en", "variant": "typo_light", "text": "Within what period can a corut decision in a civil case be appealde?"}
+{"query_id": "P01-en:typo_heavy", "need_id": "P01", "lang": "en", "variant": "typo_heavy", "text": "Within what period can a court deecision in a ciil case be appealed?"}
+{"query_id": "P01-en:nopunct", "need_id": "P01", "lang": "en", "variant": "nopunct", "text": "within what period can a court decision in a civil case be appealed"}
+{"query_id": "P01-en:keywords", "need_id": "P01", "lang": "en", "variant": "keywords", "text": "Within period decision appealed"}
+{"query_id": "P02-ru:clean", "need_id": "P02", "lang": "ru", "variant": "clean", "text": "Как подать иск о взыскании долга в суд и что должно быть в заявлении?"}
+{"query_id": "P02-ru:typo_light", "need_id": "P02", "lang": "ru", "variant": "typo_light", "text": "Как поать иск о взыкании долга в суд и что должно быть в заявлении?"}
+{"query_id": "P02-ru:typo_heavy", "need_id": "P02", "lang": "ru", "variant": "typo_heavy", "text": "Как подать иск о взыскании долга в суд и что долнжо быть в заявлении?"}
+{"query_id": "P02-ru:nopunct", "need_id": "P02", "lang": "ru", "variant": "nopunct", "text": "как подать иск о взыскании долга в суд и что должно быть в заявлении"}
+{"query_id": "P02-ru:keywords", "need_id": "P02", "lang": "ru", "variant": "keywords", "text": "подать взыскании должно заявлении"}
+{"query_id": "P02-ru:translit", "need_id": "P02", "lang": "ru", "variant": "translit", "text": "kak podat isk o vzyskanii dolga v sud i chto dolzhno byt v zayavlenii?"}
+{"query_id": "P02:mixed", "need_id": "P02", "lang": "mix", "variant": "mixed", "text": "Как подать иск о взыскании долга в суд и что должно быть в заявлении? / Қарызды өндіру туралы талап арызды сотқа қалай беруге болады және онда не болуы керек?"}
+{"query_id": "P02-kk:clean", "need_id": "P02", "lang": "kk", "variant": "clean", "text": "Қарызды өндіру туралы талап арызды сотқа қалай беруге болады және онда не болуы керек?"}
+{"query_id": "P02-kk:typo_light", "need_id": "P02", "lang": "kk", "variant": "typo_light", "text": "Қарызды өндіру туралы талап арзыды сотқа қалай беруге болады және онда не боуы керке?"}
+{"query_id": "P02-kk:typo_heavy", "need_id": "P02", "lang": "kk", "variant": "typo_heavy", "text": "Қарызды өндіру туралы талап арызды соотқа қлаай беруге болады және онда не болуы керек?"}
+{"query_id": "P02-kk:nopunct", "need_id": "P02", "lang": "kk", "variant": "nopunct", "text": "қарызды өндіру туралы талап арызды сотқа қалай беруге болады және онда не болуы керек"}
+{"query_id": "P02-kk:keywords", "need_id": "P02", "lang": "kk", "variant": "keywords", "text": "Қарызды өндіру туралы арызды"}
+{"query_id": "P02-kk:translit", "need_id": "P02", "lang": "kk", "variant": "translit", "text": "karyzdy ondiru turaly talap aryzdy sotka kalay beruge bolady zhane onda ne boluy kerek?"}
+{"query_id": "P02-en:clean", "need_id": "P02", "lang": "en", "variant": "clean", "text": "How do I file a claim to recover a debt and what must the claim contain?"}
+{"query_id": "P02-en:typo_light", "need_id": "P02", "lang": "en", "variant": "typo_light", "text": "How do I file a claim to recver a debt and what must the claaim cntain?"}
+{"query_id": "P02-en:typo_heavy", "need_id": "P02", "lang": "en", "variant": "typo_heavy", "text": "How do I file a clim to recover a debt and what must the claim contain?"}
+{"query_id": "P02-en:nopunct", "need_id": "P02", "lang": "en", "variant": "nopunct", "text": "how do i file a claim to recover a debt and what must the claim contain"}
+{"query_id": "P02-en:keywords", "need_id": "P02", "lang": "en", "variant": "keywords", "text": "claim recover claim contain"}
+{"query_id": "P03-ru:clean", "need_id": "P03", "lang": "ru", "variant": "clean", "text": "Какие права у человека, которого задержала полиция?"}
+{"query_id": "P03-ru:typo_light", "need_id": "P03", "lang": "ru", "variant": "typo_light", "text": "Какие права у человека, которого задержала полиция?"}
+{"query_id": "P03-ru:typo_heavy", "need_id": "P03", "lang": "ru", "variant": "typo_heavy", "text": "Какие права у человека, которрого задержала полиция?"}
+{"query_id": "P03-ru:nopunct", "need_id": "P03", "lang": "ru", "variant": "nopunct", "text": "какие права у человека которого задержала полиция"}
+{"query_id": "P03-ru:keywords", "need_id": "P03", "lang": "ru", "variant": "keywords", "text": "человека которого задержала полиция"}
+{"query_id": "P03-ru:translit", "need_id": "P03", "lang": "ru", "variant": "translit", "text": "kakie prava u cheloveka, kotorogo zaderzhala politsiya?"}
+{"query_id": "P03:mixed", "need_id": "P03", "lang": "mix", "variant": "mixed", "text": "Какие права у человека, которого задержала полиция? / Полиция ұстаған адамның қандай құқықтары бар?"}
+{"query_id": "P03-kk:clean", "need_id": "P03", "lang": "kk", "variant": "clean", "text": "Полиция ұстаған адамның қандай құқықтары бар?"}
+{"query_id": "P03-kk:typo_light", "need_id": "P03", "lang": "kk", "variant": "typo_light", "text": "Полиция ұстаған адамның қандай құқықтары бар?"}
+{"query_id": "P03-kk:typo_heavy", "need_id": "P03", "lang": "kk", "variant": "typo_heavy", "text": "Полиция ұстаған адамның қандай құқықтары бар?"}
+{"query_id": "P03-kk:nopunct", "need_id": "P03", "lang": "kk", "variant": "nopunct", "text": "полиция ұстаған адамның қандай құқықтары бар"}
+{"query_id": "P03-kk:keywords", "need_id": "P03", "lang": "kk", "variant": "keywords", "text": "Полиция ұстаған адамның құқықтары"}
+{"query_id": "P03-kk:translit", "need_id": "P03", "lang": "kk", "variant": "translit", "text": "politsiya ustagan adamnyn kanday kukyktary bar?"}
+{"query_id": "P03-en:clean", "need_id": "P03", "lang": "en", "variant": "clean", "text": "What rights does a person detained by the police have?"}
+{"query_id": "P03-en:typo_light", "need_id": "P03", "lang": "en", "variant": "typo_light", "text": "What rights does a person detained by the police have?"}
+{"query_id": "P03-en:typo_heavy", "need_id": "P03", "lang": "en", "variant": "typo_heavy", "text": "What rights does a person detained by the plice have?"}
+{"query_id": "P03-en:nopunct", "need_id": "P03", "lang": "en", "variant": "nopunct", "text": "what rights does a person detained by the police have"}
+{"query_id": "P03-en:keywords", "need_id": "P03", "lang": "en", "variant": "keywords", "text": "rights person detained police"}
+{"query_id": "H01-ru:clean", "need_id": "H01", "lang": "ru", "variant": "clean", "text": "На какой срок и на каких условиях можно взять земельный участок в аренду у государства?"}
+{"query_id": "H01-ru:typo_light", "need_id": "H01", "lang": "ru", "variant": "typo_light", "text": "На какой срок и на каких улсовиях можно взять земельный участок в аренду у государства?"}
+{"query_id": "H01-ru:typo_heavy", "need_id": "H01", "lang": "ru", "variant": "typo_heavy", "text": "На какой срок и на кких условиях можжно взть земеельный участок в аенду у государства?"}
+{"query_id": "H01-ru:nopunct", "need_id": "H01", "lang": "ru", "variant": "nopunct", "text": "на какой срок и на каких условиях можно взять земельный участок в аренду у государства"}
+{"query_id": "H01-ru:keywords", "need_id": "H01", "lang": "ru", "variant": "keywords", "text": "условиях земельный участок государства"}
+{"query_id": "H01-ru:translit", "need_id": "H01", "lang": "ru", "variant": "translit", "text": "na kakoy srok i na kakikh usloviyakh mozhno vzyat zemelnyy uchastok v arendu u gosudarstva?"}
+{"query_id": "H01:mixed", "need_id": "H01", "lang": "mix", "variant": "mixed", "text": "На какой срок и на каких условиях можно взять земельный участок в аренду у государства? / Мемлекеттен жер учаскесін қандай мерзімге және қандай шартпен жалға алуға болады?"}
+{"query_id": "H01-kk:clean", "need_id": "H01", "lang": "kk", "variant": "clean", "text": "Мемлекеттен жер учаскесін қандай мерзімге және қандай шартпен жалға алуға болады?"}
+{"query_id": "H01-kk:typo_light", "need_id": "H01", "lang": "kk", "variant": "typo_light", "text": "Мемлекеттен жер учаскесін қандай мерзімге және қандай шартпен жалға алуға болады?"}
+{"query_id": "H01-kk:typo_heavy", "need_id": "H01", "lang": "kk", "variant": "typo_heavy", "text": "Мелекеттен жер учаскесін қандай мерзімге және қандай шартппен жалға алға болады?"}
+{"query_id": "H01-kk:nopunct", "need_id": "H01", "lang": "kk", "variant": "nopunct", "text": "мемлекеттен жер учаскесін қандай мерзімге және қандай шартпен жалға алуға болады"}
+{"query_id": "H01-kk:keywords", "need_id": "H01", "lang": "kk", "variant": "keywords", "text": "Мемлекеттен учаскесін мерзімге шартпен"}
+{"query_id": "H01-kk:translit", "need_id": "H01", "lang": "kk", "variant": "translit", "text": "memleketten zher uchaskesin kanday merzimge zhane kanday shartpen zhalga aluga bolady?"}
+{"query_id": "H01-en:clean", "need_id": "H01", "lang": "en", "variant": "clean", "text": "For how long and on what terms can I lease a plot of land from the state?"}
+{"query_id": "H01-en:typo_light", "need_id": "H01", "lang": "en", "variant": "typo_light", "text": "For how long and on what terms can I lease a plot of land from the state?"}
+{"query_id": "H01-en:typo_heavy", "need_id": "H01", "lang": "en", "variant": "typo_heavy", "text": "For how long and on what terms can I lesae a plot of land from the state?"}
+{"query_id": "H01-en:nopunct", "need_id": "H01", "lang": "en", "variant": "nopunct", "text": "for how long and on what terms can i lease a plot of land from the state"}
+{"query_id": "H01-en:keywords", "need_id": "H01", "lang": "en", "variant": "keywords", "text": "long terms lease state"}
+{"query_id": "H02-ru:clean", "need_id": "H02", "lang": "ru", "variant": "clean", "text": "Государство хочет изъять мой земельный участок. Какие у меня права?"}
+{"query_id": "H02-ru:typo_light", "need_id": "H02", "lang": "ru", "variant": "typo_light", "text": "Государство хочет изътяь мой земельный участок. Какие у меня права?"}
+{"query_id": "H02-ru:typo_heavy", "need_id": "H02", "lang": "ru", "variant": "typo_heavy", "text": "Государсттво хоччет изъъять мой земельный участок. Какие у меня права?"}
+{"query_id": "H02-ru:nopunct", "need_id": "H02", "lang": "ru", "variant": "nopunct", "text": "государство хочет изъять мой земельный участок какие у меня права"}
+{"query_id": "H02-ru:keywords", "need_id": "H02", "lang": "ru", "variant": "keywords", "text": "Государство изъять земельный участок"}
+{"query_id": "H02-ru:translit", "need_id": "H02", "lang": "ru", "variant": "translit", "text": "gosudarstvo khochet izyat moy zemelnyy uchastok. kakie u menya prava?"}
+{"query_id": "H02:mixed", "need_id": "H02", "lang": "mix", "variant": "mixed", "text": "Государство хочет изъять мой земельный участок. Какие у меня права? / Мемлекет менің жер учаскемді тартып алғысы келеді. Менің қандай құқықтарым бар?"}
+{"query_id": "H02-kk:clean", "need_id": "H02", "lang": "kk", "variant": "clean", "text": "Мемлекет менің жер учаскемді тартып алғысы келеді. Менің қандай құқықтарым бар?"}
+{"query_id": "H02-kk:typo_light", "need_id": "H02", "lang": "kk", "variant": "typo_light", "text": "Мемлекет менің жер учаскемді тартып алғысы келеді. Менің қандай ққықтарым бар?"}
+{"query_id": "H02-kk:typo_heavy", "need_id": "H02", "lang": "kk", "variant": "typo_heavy", "text": "Мемлекет менің жер учаскемді тартып алғғысы келеді. Менің қандай құқықтарым бар?"}
+{"query_id": "H02-kk:nopunct", "need_id": "H02", "lang": "kk", "variant": "nopunct", "text": "мемлекет менің жер учаскемді тартып алғысы келеді менің қандай құқықтарым бар"}
+{"query_id": "H02-kk:keywords", "need_id": "H02", "lang": "kk", "variant": "keywords", "text": "Мемлекет учаскемді тартып құқықтарым"}
+{"query_id": "H02-kk:translit", "need_id": "H02", "lang": "kk", "variant": "translit", "text": "memleket menin zher uchaskemdi tartyp algysy keledi. menin kanday kukyktarym bar?"}
+{"query_id": "H02-en:clean", "need_id": "H02", "lang": "en", "variant": "clean", "text": "The state wants to take my land. What are my rights?"}
+{"query_id": "H02-en:typo_light", "need_id": "H02", "lang": "en", "variant": "typo_light", "text": "The state wants to take my land. What are my rights?"}
+{"query_id": "H02-en:typo_heavy", "need_id": "H02", "lang": "en", "variant": "typo_heavy", "text": "The state wnts to take my land. What are my rights?"}
+{"query_id": "H02-en:nopunct", "need_id": "H02", "lang": "en", "variant": "nopunct", "text": "the state wants to take my land what are my rights"}
+{"query_id": "H02-en:keywords", "need_id": "H02", "lang": "en", "variant": "keywords", "text": "state wants take rights"}
+{"query_id": "H03-ru:clean", "need_id": "H03", "lang": "ru", "variant": "clean", "text": "Кто обязан платить за содержание общего имущества многоквартирного дома?"}
+{"query_id": "H03-ru:typo_light", "need_id": "H03", "lang": "ru", "variant": "typo_light", "text": "Кто обязан платить за содержание общего имущества многоквартирного дома?"}
+{"query_id": "H03-ru:typo_heavy", "need_id": "H03", "lang": "ru", "variant": "typo_heavy", "text": "Кто обязан платить за содержание общего имущества многоквартирного дома?"}
+{"query_id": "H03-ru:nopunct", "need_id": "H03", "lang": "ru", "variant": "nopunct", "text": "кто обязан платить за содержание общего имущества многоквартирного дома"}
+{"query_id": "H03-ru:keywords", "need_id": "H03", "lang": "ru", "variant": "keywords", "text": "платить содержание имущества многоквартирного"}
+{"query_id": "H03-ru:translit", "need_id": "H03", "lang": "ru", "variant": "translit", "text": "kto obyazan platit za soderzhanie obshchego imushchestva mnogokvartirnogo doma?"}
+{"query_id": "H03:mixed", "need_id": "H03", "lang": "mix", "variant": "mixed", "text": "Кто обязан платить за содержание общего имущества многоквартирного дома? / Көпқабатты үйдің ортақ мүлкін ұстауға кім төлеуге міндетті?"}
+{"query_id": "H03-kk:clean", "need_id": "H03", "lang": "kk", "variant": "clean", "text": "Көпқабатты үйдің ортақ мүлкін ұстауға кім төлеуге міндетті?"}
+{"query_id": "H03-kk:typo_light", "need_id": "H03", "lang": "kk", "variant": "typo_light", "text": "Көпқабатты үйдің ортақ мүлкін ұстауға кім төлеуге міндетті?"}
+{"query_id": "H03-kk:typo_heavy", "need_id": "H03", "lang": "kk", "variant": "typo_heavy", "text": "Көпқабатты үйдің ортақ мүлкін ұстауға кім төлеуге міндетті?"}
+{"query_id": "H03-kk:nopunct", "need_id": "H03", "lang": "kk", "variant": "nopunct", "text": "көпқабатты үйдің ортақ мүлкін ұстауға кім төлеуге міндетті"}
+{"query_id": "H03-kk:keywords", "need_id": "H03", "lang": "kk", "variant": "keywords", "text": "Көпқабатты ұстауға төлеуге міндетті"}
+{"query_id": "H03-kk:translit", "need_id": "H03", "lang": "kk", "variant": "translit", "text": "kopkabatty uydin ortak mulkin ustauga kim toleuge mindetti?"}
+{"query_id": "H03-en:clean", "need_id": "H03", "lang": "en", "variant": "clean", "text": "Who must pay for maintaining the shared property of an apartment building?"}
+{"query_id": "H03-en:typo_light", "need_id": "H03", "lang": "en", "variant": "typo_light", "text": "Who must pay for maintaniing the shared property of an apartent building?"}
+{"query_id": "H03-en:typo_heavy", "need_id": "H03", "lang": "en", "variant": "typo_heavy", "text": "Who must pay for maintaiining the shared property of an appartment building?"}
+{"query_id": "H03-en:nopunct", "need_id": "H03", "lang": "en", "variant": "nopunct", "text": "who must pay for maintaining the shared property of an apartment building"}
+{"query_id": "H03-en:keywords", "need_id": "H03", "lang": "en", "variant": "keywords", "text": "maintaining property apartment building"}
+{"query_id": "B01-ru:clean", "need_id": "B01", "lang": "ru", "variant": "clean", "text": "Как стать индивидуальным предпринимателем и какие для этого нужны документы?"}
+{"query_id": "B01-ru:typo_light", "need_id": "B01", "lang": "ru", "variant": "typo_light", "text": "Как стать индивидуальным предпринимателем и какие для этого нужны документы?"}
+{"query_id": "B01-ru:typo_heavy", "need_id": "B01", "lang": "ru", "variant": "typo_heavy", "text": "Как стать индивидуальным предпринимателем и какие для этого нунжы документы?"}
+{"query_id": "B01-ru:nopunct", "need_id": "B01", "lang": "ru", "variant": "nopunct", "text": "как стать индивидуальным предпринимателем и какие для этого нужны документы"}
+{"query_id": "B01-ru:keywords", "need_id": "B01", "lang": "ru", "variant": "keywords", "text": "стать индивидуальным предпринимателем документы"}
+{"query_id": "B01-ru:translit", "need_id": "B01", "lang": "ru", "variant": "translit", "text": "kak stat individualnym predprinimatelem i kakie dlya etogo nuzhny dokumenty?"}
+{"query_id": "B01:mixed", "need_id": "B01", "lang": "mix", "variant": "mixed", "text": "Как стать индивидуальным предпринимателем и какие для этого нужны документы? / Жеке кәсіпкер болу үшін не істеу керек және қандай құжаттар қажет?"}
+{"query_id": "B01-kk:clean", "need_id": "B01", "lang": "kk", "variant": "clean", "text": "Жеке кәсіпкер болу үшін не істеу керек және қандай құжаттар қажет?"}
+{"query_id": "B01-kk:typo_light", "need_id": "B01", "lang": "kk", "variant": "typo_light", "text": "Жеке кәсіпкер болу үшін не істтеу керек және қандай құжаттар қажет?"}
+{"query_id": "B01-kk:typo_heavy", "need_id": "B01", "lang": "kk", "variant": "typo_heavy", "text": "Жеке кәсіппкер болу үшін не ісету керек және қаандай құжаттар қажет?"}
+{"query_id": "B01-kk:nopunct", "need_id": "B01", "lang": "kk", "variant": "nopunct", "text": "жеке кәсіпкер болу үшін не істеу керек және қандай құжаттар қажет"}
+{"query_id": "B01-kk:keywords", "need_id": "B01", "lang": "kk", "variant": "keywords", "text": "кәсіпкер істеу қандай құжаттар"}
+{"query_id": "B01-kk:translit", "need_id": "B01", "lang": "kk", "variant": "translit", "text": "zheke kasipker bolu ushin ne isteu kerek zhane kanday kuzhattar kazhet?"}
+{"query_id": "B01-en:clean", "need_id": "B01", "lang": "en", "variant": "clean", "text": "How do I become a sole proprietor and what documents are needed?"}
+{"query_id": "B01-en:typo_light", "need_id": "B01", "lang": "en", "variant": "typo_light", "text": "How do I become a sole proprietor and what documents are needed?"}
+{"query_id": "B01-en:typo_heavy", "need_id": "B01", "lang": "en", "variant": "typo_heavy", "text": "How do I become a sole proprietor and what documents are needed?"}
+{"query_id": "B01-en:nopunct", "need_id": "B01", "lang": "en", "variant": "nopunct", "text": "how do i become a sole proprietor and what documents are needed"}
+{"query_id": "B01-en:keywords", "need_id": "B01", "lang": "en", "variant": "keywords", "text": "become proprietor documents needed"}
+{"query_id": "B02-ru:clean", "need_id": "B02", "lang": "ru", "variant": "clean", "text": "Какой минимальный уставный капитал нужен для ТОО и кто за него отвечает?"}
+{"query_id": "B02-ru:typo_light", "need_id": "B02", "lang": "ru", "variant": "typo_light", "text": "Какой минимальный уставный капитал нуужен для ТОО и кто за него отвечает?"}
+{"query_id": "B02-ru:typo_heavy", "need_id": "B02", "lang": "ru", "variant": "typo_heavy", "text": "Какой минимальный устаный капитал нуужен для ТОО и кто за него отвечает?"}
+{"query_id": "B02-ru:nopunct", "need_id": "B02", "lang": "ru", "variant": "nopunct", "text": "какой минимальный уставный капитал нужен для тоо и кто за него отвечает"}
+{"query_id": "B02-ru:keywords", "need_id": "B02", "lang": "ru", "variant": "keywords", "text": "минимальный уставный капитал отвечает"}
+{"query_id": "B02-ru:translit", "need_id": "B02", "lang": "ru", "variant": "translit", "text": "kakoy minimalnyy ustavnyy kapital nuzhen dlya too i kto za nego otvechaet?"}
+{"query_id": "B02:mixed", "need_id": "B02", "lang": "mix", "variant": "mixed", "text": "Какой минимальный уставный капитал нужен для ТОО и кто за него отвечает? / ЖШС үшін ең төменгі жарғылық капитал қанша және оған кім жауап береді?"}
+{"query_id": "B02-kk:clean", "need_id": "B02", "lang": "kk", "variant": "clean", "text": "ЖШС үшін ең төменгі жарғылық капитал қанша және оған кім жауап береді?"}
+{"query_id": "B02-kk:typo_light", "need_id": "B02", "lang": "kk", "variant": "typo_light", "text": "ЖШС үшін ең төменгі жарылық капитал қанша және оған кім жауап береді?"}
+{"query_id": "B02-kk:typo_heavy", "need_id": "B02", "lang": "kk", "variant": "typo_heavy", "text": "ЖШС үшін ең төменгі жарғылық капитал қанша және оған кім жауап береді?"}
+{"query_id": "B02-kk:nopunct", "need_id": "B02", "lang": "kk", "variant": "nopunct", "text": "жшс үшін ең төменгі жарғылық капитал қанша және оған кім жауап береді"}
+{"query_id": "B02-kk:keywords", "need_id": "B02", "lang": "kk", "variant": "keywords", "text": "төменгі жарғылық капитал береді"}
+{"query_id": "B02-kk:translit", "need_id": "B02", "lang": "kk", "variant": "translit", "text": "zhshs ushin en tomengi zhargylyk kapital kansha zhane ogan kim zhauap beredi?"}
+{"query_id": "B02-en:clean", "need_id": "B02", "lang": "en", "variant": "clean", "text": "What is the minimum charter capital for an LLP and who is liable?"}
+{"query_id": "B02-en:typo_light", "need_id": "B02", "lang": "en", "variant": "typo_light", "text": "What is the minimum charter capital for an LLP and who is liable?"}
+{"query_id": "B02-en:typo_heavy", "need_id": "B02", "lang": "en", "variant": "typo_heavy", "text": "What is the minimum charter capital for an LLP and who is liable?"}
+{"query_id": "B02-en:nopunct", "need_id": "B02", "lang": "en", "variant": "nopunct", "text": "what is the minimum charter capital for an llp and who is liable"}
+{"query_id": "B02-en:keywords", "need_id": "B02", "lang": "en", "variant": "keywords", "text": "minimum charter capital liable"}
+{"query_id": "B03-ru:clean", "need_id": "B03", "lang": "ru", "variant": "clean", "text": "Я не могу выплатить кредиты. Можно ли признать себя банкротом?"}
+{"query_id": "B03-ru:typo_light", "need_id": "B03", "lang": "ru", "variant": "typo_light", "text": "Я не могу выплатить кредиты. Можно ли признать себя банкротом?"}
+{"query_id": "B03-ru:typo_heavy", "need_id": "B03", "lang": "ru", "variant": "typo_heavy", "text": "Я не могу выплатиить кредиты. Можно ли принзать себя бакротом?"}
+{"query_id": "B03-ru:nopunct", "need_id": "B03", "lang": "ru", "variant": "nopunct", "text": "я не могу выплатить кредиты можно ли признать себя банкротом"}
+{"query_id": "B03-ru:keywords", "need_id": "B03", "lang": "ru", "variant": "keywords", "text": "выплатить кредиты признать банкротом"}
+{"query_id": "B03-ru:translit", "need_id": "B03", "lang": "ru", "variant": "translit", "text": "ya ne mogu vyplatit kredity. mozhno li priznat sebya bankrotom?"}
+{"query_id": "B03:mixed", "need_id": "B03", "lang": "mix", "variant": "mixed", "text": "Я не могу выплатить кредиты. Можно ли признать себя банкротом? / Несиелерімді төлей алмаймын. Өзімді банкрот деп тануға бола ма?"}
+{"query_id": "B03-kk:clean", "need_id": "B03", "lang": "kk", "variant": "clean", "text": "Несиелерімді төлей алмаймын. Өзімді банкрот деп тануға бола ма?"}
+{"query_id": "B03-kk:typo_light", "need_id": "B03", "lang": "kk", "variant": "typo_light", "text": "Несиелерімді төлей алмаймын. Өзімді банкрот деп тануға бола ма?"}
+{"query_id": "B03-kk:typo_heavy", "need_id": "B03", "lang": "kk", "variant": "typo_heavy", "text": "Несиелерімді төлей алмаймын. Өзімді банкррот деп тануға бола ма?"}
+{"query_id": "B03-kk:nopunct", "need_id": "B03", "lang": "kk", "variant": "nopunct", "text": "несиелерімді төлей алмаймын өзімді банкрот деп тануға бола ма"}
+{"query_id": "B03-kk:keywords", "need_id": "B03", "lang": "kk", "variant": "keywords", "text": "Несиелерімді алмаймын Өзімді банкрот"}
+{"query_id": "B03-kk:translit", "need_id": "B03", "lang": "kk", "variant": "translit", "text": "nesielerimdi toley almaymyn. ozimdi bankrot dep tanuga bola ma?"}
+{"query_id": "B03-en:clean", "need_id": "B03", "lang": "en", "variant": "clean", "text": "I cannot repay my loans. Can I declare personal bankruptcy?"}
+{"query_id": "B03-en:typo_light", "need_id": "B03", "lang": "en", "variant": "typo_light", "text": "I cnanot repay my loasn. Can I declare personal bankruptcy?"}
+{"query_id": "B03-en:typo_heavy", "need_id": "B03", "lang": "en", "variant": "typo_heavy", "text": "I cannot repay my loans. Can I declare personal bankruptcy?"}
+{"query_id": "B03-en:nopunct", "need_id": "B03", "lang": "en", "variant": "nopunct", "text": "i cannot repay my loans can i declare personal bankruptcy"}
+{"query_id": "B03-en:keywords", "need_id": "B03", "lang": "en", "variant": "keywords", "text": "cannot declare personal bankruptcy"}
+{"query_id": "S01-ru:clean", "need_id": "S01", "lang": "ru", "variant": "clean", "text": "В каком возрасте можно выйти на пенсию?"}
+{"query_id": "S01-ru:typo_light", "need_id": "S01", "lang": "ru", "variant": "typo_light", "text": "В каком возрасте мжоно выйти на пенсию?"}
+{"query_id": "S01-ru:typo_heavy", "need_id": "S01", "lang": "ru", "variant": "typo_heavy", "text": "В каком возрасте можжно выйти на пенсию?"}
+{"query_id": "S01-ru:nopunct", "need_id": "S01", "lang": "ru", "variant": "nopunct", "text": "в каком возрасте можно выйти на пенсию"}
+{"query_id": "S01-ru:keywords", "need_id": "S01", "lang": "ru", "variant": "keywords", "text": "каком возрасте можно пенсию"}
+{"query_id": "S01-ru:translit", "need_id": "S01", "lang": "ru", "variant": "translit", "text": "v kakom vozraste mozhno vyyti na pensiyu?"}
+{"query_id": "S01:mixed", "need_id": "S01", "lang": "mix", "variant": "mixed", "text": "В каком возрасте можно выйти на пенсию? / Зейнеткерлікке қай жаста шығуға болады?"}
+{"query_id": "S01-kk:clean", "need_id": "S01", "lang": "kk", "variant": "clean", "text": "Зейнеткерлікке қай жаста шығуға болады?"}
+{"query_id": "S01-kk:typo_light", "need_id": "S01", "lang": "kk", "variant": "typo_light", "text": "Зейнеткерлікке қай жаста шығуға болаыд?"}
+{"query_id": "S01-kk:typo_heavy", "need_id": "S01", "lang": "kk", "variant": "typo_heavy", "text": "Зейнеткерлікке қай жаста шығуға блоады?"}
+{"query_id": "S01-kk:nopunct", "need_id": "S01", "lang": "kk", "variant": "nopunct", "text": "зейнеткерлікке қай жаста шығуға болады"}
+{"query_id": "S01-kk:keywords", "need_id": "S01", "lang": "kk", "variant": "keywords", "text": "Зейнеткерлікке жаста шығуға болады"}
+{"query_id": "S01-kk:translit", "need_id": "S01", "lang": "kk", "variant": "translit", "text": "zeynetkerlikke kay zhasta shyguga bolady?"}
+{"query_id": "S01-en:clean", "need_id": "S01", "lang": "en", "variant": "clean", "text": "At what age can I retire?"}
+{"query_id": "S01-en:typo_light", "need_id": "S01", "lang": "en", "variant": "typo_light", "text": "At what age can I retire?"}
+{"query_id": "S01-en:typo_heavy", "need_id": "S01", "lang": "en", "variant": "typo_heavy", "text": "At what age can I retier?"}
+{"query_id": "S01-en:nopunct", "need_id": "S01", "lang": "en", "variant": "nopunct", "text": "at what age can i retire"}
+{"query_id": "S01-en:keywords", "need_id": "S01", "lang": "en", "variant": "keywords", "text": "what age can retire"}
+{"query_id": "S02-ru:clean", "need_id": "S02", "lang": "ru", "variant": "clean", "text": "Какие пособия положены при рождении ребёнка?"}
+{"query_id": "S02-ru:typo_light", "need_id": "S02", "lang": "ru", "variant": "typo_light", "text": "Какие пособия положены при рождении ребёнка?"}
+{"query_id": "S02-ru:typo_heavy", "need_id": "S02", "lang": "ru", "variant": "typo_heavy", "text": "Какие пособия положены при рждении ребёнка?"}
+{"query_id": "S02-ru:nopunct", "need_id": "S02", "lang": "ru", "variant": "nopunct", "text": "какие пособия положены при рождении ребёнка"}
+{"query_id": "S02-ru:keywords", "need_id": "S02", "lang": "ru", "variant": "keywords", "text": "пособия положены рождении ребёнка"}
+{"query_id": "S02-ru:translit", "need_id": "S02", "lang": "ru", "variant": "translit", "text": "kakie posobiya polozheny pri rozhdenii rebenka?"}
+{"query_id": "S02:mixed", "need_id": "S02", "lang": "mix", "variant": "mixed", "text": "Какие пособия положены при рождении ребёнка? / Бала туғанда қандай жәрдемақылар тағайындалады?"}
+{"query_id": "S02-kk:clean", "need_id": "S02", "lang": "kk", "variant": "clean", "text": "Бала туғанда қандай жәрдемақылар тағайындалады?"}
+{"query_id": "S02-kk:typo_light", "need_id": "S02", "lang": "kk", "variant": "typo_light", "text": "Бала туғанда қандай жәрдемақылар тағайындалады?"}
+{"query_id": "S02-kk:typo_heavy", "need_id": "S02", "lang": "kk", "variant": "typo_heavy", "text": "Бала туғанда қандай жәәрдемақылар тағайындалады?"}
+{"query_id": "S02-kk:nopunct", "need_id": "S02", "lang": "kk", "variant": "nopunct", "text": "бала туғанда қандай жәрдемақылар тағайындалады"}
+{"query_id": "S02-kk:keywords", "need_id": "S02", "lang": "kk", "variant": "keywords", "text": "туғанда қандай жәрдемақылар тағайындалады"}
+{"query_id": "S02-kk:translit", "need_id": "S02", "lang": "kk", "variant": "translit", "text": "bala tuganda kanday zhardemakylar tagayyndalady?"}
+{"query_id": "S02-en:clean", "need_id": "S02", "lang": "en", "variant": "clean", "text": "What benefits are paid when a child is born?"}
+{"query_id": "S02-en:typo_light", "need_id": "S02", "lang": "en", "variant": "typo_light", "text": "What benefits are paid when a child is born?"}
+{"query_id": "S02-en:typo_heavy", "need_id": "S02", "lang": "en", "variant": "typo_heavy", "text": "What benefits are paid when a child is born?"}
+{"query_id": "S02-en:nopunct", "need_id": "S02", "lang": "en", "variant": "nopunct", "text": "what benefits are paid when a child is born"}
+{"query_id": "S02-en:keywords", "need_id": "S02", "lang": "en", "variant": "keywords", "text": "What benefits paid child"}
+{"query_id": "S03-ru:clean", "need_id": "S03", "lang": "ru", "variant": "clean", "text": "Какую медицинскую помощь государство оказывает бесплатно?"}
+{"query_id": "S03-ru:typo_light", "need_id": "S03", "lang": "ru", "variant": "typo_light", "text": "Какую медицинскую помощь государство оказывает бесплатно?"}
+{"query_id": "S03-ru:typo_heavy", "need_id": "S03", "lang": "ru", "variant": "typo_heavy", "text": "Какую меицинскую помощь государтво оказывает бесплатно?"}
+{"query_id": "S03-ru:nopunct", "need_id": "S03", "lang": "ru", "variant": "nopunct", "text": "какую медицинскую помощь государство оказывает бесплатно"}
+{"query_id": "S03-ru:keywords", "need_id": "S03", "lang": "ru", "variant": "keywords", "text": "медицинскую государство оказывает бесплатно"}
+{"query_id": "S03-ru:translit", "need_id": "S03", "lang": "ru", "variant": "translit", "text": "kakuyu meditsinskuyu pomoshch gosudarstvo okazyvaet besplatno?"}
+{"query_id": "S03:mixed", "need_id": "S03", "lang": "mix", "variant": "mixed", "text": "Какую медицинскую помощь государство оказывает бесплатно? / Мемлекет қандай медициналық көмекті тегін көрсетеді?"}
+{"query_id": "S03-kk:clean", "need_id": "S03", "lang": "kk", "variant": "clean", "text": "Мемлекет қандай медициналық көмекті тегін көрсетеді?"}
+{"query_id": "S03-kk:typo_light", "need_id": "S03", "lang": "kk", "variant": "typo_light", "text": "Мемлекет қандай медициналық көмекті теггін көрсетеді?"}
+{"query_id": "S03-kk:typo_heavy", "need_id": "S03", "lang": "kk", "variant": "typo_heavy", "text": "Меммлекет қандай медициналық көмекті теггін көрсетеді?"}
+{"query_id": "S03-kk:nopunct", "need_id": "S03", "lang": "kk", "variant": "nopunct", "text": "мемлекет қандай медициналық көмекті тегін көрсетеді"}
+{"query_id": "S03-kk:keywords", "need_id": "S03", "lang": "kk", "variant": "keywords", "text": "Мемлекет медициналық көмекті көрсетеді"}
+{"query_id": "S03-kk:translit", "need_id": "S03", "lang": "kk", "variant": "translit", "text": "memleket kanday meditsinalyk komekti tegin korsetedi?"}
+{"query_id": "S03-en:clean", "need_id": "S03", "lang": "en", "variant": "clean", "text": "What medical care does the state provide free of charge?"}
+{"query_id": "S03-en:typo_light", "need_id": "S03", "lang": "en", "variant": "typo_light", "text": "What medical care does the state provide free of charge?"}
+{"query_id": "S03-en:typo_heavy", "need_id": "S03", "lang": "en", "variant": "typo_heavy", "text": "What medical care does the state povide free of charge?"}
+{"query_id": "S03-en:nopunct", "need_id": "S03", "lang": "en", "variant": "nopunct", "text": "what medical care does the state provide free of charge"}
+{"query_id": "S03-en:keywords", "need_id": "S03", "lang": "en", "variant": "keywords", "text": "medical state provide charge"}
+{"query_id": "S04-ru:clean", "need_id": "S04", "lang": "ru", "variant": "clean", "text": "С какого возраста ребёнок обязан идти в школу и бесплатное ли обучение?"}
+{"query_id": "S04-ru:typo_light", "need_id": "S04", "lang": "ru", "variant": "typo_light", "text": "С какого возраста ребёнок обязан идти в школу и бесплатное ли обучение?"}
+{"query_id": "S04-ru:typo_heavy", "need_id": "S04", "lang": "ru", "variant": "typo_heavy", "text": "С какого возраста ребёок обяазн идти в школу и беспатное ли обучение?"}
+{"query_id": "S04-ru:nopunct", "need_id": "S04", "lang": "ru", "variant": "nopunct", "text": "с какого возраста ребёнок обязан идти в школу и бесплатное ли обучение"}
+{"query_id": "S04-ru:keywords", "need_id": "S04", "lang": "ru", "variant": "keywords", "text": "возраста ребёнок бесплатное обучение"}
+{"query_id": "S04-ru:translit", "need_id": "S04", "lang": "ru", "variant": "translit", "text": "s kakogo vozrasta rebenok obyazan idti v shkolu i besplatnoe li obuchenie?"}
+{"query_id": "S04:mixed", "need_id": "S04", "lang": "mix", "variant": "mixed", "text": "С какого возраста ребёнок обязан идти в школу и бесплатное ли обучение? / Бала мектепке қай жастан барады және оқу тегін бе?"}
+{"query_id": "S04-kk:clean", "need_id": "S04", "lang": "kk", "variant": "clean", "text": "Бала мектепке қай жастан барады және оқу тегін бе?"}
+{"query_id": "S04-kk:typo_light", "need_id": "S04", "lang": "kk", "variant": "typo_light", "text": "Бала мектепке қай жастан баады және оқу тегін бе?"}
+{"query_id": "S04-kk:typo_heavy", "need_id": "S04", "lang": "kk", "variant": "typo_heavy", "text": "Бала мектепке қай жастан баррады және оқу тегін бе?"}
+{"query_id": "S04-kk:nopunct", "need_id": "S04", "lang": "kk", "variant": "nopunct", "text": "бала мектепке қай жастан барады және оқу тегін бе"}
+{"query_id": "S04-kk:keywords", "need_id": "S04", "lang": "kk", "variant": "keywords", "text": "мектепке жастан барады тегін"}
+{"query_id": "S04-kk:translit", "need_id": "S04", "lang": "kk", "variant": "translit", "text": "bala mektepke kay zhastan barady zhane oku tegin be?"}
+{"query_id": "S04-en:clean", "need_id": "S04", "lang": "en", "variant": "clean", "text": "At what age must a child start school and is education free?"}
+{"query_id": "S04-en:typo_light", "need_id": "S04", "lang": "en", "variant": "typo_light", "text": "At what age must a child start school and is education free?"}
+{"query_id": "S04-en:typo_heavy", "need_id": "S04", "lang": "en", "variant": "typo_heavy", "text": "At what age must a cihld strt school and is education free?"}
+{"query_id": "S04-en:nopunct", "need_id": "S04", "lang": "en", "variant": "nopunct", "text": "at what age must a child start school and is education free"}
+{"query_id": "S04-en:keywords", "need_id": "S04", "lang": "en", "variant": "keywords", "text": "child start school education"}
+{"query_id": "O01-ru:clean", "need_id": "O01", "lang": "ru", "variant": "clean", "text": "Могут ли у меня без моего согласия собирать и передавать персональные данные?"}
+{"query_id": "O01-ru:typo_light", "need_id": "O01", "lang": "ru", "variant": "typo_light", "text": "Могут ли у меня без моего согласия собирать и передавать персональные данные?"}
+{"query_id": "O01-ru:typo_heavy", "need_id": "O01", "lang": "ru", "variant": "typo_heavy", "text": "Могут ли у меня без моеего соглласия собирать и перредавать персональные данные?"}
+{"query_id": "O01-ru:nopunct", "need_id": "O01", "lang": "ru", "variant": "nopunct", "text": "могут ли у меня без моего согласия собирать и передавать персональные данные"}
+{"query_id": "O01-ru:keywords", "need_id": "O01", "lang": "ru", "variant": "keywords", "text": "согласия собирать передавать персональные"}
+{"query_id": "O01-ru:translit", "need_id": "O01", "lang": "ru", "variant": "translit", "text": "mogut li u menya bez moego soglasiya sobirat i peredavat personalnye dannye?"}
+{"query_id": "O01:mixed", "need_id": "O01", "lang": "mix", "variant": "mixed", "text": "Могут ли у меня без моего согласия собирать и передавать персональные данные? / Менің келісімімсіз жеке деректерімді жинап, басқаларға бере ала ма?"}
+{"query_id": "O01-kk:clean", "need_id": "O01", "lang": "kk", "variant": "clean", "text": "Менің келісімімсіз жеке деректерімді жинап, басқаларға бере ала ма?"}
+{"query_id": "O01-kk:typo_light", "need_id": "O01", "lang": "kk", "variant": "typo_light", "text": "Менің келісімімсіз жеке деректерімді жинап, басқаларға бере ала ма?"}
+{"query_id": "O01-kk:typo_heavy", "need_id": "O01", "lang": "kk", "variant": "typo_heavy", "text": "Менің келісімімсіз жеке деректерімді жниап, басқаларға бере ала ма?"}
+{"query_id": "O01-kk:nopunct", "need_id": "O01", "lang": "kk", "variant": "nopunct", "text": "менің келісімімсіз жеке деректерімді жинап басқаларға бере ала ма"}
+{"query_id": "O01-kk:keywords", "need_id": "O01", "lang": "kk", "variant": "keywords", "text": "Менің келісімімсіз деректерімді басқаларға"}
+{"query_id": "O01-kk:translit", "need_id": "O01", "lang": "kk", "variant": "translit", "text": "menin kelisimimsiz zheke derekterimdi zhinap, baskalarga bere ala ma?"}
+{"query_id": "O01-en:clean", "need_id": "O01", "lang": "en", "variant": "clean", "text": "Can my personal data be collected and passed on without my consent?"}
+{"query_id": "O01-en:typo_light", "need_id": "O01", "lang": "en", "variant": "typo_light", "text": "Can my peersonal data be collected and passed on without my consent?"}
+{"query_id": "O01-en:typo_heavy", "need_id": "O01", "lang": "en", "variant": "typo_heavy", "text": "Can my personal data be collected and passed on without my consent?"}
+{"query_id": "O01-en:nopunct", "need_id": "O01", "lang": "en", "variant": "nopunct", "text": "can my personal data be collected and passed on without my consent"}
+{"query_id": "O01-en:keywords", "need_id": "O01", "lang": "en", "variant": "keywords", "text": "personal collected without consent"}
+{"query_id": "O03-ru:clean", "need_id": "O03", "lang": "ru", "variant": "clean", "text": "Судебный исполнитель хочет списать деньги с моей зарплаты. Какую часть могут удержать?"}
+{"query_id": "O03-ru:typo_light", "need_id": "O03", "lang": "ru", "variant": "typo_light", "text": "Судеебный исполнитель хоечт списать деньги с моей зарплаты. Какую часть моут удержтаь?"}
+{"query_id": "O03-ru:typo_heavy", "need_id": "O03", "lang": "ru", "variant": "typo_heavy", "text": "Судебный исполнитлеь хоечт списать деньги с моей зарплаты. Какую часть моут удержать?"}
+{"query_id": "O03-ru:nopunct", "need_id": "O03", "lang": "ru", "variant": "nopunct", "text": "судебный исполнитель хочет списать деньги с моей зарплаты какую часть могут удержать"}
+{"query_id": "O03-ru:keywords", "need_id": "O03", "lang": "ru", "variant": "keywords", "text": "Судебный исполнитель зарплаты удержать"}
+{"query_id": "O03-ru:translit", "need_id": "O03", "lang": "ru", "variant": "translit", "text": "sudebnyy ispolnitel khochet spisat dengi s moey zarplaty. kakuyu chast mogut uderzhat?"}
+{"query_id": "O03:mixed", "need_id": "O03", "lang": "mix", "variant": "mixed", "text": "Судебный исполнитель хочет списать деньги с моей зарплаты. Какую часть могут удержать? / Сот орындаушысы жалақымнан ақша ұстағысы келеді. Қандай бөлігін ұстауға болады?"}
+{"query_id": "O03-kk:clean", "need_id": "O03", "lang": "kk", "variant": "clean", "text": "Сот орындаушысы жалақымнан ақша ұстағысы келеді. Қандай бөлігін ұстауға болады?"}
+{"query_id": "O03-kk:typo_light", "need_id": "O03", "lang": "kk", "variant": "typo_light", "text": "Сот орындаушсы жалақымнан ақша ұстағысы келеді. Қандай бөілгін ұстауға болады?"}
+{"query_id": "O03-kk:typo_heavy", "need_id": "O03", "lang": "kk", "variant": "typo_heavy", "text": "Сот орындауушысы жалаықмнан ақша ұстағысы келеді. Қндай бөлігін ұстауға боолады?"}
+{"query_id": "O03-kk:nopunct", "need_id": "O03", "lang": "kk", "variant": "nopunct", "text": "сот орындаушысы жалақымнан ақша ұстағысы келеді қандай бөлігін ұстауға болады"}
+{"query_id": "O03-kk:keywords", "need_id": "O03", "lang": "kk", "variant": "keywords", "text": "орындаушысы жалақымнан ұстағысы бөлігін"}
+{"query_id": "O03-kk:translit", "need_id": "O03", "lang": "kk", "variant": "translit", "text": "sot oryndaushysy zhalakymnan aksha ustagysy keledi. kanday boligin ustauga bolady?"}
+{"query_id": "O03-en:clean", "need_id": "O03", "lang": "en", "variant": "clean", "text": "A bailiff wants to deduct money from my salary. How much can be withheld?"}
+{"query_id": "O03-en:typo_light", "need_id": "O03", "lang": "en", "variant": "typo_light", "text": "A bailiff wants to deduct money from my salary. How much can be withheld?"}
+{"query_id": "O03-en:typo_heavy", "need_id": "O03", "lang": "en", "variant": "typo_heavy", "text": "A bailiff wats to dduct money from my salary. How much can be withheld?"}
+{"query_id": "O03-en:nopunct", "need_id": "O03", "lang": "en", "variant": "nopunct", "text": "a bailiff wants to deduct money from my salary how much can be withheld"}
+{"query_id": "O03-en:keywords", "need_id": "O03", "lang": "en", "variant": "keywords", "text": "bailiff deduct salary withheld"}
+{"query_id": "O04-ru:clean", "need_id": "O04", "lang": "ru", "variant": "clean", "text": "С какого возраста гражданин может голосовать и быть избранным?"}
+{"query_id": "O04-ru:typo_light", "need_id": "O04", "lang": "ru", "variant": "typo_light", "text": "С какого возрста гражднаин может голосовать и быть избранным?"}
+{"query_id": "O04-ru:typo_heavy", "need_id": "O04", "lang": "ru", "variant": "typo_heavy", "text": "С какого возраста гржданин может голосовать и быть изрбанным?"}
+{"query_id": "O04-ru:nopunct", "need_id": "O04", "lang": "ru", "variant": "nopunct", "text": "с какого возраста гражданин может голосовать и быть избранным"}
+{"query_id": "O04-ru:keywords", "need_id": "O04", "lang": "ru", "variant": "keywords", "text": "возраста гражданин голосовать избранным"}
+{"query_id": "O04-ru:translit", "need_id": "O04", "lang": "ru", "variant": "translit", "text": "s kakogo vozrasta grazhdanin mozhet golosovat i byt izbrannym?"}
+{"query_id": "O04:mixed", "need_id": "O04", "lang": "mix", "variant": "mixed", "text": "С какого возраста гражданин может голосовать и быть избранным? / Азамат қай жастан бастап дауыс бере алады және сайлана алады?"}
+{"query_id": "O04-kk:clean", "need_id": "O04", "lang": "kk", "variant": "clean", "text": "Азамат қай жастан бастап дауыс бере алады және сайлана алады?"}
+{"query_id": "O04-kk:typo_light", "need_id": "O04", "lang": "kk", "variant": "typo_light", "text": "Азамат қай жастан бастап дауыс бере алады және сайлана алады?"}
+{"query_id": "O04-kk:typo_heavy", "need_id": "O04", "lang": "kk", "variant": "typo_heavy", "text": "Азамат қай жастан бастап дауыс бере алады және сайлана алады?"}
+{"query_id": "O04-kk:nopunct", "need_id": "O04", "lang": "kk", "variant": "nopunct", "text": "азамат қай жастан бастап дауыс бере алады және сайлана алады"}
+{"query_id": "O04-kk:keywords", "need_id": "O04", "lang": "kk", "variant": "keywords", "text": "Азамат жастан бастап сайлана"}
+{"query_id": "O04-kk:translit", "need_id": "O04", "lang": "kk", "variant": "translit", "text": "azamat kay zhastan bastap dauys bere alady zhane saylana alady?"}
+{"query_id": "O04-en:clean", "need_id": "O04", "lang": "en", "variant": "clean", "text": "From what age may a citizen vote and stand for election?"}
+{"query_id": "O04-en:typo_light", "need_id": "O04", "lang": "en", "variant": "typo_light", "text": "From what age may a citizen vote and stnad for election?"}
+{"query_id": "O04-en:typo_heavy", "need_id": "O04", "lang": "en", "variant": "typo_heavy", "text": "From what age may a cittizen vote and stand for election?"}
+{"query_id": "O04-en:nopunct", "need_id": "O04", "lang": "en", "variant": "nopunct", "text": "from what age may a citizen vote and stand for election"}
+{"query_id": "O04-en:keywords", "need_id": "O04", "lang": "en", "variant": "keywords", "text": "From citizen stand election"}
+{"query_id": "O05-ru:clean", "need_id": "O05", "lang": "ru", "variant": "clean", "text": "Кто имеет право на бесплатную юридическую помощь от государства?"}
+{"query_id": "O05-ru:typo_light", "need_id": "O05", "lang": "ru", "variant": "typo_light", "text": "Кто имеет прраво на бесплатную юридическую помощь от государства?"}
+{"query_id": "O05-ru:typo_heavy", "need_id": "O05", "lang": "ru", "variant": "typo_heavy", "text": "Кто имеет право на беслпатную юридичесскую помощь от государства?"}
+{"query_id": "O05-ru:nopunct", "need_id": "O05", "lang": "ru", "variant": "nopunct", "text": "кто имеет право на бесплатную юридическую помощь от государства"}
+{"query_id": "O05-ru:keywords", "need_id": "O05", "lang": "ru", "variant": "keywords", "text": "бесплатную юридическую помощь государства"}
+{"query_id": "O05-ru:translit", "need_id": "O05", "lang": "ru", "variant": "translit", "text": "kto imeet pravo na besplatnuyu yuridicheskuyu pomoshch ot gosudarstva?"}
+{"query_id": "O05:mixed", "need_id": "O05", "lang": "mix", "variant": "mixed", "text": "Кто имеет право на бесплатную юридическую помощь от государства? / Мемлекеттен тегін заң көмегін алуға кімнің құқығы бар?"}
+{"query_id": "O05-kk:clean", "need_id": "O05", "lang": "kk", "variant": "clean", "text": "Мемлекеттен тегін заң көмегін алуға кімнің құқығы бар?"}
+{"query_id": "O05-kk:typo_light", "need_id": "O05", "lang": "kk", "variant": "typo_light", "text": "Мемлекеттен тегін заң көмегін алуға кінің құқығы бар?"}
+{"query_id": "O05-kk:typo_heavy", "need_id": "O05", "lang": "kk", "variant": "typo_heavy", "text": "Мемлекеттен теігн заң көмеегін алуға кімің құқығы бар?"}
+{"query_id": "O05-kk:nopunct", "need_id": "O05", "lang": "kk", "variant": "nopunct", "text": "мемлекеттен тегін заң көмегін алуға кімнің құқығы бар"}
+{"query_id": "O05-kk:keywords", "need_id": "O05", "lang": "kk", "variant": "keywords", "text": "Мемлекеттен көмегін кімнің құқығы"}
+{"query_id": "O05-kk:translit", "need_id": "O05", "lang": "kk", "variant": "translit", "text": "memleketten tegin zan komegin aluga kimnin kukygy bar?"}
+{"query_id": "O05-en:clean", "need_id": "O05", "lang": "en", "variant": "clean", "text": "Who is entitled to free legal aid from the state?"}
+{"query_id": "O05-en:typo_light", "need_id": "O05", "lang": "en", "variant": "typo_light", "text": "Who is entiitled to free legal aid from the state?"}
+{"query_id": "O05-en:typo_heavy", "need_id": "O05", "lang": "en", "variant": "typo_heavy", "text": "Who is entitled to free legal aid from the state?"}
+{"query_id": "O05-en:nopunct", "need_id": "O05", "lang": "en", "variant": "nopunct", "text": "who is entitled to free legal aid from the state"}
+{"query_id": "O05-en:keywords", "need_id": "O05", "lang": "en", "variant": "keywords", "text": "entitled free legal state"}
