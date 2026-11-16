@@ -96,6 +96,7 @@ python src/00_download_data.py
 | Оценка BM25, TF-IDF, ключевых слов | `QRELS_VERSION=v1 python src/22_sparse_experiments.py --scope articles` (и `--scope all --modes stem --langs ru`, `--modes p5 --langs kk`) |
 | Оценка плотного поиска и гибрида | `QRELS_VERSION=v1 python src/25_dense_eval.py BAAI/bge-m3 articles` (аналогично для остальных моделей) |
 | Поиск акта по названию | `python src/27_title_eval.py` |
+| Ответ языковой модели с проверкой цитат (нужен запущенный Ollama с gemma3:4b; около 45 минут на 135 вопросов) | `python src/46_answer_eval.py [ru kk en]` → `outputs/answer_eval.json`, `answers_sample.json` |
 | История изменений из сносок (охват и выборка для ручной проверки), сравнение актов | `python src/44_amendments_check.py`, `python src/45_regimes_eval.py` |
 | Расшифровка сокращений и автоматический выбор режима (описательные проверки) | `python src/42_abbreviations.py`, `python src/43_router_eval.py` |
 | Устойчивость к опечаткам, латинице и сигнал «статьи нет» | `python src/41_robustness.py` → `outputs/robustness.json` (нужны индексы и GPU; около 5 минут) |

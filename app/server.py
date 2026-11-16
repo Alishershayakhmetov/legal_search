@@ -12,7 +12,9 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import llm  # noqa: E402
 from amendments import parse_notes  # noqa: E402
+from answer import make_answer, select_excerpts  # noqa: E402
 from engine import ROOT, Filters, SearchEngine, group_by_act, log_feedback  # noqa: E402
 
 STATIC = Path(__file__).resolve().parent / "static"
@@ -73,6 +75,36 @@ def run_search(req):
                 "direct": info.get("direct", 0), "low_confidence": info.get("low_confidence", False), "hits": [hit_to_dict(h, info["lang"]) for h in hits]}
 
 
+def run_answer(req):
+    """A short answer from a language model, written only from the top articles and checked sentence by sentence (app/answer.py)."""
+    query = str(req.get("query", "")).strip()[:500]
+    if not query:
+        return {"error": "empty query"}
+    filters = make_filters(req.get("filters"))
+    with LOCK:
+        hits, info = ENGINE.search(query, 6, "dense", filters)
+        if info.get("low_confidence") or not hits:
+            return {"status": "no_reliable_article", "lang": info["lang"]}
+        lang = info["lang"]
+
+        def pick(h):
+            return h.texts.get("kk" if lang == "kk" and "kk" in h.texts else "ru", "") or next(iter(h.texts.values()), "")
+
+        excerpts = select_excerpts(hits, query, pick, ENGINE.explain)
+
+    def embed(xs):
+        with LOCK:
+            return ENGINE.model.encode(xs, normalize_embeddings=True, convert_to_numpy=True).astype("float32")
+
+    try:
+        res = make_answer(query, lang, excerpts, llm.get_backend(), embed)
+    except llm.LLMError as e:
+        return {"status": "error", "error": f"Языковая модель недоступна: {e}"}
+    res["lang"] = lang
+    res["hit_numbers"] = {e["n"]: i + 1 for i, e in enumerate(excerpts)}
+    return res
+
+
 def examples():
     """Every query of the test set, per language (the needs that have judgments)."""
     try:
@@ -119,6 +151,8 @@ class Handler(BaseHTTPRequestHandler):
             req = json.loads(self.rfile.read(length) or b"{}")
             if self.path == "/api/search":
                 return self._json(run_search(req))
+            if self.path == "/api/answer":
+                return self._json(run_answer(req))
             if self.path == "/api/explain":
                 with LOCK:
                     return self._json({"sentences": ENGINE.explain(str(req.get("query", ""))[:500], str(req.get("text", ""))[:20000], max(1, min(int(req.get("k", 3)), 5)))})

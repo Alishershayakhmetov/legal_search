@@ -74,6 +74,10 @@ defaults, CPU-only mode, the thumbs buttons.
 
 `engine.search` now (a) reads an all-Latin query as Russian when that gives a higher top-1 score, (b) sets `low_confidence` and adds a warning when the best score is below `CONFIDENCE_MIN` (ru 0.62, kk 0.61, en 0.58), (c) adds the policy note for questions about evading the law (`docs/policy.md`). The server returns `low_confidence`; the page shows it as a warning line.
 
+## Cited LLM answer (2026-11-15)
+
+Button "Ответ с цитатами" -> `/api/answer` -> `app/answer.py` + `app/llm.py` (Ollama `gemma3:4b` by default; `LLM_BACKEND`, `LLM_MODEL`, `ANTHROPIC_API_KEY`). Needs Ollama running (installed here). The Anthropic backend has never been run.
+
 ## Stage 4 additions (2026-11-15)
 
 `app/amendments.py` (history and pending changes from footnotes), modes "Сравнить акты" (`group_by_act`), `/api/explain` (key sentences) and the quote summary button; `engine._hit` no longer slices the whole frame (search ~0.2 s). No LLM: A1 is extractive only.

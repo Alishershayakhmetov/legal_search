@@ -40,6 +40,19 @@ Filters: in-force acts only, hide bills ("О проекте…", "жоба") and
 be identified, kind of act, year of adoption. The thumbs up/down under a result appends a judgment to `data/app/feedback.jsonl`
 (query, article, label), which can be used as more relevance data.
 
+## Cited answer from a language model
+
+The button "Ответ с цитатами" asks a language model to answer from the top four articles only; each sentence is then checked (it must cite an
+existing excerpt, every number in it must occur in the cited excerpt, and its meaning must be close to a sentence of that excerpt) and sentences that
+fail are dropped. By default a local model through Ollama is used (`gemma3:4b`, about 10-20 s per answer on the project's laptop). To change it:
+
+```bash
+set LLM_MODEL=qwen2.5:3b                         # another local Ollama model
+set LLM_BACKEND=anthropic & set ANTHROPIC_API_KEY=...   # the Anthropic API (written from the API description, not yet run in this project)
+```
+
+Code: `app/llm.py` (backends), `app/answer.py` (prompt and checks); measurements: `src/46_answer_eval.py`, `outputs/answer_eval.json`.
+
 ## How well does it work
 
 On the project's test set of 45 everyday questions (judgments still to be reviewed by the author), the correct article is among the

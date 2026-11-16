@@ -1,0 +1,17 @@
+{
+ "ru": {
+  "sentences": 182,
+  "kept": 147,
+  "kept_share": 0.808
+ },
+ "kk": {
+  "sentences": 103,
+  "kept": 67,
+  "kept_share": 0.65
+ },
+ "en": {
+  "sentences": 170,
+  "kept": 121,
+  "kept_share": 0.712
+ }
+}

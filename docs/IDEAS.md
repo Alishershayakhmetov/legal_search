@@ -22,7 +22,7 @@ keep the "Log" at the bottom up to date. Every search idea should be measured be
 
 | # | Idea | Why | Effort | Status |
 |---|---|---|---|---|
-| A1 | Short answer written only from the retrieved articles, with citations ("ТК, ст. 113") and a check that every cited sentence exists | Most visible demo feature; the check guards against invented citations | 2 days, needs an LLM | partly done 2026-11-15: extractive quote summary only; no LLM |
+| A1 | Short answer written only from the retrieved articles, with citations ("ТК, ст. 113") and a check that every cited sentence exists | Most visible demo feature; the check guards against invented citations | 2 days, needs an LLM | done 2026-11-15 with a local model (gemma3:4b) and per-sentence checks; key later |
 | A2 | Clarifying question when the query is ambiguous | Fewer wrong-regime answers | 1 day | idea |
 | A3 | Compare editions of an article over time | History file is missing from the repository, needs another source | 2+ days | idea |
 

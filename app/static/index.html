@@ -255,6 +255,25 @@ async function run() {
         sb.replaceWith(box);
       };
       frag.appendChild(sb);
+      const ab = el('button', 'tr', 'Ответ с цитатами (языковая модель, 10–20 с)'); ab.type = 'button'; ab.style.marginLeft = '8px';
+      ab.onclick = async () => {
+        ab.disabled = true; ab.textContent = 'Модель читает статьи…';
+        const r = await post('/api/answer', {query, filters: filters()});
+        const box = el('div', 'card'); box.appendChild(el('h3', '', 'Ответ с цитатами'));
+        if (r.status === 'ok') {
+          const p = el('p', 'body'); r.sentences.filter(s => s.ok).forEach(s => p.appendChild(document.createTextNode(s.text + ' '))); box.appendChild(p);
+          const sup = el('details', 'full'); sup.appendChild(el('summary', '', 'Опора в статьях: ближайшее предложение статьи к каждому предложению ответа'));
+          const ul0 = el('ul', 'facts'); r.sentences.filter(s => s.ok).forEach(s => ul0.appendChild(el('li', '', `${s.text.replace(/\[[\d,\s]+\]/g, '').trim().slice(0, 90)}… → «${s.support_quote}» (близость ${s.support})`))); sup.appendChild(ul0); box.appendChild(sup);
+          const src = el('div', 'facts', 'Источники: ' + r.excerpts.map(e => `[${e.n}] ${e.title}, ст. ${e.article_no}`).join('; ')); box.appendChild(src);
+          if (r.dropped) box.appendChild(el('div', 'legend', `Проверка удалила предложений: ${r.dropped} (нет ссылки, число не из статьи или смысл не подтверждён).`));
+        } else if (r.status === 'abstain') box.appendChild(el('p', 'body', 'Модель не нашла ответа в найденных статьях. Посмотрите статьи ниже.'));
+        else if (r.status === 'unverified') box.appendChild(el('p', 'body', 'Ответ модели не прошёл проверку ссылок и чисел, поэтому не показан. Воспользуйтесь краткой выжимкой или статьями ниже.'));
+        else if (r.status === 'no_reliable_article') box.appendChild(el('p', 'body', 'Надёжной статьи для этого вопроса не найдено, ответ не строится.'));
+        else box.appendChild(el('p', 'body', r.error || 'Ошибка'));
+        box.appendChild(el('div', 'legend', `Ответ написан моделью ${r.model || 'локальной'} только по найденным статьям; каждое предложение проверено на ссылку, числа и близость к статье, но проверяйте по тексту. Это не юридическая консультация.`));
+        ab.replaceWith(box);
+      };
+      frag.appendChild(ab);
     }
     res.hits.forEach((h, i) => frag.appendChild(articleCard(i + 1, h, query, res.lang)));
     if (!res.hits.length && !res.notes.length) frag.appendChild(el('div', 'note info', 'Ничего не найдено: попробуйте ослабить фильтры.'));
