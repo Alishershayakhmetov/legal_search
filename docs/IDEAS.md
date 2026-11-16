@@ -35,7 +35,7 @@ keep the "Log" at the bottom up to date. Every search idea should be measured be
 | D3 | Court practice (normative resolutions of the Supreme Court) as another layer | Interpretation next to the law | 2+ days | idea |
 | D4 | Script that detects new versions of the source data and rebuilds only what changed | Laws change | 1–2 days | idea |
 | D5 | Re-run the whole pipeline with the fixed chunker and recompute every metric | Metrics currently predate the fix (88 119 articles missing) | several hours of GPU | done 2026-11-15 (about 1 h with vector reuse) |
-| D6 | bge-m3 over all 1.7 M passages | Best model was only tested on articles (about 9 h) | 9 h GPU | idea |
+| D6 | bge-m3 over all 1.7 M passages | Best model was only tested on articles (about 9 h) | 9 h GPU | not run: ~7 GPU hours left |
 
 ## Evaluation and reliability
 
@@ -126,8 +126,8 @@ keep the "Log" at the bottom up to date. Every search idea should be measured be
 | S20 | Long-query mode: paste a contract clause or a paragraph of a letter and get the relevant articles | Real use case; needs chunking of the query | 0.5 day | idea |
 | A8 | Term definitions: "что такое …" goes to the "Основные понятия" article of the act and shows the definition; hover on terms in results | Definitions are a frequent need; the articles already exist in the index | 1 day | idea |
 | A9 | Deadline calculator: from a date and a rule found in the article ("в течение 10 рабочих дней") compute the last day with the calendar of holidays | Practical; needs the holiday calendar | 1 day | idea |
-| D8 | Parallel Russian–Kazakh article corpus (68 111 acts have both texts): align by act and article number, check that the pair really matches (embedding similarity), release as a dataset | A by-product with value of its own; also tests cross-lingual retrieval (Kazakh query → Russian article) | 1–2 days | idea |
-| D9 | Publish the test set (needs, queries, judgments, guidelines) as a small dataset with a datasheet | Reusable benchmark; supports the extension bonus | 0.5 day | idea |
+| D8 | Parallel Russian–Kazakh article corpus (68 111 acts have both texts): align by act and article number, check that the pair really matches (embedding similarity), release as a dataset | A by-product with value of its own; also tests cross-lingual retrieval (Kazakh query → Russian article) | 1–2 days | done 2026-11-15 (local, unpublished) |
+| D9 | Publish the test set (needs, queries, judgments, guidelines) as a small dataset with a datasheet | Reusable benchmark; supports the extension bonus | 0.5 day | done 2026-11-15 (local, unpublished) |
 | E10 | Second annotator: an LLM judges the same pairs; compare with the author and report agreement, never replace human review | Cheap check of the judgments; clearly labelled as a model | 0.5 day, needs an LLM | idea |
 | U12 | Filter by branch of law (351 areas already in the metadata) | Cheap facet; narrows results the way lawyers think | 3 h | blocked 2026-11-15: area codes have no names in the data |
 | U13 | Browse by topic: clusters of articles or the area tree with counts | Exploration when the user does not know what to ask | 1–2 days | idea |
@@ -145,7 +145,7 @@ keep the "Log" at the bottom up to date. Every search idea should be measured be
 | A11 | Warning about changes not yet in force from the "Примечание ИЗПИ! … вводится в действие …" notes | The user sees that the text will change | 0.5 day | done 2026-11-15 |
 | A12 | "Куда обращаться": name the competent body from the article and the metadata (adopting and regulatory body) | Practical next step for the user | 1–2 days | idea |
 | A13 | Compare one question across regimes in a table (Labour Code vs Law on civil service vs police service) | Turns the "general vs special regime" error into a feature | 1 day | done 2026-11-15 (act-grouped view) |
-| D10 | Kazakh–Russian legal term glossary mined from the parallel article corpus (D8) | Useful to translators; by-product with value of its own | 1–2 days | idea |
+| D10 | Kazakh–Russian legal term glossary mined from the parallel article corpus (D8) | Useful to translators; by-product with value of its own | 1–2 days | done 2026-11-15 (local, unpublished) |
 | D11 | Classifier of article role (definition, right, duty, liability, procedure, deadline) as a filter and a ranking hint | "What is the punishment" wants liability articles | 2 days | idea |
 | E11 | Retrievability audit: which articles are never returned for any question (index health, hubness) | Finds dead zones of the index | 0.5 day | idea |
 | E12 | Golden queries: 20 fixed questions with the expected top article, run in the tests/CI after every change | Catches regressions when the index or ranking changes | 3 h | done 2026-11-15 (23 cases, RUN_GOLDEN=1) |
@@ -159,7 +159,7 @@ keep the "Log" at the bottom up to date. Every search idea should be measured be
 
 | # | Idea | Why | Effort | Status |
 |---|---|---|---|---|
-| S25 | Model sweep on the article index: multilingual-e5-large, Qwen3-Embedding, jina-embeddings-v3, gte-multilingual, LaBSE | Only three models were compared; a bigger or newer one may beat bge-m3 on Kazakh | 0.5–1 day per large model (encoding hours) | idea |
+| S25 | Model sweep on the article index: multilingual-e5-large, Qwen3-Embedding, jina-embeddings-v3, gte-multilingual, LaBSE | Only three models were compared; a bigger or newer one may beat bge-m3 on Kazakh | 0.5–1 day per large model (encoding hours) | done 2026-11-15 (local, unpublished) |
 | S26 | Query instructions ("Represent this legal question for retrieving articles of Kazakh law") for models that support them | Free quality change, never tried | 3 h | done 2026-11-15: hurts bge-m3, dropped |
 | S27 | Document expansion: generate the questions each article answers (doc2query) and embed them next to the article | Attacks the everyday-vs-legal vocabulary gap from the document side | 2 days, needs an LLM, big index growth | idea |
 | S28 | HyDE: let an LLM write a short hypothetical answer, embed it instead of the question | Often helps vague situational questions | 0.5 day, needs an LLM | idea |
@@ -169,7 +169,7 @@ keep the "Log" at the bottom up to date. Every search idea should be measured be
 | A15 | "Объясни простыми словами" button with a disclaimer | Readability for non-lawyers; risk of distortion, show the original next to it | 1 day, needs an LLM | idea |
 | A16 | Translate the shown snippet into the language of the question when only another language is available (English users now get Russian or Kazakh text) | Closes a visible gap of the English mode | 0.5 day (NLLB already installed) | done 2026-11-15 (on-demand button) |
 | A17 | Read-aloud of an article (text to speech) | Accessibility | 0.5 day | idea |
-| D12 | Personal-data scan of the texts before any release of the parallel corpus or the test set | Court-related texts may contain names; legal and ethical check | 0.5 day | idea |
+| D12 | Personal-data scan of the texts before any release of the parallel corpus or the test set | Court-related texts may contain names; legal and ethical check | 0.5 day | done 2026-11-15 (local, unpublished) |
 | E15 | Interleaving experiment to compare two rankings on live use of 👍/👎 | Online evaluation without new annotation | 1 day | idea |
 | X9 | One command that runs the pipeline and skips stages whose inputs did not change (Makefile or small runner with hashes) | README now lists 11 manual steps | 1 day | idea |
 | X10 | Developer guide: architecture diagram, data flow, how to add a ranking idea and measure it | Handover and defense | 0.5 day | idea |

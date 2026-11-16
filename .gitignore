@@ -10,3 +10,4 @@ data/
 logs/
 *.log
 report/figures/_*.png
+release/parallel/*.parquet

@@ -110,7 +110,14 @@ Run in this order, each measured against the baseline; keep only what helps on t
 | S25 model sweep (larger and newer encoders) | may replace bge-m3 |
 | D6 bge-m3 over all passages (about 9 h of GPU) | closes a stated limitation |
 
-**Gate:** each published artefact has a licence and a datasheet; the instructor has approved the extension.
+**Status 2026-11-15:** D8, D10, D9, D12, S25 done locally; D6 not run; nothing published.
+* D12: regex scan of the test-set files (e-mail, phone, 12-digit numbers, card, IBAN): no hits; names are not detected.
+* D9: `src/47_release_testset.py` -> `release/testset/` (8 data files, `DATASHEET.md`, `MANIFEST.sha256`); licence not chosen (proposal CC BY 4.0); KazakhLawCorpus licence NOT verified (could not be found; check its Hugging Face card).
+* D8: `src/48_parallel_corpus.py` -> `release/parallel/articles_ru_kk.parquet` (git-ignored, 48 MB, regenerable): 40,516 article pairs, 2,139 acts, tiers by bge-m3 cosine; 39,541 flagged aligned; manual read of 43 pairs (high 10/10, medium 8-9/9, low 5-6/9, unreliable ~4/15). Datasheet by `src/51_release_datasheets.py`.
+* D10: `src/49_glossary.py` -> `release/glossary/` (204 recurring headings, 1,174 word pairs); manual check 30/30 phrases, 46/50 words.
+* S25: `src/50_encoder_sweep.py`, re-ranking of a shared candidate pool (22,447 docs; not a full-corpus run): multilingual-e5-large equals bge-m3 on Russian (S@10 0.82 vs 0.80, p=1), worse on Kazakh (p=0.012); Qwen3-Embedding-0.6B worse on Kazakh (p<0.001). bge-m3 stays. gte-multilingual-base not run (needs downloaded code; the launch was blocked and I dropped the model). Pool shaped by bge-m3 favours it slightly.
+* D6 (bge-m3 over all passages): about 7 more GPU hours; not started. It would only close a stated limitation.
+* **Gate not met:** the artefacts have datasheets but no licence, and the instructor has not approved the extension (C3). Nothing should be published before both.
 
 ## Stage 6: report, slides, defense (1–2 days)
 

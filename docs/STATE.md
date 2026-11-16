@@ -74,6 +74,10 @@ defaults, CPU-only mode, the thumbs buttons.
 
 `engine.search` now (a) reads an all-Latin query as Russian when that gives a higher top-1 score, (b) sets `low_confidence` and adds a warning when the best score is below `CONFIDENCE_MIN` (ru 0.62, kk 0.61, en 0.58), (c) adds the policy note for questions about evading the law (`docs/policy.md`). The server returns `low_confidence`; the page shows it as a warning line.
 
+## Stage 5 artefacts (2026-11-15)
+
+`release/testset/`, `release/parallel/` (parquet is git-ignored; rebuild with `src/48_parallel_corpus.py`), `release/glossary/`, each with a datasheet and checksums; none published. Encoder sweep: `outputs/encoder_sweep.json` (models cached in the Hugging Face cache: bge-reranker-v2-m3, Qwen3-Embedding-0.6B, multilingual-e5-large).
+
 ## Cited LLM answer (2026-11-15)
 
 Button "Ответ с цитатами" -> `/api/answer` -> `app/answer.py` + `app/llm.py` (Ollama `gemma3:4b` by default; `LLM_BACKEND`, `LLM_MODEL`, `ANTHROPIC_API_KEY`). Needs Ollama running (installed here). The Anthropic backend has never been run.
