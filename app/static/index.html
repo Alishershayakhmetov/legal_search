@@ -45,7 +45,9 @@
   .years { display:flex; gap:8px; } .kinds { max-height:150px; overflow:auto; background:var(--panel); border-radius:8px; padding:4px 10px; }
   @media (max-width: 960px) { .layout { grid-template-columns:1fr; } aside { position:static; order:-1; } .cols { grid-template-columns:1fr; } }
   button.tr { font:inherit; font-size:13px; padding:5px 10px; margin:4px 0 8px; border:1px solid var(--line); border-radius:8px; background:var(--bg); color:var(--ink); cursor:pointer; } button.tr:disabled { opacity:.6; }
+  mark.s { background:#d6e6ff; border-radius:3px; padding:0 2px; }
   mark.d { background:#fff1c2; border-radius:3px; padding:0 2px; } mark.a { background:#d7f0dc; border-radius:3px; padding:0 2px; }
+  table.regimes { width:100%; border-collapse:collapse; font-size:14px; } table.regimes th, table.regimes td { text-align:left; vertical-align:top; padding:8px 10px; border-bottom:1px solid var(--line); } table.regimes th { color:var(--mute); font-weight:600; }
   .facts { font-size:13px; color:var(--mute); margin:0 0 8px; } .legend { font-size:12px; color:var(--mute); margin:6px 0; }
 </style>
 </head>
@@ -65,6 +67,7 @@
     <label class="row"><input type="radio" name="mode" value="auto" checked title="Название акта («Трудовой кодекс») ищется как акт, вопрос — как статьи">Автоматически</label>
     <label class="row"><input type="radio" name="mode" value="articles">Поиск по статьям</label>
     <label class="row"><input type="radio" name="mode" value="titles">Найти акт по названию</label>
+    <label class="row"><input type="radio" name="mode" value="regimes" title="Одна лучшая статья из каждого акта: так видно, что говорят разные законы об одном и том же">Сравнить акты (режимы)</label>
     <label class="row"><input type="radio" name="mode" value="compare">Сравнить методы</label>
     <div class="field">Метод</div>
     <select id="method"><option value="dense">Смысловой (bge-m3)</option><option value="bm25">По словам (BM25)</option><option value="hybrid">Гибрид (смысл + слова)</option></select>
@@ -84,7 +87,7 @@
 <script>
 const $ = s => document.querySelector(s);
 const LANG = {ru: 'русский', kk: 'казахский', en: 'английский'};
-const MODES = ['auto', 'articles', 'titles', 'compare'];
+const MODES = ['auto', 'articles', 'titles', 'regimes', 'compare'];
 const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text !== undefined) e.textContent = text; return e; };
 const mode = () => document.querySelector('input[name=mode]:checked').value;
 const kinds = () => [...document.querySelectorAll('#kinds input:checked')].map(i => i.value);
@@ -145,6 +148,35 @@ function articleCard(i, h, query, lang) {
       const box = el('div', 'tr-out'); box.appendChild(el('div', 'meta', 'Unofficial machine translation (NLLB-200), may contain errors' + (r.cut ? '; only the beginning is translated' : '') + '; the legal text is the Russian/Kazakh original.')); box.appendChild(el('p', 'body', r.error ? r.error : r.text)); tb.replaceWith(box); };
     c.appendChild(tb);
   }
+  const am = h.amendments || {history: [], pending: []};
+  for (const p of am.pending.slice(0, 3)) {
+    const text = p.status === 'upcoming' ? `⚠ Изменение ещё не вступило в силу: ${p.effective || ''} — ${p.note}`
+      : p.status === 'in_force_since_snapshot' ? `⚠ Текст приведён на 01.04.2024; ${p.effective ? p.effective + ' вступило в силу' : 'изменение вступило в силу'}, поэтому актуальный текст отличается: ${p.note}`
+      : `⚠ Анонсировано изменение (срок вступления определяется датой опубликования): ${p.note}`;
+    c.appendChild(el('div', 'note warn', text.slice(0, 420)));
+  }
+  if (am.history.length) {
+    const d = el('details', 'full'); d.appendChild(el('summary', '', `История изменений по сноскам (${am.history.length})`));
+    const ul = el('ul', 'facts');
+    for (const a of am.history) ul.appendChild(el('li', '', `${a.date} № ${a.number} — ${a.action}` + (a.effective ? ` (${a.effective})` : '')));
+    d.appendChild(ul); d.appendChild(el('div', 'legend', 'Сведения прочитаны из сносок в тексте акта; если сноски нет или она записана нестандартно, история не показывается — это не значит, что статья не менялась.'));
+    c.appendChild(d);
+  }
+  const ex = el('button', 'tr', 'Показать ключевые предложения'); ex.type = 'button';
+  ex.onclick = async () => {
+    const lg = h.snippet_lang, full = h.texts[lg] || ''; ex.disabled = true; ex.textContent = '…';
+    const r = await post('/api/explain', {query, text: full});
+    const box = el('div', 'tr-out'); box.appendChild(el('div', 'meta', 'Предложения статьи, ближе всего к запросу по смыслу (оценка — косинусная близость); они отмечены синим в полном тексте.'));
+    const pre = c.querySelector('details.full pre');
+    if (pre && r.sentences && r.sentences.length) {
+      const f = document.createDocumentFragment(); let last = 0;
+      for (const s of r.sentences) { f.appendChild(document.createTextNode(full.slice(last, s.start))); const mk = el('mark', 's', full.slice(s.start, s.end)); mk.title = 'близость ' + s.score; f.appendChild(mk); last = s.end; }
+      f.appendChild(document.createTextNode(full.slice(last))); pre.replaceChildren(f);
+    }
+    const ol = el('ol', 'facts'); (r.sentences || []).slice().sort((a, b) => b.score - a.score).forEach(s => ol.appendChild(el('li', '', `${s.score.toFixed(2)} — ${full.slice(s.start, s.end)}`)));
+    box.appendChild(ol); ex.replaceWith(box);
+  };
+  c.appendChild(ex);
   const conv = mrpLine(h.texts.ru || h.texts.kk || h.snippet); if (conv) c.appendChild(conv);
   const act = el('div', 'actions');
   for (const [label, text, tip] of [['up', '👍', 'Эта статья отвечает на запрос'], ['down', '👎', 'Эта статья не подходит']]) {
@@ -180,6 +212,21 @@ async function run() {
       frag.appendChild(c);
     });
     if (!res.results.length) frag.appendChild(el('div', 'note info', 'Ничего не найдено: попробуйте ослабить фильтры.'));
+  } else if (res.mode === 'regimes') {
+    frag.appendChild(el('div', 'meta', `Язык запроса: ${LANG[res.lang]} · ${res.seconds.toFixed(2)} с`));
+    frag.appendChild(el('div', 'note info', 'Одна лучшая статья из каждого акта: сравните, как об одном вопросе говорят общий и специальные режимы (например, Трудовой кодекс и закон о службе). Выбор режима, который относится к вам, за вами.'));
+    res.notes.forEach(n => frag.appendChild(el('div', res.low_confidence && n.startsWith('Надёжной') ? 'note warn' : 'note info', n)));
+    const tb = el('table', 'regimes'); const head = el('tr'); ['Акт', 'Статья', 'Что говорит статья', 'Ещё статей'].forEach(t => head.appendChild(el('th', '', t))); tb.appendChild(head);
+    for (const r of res.rows) {
+      const tr = el('tr'); const a = el('td'); const strong = el('b', '', r.title); a.appendChild(strong); a.appendChild(el('div', 'chips', chips([r.kind, r.year, status(r.in_force)])));
+      if (r.url) { const l = el('a', '', 'adilet.zan.kz'); l.href = r.url; l.target = '_blank'; l.rel = 'noopener'; a.appendChild(l); }
+      const art = el('td', '', `ст. ${r.article_no}` + (r.heading ? ` — ${r.heading}` : ''));
+      const body = el('td'); body.appendChild(marked(r.snippet.slice(0, 380) + (r.snippet.length > 380 ? '…' : '')));
+      const conv = mrpLine(r.snippet); if (conv) body.appendChild(conv);
+      tr.append(a, art, body, el('td', '', r.also ? `+${r.also}` : '—')); tb.appendChild(tr);
+    }
+    frag.appendChild(tb);
+    if (!res.rows.length) frag.appendChild(el('div', 'note info', 'Ничего не найдено: попробуйте ослабить фильтры.'));
   } else if (res.mode === 'compare') {
     const cols = el('div', 'cols');
     res.columns.forEach(col => {
@@ -194,6 +241,21 @@ async function run() {
     if (res.hits.length) frag.appendChild(el('div', 'legend', 'В тексте отмечены сроки (жёлтым) и суммы, доли, штрафы (зелёным); суммы в МРП пересчитаны в тенге.'));
     if (res.direct) frag.appendChild(el('div', 'note info', 'Запрос содержит номер статьи: сначала показана найденная по номеру статья, затем результаты смыслового поиска.'));
     res.notes.forEach(n => frag.appendChild(el('div', res.low_confidence && n.startsWith('Надёжной') ? 'note warn' : 'note info', n)));
+    if (res.hits.length && !res.low_confidence) {
+      const sb = el('button', 'tr', 'Краткая выжимка: главные предложения первых трёх статей'); sb.type = 'button';
+      sb.onclick = async () => {
+        sb.disabled = true; sb.textContent = '…'; const box = el('div', 'card'); box.appendChild(el('h3', '', 'Краткая выжимка (цитаты, не пересказ)'));
+        const ul = el('ul');
+        for (const h of res.hits.slice(0, 3)) {
+          const full = h.texts[h.snippet_lang] || ''; const r = await post('/api/explain', {query, text: full, k: 1});
+          const s = (r.sentences || [])[0]; if (!s) continue;
+          const li = el('li'); li.appendChild(el('span', '', '«')); li.appendChild(marked(full.slice(s.start, s.end))); li.appendChild(el('span', '', `» — ${h.title}, ст. ${h.article_no}`)); ul.appendChild(li);
+        }
+        box.appendChild(ul); box.appendChild(el('div', 'legend', 'Каждое предложение дословно взято из статьи, указанной рядом, поэтому выдуманных ссылок здесь быть не может; но выбор предложения автоматический и может быть неточным. Это не юридическая консультация.'));
+        sb.replaceWith(box);
+      };
+      frag.appendChild(sb);
+    }
     res.hits.forEach((h, i) => frag.appendChild(articleCard(i + 1, h, query, res.lang)));
     if (!res.hits.length && !res.notes.length) frag.appendChild(el('div', 'note info', 'Ничего не найдено: попробуйте ослабить фильтры.'));
   }

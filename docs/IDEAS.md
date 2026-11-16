@@ -22,7 +22,7 @@ keep the "Log" at the bottom up to date. Every search idea should be measured be
 
 | # | Idea | Why | Effort | Status |
 |---|---|---|---|---|
-| A1 | Short answer written only from the retrieved articles, with citations ("ТК, ст. 113") and a check that every cited sentence exists | Most visible demo feature; the check guards against invented citations | 2 days, needs an LLM | idea |
+| A1 | Short answer written only from the retrieved articles, with citations ("ТК, ст. 113") and a check that every cited sentence exists | Most visible demo feature; the check guards against invented citations | 2 days, needs an LLM | partly done 2026-11-15: extractive quote summary only; no LLM |
 | A2 | Clarifying question when the query is ambiguous | Fewer wrong-regime answers | 1 day | idea |
 | A3 | Compare editions of an article over time | History file is missing from the repository, needs another source | 2+ days | idea |
 
@@ -122,7 +122,7 @@ keep the "Log" at the bottom up to date. Every search idea should be measured be
 | # | Idea | Why | Effort | Status |
 |---|---|---|---|---|
 | S18 | Use bge-m3's own sparse (lexical-weight) and multi-vector outputs, fused with the dense score | The model offers all three scores; a hybrid inside one model may avoid the BM25 weakness seen in the equal-weight RRF | 1 day (re-encode, bigger index) | idea |
-| S19 | Explain a result: highlight the sentences closest to the query and show the score per sentence | Trust and faster reading; helps error analysis | 1 day | idea |
+| S19 | Explain a result: highlight the sentences closest to the query and show the score per sentence | Trust and faster reading; helps error analysis | 1 day | done 2026-11-15 |
 | S20 | Long-query mode: paste a contract clause or a paragraph of a letter and get the relevant articles | Real use case; needs chunking of the query | 0.5 day | idea |
 | A8 | Term definitions: "что такое …" goes to the "Основные понятия" article of the act and shows the definition; hover on terms in results | Definitions are a frequent need; the articles already exist in the index | 1 day | idea |
 | A9 | Deadline calculator: from a date and a rule found in the article ("в течение 10 рабочих дней") compute the last day with the calendar of holidays | Practical; needs the holiday calendar | 1 day | idea |
@@ -141,10 +141,10 @@ keep the "Log" at the bottom up to date. Every search idea should be measured be
 | S22 | Prior from legal force (Constitution > codes > laws > by-laws; the `legal_force` field exists) | Higher-ranking norms first when texts compete | 3 h, measure on the test set | done 2026-11-15: helps on the test set, off by default until the held-out set |
 | S23 | Ablation of passage size and overlap (1 500 / 800 chars, with and without overlap) | Never tested; may change every number | 1 day (re-chunk, re-embed) | idea |
 | S24 | Ablation of the encoder input length (256 / 384 / 512 tokens) | 8% of passages are cut at 384; shows what that costs | 0.5 day | idea |
-| A10 | Amendment timeline of an article from the footnotes in the text ("Сноска. … с изменениями, внесенными законами РК от …") | History without the missing history file; the data is already in the passages | 1–2 days | idea |
-| A11 | Warning about changes not yet in force from the "Примечание ИЗПИ! … вводится в действие …" notes | The user sees that the text will change | 0.5 day | idea |
+| A10 | Amendment timeline of an article from the footnotes in the text ("Сноска. … с изменениями, внесенными законами РК от …") | History without the missing history file; the data is already in the passages | 1–2 days | done 2026-11-15 |
+| A11 | Warning about changes not yet in force from the "Примечание ИЗПИ! … вводится в действие …" notes | The user sees that the text will change | 0.5 day | done 2026-11-15 |
 | A12 | "Куда обращаться": name the competent body from the article and the metadata (adopting and regulatory body) | Practical next step for the user | 1–2 days | idea |
-| A13 | Compare one question across regimes in a table (Labour Code vs Law on civil service vs police service) | Turns the "general vs special regime" error into a feature | 1 day | idea |
+| A13 | Compare one question across regimes in a table (Labour Code vs Law on civil service vs police service) | Turns the "general vs special regime" error into a feature | 1 day | done 2026-11-15 (act-grouped view) |
 | D10 | Kazakh–Russian legal term glossary mined from the parallel article corpus (D8) | Useful to translators; by-product with value of its own | 1–2 days | idea |
 | D11 | Classifier of article role (definition, right, duty, liability, procedure, deadline) as a filter and a ranking hint | "What is the punishment" wants liability articles | 2 days | idea |
 | E11 | Retrievability audit: which articles are never returned for any question (index health, hubness) | Finds dead zones of the index | 0.5 day | idea |

@@ -1,0 +1,22 @@
+{
+ "today": "2026-11-15",
+ "stats": {
+  "ru_articles": 160962,
+  "ru_with_footnote": 13363,
+  "ru_with_pending_note": 496,
+  "ru_footnote_parsed": 13295,
+  "ru_pending_parsed": 435,
+  "entries": 60406,
+  "entries_with_abs_effective_date": 12610,
+  "kk_articles": 158415,
+  "kk_with_footnote": 13306,
+  "kk_with_pending_note": 1421,
+  "kk_footnote_parsed": 13201,
+  "kk_pending_parsed": 1293
+ },
+ "pending_status": {
+  "unknown": 1931,
+  "upcoming": 49,
+  "in_force_since_snapshot": 163
+ }
+}

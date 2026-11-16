@@ -12,7 +12,8 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from engine import ROOT, Filters, SearchEngine, log_feedback  # noqa: E402
+from amendments import parse_notes  # noqa: E402
+from engine import ROOT, Filters, SearchEngine, group_by_act, log_feedback  # noqa: E402
 
 STATIC = Path(__file__).resolve().parent / "static"
 METHODS = {"dense": "Смысловой (bge-m3)", "bm25": "По словам (BM25)", "hybrid": "Гибрид (смысл + слова)"}
@@ -35,7 +36,8 @@ def hit_to_dict(hit, lang):
     show = "kk" if lang == "kk" and "kk" in hit.texts else "ru" if "ru" in hit.texts else next(iter(hit.texts), "ru")
     body = FIRST_LINE.sub("", hit.texts.get(show, ""), count=1)
     heading = hit.headings.get(show) or hit.heading
-    return {"snippet_lang": show, "title": hit.title, "article_no": hit.article_no, "heading": "" if heading == "None" else heading, "kind": hit.kind,
+    notes = parse_notes(hit.texts.get(show, ""), show)
+    return {"amendments": notes, "snippet_lang": show, "title": hit.title, "article_no": hit.article_no, "heading": "" if heading == "None" else heading, "kind": hit.kind,
             "year": hit.year, "in_force": hit.in_force, "url": hit.url, "methods": list(hit.methods),
             "snippet": body[:600] + ("…" if len(body) > 600 else ""), "texts": hit.texts}
 
@@ -54,6 +56,10 @@ def run_search(req):
         if mode == "titles":
             results, info = ENGINE.search_titles(query, k, filters)
             return {"mode": mode, "routed": routed, "lang": info["lang"], "seconds": info["seconds"], "results": results}
+        if mode == "regimes":
+            hits, info = ENGINE.search(query, 40, "dense", filters)
+            rows = [{**hit_to_dict(h, info["lang"]), "also": n} for h, n in group_by_act(hits, min(k, 8))]
+            return {"mode": mode, "routed": routed, "lang": info["lang"], "seconds": info["seconds"], "notes": info["notes"], "low_confidence": info.get("low_confidence", False), "rows": rows}
         if mode == "compare":
             columns = []
             for method, label in METHODS.items():
@@ -113,6 +119,9 @@ class Handler(BaseHTTPRequestHandler):
             req = json.loads(self.rfile.read(length) or b"{}")
             if self.path == "/api/search":
                 return self._json(run_search(req))
+            if self.path == "/api/explain":
+                with LOCK:
+                    return self._json({"sentences": ENGINE.explain(str(req.get("query", ""))[:500], str(req.get("text", ""))[:20000], max(1, min(int(req.get("k", 3)), 5)))})
             if self.path == "/api/translate":
                 src, tgt = str(req.get("src", "ru")), str(req.get("tgt", "en"))
                 if src not in ("ru", "kk", "en") or tgt not in ("ru", "kk", "en") or src == tgt:

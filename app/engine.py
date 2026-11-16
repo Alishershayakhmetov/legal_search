@@ -370,17 +370,29 @@ class SearchEngine:
 
     def _hit(self, key, row, score, methods):
         r = self.df.iloc[row]
-        texts = {}
+        if "_text_col" not in self.__dict__:  # plain arrays: iloc on the whole frame copied every column for each twin (0.3 s per hit)
+            self._text_col, self._head_col = self.df["text"].to_numpy(), self.df["heading"].to_numpy()
+        texts, headings = {}, {}
         for lg, idxs in self.twins.get(key, {}).items():
-            sub = self.df.iloc[idxs]
-            texts[lg] = "\n".join(sub.text)
-        headings = {lg: str(self.df.iloc[idxs[0]].heading or "") for lg, idxs in self.twins.get(key, {}).items()}
+            texts[lg] = chr(10).join(self._text_col[i] for i in idxs)
+            headings[lg] = str(self._head_col[idxs[0]] or "")
         ru_head = headings.get("ru") or str(r.heading or "")
         return Hit(title=str(r.display_title), article_no=str(r.article_no), heading=ru_head, section=str(r.section or ""), headings=headings,
                    kind=str(r.kind), year=None if pd.isna(r.adopted_year) else int(r.adopted_year),
                    in_force=None if pd.isna(r.is_repealed) else not bool(r.is_repealed),
                    url=None if pd.isna(r.adilet_url) else r.adilet_url, law_id=None if pd.isna(r.law_id) else r.law_id,
                    score=score, matched_lang=str(r.lang), texts=texts, methods=tuple(methods))
+
+    def explain(self, query, text, k=3):
+        """The k sentences of an article closest to the query: [{'start', 'end', 'score'}] in reading order."""
+        spans = split_sentences(text)
+        if not spans:
+            return []
+        sentences = [text[a:b] for a, b in spans]
+        emb = self.model.encode(sentences, batch_size=32, normalize_embeddings=True, convert_to_tensor=True).to(self.emb.dtype)
+        scores = (emb @ self.encode(expand_abbreviations(query))).float().cpu().numpy()
+        top = sorted(scores.argsort()[::-1][:k])
+        return [{"start": spans[i][0], "end": spans[i][1], "score": round(float(scores[i]), 3)} for i in top]
 
     # -- machine translation of a snippet (English users otherwise get Russian or Kazakh text) ---------------------------
     NLLB = "facebook/nllb-200-distilled-600M"
@@ -467,6 +479,37 @@ class SearchEngine:
             if len(out) == k:
                 break
         return out, {"lang": detect_language(query), "seconds": time.time() - t0}
+
+
+NOTE_LINE = re.compile(r"^(Сноска|Ескерту|Примечание ИЗПИ|ЗҚАИ)")
+
+
+def split_sentences(text, min_chars=20):
+    """[(start, end)] character spans of the sentences of an article, without the heading line and without footnotes."""
+    spans, pos = [], 0
+    for li, line in enumerate(text.split(chr(10))):
+        start = pos
+        pos += len(line) + 1
+        if li == 0 or NOTE_LINE.match(line.strip()):
+            continue
+        for m in re.finditer(r"[^.;:]+(?:[.;:]+|$)", line):
+            s = m.group(0)
+            lead = len(s) - len(s.lstrip())
+            if len(s.strip()) >= min_chars:
+                spans.append((start + m.start() + lead, start + m.end() - (len(s) - len(s.rstrip()))))
+    return spans
+
+
+def group_by_act(hits, limit=5):
+    """One row per act, in the order of its best article: [(best hit, number of other articles of the same act among the hits)]."""
+    order, rest = [], {}
+    for h in hits:
+        if h.title not in rest:
+            rest[h.title] = [h, 0]
+            order.append(h.title)
+        else:
+            rest[h.title][1] += 1
+    return [tuple(rest[t]) for t in order[:limit]]
 
 
 def log_feedback(query, kind, key, label, path=DATA / "feedback.jsonl", keep_query=False):

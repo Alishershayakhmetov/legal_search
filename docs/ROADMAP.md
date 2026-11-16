@@ -92,7 +92,13 @@ Run in this order, each measured against the baseline; keep only what helps on t
 | S19 explain a result (highlight the closest sentences) | also helps error analysis |
 | **LLM** A1 short answer with citations and a check that every citation exists in the retrieved text | only if the LLM question is settled; always labelled "not legal advice" |
 
-**Gate:** each feature has a test and an entry in the user guide; for A1 a rate of unsupported citations measured on the test set.
+**Status 2026-11-15:** A10, A11, A13, S19 done; A1 done only in an extractive form (no LLM).
+* A10/A11: `app/amendments.py` reads footnotes ("Сноска."/"Ескерту.") into a history (action, date, number, entry into force) and "Примечание ИЗПИ!"/"ЗҚАИ-ның ескертпесі!" notes into warnings with a status against today and the 01.04.2024 snapshot. Coverage (`src/44_amendments_check.py`): footnotes in 13,363 ru / 13,306 kk articles, parsed 99.5% / 99.2%, 60,406 entries, 12,610 with an exact date; 34 random parses read by hand (errors found and fixed: kk relative days, "бастап", duplicates, spelled-out dates, empty ИЗПИ markers). 8 unit tests. Shown in the card as a collapsible history and warning lines.
+* A13: mode "Сравнить акты (режимы)" = one best article per act (`engine.group_by_act`), `src/45_regimes_eval.py`: the gold act is among the 5 acts in 44/45 ru, 44/45 kk, 40/45 en, but the exact gold article among the best-per-act articles is found less often than in the plain top 5 (ru 33 vs 38), so it complements, not replaces, the list.
+* S19: "Показать ключевые предложения" (`engine.explain`, sentence-level bge-m3 similarity, highlighted in the full text).
+* A1 (extractive form): button "Краткая выжимка" = the best sentence of each of the top 3 articles as a verbatim quote with act and article; no invented citations possible by construction, selection quality not measured; hidden when the no-reliable-answer warning is on. **No LLM answer: no API key in the project; a local model on 4 GB would be poor in ru/kk. Decision for the author.**
+* Side finding: building result cards cost 0.3 s per hit (full-frame `iloc` per twin); fixed, search now ~0.15-0.2 s instead of 1.7 s, golden suite 44 s instead of 180 s.
+* Gate: each feature has unit tests (38 passed, 28 behaviour/golden) and was checked in the browser pane; the user guide (`app/README.md`) was not extended. The unsupported-citation rate for A1 is 0 by construction for the extractive form and not applicable otherwise.
 
 ## Stage 5: contributions beyond the course minimum (optional, 3–5 days)
 

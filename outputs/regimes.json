@@ -1,0 +1,26 @@
+{
+ "ru": {
+  "n": 45,
+  "plain5": 38,
+  "regimes_article": 33,
+  "regimes_act": 44,
+  "mean_acts_shown": 5.0,
+  "mean_distinct_acts_in_plain_top5": 3.13
+ },
+ "kk": {
+  "n": 45,
+  "plain5": 34,
+  "regimes_article": 30,
+  "regimes_act": 44,
+  "mean_acts_shown": 5.0,
+  "mean_distinct_acts_in_plain_top5": 3.07
+ },
+ "en": {
+  "n": 45,
+  "plain5": 35,
+  "regimes_article": 28,
+  "regimes_act": 40,
+  "mean_acts_shown": 4.96,
+  "mean_distinct_acts_in_plain_top5": 3.42
+ }
+}

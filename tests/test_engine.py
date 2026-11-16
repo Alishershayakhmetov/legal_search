@@ -135,3 +135,12 @@ def test_router_sends_short_act_names_to_titles_and_everything_else_to_articles(
     assert route_query("Сколько дней отпуска положено при увольнении по сокращению штатов в организации", 0.70, 0.66) == "articles"
     assert route_query("Кого считают безработным?", 0.55, 0.66) == "articles"
     assert route_query("статья 52 трудового кодекса", 0.80, 0.60) == "articles"
+
+
+def test_sentence_spans_skip_the_heading_and_footnotes():
+    from engine import split_sentences
+    text = "Статья 5. Сроки\n1. Заявление подается в течение трёх месяцев со дня события. Срок можно продлить.\nСноска. Статья 5 с изменениями, внесенными законом РК от 01.01.2020 № 1-VI.\n2) иные случаи, предусмотренные законом;"
+    spans = split_sentences(text)
+    got = [text[a:b] for a, b in spans]
+    assert got[0].startswith("Заявление") and got[0].endswith("события.") and got[1] == "Срок можно продлить." and got[-1] == "2) иные случаи, предусмотренные законом;"
+    assert all("Сноска" not in g and "Статья 5. Сроки" not in g for g in got)

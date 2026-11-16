@@ -36,3 +36,11 @@ def test_filters_default_and_override():
 def test_legal_force_prior_is_off_unless_requested():
     assert make_filters({}).force_prior == 0.0
     assert make_filters({"force_prior": 0.02}).force_prior == 0.02
+
+
+def test_group_by_act_keeps_the_best_article_of_each_act_in_order():
+    from engine import group_by_act
+    hits = [hit(title="Трудовой кодекс", article_no="88"), hit(title="О правоохранительной службе", article_no="73"), hit(title="Трудовой кодекс", article_no="89"),
+            hit(title="О государственной службе", article_no="40"), hit(title="Трудовой кодекс", article_no="90")]
+    rows = group_by_act(hits, 3)
+    assert [(h.title, h.article_no, n) for h, n in rows] == [("Трудовой кодекс", "88", 2), ("О правоохранительной службе", "73", 0), ("О государственной службе", "40", 0)]
