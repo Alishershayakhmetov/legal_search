@@ -202,7 +202,7 @@ bullets(s, 0.6, 1.8, 7.0, 4.8, [
     "No training|: all models are used as published, so no train/test leakage; thresholds added later are flagged.",
 ], size=17, gap=12)
 textbox(s, 8.0, 1.9, 4.7, 0.5, "Honest caveats", size=22, bold=True, color=ACCENT)
-bullets(s, 8.0, 2.5, 4.7, 4.0, ["Not reviewed by a lawyer or second annotator.", "Kazakh not checked by a native speaker.", "52 of 67 answers are code articles.", "45 needs per language: wide intervals."], size=16, gap=8)
+bullets(s, 8.0, 2.5, 4.7, 4.0, ["Drafted with an AI assistant, annotated in the team (Y. Sakenov); no lawyer review.", "Kazakh queries reviewed by the team; no objections.", "52 of 67 answers are code articles.", "45 needs per language: wide intervals."], size=16, gap=8)
 
 # 8 methods
 s = new_slide("What we compared", "Baseline → words (BM25) → meaning (embeddings) → hybrid",
@@ -238,6 +238,32 @@ bullets(s, 0.6, 5.0, 12.1, 2.0, ["Word processing|: Russian stemming 0.42 vs 0.2
                                   "More text, lower quality|: BM25 on Russian 0.42 → 0.18 when all 1.7 M passages are searched.",
                                   "English|: bge-m3 searches ru/kk text with an English query at 0.69 without translation."], size=15, gap=6)
 
+# 11b recall table
+UNI = jload("unified_comparison.json")["rows"]
+s = new_slide("BM25 vs TF-IDF vs embeddings: Recall@k and MRR", "135 article queries (45 needs x 3 languages) + 24 title queries = 159 queries, 53 needs per language",
+              "This is the comparison the topic asks for. Every method runs on the same queries and judgments. Recall at k is the share of judged answers found in the top k. BM25 beats TF-IDF and the keyword baseline, dense models beat BM25, and bge-m3 is far ahead. Numbers for Russian and Kazakh are shown; English is only possible for dense and translation-based methods.")
+pick = ["Keyword overlap (baseline), stemming", "TF-IDF, stemming", "BM25, stemming", "Dense e5-small", "Dense e5-base", "Dense bge-m3", "Hybrid BM25 + bge-m3 (RRF)"]
+pick_kk = ["Keyword overlap (baseline), 5-letter prefix", "TF-IDF, 5-letter prefix", "BM25, 5-letter prefix"] + pick[3:]
+for k, (lang, names_, x) in enumerate((("ru", pick, 0.3), ("kk", pick_kk, 6.8))):
+    rows = [["Method", "R@5", "R@10", "R@50", "MRR"]]
+    for nm in names_:
+        r = next(q for q in UNI if q["lang"] == lang and q["method"] == nm)
+        rows.append([nm.replace(", stemming", "").replace(", 5-letter prefix", "").replace("Keyword overlap (baseline)", "Keyword overlap").replace("Hybrid BM25 + bge-m3 (RRF)", "Hybrid"), f2(r["recall@5"]), f2(r["recall@10"]), f2(r["recall@50"]), f3(r["mrr@10"])])
+    textbox(s, x, 1.65, 6.0, 0.4, {"ru": "Russian queries", "kk": "Kazakh queries"}[lang], size=16, bold=True, color=BLUE)
+    table(s, x, 2.1, 6.0, rows, [2.4, 0.8, 0.9, 0.9, 1.0], size=13, row_h=0.5)
+
+# 11c part corpus
+PART = jload("part_corpus_eval.json")
+s = new_slide("bge-m3 on a part of the corpus", f"All {PART['articles']:,} articles + 15% of the other passages = {PART['passages']:,} passages ({PART['share_of_index']:.0%} of the index)",
+              "Embedding the whole 1.7 million passages would take about eight GPU hours, so we embedded all articles plus a fixed random fifteen percent of the other passages. BM25 and e5-small were evaluated on exactly the same subset. bge-m3 keeps almost all of its quality when regulations and decisions are added, and it still beats the others by a wide margin.")
+rows = [["System", "ru S@10", "ru MRR", "kk S@10", "kk MRR", "en S@10", "en MRR"]]
+for nm in ("BM25", "e5-small", "bge-m3", "hybrid BM25 + bge-m3"):
+    r = PART["systems"][nm]
+    rows.append([nm] + sum(([f2(r[l]["success@10"]), f3(r[l]["mrr@10"])] if l in r else ["—", "—"] for l in ("ru", "kk", "en")), []))
+table(s, 0.6, 1.9, 12.1, rows, [3.6, 1.4, 1.4, 1.4, 1.4, 1.4, 1.4], size=15, row_h=0.6)
+bullets(s, 0.6, 5.4, 12.1, 1.5, [f"On the article index alone bge-m3 scores {f2(b_ru['success@10'])} / {f2(b_kk['success@10'])} / {f2(b_en['success@10'])} (ru / kk / en): adding a third of the corpus costs little.",
+                                  "The added passages are mostly unjudged, so any drop is partly an incomplete-judgment effect."], size=15, gap=6)
+
 # 12 cost
 s = new_slide("Cost of quality", "RTX 3050 Laptop 4 GB, 16 GB RAM, fp16, 384 tokens",
               "bge-m3 encodes 53 passages per second, so the article index takes about an hour and the whole corpus about eight hours. We chose it because it is far better on Kazakh while a query still takes tens of milliseconds.")
@@ -247,7 +273,11 @@ for model, name, mins, dim in (("multilingual-e5-small", "e5-small", "8.9 min", 
     r, k = g(DENSE, model=model, lang="ru", system="dense"), g(DENSE, model=model, lang="kk", system="dense")
     rows.append([name, mins, f"{319377 * dim * 2 // 1_000_000} MB", f"{r['ms_per_query']:.0f}", f"{f2(r['success@10'])} / {f2(k['success@10'])}"])
 table(s, 0.6, 1.9, 12.1, rows, [2.4, 2.6, 2.4, 2.1, 2.6], size=16, row_h=0.62)
-bullets(s, 0.6, 5.5, 12.1, 1.4, ["Encoding speed|: e5-small 377, e5-base 161, bge-m3 53 passages/s.", "Not run|: bge-m3 over all 1.7 M passages (about 8 GPU hours)."], size=16, gap=6)
+MEM = jload("memory_benchmark.json")
+bullets(s, 0.6, 5.2, 12.1, 1.9, ["Encoding speed|: e5-small 377, e5-base 161, bge-m3 53 passages/s; part-corpus run took 69 min.",
+                                  f"Loading the 952 MB CSV|: {MEM['loading'][0]['peak_mb']} MB peak with default types, {MEM['loading'][2]['peak_mb']} MB chunked; frame {MEM['loading'][0]['frame_mb']} → {MEM['loading'][4]['frame_mb']} MB with categories; Parquet {MEM['files']['parquet_mb']} MB.",
+                                  f"Application|: {MEM['application']['after_load']['rss_mb']} MB RAM after start, {MEM['application']['after_20_searches']['gpu_allocated_mb']} MB GPU memory.",
+                                  "Not run|: bge-m3 over all 1.7 M passages (about 8 GPU hours)."], size=15, gap=5)
 
 # 13 ranking
 s = new_slide("What improves ranking", "Variants fixed in advance on the same 45 needs",
@@ -269,7 +299,7 @@ s = new_slide("The application", "Standard-library web server + one page; engine
               "The user types a question in any language; the page detects the language, and the automatic mode decides between act search and article search. Exact article numbers are looked up directly. Cards show amendment history, highlighted deadlines and amounts, and links to the official site. The interface text is currently Russian.")
 s.shapes.add_picture(str(OLD / "app_ru_search.jpg"), Inches(0.5), Inches(1.6), width=Inches(7.2))
 bullets(s, 7.9, 1.7, 5.1, 5.2, ["Modes|: automatic, articles, act by title, compare acts, compare methods.", "Lookup|: “статья 188 УК” → the article itself.", "Layers|: filters, amendment history, deadlines and amounts, МРП → tenge, comparison of acts.",
-                                "Warnings|: no reliable article; questions about evading the law.", "Note|: interface text is Russian; screenshot is from an earlier build."], size=14, gap=7)
+                                "Warnings|: no reliable article; questions about evading the law.", "Languages|: queries and results in kk / ru / en; interface localisation into 3 languages is planned (screenshot: earlier build, Russian text)."], size=14, gap=7)
 
 # 16 cited answer
 sa = ANS["summary"]
@@ -297,23 +327,23 @@ textbox(s, 0.6, 1.3, 6.0, 0.5, "Conclusions", size=22, bold=True, color=GREEN)
 bullets(s, 0.6, 1.9, 6.0, 5.0, [f"Meaning beats words|: bge-m3 {f2(b_ru['success@10'])} / {f2(b_kk['success@10'])} vs BM25 {f2(bm_ru['success@10'])} / {f2(bm_kk['success@10'])}; significant.", f"English without translation|: {f2(b_en['success@10'])}.",
                                 "Filters matter|: status filters nearly double MRR@10.", "Check the data|: a linker bug had removed the main codes.", "Not helpful|: re-ranker, instructions, larger encoders, equal-weight hybrid."], size=16, gap=9)
 textbox(s, 6.9, 1.3, 6.0, 0.5, "Limitations", size=22, bold=True, color=ACCENT)
-bullets(s, 6.9, 1.9, 6.0, 5.0, ["Judgments by the author with an AI assistant, unreviewed; Kazakh not checked by a native speaker.", "45 needs per language: intervals ±0.1.", "Thresholds and router read from the same questions.",
-                                "bge-m3 not run on all 1.7 M passages; texts as of 01.04.2024.", "Interface in Russian; no citation graph."], size=16, gap=9)
+bullets(s, 6.9, 1.9, 6.0, 5.0, ["Judgments drafted with an AI assistant, annotated in the team; no lawyer review.", "45 needs per language: intervals ±0.1.", "Thresholds and router read from the same questions.",
+                                "bge-m3 not run on all 1.7 M passages; texts as of 01.04.2024.", "Interface text is Russian (localisation planned); no citation graph."], size=16, gap=9)
 
 # 19 team & next
 s = prs.slides.add_slide(BLANK)
 bg = s.shapes.add_shape(MSO_SHAPE.RECTANGLE, 0, 0, prs.slide_width, prs.slide_height)
 bg.fill.solid(); bg.fill.fore_color.rgb = NAVY; bg.line.fill.background()
 textbox(s, 0.9, 0.9, 11.5, 0.9, "Team contributions and next steps", size=36, bold=True, color=RGBColor(255, 255, 255))
-bullets(s, 0.9, 2.0, 11.5, 4.5, ["Team|: Alisher Shayakhmetov, Arsen Zhambekov, Yernar Sakenov — contributions: [to be filled in by the team].",
+bullets(s, 0.9, 2.0, 11.5, 4.5, ["Alisher Shayakhmetov|: the “brain” of the project — retrieval methods and models, evaluation, ranking and answer logic.", "Arsen Zhambekov|: data collection.", "Yernar Sakenov|: web site design, evaluation of the data and annotation.",
                                  "Next|: independent review of the judgments and a held-out question set; bge-m3 over all passages; evaluation of the answer with a stronger model.",
-                                 "Delivered|: code (src/, app/, tests/), README, report, this presentation, data rebuild scripts; repository link: [to be added]."], size=20, gap=16)
+                                 "Code|: github.com/Alishershayakhmetov/legal_search (MIT); all datasets, models and papers used are credited with links in CREDITS.md."], size=20, gap=16)
 for p in s.shapes:
     if p.has_text_frame:
         for para in p.text_frame.paragraphs:
             for r in para.runs:
                 r.font.color.rgb = RGBColor(255, 255, 255)
-s.notes_slide.notes_text_frame.text = "The contributions of each team member must be stated; the repository records one author's work, so the other lines are placeholders for the team."
+s.notes_slide.notes_text_frame.text = "Contributions as stated by the team."
 
 prs.save(str(OUT))
 print("saved", OUT, "| slides", len(prs.slides))

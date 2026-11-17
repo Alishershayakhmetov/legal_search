@@ -175,8 +175,8 @@ for _ in range(4):
     doc.add_paragraph()
 p("Team: Alisher Shayakhmetov, Arsen Zhambekov, Yernar Sakenov (as registered for topic 16)", align="center")
 p("Group: AAI-2604", align="center")
-p("Instructor: [name to be filled in]", align="center")
-p("Code repository: [GitHub link to be filled in once the repository is published]", align="center")
+p("Instructor: [name]", align="center")
+p("Code repository: https://github.com/Alishershayakhmetov/legal_search (MIT licence)", align="center")
 doc.add_paragraph()
 p("Astana, November 2026", align="center")
 doc.add_page_break()
@@ -286,7 +286,7 @@ table("Judgments", ["Version", "How obtained", "Judged", "Answers (2)", "Related
     ["v0", "Articles chosen by hand from legal knowledge and heading search; text read for 54 of 102", "102", "58", "44", "—"],
     ["v1", "Added the top results of eight system runs (pooling [12]): 270 candidates", "376", "67", "100", "209"],
 ], widths=[1.3, 8.0, 1.8, 1.9, 1.9, 1.9])
-body("All judgments were prepared by the author with an AI assistant; they were not reviewed by a lawyer or a second annotator, and the Kazakh queries were not checked by a native speaker. The pool comes from the systems that are compared, which slightly favours them, "
+body("The judgments were drafted with an AI assistant and the annotation work was carried out within the team by its annotator (Y. Sakenov), which the assignment allows; they were not reviewed by a lawyer. The Kazakh queries were reviewed by the team and no objections were raised. The pool comes from the systems that are compared, which slightly favours them, "
      "and 52 of the 67 grade-2 judgments are articles of codes. No model is trained or tuned on the questions (all models are used as published), so there is no train/test leakage in the model comparison; "
      "the few thresholds chosen later (Sections 4.7–4.9) were read from the same questions and are flagged as unconfirmed.")
 
@@ -345,6 +345,19 @@ table("System comparison on articles (judgments v1, no status filters)", ["Lang"
 figure(FIG / "fig_success10.png", "Success@10 by system and query language (article index)", 15.5)
 body(f"Dense retrieval beats BM25 in both languages and bge-m3 beats every other system; MRR@10 intervals of bge-m3 and BM25 do not overlap (Russian {f3(b3['mrr@10'])} vs {f3(bm_ru['mrr@10'])}, Kazakh {f3(b3k['mrr@10'])} vs {f3(bm_kk['mrr@10'])}). "
      "e5-base is worse than e5-small on Kazakh (0.36 vs 0.49), with overlapping intervals and no explanation in the data. The equal-weight hybrid is worse than bge-m3 alone because the weaker BM25 pulls the ranking down; weights were not tuned, to avoid fitting 45 questions.")
+UNI = jload("unified_comparison.json")
+doc.add_heading("Complete comparison with Recall@k and MRR", level=3)
+body("The course asks for BM25 vs TF-IDF vs embeddings with Recall@k and MRR on at least 50 annotated queries. The test set has 53 needs per language (159 queries): 45 article needs per language (135 queries) are scored on the article index below, "
+     "and the 8 act-title needs per language (24 queries) in the title layer (Section 4.5). Recall@k is the share of the judged answers (grade 2) found in the top k results. "
+     "Every method below is run on the same queries with the same judgments (v1) and the corpus after the chunker fix.")
+for lang, title in (("ru", "Russian"), ("kk", "Kazakh"), ("en", "English")):
+    urows = [[r["method"], f3(r["recall@1"]), f3(r["recall@5"]), f3(r["recall@10"]), f3(r["recall@20"]), f3(r["recall@50"]), f3(r["success@10"]), f3(r["mrr@10"]), f3(r["ndcg@10"])] for r in UNI["rows"] if r["lang"] == lang]
+    best = max(range(len(urows)), key=lambda i: float(urows[i][7]))
+    table(f"All methods, {title} queries (45 needs); the best MRR@10 in bold", ["Method", "R@1", "R@5", "R@10", "R@20", "R@50", "S@10", "MRR@10", "nDCG@10"], urows,
+          widths=[6.4, 1.3, 1.3, 1.3, 1.3, 1.3, 1.3, 1.5, 1.6], size=7.5, bold_rows=(best,))
+pooled = [r for r in UNI["rows"] if r["lang"] == "pooled" and r["method"] in ("BM25, stemming", "BM25, 5-letter prefix", "TF-IDF, stemming", "TF-IDF, 5-letter prefix", "Dense e5-small", "Dense e5-base", "Dense bge-m3", "Hybrid BM25 + bge-m3 (RRF)")]
+body("Pooled over the languages where the method exists, bge-m3 reaches MRR@10 " + f3(next(r for r in UNI["rows"] if r["lang"] == "pooled" and r["method"] == "Dense bge-m3")["mrr@10"]) +
+     " on all 135 queries; the best lexical method (BM25) is far lower, TF-IDF and keyword overlap are lower still.")
 pr, pk = PAIRED["paired_success_at_10"]["ru"], PAIRED["paired_success_at_10"]["kk"]
 table("Paired view of BM25 and bge-m3 by need (Success@10, 45 needs)", ["Language", "Both find", "Only bge-m3", "Only BM25", "Neither"],
       [["Russian", pr["both"], pr["only_bge_m3"], pr["only_bm25"], pr["neither"]], ["Kazakh", pk["both"], pk["only_bge_m3"], pk["only_bm25"], pk["neither"]]], widths=[3, 3, 3.2, 3.2, 3])
@@ -370,6 +383,22 @@ for lang, mode in (("ru", "stem"), ("kk", "p5")):
 table("Effect of corpus composition", ["Lang", "System", "Articles: passages", "S@10", "All text: passages", "S@10", "BM25 index"], rows, widths=[1.3, 3, 3.2, 1.6, 3.3, 1.6, 2.4])
 body("Adding regulations, decisions and other text lowers every system (BM25 on Russian: 0.42 → 0.18) but the ranking of the systems is preserved. Part of the loss comes from incomplete judgments: added documents may be relevant but are not judged. "
      "bge-m3 over all passages was not run (about 8 GPU hours on this laptop), so the best model is verified only on the article index.")
+PART = jload("part_corpus_eval.json")
+doc.add_heading("bge-m3 on a part of the corpus", level=3)
+body(f"Running bge-m3 over all 1.7 million passages takes about 8 GPU hours on this laptop, so we embedded a part of the corpus: all {PART['articles']:,} article passages plus a fixed random 15% of the other passages, "
+     f"{PART['passages']:,} passages in total ({PART['share_of_index']:.0%} of the index). To keep the comparison fair, BM25 was rebuilt on the same subset and e5-small vectors were restricted to it.")
+prow = []
+for sysname in ("BM25", "e5-small", "bge-m3", "hybrid BM25 + bge-m3"):
+    r = PART["systems"][sysname]
+    cells = [sysname]
+    for lang in ("ru", "kk", "en"):
+        x = r.get(lang)
+        cells += [f2(x["success@10"]), f3(x["mrr@10"])] if x else ["—", "—"]
+    prow.append(cells)
+base_ru = {"BM25": g(SPARSE, lang="ru", analyzer="stem", scheme="bm25"), "e5-small": g(DENSE, model="multilingual-e5-small", lang="ru", system="dense"), "bge-m3": g(DENSE, model="bge-m3", lang="ru", system="dense")}
+table(f"Success@10 and MRR@10 on articles + 15% of other passages ({PART['passages']:,} passages)", ["System", "ru S@10", "ru MRR", "kk S@10", "kk MRR", "en S@10", "en MRR"], prow, widths=[5.2, 2, 2, 2, 2, 2, 2])
+body("For comparison, on the article index alone (319,377 passages) bge-m3 reaches Success@10 " + f"{f2(b3['success@10'])} / {f2(b3k['success@10'])} / {f2(b3e['success@10'])} (ru / kk / en). "
+     "The table shows how much of that is kept when a third of the corpus, including regulations and decisions, is searched; because the added passages are mostly unjudged, a drop is partly an incomplete-judgment effect.")
 doc.add_heading("4.4 English queries", level=2)
 figure(FIG / "fig_english.png", "Success@10 for English queries: direct search vs query translation", 11.5)
 rows = []
@@ -391,6 +420,20 @@ for model, mins, dim, params in (("multilingual-e5-small", "8.9", 384, "118M"), 
 table("Cost of the approaches (RTX 3050 Laptop 4 GB, 16 GB RAM, fp16, 384 tokens)", ["Method", "Index build (230,545 articles, full run)", "Index size (319,377)", "ms per query (Russian)", "Parameters"], rows, widths=[3, 4.6, 3.2, 3.4, 2.4])
 body("Encoding speed at 384 tokens is 377 (e5-small), 161 (e5-base) and 53 (bge-m3) passages per second. Embedding the 66,538 new articles after the chunker fix took about an hour because the vectors of unchanged texts were reused (checked: re-encoding 300 random texts gives cosine ≥ 0.9995 with the stored vectors). "
      "A complete application search takes about 0.2 s once the encoder is loaded; the first query after start-up takes longer.")
+MEM = jload("memory_benchmark.json")
+mrows = []
+names = {"A_csv_default": "A. whole CSV, default types (49 columns)", "B_csv_usecols_str": "B. whole CSV, 24 needed columns as strings", "C_chunked_to_parquet": "C. chunked read (100k rows) → Parquet",
+         "D_parquet": "D. read the Parquet file (24 columns)", "E_parquet_optimised": "E. Parquet + categories and datetimes"}
+for r in MEM["loading"]:
+    mrows.append([names[r["variant"]], f"{r['seconds']}", str(r["peak_mb"]), "—" if r.get("frame_mb") is None else str(r["frame_mb"])])
+table(f"Loading the {MEM['files']['csv_mb']} MB metadata CSV ({MEM['files']['parquet_mb']} MB as Parquet), each variant in a fresh process", ["Variant", "Seconds", "Peak RAM of the process, MB", "DataFrame in memory, MB"], mrows, widths=[8.2, 2, 3.6, 3.2], size=8.5)
+app = MEM["application"]
+body(f"Memory. Reading the whole file with default types needs {MEM['loading'][0]['peak_mb']} MB of RAM at peak and holds a {MEM['loading'][0]['frame_mb']} MB frame; selecting the 24 needed columns cuts the frame to {MEM['loading'][1]['frame_mb']} MB, and categories plus datetimes to {MEM['loading'][4]['frame_mb']} MB "
+     f"({1 - MEM['loading'][4]['frame_mb'] / MEM['loading'][0]['frame_mb']:.0%} less than default). Chunked reading keeps the peak at {MEM['loading'][2]['peak_mb']} MB, close to the whole-file read of the same columns, because the file fits in 16 GB; its value is that it scales to files that do not. "
+     f"The Parquet file is {MEM['files']['csv_mb'] / MEM['files']['parquet_mb']:.0f} times smaller than the CSV and loads in {MEM['loading'][3]['seconds']} s. "
+     f"The running application (article table, BM25 indexes and the bge-m3 vectors of {app['articles']:,} articles) uses {app['after_load']['rss_mb']} MB of RAM after loading and {app['after_20_searches']['rss_mb']} MB after 20 searches, "
+     f"and {app['after_20_searches']['gpu_allocated_mb']} MB of GPU memory (peak {app['after_20_searches']['gpu_peak_mb']} MB). Index sizes on disk or in memory: BM25 about {g(SPARSE, lang='ru', analyzer='stem', scheme='bm25')['index_mb']} MB per language, embeddings "
+     f"{n_art * 384 * 2 // 1_000_000} / {n_art * 768 * 2 // 1_000_000} / {n_art * 1024 * 2 // 1_000_000} MB for e5-small / e5-base / bge-m3 (fp16).")
 doc.add_heading("4.7 Ranking improvements (fixed in advance, no tuning)", level=2)
 figure(FIG / "fig_ranking.png", "MRR@10 of ranking variants on top of bge-m3", 14)
 rows = []
@@ -465,11 +508,11 @@ bullets([f"Semantic multilingual retrieval clearly beats lexical retrieval for e
          "A cross-encoder re-ranker, query instructions, larger encoders (e5-large, Qwen3-0.6B) and an equal-weight hybrid did not help once the better setup was in place.",
          "The application adds the layers a user needs (article lookup, amendment history, comparison of acts, warnings, robustness, optional checked answer), each with a test and a measurement or an explicit statement that it was not measured."])
 doc.add_heading("Limitations", level=3)
-bullets(["Judgments were prepared by the author with an AI assistant, are incomplete and unreviewed; the Kazakh queries were not checked by a native speaker; 52 of the 67 grade-2 judgments are code articles.",
+bullets(["Judgments were drafted with an AI assistant and annotated within the team; they are incomplete and were not reviewed by a lawyer; 52 of the 67 grade-2 judgments are code articles.",
          "Small test set (45 needs per language): intervals are wide; thresholds and rules added later were read from the same questions.",
          "Texts are a snapshot of 01.04.2024 covering mostly current legislation; the citation graph and the history of editions are not available.",
          "bge-m3 was not run on all 1.7 million passages; the LLM answer is checked only sentence by sentence and by a small manual read; the Anthropic backend has not been run.",
-         "The web interface is in Russian; there is no console menu and Streamlit was removed in favour of a standard-library web page."])
+         "The search supports queries and results in three languages (Kazakh, Russian, English); the interface text is currently Russian and its localisation into the three languages is planned as the next step; there is no console menu (the standard-library web page replaces Streamlit)."])
 doc.add_heading("Future work", level=3)
 bullets(["Independent review of the judgments and a held-out set written by other people; then re-estimate every threshold and the legal-force prior on it.",
          "bge-m3 over all passages; citation graph if the missing files appear; edition history by date.",
@@ -513,12 +556,23 @@ body("Python 3.12, a CUDA GPU with 4 GB is enough. Install with pip install -r r
      "python src/00_download_data.py downloads and verifies the data (the real download path was not run in the final environment). python app/server.py starts the web application at http://localhost:8610; "
      "python -m pytest tests -q runs the unit tests and RUN_GOLDEN=1 python -m pytest tests/test_golden.py the behaviour tests on the real index. Large data files are not in the repository: data/ is rebuilt by the scripts.")
 doc.add_heading("Appendix C. Team contributions", level=1)
-body("The course requires each team member’s contribution to be stated. The repository history records the work of one author; the contributions of the other registered team members are not recorded in the project files and must be filled in by the team before submission:")
 table("Contributions", ["Team member", "Contribution"], [
-    ["Alisher Shayakhmetov", "[to be confirmed by the team] — in the repository: data acquisition and audit, linking, schema and SQL, chunking, test set and judgments, retrieval experiments, web application, tests, report"],
-    ["Arsen Zhambekov", "[to be filled in by the team]"],
-    ["Yernar Sakenov", "[to be filled in by the team]"],
-], widths=[4.5, 12], size=9)
+    ["Alisher Shayakhmetov", "The “brain” of the project: retrieval methods and models, evaluation, ranking and answer logic, application back end"],
+    ["Arsen Zhambekov", "Data collection"],
+    ["Yernar Sakenov", "Web site design, evaluation of the data and annotation (labelling)"],
+], widths=[4.5, 12], size=9.5)
+doc.add_heading("Appendix D. Licence, languages and third-party works", level=1)
+body("The code is released under the MIT licence (LICENSE in the repository). Queries and results are supported in Kazakh, Russian and English; interface localisation into the three languages is planned. "
+     "Every dataset, model, library and paper that was used, with its authors, link and licence, is listed in CREDITS.md; the main ones are summarised here.")
+table("Main third-party works (licences read from the project pages and the Hugging Face / Mendeley APIs on 17 Nov 2026)", ["Work", "Licence", "Use"], [
+    ["KazakhLawCorpus — A. Tleubayeva et al., Data 2026, 11(9), 217; huggingface.co/datasets/Arailym-tleubayeva/KazakhLawCorpus", "Apache-2.0", "act metadata"],
+    ["Textual Foundations of Justice — I. Akhmetov, A. Zhamankhan, N. Zhetesov, A. Kubaeva; Mendeley Data, doi:10.17632/jdpc5658nh.3", "CC BY 4.0", "full texts (not redistributed)"],
+    ["BAAI/bge-m3 (arXiv:2402.03216); intfloat/multilingual-e5-small/base/large (arXiv:2402.05672)", "MIT", "retrievers"],
+    ["BAAI/bge-reranker-v2-m3; Qwen/Qwen3-Embedding-0.6B", "Apache-2.0", "re-ranker and encoder experiments"],
+    ["facebook/nllb-200-distilled-600M (arXiv:2207.04672)", "CC BY-NC 4.0 (non-commercial)", "query and snippet translation"],
+    ["Gemma 3 4B via Ollama (arXiv:2503.19786)", "Gemma Terms of Use", "optional local answers"],
+    ["PyTorch, sentence-transformers, Transformers, pandas, NumPy, SciPy, scikit-learn, PyArrow, NLTK, matplotlib, SQLite, psutil, python-docx, python-pptx, pytest, LibreOffice", "BSD / Apache-2.0 / MIT / MPL-2.0 / public domain", "see CREDITS.md"],
+], widths=[9.6, 3.6, 3.4], size=8)
 
 doc.save(str(OUT))
 print("saved", OUT, "| tables", counter["t"], "| figures", counter["f"])

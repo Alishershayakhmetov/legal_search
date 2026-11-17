@@ -74,6 +74,13 @@ defaults, CPU-only mode, the thumbs buttons.
 
 `engine.search` now (a) reads an all-Latin query as Russian when that gives a higher top-1 score, (b) sets `low_confidence` and adds a warning when the best score is below `CONFIDENCE_MIN` (ru 0.62, kk 0.61, en 0.58), (c) adds the policy note for questions about evading the law (`docs/policy.md`). The server returns `low_confidence`; the page shows it as a warning line.
 
+## 2026-11-17: English deliverables, part-corpus run, unified comparison, memory
+
+* `report/Report_Kazakh_Legal_Search_Engine.pdf` (18 pages) and `report/Presentation_Kazakh_Legal_Search_Engine.pdf` (21 slides), English, built by `report/build_report_en.py` and `report/build_slides_en.py`.
+* bge-m3 on a part of the corpus: `src/24_embed.py BAAI/bge-m3 part ...` (articles + 15% of other passages = 530,772 passages, 69 min), evaluated by `src/52_part_corpus_eval.py` -> `outputs/part_corpus_eval.json` (ru S@10 0.80, kk 0.69, en 0.67). The full-corpus run (D6) is still not done.
+* `src/55_unified_comparison.py` -> `docs/results_unified.md` (Recall@1/5/10/20/50, MRR, nDCG for every method), `src/53_memory_benchmark.py` -> `outputs/memory_benchmark.json`.
+* MIT `LICENSE` and `CREDITS.md`; team contributions and the three-language statement are in README and report. Interface text is still Russian (localisation to ru/kk/en planned).
+
 ## Stage 5 artefacts (2026-11-15)
 
 `release/testset/`, `release/parallel/` (parquet is git-ignored; rebuild with `src/48_parallel_corpus.py`), `release/glossary/`, each with a datasheet and checksums; none published. Encoder sweep: `outputs/encoder_sweep.json` (models cached in the Hugging Face cache: bge-reranker-v2-m3, Qwen3-Embedding-0.6B, multilingual-e5-large).

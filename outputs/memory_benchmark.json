@@ -1,0 +1,62 @@
+{
+ "files": {
+  "csv_mb": 953,
+  "parquet_mb": 31
+ },
+ "loading": [
+  {
+   "variant": "A_csv_default",
+   "seconds": 1.9,
+   "peak_mb": 2155,
+   "frame_mb": 1023,
+   "rows": 223245,
+   "columns": 49
+  },
+  {
+   "variant": "B_csv_usecols_str",
+   "seconds": 3.3,
+   "peak_mb": 838,
+   "frame_mb": 584,
+   "rows": 223245,
+   "columns": 24
+  },
+  {
+   "variant": "C_chunked_to_parquet",
+   "seconds": 4.1,
+   "peak_mb": 830,
+   "frame_mb": null,
+   "rows": null,
+   "columns": null
+  },
+  {
+   "variant": "D_parquet",
+   "seconds": 0.2,
+   "peak_mb": 1241,
+   "frame_mb": 584,
+   "rows": 223245,
+   "columns": 24
+  },
+  {
+   "variant": "E_parquet_optimised",
+   "seconds": 0.3,
+   "peak_mb": 1308,
+   "frame_mb": 387,
+   "rows": 223245,
+   "columns": 24
+  }
+ ],
+ "application": {
+  "after_load": {
+   "seconds": 15.0,
+   "rss_mb": 3817,
+   "gpu_allocated_mb": 1792
+  },
+  "after_20_searches": {
+   "rss_mb": 5303,
+   "peak_rss_mb": 5750,
+   "gpu_allocated_mb": 1801,
+   "gpu_peak_mb": 1804
+  },
+  "articles": 319377
+ }
+}

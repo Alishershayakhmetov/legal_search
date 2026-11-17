@@ -1,0 +1,109 @@
+{
+ "passages": 530772,
+ "articles": 319377,
+ "share_of_index": 0.307,
+ "systems": {
+  "BM25": {
+   "kk": {
+    "success@1": 0.089,
+    "success@5": 0.2,
+    "success@10": 0.267,
+    "recall@10": 0.219,
+    "recall@50": 0.37,
+    "mrr@10": 0.143,
+    "ndcg@10": 0.14
+   },
+   "ru": {
+    "success@1": 0.044,
+    "success@5": 0.2,
+    "success@10": 0.4,
+    "recall@10": 0.337,
+    "recall@50": 0.478,
+    "mrr@10": 0.13,
+    "ndcg@10": 0.164
+   },
+   "ms_per_query": 11
+  },
+  "e5-small": {
+   "en": {
+    "success@1": 0.044,
+    "success@5": 0.133,
+    "success@10": 0.222,
+    "recall@10": 0.181,
+    "recall@50": 0.311,
+    "mrr@10": 0.079,
+    "ndcg@10": 0.092
+   },
+   "kk": {
+    "success@1": 0.067,
+    "success@5": 0.311,
+    "success@10": 0.444,
+    "recall@10": 0.389,
+    "recall@50": 0.574,
+    "mrr@10": 0.183,
+    "ndcg@10": 0.192
+   },
+   "ru": {
+    "success@1": 0.133,
+    "success@5": 0.4,
+    "success@10": 0.533,
+    "recall@10": 0.467,
+    "recall@50": 0.689,
+    "mrr@10": 0.245,
+    "ndcg@10": 0.307
+   },
+   "ms_per_query": 22
+  },
+  "bge-m3": {
+   "en": {
+    "success@1": 0.156,
+    "success@5": 0.511,
+    "success@10": 0.667,
+    "recall@10": 0.607,
+    "recall@50": 0.826,
+    "mrr@10": 0.31,
+    "ndcg@10": 0.339
+   },
+   "kk": {
+    "success@1": 0.178,
+    "success@5": 0.511,
+    "success@10": 0.689,
+    "recall@10": 0.652,
+    "recall@50": 0.848,
+    "mrr@10": 0.32,
+    "ndcg@10": 0.355
+   },
+   "ru": {
+    "success@1": 0.156,
+    "success@5": 0.667,
+    "success@10": 0.8,
+    "recall@10": 0.719,
+    "recall@50": 0.878,
+    "mrr@10": 0.358,
+    "ndcg@10": 0.404
+   },
+   "ms_per_query": 21
+  },
+  "hybrid BM25 + bge-m3": {
+   "kk": {
+    "success@1": 0.111,
+    "success@5": 0.311,
+    "success@10": 0.489,
+    "recall@10": 0.407,
+    "recall@50": 0.781,
+    "mrr@10": 0.216,
+    "ndcg@10": 0.24
+   },
+   "ru": {
+    "success@1": 0.156,
+    "success@5": 0.467,
+    "success@10": 0.556,
+    "recall@10": 0.485,
+    "recall@50": 0.848,
+    "mrr@10": 0.283,
+    "ndcg@10": 0.311
+   },
+   "ms_per_query": 23
+  }
+ }
+}

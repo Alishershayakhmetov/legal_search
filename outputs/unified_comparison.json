@@ -1,0 +1,2093 @@
+{
+ "rows": [
+  {
+   "method": "Keyword overlap (baseline), word forms",
+   "lang": "ru",
+   "n": 45,
+   "recall@1": 0.022,
+   "recall@5": 0.048,
+   "recall@10": 0.126,
+   "recall@20": 0.181,
+   "recall@50": 0.233,
+   "success@10": 0.178,
+   "mrr@10": 0.061,
+   "ndcg@10": 0.065
+  },
+  {
+   "method": "TF-IDF, word forms",
+   "lang": "ru",
+   "n": 45,
+   "recall@1": 0.0,
+   "recall@5": 0.033,
+   "recall@10": 0.133,
+   "recall@20": 0.193,
+   "recall@50": 0.226,
+   "success@10": 0.156,
+   "mrr@10": 0.032,
+   "ndcg@10": 0.064
+  },
+  {
+   "method": "BM25, word forms",
+   "lang": "ru",
+   "n": 45,
+   "recall@1": 0.033,
+   "recall@5": 0.093,
+   "recall@10": 0.137,
+   "recall@20": 0.2,
+   "recall@50": 0.278,
+   "success@10": 0.2,
+   "mrr@10": 0.092,
+   "ndcg@10": 0.105
+  },
+  {
+   "method": "Keyword overlap (baseline), stemming",
+   "lang": "ru",
+   "n": 45,
+   "recall@1": 0.033,
+   "recall@5": 0.056,
+   "recall@10": 0.122,
+   "recall@20": 0.204,
+   "recall@50": 0.27,
+   "success@10": 0.156,
+   "mrr@10": 0.063,
+   "ndcg@10": 0.066
+  },
+  {
+   "method": "TF-IDF, stemming",
+   "lang": "ru",
+   "n": 45,
+   "recall@1": 0.011,
+   "recall@5": 0.159,
+   "recall@10": 0.259,
+   "recall@20": 0.326,
+   "recall@50": 0.415,
+   "success@10": 0.333,
+   "mrr@10": 0.097,
+   "ndcg@10": 0.134
+  },
+  {
+   "method": "BM25, stemming",
+   "lang": "ru",
+   "n": 45,
+   "recall@1": 0.019,
+   "recall@5": 0.204,
+   "recall@10": 0.359,
+   "recall@20": 0.422,
+   "recall@50": 0.522,
+   "success@10": 0.422,
+   "mrr@10": 0.153,
+   "ndcg@10": 0.189
+  },
+  {
+   "method": "Keyword overlap (baseline), word forms",
+   "lang": "kk",
+   "n": 45,
+   "recall@1": 0.022,
+   "recall@5": 0.074,
+   "recall@10": 0.107,
+   "recall@20": 0.152,
+   "recall@50": 0.226,
+   "success@10": 0.133,
+   "mrr@10": 0.044,
+   "ndcg@10": 0.056
+  },
+  {
+   "method": "TF-IDF, word forms",
+   "lang": "kk",
+   "n": 45,
+   "recall@1": 0.019,
+   "recall@5": 0.137,
+   "recall@10": 0.193,
+   "recall@20": 0.215,
+   "recall@50": 0.267,
+   "success@10": 0.222,
+   "mrr@10": 0.096,
+   "ndcg@10": 0.11
+  },
+  {
+   "method": "BM25, word forms",
+   "lang": "kk",
+   "n": 45,
+   "recall@1": 0.063,
+   "recall@5": 0.163,
+   "recall@10": 0.248,
+   "recall@20": 0.281,
+   "recall@50": 0.363,
+   "success@10": 0.289,
+   "mrr@10": 0.132,
+   "ndcg@10": 0.13
+  },
+  {
+   "method": "Keyword overlap (baseline), 5-letter prefix",
+   "lang": "kk",
+   "n": 45,
+   "recall@1": 0.0,
+   "recall@5": 0.041,
+   "recall@10": 0.13,
+   "recall@20": 0.174,
+   "recall@50": 0.233,
+   "success@10": 0.178,
+   "mrr@10": 0.035,
+   "ndcg@10": 0.062
+  },
+  {
+   "method": "TF-IDF, 5-letter prefix",
+   "lang": "kk",
+   "n": 45,
+   "recall@1": 0.019,
+   "recall@5": 0.104,
+   "recall@10": 0.148,
+   "recall@20": 0.204,
+   "recall@50": 0.285,
+   "success@10": 0.156,
+   "mrr@10": 0.075,
+   "ndcg@10": 0.101
+  },
+  {
+   "method": "BM25, 5-letter prefix",
+   "lang": "kk",
+   "n": 45,
+   "recall@1": 0.052,
+   "recall@5": 0.174,
+   "recall@10": 0.259,
+   "recall@20": 0.311,
+   "recall@50": 0.393,
+   "success@10": 0.311,
+   "mrr@10": 0.166,
+   "ndcg@10": 0.167
+  },
+  {
+   "method": "Dense e5-small",
+   "lang": "en",
+   "n": 45,
+   "recall@1": 0.044,
+   "recall@5": 0.115,
+   "recall@10": 0.181,
+   "recall@20": 0.256,
+   "recall@50": 0.322,
+   "success@10": 0.222,
+   "mrr@10": 0.082,
+   "ndcg@10": 0.094
+  },
+  {
+   "method": "Dense e5-small",
+   "lang": "kk",
+   "n": 45,
+   "recall@1": 0.037,
+   "recall@5": 0.333,
+   "recall@10": 0.422,
+   "recall@20": 0.474,
+   "recall@50": 0.585,
+   "success@10": 0.489,
+   "mrr@10": 0.203,
+   "ndcg@10": 0.213
+  },
+  {
+   "method": "Dense e5-small",
+   "lang": "ru",
+   "n": 45,
+   "recall@1": 0.074,
+   "recall@5": 0.381,
+   "recall@10": 0.478,
+   "recall@20": 0.633,
+   "recall@50": 0.719,
+   "success@10": 0.533,
+   "mrr@10": 0.259,
+   "ndcg@10": 0.327
+  },
+  {
+   "method": "Dense e5-small",
+   "lang": "pooled",
+   "n": 135,
+   "recall@1": 0.052,
+   "recall@5": 0.277,
+   "recall@10": 0.36,
+   "recall@20": 0.454,
+   "recall@50": 0.542,
+   "success@10": 0.415,
+   "mrr@10": 0.181,
+   "ndcg@10": 0.212
+  },
+  {
+   "method": "Dense e5-base",
+   "lang": "en",
+   "n": 45,
+   "recall@1": 0.044,
+   "recall@5": 0.1,
+   "recall@10": 0.119,
+   "recall@20": 0.233,
+   "recall@50": 0.289,
+   "success@10": 0.133,
+   "mrr@10": 0.086,
+   "ndcg@10": 0.092
+  },
+  {
+   "method": "Dense e5-base",
+   "lang": "kk",
+   "n": 45,
+   "recall@1": 0.052,
+   "recall@5": 0.23,
+   "recall@10": 0.311,
+   "recall@20": 0.441,
+   "recall@50": 0.519,
+   "success@10": 0.356,
+   "mrr@10": 0.165,
+   "ndcg@10": 0.183
+  },
+  {
+   "method": "Dense e5-base",
+   "lang": "ru",
+   "n": 45,
+   "recall@1": 0.089,
+   "recall@5": 0.433,
+   "recall@10": 0.57,
+   "recall@20": 0.681,
+   "recall@50": 0.811,
+   "success@10": 0.667,
+   "mrr@10": 0.295,
+   "ndcg@10": 0.362
+  },
+  {
+   "method": "Dense e5-base",
+   "lang": "pooled",
+   "n": 135,
+   "recall@1": 0.062,
+   "recall@5": 0.254,
+   "recall@10": 0.333,
+   "recall@20": 0.452,
+   "recall@50": 0.54,
+   "success@10": 0.385,
+   "mrr@10": 0.182,
+   "ndcg@10": 0.212
+  },
+  {
+   "method": "Dense bge-m3",
+   "lang": "en",
+   "n": 45,
+   "recall@1": 0.122,
+   "recall@5": 0.485,
+   "recall@10": 0.641,
+   "recall@20": 0.741,
+   "recall@50": 0.826,
+   "success@10": 0.689,
+   "mrr@10": 0.321,
+   "ndcg@10": 0.356
+  },
+  {
+   "method": "Dense bge-m3",
+   "lang": "kk",
+   "n": 45,
+   "recall@1": 0.141,
+   "recall@5": 0.5,
+   "recall@10": 0.685,
+   "recall@20": 0.752,
+   "recall@50": 0.848,
+   "success@10": 0.733,
+   "mrr@10": 0.354,
+   "ndcg@10": 0.384
+  },
+  {
+   "method": "Dense bge-m3",
+   "lang": "ru",
+   "n": 45,
+   "recall@1": 0.122,
+   "recall@5": 0.563,
+   "recall@10": 0.719,
+   "recall@20": 0.826,
+   "recall@50": 0.889,
+   "success@10": 0.8,
+   "mrr@10": 0.383,
+   "ndcg@10": 0.425
+  },
+  {
+   "method": "Dense bge-m3",
+   "lang": "pooled",
+   "n": 135,
+   "recall@1": 0.128,
+   "recall@5": 0.516,
+   "recall@10": 0.681,
+   "recall@20": 0.773,
+   "recall@50": 0.854,
+   "success@10": 0.741,
+   "mrr@10": 0.352,
+   "ndcg@10": 0.388
+  },
+  {
+   "method": "Hybrid BM25 + bge-m3 (RRF)",
+   "lang": "kk",
+   "n": 45,
+   "recall@1": 0.085,
+   "recall@5": 0.237,
+   "recall@10": 0.437,
+   "recall@20": 0.581,
+   "recall@50": 0.781,
+   "success@10": 0.533,
+   "mrr@10": 0.24,
+   "ndcg@10": 0.258
+  },
+  {
+   "method": "Hybrid BM25 + bge-m3 (RRF)",
+   "lang": "ru",
+   "n": 45,
+   "recall@1": 0.119,
+   "recall@5": 0.404,
+   "recall@10": 0.507,
+   "recall@20": 0.774,
+   "recall@50": 0.848,
+   "success@10": 0.6,
+   "mrr@10": 0.315,
+   "ndcg@10": 0.334
+  },
+  {
+   "method": "Hybrid BM25 + bge-m3 (RRF)",
+   "lang": "pooled",
+   "n": 90,
+   "recall@1": 0.102,
+   "recall@5": 0.32,
+   "recall@10": 0.472,
+   "recall@20": 0.678,
+   "recall@50": 0.815,
+   "success@10": 0.567,
+   "mrr@10": 0.277,
+   "ndcg@10": 0.296
+  },
+  {
+   "method": "English via translation + dense bge-m3",
+   "lang": "en",
+   "n": 45,
+   "recall@1": 0.111,
+   "recall@5": 0.367,
+   "recall@10": 0.578,
+   "recall@20": 0.719,
+   "recall@50": 0.837,
+   "success@10": 0.644,
+   "mrr@10": 0.288,
+   "ndcg@10": 0.316
+  },
+  {
+   "method": "English via translation + dense bge-m3",
+   "lang": "pooled",
+   "n": 45,
+   "recall@1": 0.111,
+   "recall@5": 0.367,
+   "recall@10": 0.578,
+   "recall@20": 0.719,
+   "recall@50": 0.837,
+   "success@10": 0.644,
+   "mrr@10": 0.288,
+   "ndcg@10": 0.316
+  },
+  {
+   "method": "English via translation + BM25",
+   "lang": "en",
+   "n": 45,
+   "recall@1": 0.074,
+   "recall@5": 0.148,
+   "recall@10": 0.193,
+   "recall@20": 0.33,
+   "recall@50": 0.426,
+   "success@10": 0.244,
+   "mrr@10": 0.152,
+   "ndcg@10": 0.154
+  },
+  {
+   "method": "English via translation + BM25",
+   "lang": "pooled",
+   "n": 45,
+   "recall@1": 0.074,
+   "recall@5": 0.148,
+   "recall@10": 0.193,
+   "recall@20": 0.33,
+   "recall@50": 0.426,
+   "success@10": 0.244,
+   "mrr@10": 0.152,
+   "ndcg@10": 0.154
+  }
+ ],
+ "legacy": [
+  {
+   "file": "dense_results_bge-m3_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "ru",
+   "system": "bm25",
+   "model": "bge-m3",
+   "success@10": 0.378,
+   "mrr@10": 0.139
+  },
+  {
+   "file": "dense_results_bge-m3_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "ru",
+   "system": "dense",
+   "model": "bge-m3",
+   "success@10": 0.778,
+   "mrr@10": 0.339
+  },
+  {
+   "file": "dense_results_bge-m3_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "ru",
+   "system": "dense_cross",
+   "model": "bge-m3",
+   "success@10": 0.8,
+   "mrr@10": 0.364
+  },
+  {
+   "file": "dense_results_bge-m3_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "ru",
+   "system": "hybrid",
+   "model": "bge-m3",
+   "success@10": 0.556,
+   "mrr@10": 0.284
+  },
+  {
+   "file": "dense_results_bge-m3_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "kk",
+   "system": "bm25",
+   "model": "bge-m3",
+   "success@10": 0.289,
+   "mrr@10": 0.165
+  },
+  {
+   "file": "dense_results_bge-m3_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "kk",
+   "system": "dense",
+   "model": "bge-m3",
+   "success@10": 0.689,
+   "mrr@10": 0.316
+  },
+  {
+   "file": "dense_results_bge-m3_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "kk",
+   "system": "dense_cross",
+   "model": "bge-m3",
+   "success@10": 0.711,
+   "mrr@10": 0.309
+  },
+  {
+   "file": "dense_results_bge-m3_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "kk",
+   "system": "hybrid",
+   "model": "bge-m3",
+   "success@10": 0.489,
+   "mrr@10": 0.203
+  },
+  {
+   "file": "dense_results_bge-m3_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "en",
+   "system": "dense_cross",
+   "model": "bge-m3",
+   "success@10": 0.689,
+   "mrr@10": 0.317
+  },
+  {
+   "file": "dense_results_bge-m3_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "en",
+   "system": "bm25_translated",
+   "model": "bge-m3",
+   "success@10": 0.267,
+   "mrr@10": 0.121
+  },
+  {
+   "file": "dense_results_bge-m3_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "en",
+   "system": "dense_translated",
+   "model": "bge-m3",
+   "success@10": 0.622,
+   "mrr@10": 0.297
+  },
+  {
+   "file": "dense_results_bge-m3_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "en",
+   "system": "hybrid_translated",
+   "model": "bge-m3",
+   "success@10": 0.622,
+   "mrr@10": 0.296
+  },
+  {
+   "file": "dense_results_bge-m3_articles_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "ru",
+   "system": "bm25",
+   "model": "bge-m3",
+   "success@10": 0.422,
+   "mrr@10": 0.184
+  },
+  {
+   "file": "dense_results_bge-m3_articles_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "ru",
+   "system": "dense",
+   "model": "bge-m3",
+   "success@10": 0.8,
+   "mrr@10": 0.407
+  },
+  {
+   "file": "dense_results_bge-m3_articles_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "ru",
+   "system": "dense_cross",
+   "model": "bge-m3",
+   "success@10": 0.822,
+   "mrr@10": 0.42
+  },
+  {
+   "file": "dense_results_bge-m3_articles_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "ru",
+   "system": "hybrid",
+   "model": "bge-m3",
+   "success@10": 0.6,
+   "mrr@10": 0.32
+  },
+  {
+   "file": "dense_results_bge-m3_articles_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "kk",
+   "system": "bm25",
+   "model": "bge-m3",
+   "success@10": 0.311,
+   "mrr@10": 0.187
+  },
+  {
+   "file": "dense_results_bge-m3_articles_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "kk",
+   "system": "dense",
+   "model": "bge-m3",
+   "success@10": 0.733,
+   "mrr@10": 0.365
+  },
+  {
+   "file": "dense_results_bge-m3_articles_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "kk",
+   "system": "dense_cross",
+   "model": "bge-m3",
+   "success@10": 0.756,
+   "mrr@10": 0.359
+  },
+  {
+   "file": "dense_results_bge-m3_articles_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "kk",
+   "system": "hybrid",
+   "model": "bge-m3",
+   "success@10": 0.533,
+   "mrr@10": 0.242
+  },
+  {
+   "file": "dense_results_bge-m3_articles_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "en",
+   "system": "dense_cross",
+   "model": "bge-m3",
+   "success@10": 0.711,
+   "mrr@10": 0.373
+  },
+  {
+   "file": "dense_results_bge-m3_articles_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "en",
+   "system": "bm25_translated",
+   "model": "bge-m3",
+   "success@10": 0.289,
+   "mrr@10": 0.144
+  },
+  {
+   "file": "dense_results_bge-m3_articles_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "en",
+   "system": "dense_translated",
+   "model": "bge-m3",
+   "success@10": 0.644,
+   "mrr@10": 0.338
+  },
+  {
+   "file": "dense_results_bge-m3_articles_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "en",
+   "system": "hybrid_translated",
+   "model": "bge-m3",
+   "success@10": 0.711,
+   "mrr@10": 0.33
+  },
+  {
+   "file": "dense_results_bge-m3_articles_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "ru",
+   "system": "bm25",
+   "model": "bge-m3",
+   "success@10": 0.422,
+   "mrr@10": 0.153
+  },
+  {
+   "file": "dense_results_bge-m3_articles_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "ru",
+   "system": "dense",
+   "model": "bge-m3",
+   "success@10": 0.8,
+   "mrr@10": 0.383
+  },
+  {
+   "file": "dense_results_bge-m3_articles_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "ru",
+   "system": "dense_cross",
+   "model": "bge-m3",
+   "success@10": 0.822,
+   "mrr@10": 0.392
+  },
+  {
+   "file": "dense_results_bge-m3_articles_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "ru",
+   "system": "hybrid",
+   "model": "bge-m3",
+   "success@10": 0.6,
+   "mrr@10": 0.315
+  },
+  {
+   "file": "dense_results_bge-m3_articles_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "kk",
+   "system": "bm25",
+   "model": "bge-m3",
+   "success@10": 0.311,
+   "mrr@10": 0.166
+  },
+  {
+   "file": "dense_results_bge-m3_articles_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "kk",
+   "system": "dense",
+   "model": "bge-m3",
+   "success@10": 0.733,
+   "mrr@10": 0.354
+  },
+  {
+   "file": "dense_results_bge-m3_articles_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "kk",
+   "system": "dense_cross",
+   "model": "bge-m3",
+   "success@10": 0.733,
+   "mrr@10": 0.342
+  },
+  {
+   "file": "dense_results_bge-m3_articles_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "kk",
+   "system": "hybrid",
+   "model": "bge-m3",
+   "success@10": 0.533,
+   "mrr@10": 0.24
+  },
+  {
+   "file": "dense_results_bge-m3_articles_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "en",
+   "system": "dense_cross",
+   "model": "bge-m3",
+   "success@10": 0.689,
+   "mrr@10": 0.321
+  },
+  {
+   "file": "dense_results_bge-m3_articles_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "en",
+   "system": "bm25_translated",
+   "model": "bge-m3",
+   "success@10": 0.244,
+   "mrr@10": 0.152
+  },
+  {
+   "file": "dense_results_bge-m3_articles_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "en",
+   "system": "dense_translated",
+   "model": "bge-m3",
+   "success@10": 0.644,
+   "mrr@10": 0.288
+  },
+  {
+   "file": "dense_results_bge-m3_articles_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "en",
+   "system": "hybrid_translated",
+   "model": "bge-m3",
+   "success@10": 0.667,
+   "mrr@10": 0.305
+  },
+  {
+   "file": "dense_results_multilingual-e5-base_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "ru",
+   "system": "bm25",
+   "model": "multilingual-e5-base",
+   "success@10": 0.378,
+   "mrr@10": 0.139
+  },
+  {
+   "file": "dense_results_multilingual-e5-base_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "ru",
+   "system": "dense",
+   "model": "multilingual-e5-base",
+   "success@10": 0.622,
+   "mrr@10": 0.278
+  },
+  {
+   "file": "dense_results_multilingual-e5-base_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "ru",
+   "system": "dense_cross",
+   "model": "multilingual-e5-base",
+   "success@10": 0.622,
+   "mrr@10": 0.275
+  },
+  {
+   "file": "dense_results_multilingual-e5-base_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "ru",
+   "system": "hybrid",
+   "model": "multilingual-e5-base",
+   "success@10": 0.511,
+   "mrr@10": 0.247
+  },
+  {
+   "file": "dense_results_multilingual-e5-base_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "kk",
+   "system": "bm25",
+   "model": "multilingual-e5-base",
+   "success@10": 0.289,
+   "mrr@10": 0.165
+  },
+  {
+   "file": "dense_results_multilingual-e5-base_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "kk",
+   "system": "dense",
+   "model": "multilingual-e5-base",
+   "success@10": 0.311,
+   "mrr@10": 0.132
+  },
+  {
+   "file": "dense_results_multilingual-e5-base_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "kk",
+   "system": "dense_cross",
+   "model": "multilingual-e5-base",
+   "success@10": 0.311,
+   "mrr@10": 0.132
+  },
+  {
+   "file": "dense_results_multilingual-e5-base_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "kk",
+   "system": "hybrid",
+   "model": "multilingual-e5-base",
+   "success@10": 0.444,
+   "mrr@10": 0.167
+  },
+  {
+   "file": "dense_results_multilingual-e5-base_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "en",
+   "system": "dense_cross",
+   "model": "multilingual-e5-base",
+   "success@10": 0.133,
+   "mrr@10": 0.066
+  },
+  {
+   "file": "dense_results_multilingual-e5-base_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "en",
+   "system": "bm25_translated",
+   "model": "multilingual-e5-base",
+   "success@10": 0.267,
+   "mrr@10": 0.121
+  },
+  {
+   "file": "dense_results_multilingual-e5-base_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "en",
+   "system": "dense_translated",
+   "model": "multilingual-e5-base",
+   "success@10": 0.311,
+   "mrr@10": 0.161
+  },
+  {
+   "file": "dense_results_multilingual-e5-base_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "en",
+   "system": "hybrid_translated",
+   "model": "multilingual-e5-base",
+   "success@10": 0.4,
+   "mrr@10": 0.19
+  },
+  {
+   "file": "dense_results_multilingual-e5-base_articles_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "ru",
+   "system": "bm25",
+   "model": "multilingual-e5-base",
+   "success@10": 0.422,
+   "mrr@10": 0.184
+  },
+  {
+   "file": "dense_results_multilingual-e5-base_articles_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "ru",
+   "system": "dense",
+   "model": "multilingual-e5-base",
+   "success@10": 0.667,
+   "mrr@10": 0.324
+  },
+  {
+   "file": "dense_results_multilingual-e5-base_articles_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "ru",
+   "system": "dense_cross",
+   "model": "multilingual-e5-base",
+   "success@10": 0.667,
+   "mrr@10": 0.321
+  },
+  {
+   "file": "dense_results_multilingual-e5-base_articles_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "ru",
+   "system": "hybrid",
+   "model": "multilingual-e5-base",
+   "success@10": 0.578,
+   "mrr@10": 0.281
+  },
+  {
+   "file": "dense_results_multilingual-e5-base_articles_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "kk",
+   "system": "bm25",
+   "model": "multilingual-e5-base",
+   "success@10": 0.311,
+   "mrr@10": 0.187
+  },
+  {
+   "file": "dense_results_multilingual-e5-base_articles_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "kk",
+   "system": "dense",
+   "model": "multilingual-e5-base",
+   "success@10": 0.356,
+   "mrr@10": 0.167
+  },
+  {
+   "file": "dense_results_multilingual-e5-base_articles_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "kk",
+   "system": "dense_cross",
+   "model": "multilingual-e5-base",
+   "success@10": 0.356,
+   "mrr@10": 0.167
+  },
+  {
+   "file": "dense_results_multilingual-e5-base_articles_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "kk",
+   "system": "hybrid",
+   "model": "multilingual-e5-base",
+   "success@10": 0.444,
+   "mrr@10": 0.186
+  },
+  {
+   "file": "dense_results_multilingual-e5-base_articles_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "en",
+   "system": "dense_cross",
+   "model": "multilingual-e5-base",
+   "success@10": 0.133,
+   "mrr@10": 0.086
+  },
+  {
+   "file": "dense_results_multilingual-e5-base_articles_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "en",
+   "system": "bm25_translated",
+   "model": "multilingual-e5-base",
+   "success@10": 0.289,
+   "mrr@10": 0.144
+  },
+  {
+   "file": "dense_results_multilingual-e5-base_articles_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "en",
+   "system": "dense_translated",
+   "model": "multilingual-e5-base",
+   "success@10": 0.356,
+   "mrr@10": 0.197
+  },
+  {
+   "file": "dense_results_multilingual-e5-base_articles_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "en",
+   "system": "hybrid_translated",
+   "model": "multilingual-e5-base",
+   "success@10": 0.4,
+   "mrr@10": 0.197
+  },
+  {
+   "file": "dense_results_multilingual-e5-base_articles_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "ru",
+   "system": "bm25",
+   "model": "multilingual-e5-base",
+   "success@10": 0.422,
+   "mrr@10": 0.153
+  },
+  {
+   "file": "dense_results_multilingual-e5-base_articles_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "ru",
+   "system": "dense",
+   "model": "multilingual-e5-base",
+   "success@10": 0.667,
+   "mrr@10": 0.295
+  },
+  {
+   "file": "dense_results_multilingual-e5-base_articles_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "ru",
+   "system": "dense_cross",
+   "model": "multilingual-e5-base",
+   "success@10": 0.667,
+   "mrr@10": 0.292
+  },
+  {
+   "file": "dense_results_multilingual-e5-base_articles_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "ru",
+   "system": "hybrid",
+   "model": "multilingual-e5-base",
+   "success@10": 0.6,
+   "mrr@10": 0.265
+  },
+  {
+   "file": "dense_results_multilingual-e5-base_articles_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "kk",
+   "system": "bm25",
+   "model": "multilingual-e5-base",
+   "success@10": 0.311,
+   "mrr@10": 0.166
+  },
+  {
+   "file": "dense_results_multilingual-e5-base_articles_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "kk",
+   "system": "dense",
+   "model": "multilingual-e5-base",
+   "success@10": 0.356,
+   "mrr@10": 0.165
+  },
+  {
+   "file": "dense_results_multilingual-e5-base_articles_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "kk",
+   "system": "dense_cross",
+   "model": "multilingual-e5-base",
+   "success@10": 0.356,
+   "mrr@10": 0.165
+  },
+  {
+   "file": "dense_results_multilingual-e5-base_articles_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "kk",
+   "system": "hybrid",
+   "model": "multilingual-e5-base",
+   "success@10": 0.4,
+   "mrr@10": 0.168
+  },
+  {
+   "file": "dense_results_multilingual-e5-base_articles_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "en",
+   "system": "dense_cross",
+   "model": "multilingual-e5-base",
+   "success@10": 0.133,
+   "mrr@10": 0.086
+  },
+  {
+   "file": "dense_results_multilingual-e5-base_articles_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "en",
+   "system": "bm25_translated",
+   "model": "multilingual-e5-base",
+   "success@10": 0.244,
+   "mrr@10": 0.152
+  },
+  {
+   "file": "dense_results_multilingual-e5-base_articles_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "en",
+   "system": "dense_translated",
+   "model": "multilingual-e5-base",
+   "success@10": 0.356,
+   "mrr@10": 0.168
+  },
+  {
+   "file": "dense_results_multilingual-e5-base_articles_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "en",
+   "system": "hybrid_translated",
+   "model": "multilingual-e5-base",
+   "success@10": 0.378,
+   "mrr@10": 0.175
+  },
+  {
+   "file": "dense_results_multilingual-e5-small_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "ru",
+   "system": "bm25",
+   "model": "multilingual-e5-small",
+   "success@10": 0.378,
+   "mrr@10": 0.139
+  },
+  {
+   "file": "dense_results_multilingual-e5-small_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "ru",
+   "system": "dense",
+   "model": "multilingual-e5-small",
+   "success@10": 0.533,
+   "mrr@10": 0.21
+  },
+  {
+   "file": "dense_results_multilingual-e5-small_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "ru",
+   "system": "dense_cross",
+   "model": "multilingual-e5-small",
+   "success@10": 0.533,
+   "mrr@10": 0.21
+  },
+  {
+   "file": "dense_results_multilingual-e5-small_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "ru",
+   "system": "hybrid",
+   "model": "multilingual-e5-small",
+   "success@10": 0.467,
+   "mrr@10": 0.212
+  },
+  {
+   "file": "dense_results_multilingual-e5-small_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "kk",
+   "system": "bm25",
+   "model": "multilingual-e5-small",
+   "success@10": 0.289,
+   "mrr@10": 0.165
+  },
+  {
+   "file": "dense_results_multilingual-e5-small_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "kk",
+   "system": "dense",
+   "model": "multilingual-e5-small",
+   "success@10": 0.467,
+   "mrr@10": 0.169
+  },
+  {
+   "file": "dense_results_multilingual-e5-small_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "kk",
+   "system": "dense_cross",
+   "model": "multilingual-e5-small",
+   "success@10": 0.467,
+   "mrr@10": 0.169
+  },
+  {
+   "file": "dense_results_multilingual-e5-small_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "kk",
+   "system": "hybrid",
+   "model": "multilingual-e5-small",
+   "success@10": 0.444,
+   "mrr@10": 0.212
+  },
+  {
+   "file": "dense_results_multilingual-e5-small_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "en",
+   "system": "dense_cross",
+   "model": "multilingual-e5-small",
+   "success@10": 0.222,
+   "mrr@10": 0.083
+  },
+  {
+   "file": "dense_results_multilingual-e5-small_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "en",
+   "system": "bm25_translated",
+   "model": "multilingual-e5-small",
+   "success@10": 0.267,
+   "mrr@10": 0.121
+  },
+  {
+   "file": "dense_results_multilingual-e5-small_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "en",
+   "system": "dense_translated",
+   "model": "multilingual-e5-small",
+   "success@10": 0.422,
+   "mrr@10": 0.109
+  },
+  {
+   "file": "dense_results_multilingual-e5-small_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "en",
+   "system": "hybrid_translated",
+   "model": "multilingual-e5-small",
+   "success@10": 0.511,
+   "mrr@10": 0.244
+  },
+  {
+   "file": "dense_results_multilingual-e5-small_articles_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "ru",
+   "system": "bm25",
+   "model": "multilingual-e5-small",
+   "success@10": 0.422,
+   "mrr@10": 0.184
+  },
+  {
+   "file": "dense_results_multilingual-e5-small_articles_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "ru",
+   "system": "dense",
+   "model": "multilingual-e5-small",
+   "success@10": 0.578,
+   "mrr@10": 0.279
+  },
+  {
+   "file": "dense_results_multilingual-e5-small_articles_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "ru",
+   "system": "dense_cross",
+   "model": "multilingual-e5-small",
+   "success@10": 0.578,
+   "mrr@10": 0.279
+  },
+  {
+   "file": "dense_results_multilingual-e5-small_articles_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "ru",
+   "system": "hybrid",
+   "model": "multilingual-e5-small",
+   "success@10": 0.489,
+   "mrr@10": 0.254
+  },
+  {
+   "file": "dense_results_multilingual-e5-small_articles_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "kk",
+   "system": "bm25",
+   "model": "multilingual-e5-small",
+   "success@10": 0.311,
+   "mrr@10": 0.187
+  },
+  {
+   "file": "dense_results_multilingual-e5-small_articles_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "kk",
+   "system": "dense",
+   "model": "multilingual-e5-small",
+   "success@10": 0.489,
+   "mrr@10": 0.203
+  },
+  {
+   "file": "dense_results_multilingual-e5-small_articles_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "kk",
+   "system": "dense_cross",
+   "model": "multilingual-e5-small",
+   "success@10": 0.489,
+   "mrr@10": 0.203
+  },
+  {
+   "file": "dense_results_multilingual-e5-small_articles_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "kk",
+   "system": "hybrid",
+   "model": "multilingual-e5-small",
+   "success@10": 0.467,
+   "mrr@10": 0.233
+  },
+  {
+   "file": "dense_results_multilingual-e5-small_articles_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "en",
+   "system": "dense_cross",
+   "model": "multilingual-e5-small",
+   "success@10": 0.244,
+   "mrr@10": 0.09
+  },
+  {
+   "file": "dense_results_multilingual-e5-small_articles_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "en",
+   "system": "bm25_translated",
+   "model": "multilingual-e5-small",
+   "success@10": 0.289,
+   "mrr@10": 0.144
+  },
+  {
+   "file": "dense_results_multilingual-e5-small_articles_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "en",
+   "system": "dense_translated",
+   "model": "multilingual-e5-small",
+   "success@10": 0.444,
+   "mrr@10": 0.14
+  },
+  {
+   "file": "dense_results_multilingual-e5-small_articles_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "en",
+   "system": "hybrid_translated",
+   "model": "multilingual-e5-small",
+   "success@10": 0.533,
+   "mrr@10": 0.272
+  },
+  {
+   "file": "dense_results_multilingual-e5-small_articles_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "ru",
+   "system": "bm25",
+   "model": "multilingual-e5-small",
+   "success@10": 0.422,
+   "mrr@10": 0.153
+  },
+  {
+   "file": "dense_results_multilingual-e5-small_articles_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "ru",
+   "system": "dense",
+   "model": "multilingual-e5-small",
+   "success@10": 0.533,
+   "mrr@10": 0.259
+  },
+  {
+   "file": "dense_results_multilingual-e5-small_articles_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "ru",
+   "system": "dense_cross",
+   "model": "multilingual-e5-small",
+   "success@10": 0.533,
+   "mrr@10": 0.259
+  },
+  {
+   "file": "dense_results_multilingual-e5-small_articles_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "ru",
+   "system": "hybrid",
+   "model": "multilingual-e5-small",
+   "success@10": 0.467,
+   "mrr@10": 0.244
+  },
+  {
+   "file": "dense_results_multilingual-e5-small_articles_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "kk",
+   "system": "bm25",
+   "model": "multilingual-e5-small",
+   "success@10": 0.311,
+   "mrr@10": 0.166
+  },
+  {
+   "file": "dense_results_multilingual-e5-small_articles_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "kk",
+   "system": "dense",
+   "model": "multilingual-e5-small",
+   "success@10": 0.489,
+   "mrr@10": 0.203
+  },
+  {
+   "file": "dense_results_multilingual-e5-small_articles_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "kk",
+   "system": "dense_cross",
+   "model": "multilingual-e5-small",
+   "success@10": 0.489,
+   "mrr@10": 0.203
+  },
+  {
+   "file": "dense_results_multilingual-e5-small_articles_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "kk",
+   "system": "hybrid",
+   "model": "multilingual-e5-small",
+   "success@10": 0.444,
+   "mrr@10": 0.201
+  },
+  {
+   "file": "dense_results_multilingual-e5-small_articles_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "en",
+   "system": "dense_cross",
+   "model": "multilingual-e5-small",
+   "success@10": 0.222,
+   "mrr@10": 0.082
+  },
+  {
+   "file": "dense_results_multilingual-e5-small_articles_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "en",
+   "system": "bm25_translated",
+   "model": "multilingual-e5-small",
+   "success@10": 0.244,
+   "mrr@10": 0.152
+  },
+  {
+   "file": "dense_results_multilingual-e5-small_articles_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "en",
+   "system": "dense_translated",
+   "model": "multilingual-e5-small",
+   "success@10": 0.422,
+   "mrr@10": 0.135
+  },
+  {
+   "file": "dense_results_multilingual-e5-small_articles_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "en",
+   "system": "hybrid_translated",
+   "model": "multilingual-e5-small",
+   "success@10": 0.511,
+   "mrr@10": 0.252
+  },
+  {
+   "file": "sparse_results_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "ru",
+   "system": "word/bm25",
+   "model": "",
+   "success@10": 0.222,
+   "mrr@10": 0.075
+  },
+  {
+   "file": "sparse_results_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "ru",
+   "system": "word/tfidf",
+   "model": "",
+   "success@10": 0.156,
+   "mrr@10": 0.032
+  },
+  {
+   "file": "sparse_results_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "ru",
+   "system": "word/overlap",
+   "model": "",
+   "success@10": 0.2,
+   "mrr@10": 0.065
+  },
+  {
+   "file": "sparse_results_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "ru",
+   "system": "p5/bm25",
+   "model": "",
+   "success@10": 0.244,
+   "mrr@10": 0.092
+  },
+  {
+   "file": "sparse_results_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "ru",
+   "system": "p5/tfidf",
+   "model": "",
+   "success@10": 0.178,
+   "mrr@10": 0.053
+  },
+  {
+   "file": "sparse_results_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "ru",
+   "system": "p5/overlap",
+   "model": "",
+   "success@10": 0.067,
+   "mrr@10": 0.047
+  },
+  {
+   "file": "sparse_results_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "ru",
+   "system": "stem/bm25",
+   "model": "",
+   "success@10": 0.378,
+   "mrr@10": 0.139
+  },
+  {
+   "file": "sparse_results_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "ru",
+   "system": "stem/tfidf",
+   "model": "",
+   "success@10": 0.289,
+   "mrr@10": 0.075
+  },
+  {
+   "file": "sparse_results_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "ru",
+   "system": "stem/overlap",
+   "model": "",
+   "success@10": 0.133,
+   "mrr@10": 0.048
+  },
+  {
+   "file": "sparse_results_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "kk",
+   "system": "word/bm25",
+   "model": "",
+   "success@10": 0.267,
+   "mrr@10": 0.098
+  },
+  {
+   "file": "sparse_results_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "kk",
+   "system": "word/tfidf",
+   "model": "",
+   "success@10": 0.222,
+   "mrr@10": 0.077
+  },
+  {
+   "file": "sparse_results_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "kk",
+   "system": "word/overlap",
+   "model": "",
+   "success@10": 0.133,
+   "mrr@10": 0.042
+  },
+  {
+   "file": "sparse_results_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "kk",
+   "system": "p5/bm25",
+   "model": "",
+   "success@10": 0.289,
+   "mrr@10": 0.165
+  },
+  {
+   "file": "sparse_results_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "kk",
+   "system": "p5/tfidf",
+   "model": "",
+   "success@10": 0.2,
+   "mrr@10": 0.061
+  },
+  {
+   "file": "sparse_results_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "kk",
+   "system": "p5/overlap",
+   "model": "",
+   "success@10": 0.178,
+   "mrr@10": 0.041
+  },
+  {
+   "file": "sparse_results_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "kk",
+   "system": "stem/bm25",
+   "model": "",
+   "success@10": 0.267,
+   "mrr@10": 0.097
+  },
+  {
+   "file": "sparse_results_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "kk",
+   "system": "stem/tfidf",
+   "model": "",
+   "success@10": 0.178,
+   "mrr@10": 0.064
+  },
+  {
+   "file": "sparse_results_articles.json",
+   "version": "v0 (102 judgments), corpus before chunker fix",
+   "lang": "kk",
+   "system": "stem/overlap",
+   "model": "",
+   "success@10": 0.111,
+   "mrr@10": 0.048
+  },
+  {
+   "file": "sparse_results_articles_rukk_wordp5stem_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "ru",
+   "system": "word/bm25",
+   "model": "",
+   "success@10": 0.244,
+   "mrr@10": 0.097
+  },
+  {
+   "file": "sparse_results_articles_rukk_wordp5stem_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "ru",
+   "system": "word/tfidf",
+   "model": "",
+   "success@10": 0.178,
+   "mrr@10": 0.038
+  },
+  {
+   "file": "sparse_results_articles_rukk_wordp5stem_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "ru",
+   "system": "word/overlap",
+   "model": "",
+   "success@10": 0.222,
+   "mrr@10": 0.07
+  },
+  {
+   "file": "sparse_results_articles_rukk_wordp5stem_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "ru",
+   "system": "p5/bm25",
+   "model": "",
+   "success@10": 0.311,
+   "mrr@10": 0.131
+  },
+  {
+   "file": "sparse_results_articles_rukk_wordp5stem_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "ru",
+   "system": "p5/tfidf",
+   "model": "",
+   "success@10": 0.222,
+   "mrr@10": 0.083
+  },
+  {
+   "file": "sparse_results_articles_rukk_wordp5stem_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "ru",
+   "system": "p5/overlap",
+   "model": "",
+   "success@10": 0.089,
+   "mrr@10": 0.058
+  },
+  {
+   "file": "sparse_results_articles_rukk_wordp5stem_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "ru",
+   "system": "stem/bm25",
+   "model": "",
+   "success@10": 0.422,
+   "mrr@10": 0.184
+  },
+  {
+   "file": "sparse_results_articles_rukk_wordp5stem_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "ru",
+   "system": "stem/tfidf",
+   "model": "",
+   "success@10": 0.333,
+   "mrr@10": 0.119
+  },
+  {
+   "file": "sparse_results_articles_rukk_wordp5stem_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "ru",
+   "system": "stem/overlap",
+   "model": "",
+   "success@10": 0.156,
+   "mrr@10": 0.07
+  },
+  {
+   "file": "sparse_results_articles_rukk_wordp5stem_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "kk",
+   "system": "word/bm25",
+   "model": "",
+   "success@10": 0.311,
+   "mrr@10": 0.125
+  },
+  {
+   "file": "sparse_results_articles_rukk_wordp5stem_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "kk",
+   "system": "word/tfidf",
+   "model": "",
+   "success@10": 0.222,
+   "mrr@10": 0.097
+  },
+  {
+   "file": "sparse_results_articles_rukk_wordp5stem_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "kk",
+   "system": "word/overlap",
+   "model": "",
+   "success@10": 0.133,
+   "mrr@10": 0.045
+  },
+  {
+   "file": "sparse_results_articles_rukk_wordp5stem_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "kk",
+   "system": "p5/bm25",
+   "model": "",
+   "success@10": 0.311,
+   "mrr@10": 0.187
+  },
+  {
+   "file": "sparse_results_articles_rukk_wordp5stem_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "kk",
+   "system": "p5/tfidf",
+   "model": "",
+   "success@10": 0.2,
+   "mrr@10": 0.081
+  },
+  {
+   "file": "sparse_results_articles_rukk_wordp5stem_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "kk",
+   "system": "p5/overlap",
+   "model": "",
+   "success@10": 0.178,
+   "mrr@10": 0.044
+  },
+  {
+   "file": "sparse_results_articles_rukk_wordp5stem_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "kk",
+   "system": "stem/bm25",
+   "model": "",
+   "success@10": 0.311,
+   "mrr@10": 0.122
+  },
+  {
+   "file": "sparse_results_articles_rukk_wordp5stem_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "kk",
+   "system": "stem/tfidf",
+   "model": "",
+   "success@10": 0.2,
+   "mrr@10": 0.086
+  },
+  {
+   "file": "sparse_results_articles_rukk_wordp5stem_v1_c1.json",
+   "version": "v1, corpus before chunker fix",
+   "lang": "kk",
+   "system": "stem/overlap",
+   "model": "",
+   "success@10": 0.133,
+   "mrr@10": 0.051
+  },
+  {
+   "file": "sparse_results_articles_rukk_wordp5stem_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "ru",
+   "system": "word/bm25",
+   "model": "",
+   "success@10": 0.2,
+   "mrr@10": 0.092
+  },
+  {
+   "file": "sparse_results_articles_rukk_wordp5stem_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "ru",
+   "system": "word/tfidf",
+   "model": "",
+   "success@10": 0.156,
+   "mrr@10": 0.032
+  },
+  {
+   "file": "sparse_results_articles_rukk_wordp5stem_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "ru",
+   "system": "word/overlap",
+   "model": "",
+   "success@10": 0.178,
+   "mrr@10": 0.061
+  },
+  {
+   "file": "sparse_results_articles_rukk_wordp5stem_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "ru",
+   "system": "p5/bm25",
+   "model": "",
+   "success@10": 0.289,
+   "mrr@10": 0.109
+  },
+  {
+   "file": "sparse_results_articles_rukk_wordp5stem_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "ru",
+   "system": "p5/tfidf",
+   "model": "",
+   "success@10": 0.2,
+   "mrr@10": 0.062
+  },
+  {
+   "file": "sparse_results_articles_rukk_wordp5stem_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "ru",
+   "system": "p5/overlap",
+   "model": "",
+   "success@10": 0.067,
+   "mrr@10": 0.039
+  },
+  {
+   "file": "sparse_results_articles_rukk_wordp5stem_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "ru",
+   "system": "stem/bm25",
+   "model": "",
+   "success@10": 0.422,
+   "mrr@10": 0.153
+  },
+  {
+   "file": "sparse_results_articles_rukk_wordp5stem_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "ru",
+   "system": "stem/tfidf",
+   "model": "",
+   "success@10": 0.333,
+   "mrr@10": 0.097
+  },
+  {
+   "file": "sparse_results_articles_rukk_wordp5stem_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "ru",
+   "system": "stem/overlap",
+   "model": "",
+   "success@10": 0.156,
+   "mrr@10": 0.063
+  },
+  {
+   "file": "sparse_results_articles_rukk_wordp5stem_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "kk",
+   "system": "word/bm25",
+   "model": "",
+   "success@10": 0.289,
+   "mrr@10": 0.132
+  },
+  {
+   "file": "sparse_results_articles_rukk_wordp5stem_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "kk",
+   "system": "word/tfidf",
+   "model": "",
+   "success@10": 0.222,
+   "mrr@10": 0.096
+  },
+  {
+   "file": "sparse_results_articles_rukk_wordp5stem_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "kk",
+   "system": "word/overlap",
+   "model": "",
+   "success@10": 0.133,
+   "mrr@10": 0.044
+  },
+  {
+   "file": "sparse_results_articles_rukk_wordp5stem_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "kk",
+   "system": "p5/bm25",
+   "model": "",
+   "success@10": 0.311,
+   "mrr@10": 0.166
+  },
+  {
+   "file": "sparse_results_articles_rukk_wordp5stem_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "kk",
+   "system": "p5/tfidf",
+   "model": "",
+   "success@10": 0.156,
+   "mrr@10": 0.075
+  },
+  {
+   "file": "sparse_results_articles_rukk_wordp5stem_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "kk",
+   "system": "p5/overlap",
+   "model": "",
+   "success@10": 0.178,
+   "mrr@10": 0.035
+  },
+  {
+   "file": "sparse_results_articles_rukk_wordp5stem_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "kk",
+   "system": "stem/bm25",
+   "model": "",
+   "success@10": 0.267,
+   "mrr@10": 0.118
+  },
+  {
+   "file": "sparse_results_articles_rukk_wordp5stem_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "kk",
+   "system": "stem/tfidf",
+   "model": "",
+   "success@10": 0.2,
+   "mrr@10": 0.078
+  },
+  {
+   "file": "sparse_results_articles_rukk_wordp5stem_v1_c2.json",
+   "version": "v1, corpus after chunker fix",
+   "lang": "kk",
+   "system": "stem/overlap",
+   "model": "",
+   "success@10": 0.133,
+   "mrr@10": 0.051
+  }
+ ],
+ "title": [
+  {
+   "layer": "title",
+   "lang": "ru",
+   "system": "bm25_word",
+   "n_queries": 8,
+   "ms_per_query": 3,
+   "success@1": 0.375,
+   "success@5": 0.875,
+   "success@10": 0.875,
+   "recall@10": 0.875,
+   "recall@50": 0.875,
+   "mrr@10": 0.594,
+   "ndcg@10": 0.665
+  },
+  {
+   "layer": "title",
+   "lang": "ru",
+   "system": "bm25_p5",
+   "n_queries": 8,
+   "ms_per_query": 2,
+   "success@1": 0.375,
+   "success@5": 0.75,
+   "success@10": 0.75,
+   "recall@10": 0.75,
+   "recall@50": 0.875,
+   "mrr@10": 0.521,
+   "ndcg@10": 0.579
+  },
+  {
+   "layer": "title",
+   "lang": "ru",
+   "system": "bm25_stem",
+   "n_queries": 8,
+   "ms_per_query": 77,
+   "success@1": 0.375,
+   "success@5": 0.75,
+   "success@10": 0.75,
+   "recall@10": 0.75,
+   "recall@50": 0.875,
+   "mrr@10": 0.51,
+   "ndcg@10": 0.57
+  },
+  {
+   "layer": "title",
+   "lang": "ru",
+   "system": "bm25_char",
+   "n_queries": 8,
+   "ms_per_query": 11,
+   "success@1": 0.375,
+   "success@5": 0.875,
+   "success@10": 0.875,
+   "recall@10": 0.875,
+   "recall@50": 1.0,
+   "mrr@10": 0.562,
+   "ndcg@10": 0.64
+  },
+  {
+   "layer": "title",
+   "lang": "ru",
+   "system": "dense",
+   "n_queries": 8,
+   "ms_per_query": 39,
+   "success@1": 0.625,
+   "success@5": 0.875,
+   "success@10": 0.875,
+   "recall@10": 0.875,
+   "recall@50": 0.875,
+   "mrr@10": 0.719,
+   "ndcg@10": 0.758
+  },
+  {
+   "layer": "title",
+   "lang": "ru",
+   "system": "hybrid",
+   "n_queries": 8,
+   "ms_per_query": 22,
+   "success@1": 0.5,
+   "success@5": 0.75,
+   "success@10": 0.75,
+   "recall@10": 0.75,
+   "recall@50": 0.875,
+   "mrr@10": 0.625,
+   "ndcg@10": 0.658
+  },
+  {
+   "layer": "title",
+   "lang": "kk",
+   "system": "bm25_word",
+   "n_queries": 8,
+   "ms_per_query": 2,
+   "success@1": 0.5,
+   "success@5": 0.875,
+   "success@10": 0.875,
+   "recall@10": 0.875,
+   "recall@50": 0.875,
+   "mrr@10": 0.688,
+   "ndcg@10": 0.737
+  },
+  {
+   "layer": "title",
+   "lang": "kk",
+   "system": "bm25_p5",
+   "n_queries": 8,
+   "ms_per_query": 2,
+   "success@1": 0.625,
+   "success@5": 0.75,
+   "success@10": 0.75,
+   "recall@10": 0.75,
+   "recall@50": 0.875,
+   "mrr@10": 0.656,
+   "ndcg@10": 0.679
+  },
+  {
+   "layer": "title",
+   "lang": "kk",
+   "system": "bm25_stem",
+   "n_queries": 8,
+   "ms_per_query": 2,
+   "success@1": 0.375,
+   "success@5": 0.625,
+   "success@10": 0.75,
+   "recall@10": 0.75,
+   "recall@50": 0.875,
+   "mrr@10": 0.484,
+   "ndcg@10": 0.547
+  },
+  {
+   "layer": "title",
+   "lang": "kk",
+   "system": "bm25_char",
+   "n_queries": 8,
+   "ms_per_query": 10,
+   "success@1": 0.5,
+   "success@5": 0.75,
+   "success@10": 0.75,
+   "recall@10": 0.75,
+   "recall@50": 1.0,
+   "mrr@10": 0.588,
+   "ndcg@10": 0.627
+  },
+  {
+   "layer": "title",
+   "lang": "kk",
+   "system": "dense",
+   "n_queries": 8,
+   "ms_per_query": 20,
+   "success@1": 0.5,
+   "success@5": 0.875,
+   "success@10": 0.875,
+   "recall@10": 0.875,
+   "recall@50": 0.875,
+   "mrr@10": 0.688,
+   "ndcg@10": 0.737
+  },
+  {
+   "layer": "title",
+   "lang": "kk",
+   "system": "hybrid",
+   "n_queries": 8,
+   "ms_per_query": 23,
+   "success@1": 0.625,
+   "success@5": 0.75,
+   "success@10": 0.875,
+   "recall@10": 0.875,
+   "recall@50": 0.875,
+   "mrr@10": 0.7,
+   "ndcg@10": 0.74
+  },
+  {
+   "layer": "title",
+   "lang": "en",
+   "system": "dense_direct",
+   "n_queries": 8,
+   "ms_per_query": 40,
+   "success@1": 0.0,
+   "success@5": 0.5,
+   "success@10": 0.5,
+   "recall@10": 0.5,
+   "recall@50": 0.875,
+   "mrr@10": 0.129,
+   "ndcg@10": 0.219
+  },
+  {
+   "layer": "title",
+   "lang": "en",
+   "system": "bm25_translated",
+   "n_queries": 8,
+   "ms_per_query": 4,
+   "success@1": 0.25,
+   "success@5": 0.5,
+   "success@10": 0.625,
+   "recall@10": 0.625,
+   "recall@50": 0.625,
+   "mrr@10": 0.359,
+   "ndcg@10": 0.422
+  },
+  {
+   "layer": "title",
+   "lang": "en",
+   "system": "dense_translated",
+   "n_queries": 8,
+   "ms_per_query": 41,
+   "success@1": 0.5,
+   "success@5": 0.75,
+   "success@10": 0.875,
+   "recall@10": 0.875,
+   "recall@50": 0.875,
+   "mrr@10": 0.585,
+   "ndcg@10": 0.652
+  },
+  {
+   "layer": "title",
+   "lang": "en",
+   "system": "hybrid_translated",
+   "n_queries": 8,
+   "ms_per_query": 78,
+   "success@1": 0.125,
+   "success@5": 0.75,
+   "success@10": 0.75,
+   "recall@10": 0.75,
+   "recall@50": 0.875,
+   "mrr@10": 0.417,
+   "ndcg@10": 0.503
+  }
+ ]
+}

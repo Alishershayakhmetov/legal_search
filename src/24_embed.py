@@ -1,6 +1,6 @@
 """Embed index documents with a multilingual model, in resumable shards.
 
-usage: 24_embed.py MODEL SCOPE [MAX_LEN] [REUSE_DIR [OLD_INDEX_DOCS]]     (SCOPE: articles | all)
+usage: 24_embed.py MODEL SCOPE [MAX_LEN] [REUSE_DIR [OLD_INDEX_DOCS]]     (SCOPE: articles | part | all)
 
 REUSE_DIR is an earlier embedding folder of the same model, scope and max_len; OLD_INDEX_DOCS is the index_docs.parquet it was built from.
 Texts whose hash already has a vector there are copied instead of encoded (the vector depends only on the text).
@@ -20,6 +20,7 @@ from sentence_transformers import SentenceTransformer
 
 ROOT = Path(__file__).resolve().parent.parent
 SHARD = 20_000
+PART_FRACTION = 0.15
 OLD_DOCS_DEFAULT = ROOT / "data" / "processed" / "v1" / "index_docs.parquet"
 PREFIX = {"intfloat/multilingual-e5-small": "passage: ", "intfloat/multilingual-e5-base": "passage: "}
 
@@ -31,7 +32,8 @@ def short(name):
 def load_cache(reuse_dir, old_docs_path, name, scope, max_len):
     """text_hash -> vector of an earlier run, after checking that it is the same model, scope and length."""
     meta = json.loads((reuse_dir / "meta.json").read_text())
-    if (meta["model"], meta["scope"], meta["max_len"]) != (name, scope, max_len):
+    subset_ok = meta["scope"] == "articles" and scope in ("all", "part")  # article vectors are a subset of the larger scopes (same texts, same model)
+    if (meta["model"], meta["max_len"]) != (name, max_len) or (meta["scope"] != scope and not subset_ok):
         raise SystemExit(f"{reuse_dir} was built with {meta['model']}/{meta['scope']}/{meta['max_len']}, not {name}/{scope}/{max_len}")
     old_ids = np.load(reuse_dir / "doc_ids.npy")
     parts = [np.load(reuse_dir / f"part_{s:04d}.npy") for s in range((len(old_ids) + meta["shard"] - 1) // meta["shard"])]
@@ -52,6 +54,9 @@ def main():
     docs = pd.read_parquet(ROOT / "data" / "processed" / "index_docs.parquet", columns=["doc_id", "is_article", "text", "text_hash"])
     if scope == "articles":
         docs = docs[docs.is_article]
+    elif scope == "part":  # all articles plus a fixed random 15% of the other passages (a part of the corpus for a time-limited full-corpus check)
+        rest = docs[~docs.is_article].sample(frac=PART_FRACTION, random_state=5)
+        docs = docs[docs.is_article | docs.doc_id.isin(rest.doc_id)]
     ids = docs.doc_id.to_numpy()
     fingerprint = hashlib.md5(ids.tobytes()).hexdigest()
     meta_path = out / "meta.json"
