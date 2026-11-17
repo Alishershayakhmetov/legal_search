@@ -175,7 +175,7 @@ for _ in range(4):
     doc.add_paragraph()
 p("Team: Alisher Shayakhmetov, Arsen Zhambekov, Yernar Sakenov (as registered for topic 16)", align="center")
 p("Group: AAI-2604", align="center")
-p("Instructor: [name]", align="center")
+p("Instructor: Kapezov Shyngys", align="center")
 p("Code repository: https://github.com/Alishershayakhmetov/legal_search (MIT licence)", align="center")
 doc.add_paragraph()
 p("Astana, November 2026", align="center")

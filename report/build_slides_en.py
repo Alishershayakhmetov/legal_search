@@ -138,7 +138,7 @@ bg = s.shapes.add_shape(MSO_SHAPE.RECTANGLE, 0, 0, prs.slide_width, prs.slide_he
 bg.fill.solid(); bg.fill.fore_color.rgb = NAVY; bg.line.fill.background()
 textbox(s, 0.9, 1.3, 11.5, 2.3, ["Kazakh Legal Search Engine", "Finding articles of Kazakhstani law by everyday questions"], size=40, bold=True, color=RGBColor(255, 255, 255))
 textbox(s, 0.9, 3.9, 11.5, 0.6, "Topic 16 · queries in Kazakh, Russian and English · BM25 vs TF-IDF vs embeddings", size=20, color=RGBColor(0xBD, 0xD7, 0xEE))
-textbox(s, 0.9, 5.3, 11.5, 1.2, ["Alisher Shayakhmetov · Arsen Zhambekov · Yernar Sakenov — group AAI-2604", "Programming for Data Analysis and Database · Applied AI (MSc) · Astana, November 2026"], size=16, color=RGBColor(0xBD, 0xD7, 0xEE))
+textbox(s, 0.9, 5.3, 11.5, 1.2, ["Alisher Shayakhmetov · Arsen Zhambekov · Yernar Sakenov — group AAI-2604", "Instructor: Kapezov Shyngys", "Programming for Data Analysis and Database · Applied AI (MSc) · Astana, November 2026"], size=16, color=RGBColor(0xBD, 0xD7, 0xEE))
 s.notes_slide.notes_text_frame.text = "Topic 16 of the course list. I will show the data work, the methods we compared, the results with their uncertainty, and a short demo of the application."
 
 # 2 problem
