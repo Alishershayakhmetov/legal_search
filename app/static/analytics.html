@@ -14,6 +14,7 @@
   .logo b { display:inline-grid; place-items:center; width:30px; height:30px; border-radius:9px; background:linear-gradient(135deg,var(--acc),var(--coral)); color:#fff; font-size:16px; }
   .nav { display:flex; gap:4px; margin-left:auto; } .nav a { padding:7px 14px; border-radius:99px; color:var(--mute); text-decoration:none; font-size:14.5px; font-weight:600; }
   .nav a.on, .nav a:hover { background:var(--acc-soft); color:var(--acc-dark); }
+  .langsw { display:inline-flex; background:var(--soft); border-radius:99px; padding:3px; margin-left:8px; } .langsw button { border:0; background:none; padding:5px 11px; border-radius:99px; font:inherit; font-size:13px; font-weight:700; color:var(--mute); cursor:pointer; } .langsw button.on { background:var(--acc); color:#fff; }
   .hero { background:linear-gradient(180deg,var(--soft),#fff); border-bottom:1px solid var(--line); }
   .hero-in, .wrap { max-width:1120px; margin:0 auto; padding:30px 24px 10px; } .wrap { padding-bottom:70px; }
   h1 { font-size:34px; margin:0 0 6px; letter-spacing:-.8px; } h1 span { color:var(--acc); }
@@ -32,71 +33,78 @@
   .note { font-size:13px; color:var(--mute); margin-top:10px; } .empty { color:var(--mute); font-size:14px; padding:8px 0; }
 </style>
 </head>
-<body>
+<body data-title="an_title">
 <header class="top"><div class="top-in">
-  <a class="logo" href="/"><b>§</b>Zan Search</a>
-  <nav class="nav"><a href="/">Поиск</a><a class="on" href="/analytics">Аналитика</a></nav>
+  <a class="logo" href="/"></b>Zan Search</a>
+  <nav class="nav"><a href="/" data-i18n="nav_search"></a><a class="on" href="/analytics" data-i18n="nav_analytics"></a></nav>
+  <div class="langsw" role="group" data-i18n-aria="lang_label"></div>
 </div></header>
 <section class="hero"><div class="hero-in">
-  <h1>Аналитика <span>платформы</span></h1>
-  <p class="sub">Что в базе, насколько хорошо работает поиск и как им пользуются прямо сейчас. Качество измерено на тестовом наборе из 53 потребностей (159 запросов) и пока предварительное.</p>
+  <h1 data-i18n-html="an_h1"></h1>
+  <p class="sub" data-i18n="an_sub"></p>
   <div class="kpis" id="kpis"></div>
 </div></section>
 <div class="wrap">
-  <h2>Качество поиска</h2>
-  <p class="lead">Какая доля вопросов находит нужную статью среди первых 10 результатов (Success@10) и насколько высоко она стоит (MRR@10).</p>
+  <h2 data-i18n="q_h"></h2>
+  <p class="lead" data-i18n="q_lead"></p>
   <div class="tabs" id="langtabs"></div>
-  <div class="grid"><div class="panel"><h3>Success@10 по методам</h3><div id="c-s10"></div></div><div class="panel"><h3>MRR@10 по методам</h3><div id="c-mrr"></div></div></div>
+  <div class="grid"><div class="panel"><h3 data-i18n="s10_h"></h3><div id="c-s10"></div></div><div class="panel"><h3 data-i18n="mrr_h"></h3><div id="c-mrr"></div></div></div>
   <div class="note" id="n-ret"></div>
-  <h2>Что улучшает ранжирование</h2>
-  <p class="lead">Варианты поверх bge-m3, заданные заранее (MRR@10, рус / каз / англ).</p>
-  <div class="grid"><div class="panel"><h3>Русский</h3><div id="r-ru"></div></div><div class="panel"><h3>Казахский</h3><div id="r-kk"></div></div><div class="panel"><h3>Английский</h3><div id="r-en"></div></div></div>
-  <h2>Устойчивость к «неидеальным» запросам</h2>
-  <p class="lead">Success@10 для искажённых версий тех же вопросов (русский).</p>
-  <div class="grid"><div class="panel"><h3>Опечатки, латиница, ключевые слова</h3><div id="rob"></div></div><div class="panel"><h3>Ответ языковой модели</h3><div id="ans"></div></div></div>
-  <h2>Использование</h2>
-  <p class="lead">Счётчики с момента запуска сервера и отметки 👍/👎 пользователей.</p>
+  <h2 data-i18n="rk_h"></h2>
+  <p class="lead" data-i18n="rk_lead"></p>
+  <div class="grid"><div class="panel"><h3 data-i18n="t_ru"></h3><div id="r-ru"></div></div><div class="panel"><h3 data-i18n="t_kk"></h3><div id="r-kk"></div></div><div class="panel"><h3 data-i18n="t_en"></h3><div id="r-en"></div></div></div>
+  <h2 data-i18n="rb_h"></h2>
+  <p class="lead" data-i18n="rb_lead"></p>
+  <div class="grid"><div class="panel"><h3 data-i18n="rb_panel"></h3><div id="rob"></div></div><div class="panel"><h3 data-i18n="ans_panel"></h3><div id="ans"></div></div></div>
+  <h2 data-i18n="us_h"></h2>
+  <p class="lead" data-i18n="us_lead"></p>
   <div class="kpis" id="usage"></div>
-  <div class="grid" style="margin-top:14px"><div class="panel"><h3>Языки запросов</h3><div id="u-lang"></div></div><div class="panel"><h3>Режимы</h3><div id="u-mode"></div></div></div>
+  <div class="grid" style="margin-top:14px"><div class="panel"><h3 data-i18n="u_langs"></h3><div id="u-lang"></div></div><div class="panel"><h3 data-i18n="u_modes"></h3><div id="u-mode"></div></div></div>
 </div>
+<script src="/static/i18n.js"></script>
 <script>
 const $ = s => document.querySelector(s);
-const nf = new Intl.NumberFormat('ru-RU');
-const el = (t, c, x) => { const e = document.createElement(t); if (c) e.className = c; if (x !== undefined) e.textContent = x; return e; };
+const el = (tag, c, x) => { const e = document.createElement(tag); if (c) e.className = c; if (x !== undefined) e.textContent = x; return e; };
 function bars(box, rows, max, cls) {
   box.replaceChildren();
-  if (!rows.length) { box.appendChild(el('div', 'empty', 'Данных пока нет.')); return; }
+  if (!rows.length) { box.appendChild(el('div', 'empty', t('no_data'))); return; }
   for (const [label, v, shown] of rows) {
     const r = el('div', 'bar ' + (cls || '')); r.appendChild(el('div', 't', label)); const rail = el('div', 'rail'); const f = el('div', 'fill'); f.style.width = Math.max(0, Math.min(100, v / max * 100)) + '%'; rail.appendChild(f);
     r.appendChild(rail); r.appendChild(el('div', 'v', shown !== undefined ? shown : v.toFixed(2))); box.appendChild(r);
   }
 }
 function kpis(box, items) { box.replaceChildren(); for (const [n, c] of items) { const k = el('div', 'kpi'); k.appendChild(el('b', '', n)); k.appendChild(el('span', '', c)); box.appendChild(k); } }
-const METHODS = {'Keyword overlap (baseline), stemming': 'Ключевые слова', 'Keyword overlap (baseline), 5-letter prefix': 'Ключевые слова', 'TF-IDF, stemming': 'TF-IDF', 'TF-IDF, 5-letter prefix': 'TF-IDF', 'BM25, stemming': 'BM25', 'BM25, 5-letter prefix': 'BM25',
-  'Dense e5-small': 'e5-small', 'Dense e5-base': 'e5-base', 'Dense bge-m3': 'bge-m3', 'Hybrid BM25 + bge-m3 (RRF)': 'Гибрид BM25 + bge-m3'};
-const VARIANTS = {base: 'bge-m3 как есть', instr_ru: '+ инструкция к запросу', filters: '+ фильтры по умолчанию', 'filters+force_0.02': '+ фильтры + приоритет кодексов', rr_title: '+ переранжирование', 'filters+rr_title': '+ фильтры + переранжирование'};
+const METHODS = {'Keyword overlap (baseline), stemming': 'me_kw', 'Keyword overlap (baseline), 5-letter prefix': 'me_kw', 'TF-IDF, stemming': 'TF-IDF', 'TF-IDF, 5-letter prefix': 'TF-IDF', 'BM25, stemming': 'BM25', 'BM25, 5-letter prefix': 'BM25',
+  'Dense e5-small': 'e5-small', 'Dense e5-base': 'e5-base', 'Dense bge-m3': 'bge-m3', 'Hybrid BM25 + bge-m3 (RRF)': 'me_hybrid'};
+const mname = k => I18N.ru[METHODS[k]] ? t(METHODS[k]) : METHODS[k];
+const VARIANTS = {base: 'v_base', instr_ru: 'v_instr', filters: 'v_filters', 'filters+force_0.02': 'v_prior', rr_title: 'v_rr', 'filters+rr_title': 'v_fr'};
+const ROBN = {clean: 'r_clean', typo_light: 'r_typo1', typo_heavy: 'r_typo2', nopunct: 'r_nopunct', keywords: 'r_kw', translit: 'r_translit'};
 let D = null, lang = 'ru';
 function drawRetrieval() {
   const rows = D.retrieval.filter(r => r.lang === lang && METHODS[r.method]);
-  bars($('#c-s10'), rows.map(r => [METHODS[r.method], r.s10, r.s10.toFixed(2)]), 1);
-  bars($('#c-mrr'), rows.map(r => [METHODS[r.method], r.mrr, r.mrr.toFixed(3)]), 0.5, 'alt');
-  $('#n-ret').textContent = lang === 'en' ? 'Для английского корпус без английских текстов: работают только смысловые модели и перевод запроса.' : 'Оценки v1, индекс по статьям, 45 потребностей на язык; интервалы широкие (около ±0,1).';
+  bars($('#c-s10'), rows.map(r => [mname(r.method), r.s10, r.s10.toFixed(2)]), 1);
+  bars($('#c-mrr'), rows.map(r => [mname(r.method), r.mrr, r.mrr.toFixed(3)]), 0.5, 'alt');
+  $('#n-ret').textContent = lang === 'en' ? t('note_en') : t('note_ret');
 }
-fetch('/api/analytics').then(r => r.json()).then(d => {
-  D = d;
-  kpis($('#kpis'), [[nf.format(d.corpus.acts), 'актов в метаданных'], [nf.format(d.corpus.articles), 'статей в поисковом индексе'], ['3,12 млн', 'фрагментов текста'], ['159', 'запросов в тестовом наборе'], ['3', 'языка запроса: kk, ru, en']]);
-  const tabs = $('#langtabs');
-  for (const [l, n] of [['ru', 'Русский'], ['kk', 'Казахский'], ['en', 'Английский']]) { const b = el('button', l === lang ? 'on' : '', n); b.onclick = () => { lang = l; tabs.querySelectorAll('button').forEach(x => x.classList.remove('on')); b.classList.add('on'); drawRetrieval(); }; tabs.appendChild(b); }
+function render() {
+  if (!D) return;
+  const d = D, nfm = numFmt();
+  kpis($('#kpis'), [[nfm.format(d.corpus.acts), t('k_acts')], [nfm.format(d.corpus.articles), t('k_articles')], [t('k_passages_v'), t('k_passages')], ['159', t('k_queries')], ['3', t('k_langs')]]);
+  const tabs = $('#langtabs'); tabs.replaceChildren();
+  for (const l of ['ru', 'kk', 'en']) { const b = el('button', l === lang ? 'on' : '', t('t_' + l)); b.onclick = () => { lang = l; render(); }; tabs.appendChild(b); }
   drawRetrieval();
-  for (const l of ['ru', 'kk', 'en']) bars($('#r-' + l), Object.keys(VARIANTS).map(k => { const r = d.ranking.find(x => x.lang === l && x.variant === k); return r ? [VARIANTS[k], r.mrr, r.mrr.toFixed(2)] : null; }).filter(Boolean), 0.9, l === 'kk' ? 'teal' : (l === 'en' ? 'alt' : ''));
-  const rn = {clean: 'Исходный вопрос', typo_light: 'Лёгкие опечатки', typo_heavy: 'Сильные опечатки', nopunct: 'Без знаков препинания', keywords: '4 ключевых слова', translit: 'Латиницей'};
-  bars($('#rob'), Object.keys(rn).map(k => { const r = d.robustness.find(x => x.variant === k && x.lang === 'ru'); return r ? [rn[k], r.s10, r.s10.toFixed(2)] : null; }).filter(Boolean), 1, 'teal');
-  bars($('#ans'), d.answers.map(a => [a.label, a.value, a.shown]), 1);
+  for (const l of ['ru', 'kk', 'en']) bars($('#r-' + l), Object.keys(VARIANTS).map(k => { const r = d.ranking.find(x => x.lang === l && x.variant === k); return r ? [t(VARIANTS[k]), r.mrr, r.mrr.toFixed(2)] : null; }).filter(Boolean), 0.9, l === 'kk' ? 'teal' : (l === 'en' ? 'alt' : ''));
+  bars($('#rob'), Object.keys(ROBN).map(k => { const r = d.robustness.find(x => x.variant === k && x.lang === 'ru'); return r ? [t(ROBN[k]), r.s10, r.s10.toFixed(2)] : null; }).filter(Boolean), 1, 'teal');
+  const SUFFIX = {ru: 'рус.', kk: 'каз.', en: 'англ.'};
+  bars($('#ans'), d.answers.map(a => { const l = ['ru', 'kk', 'en'].find(x => a.label.endsWith(SUFFIX[x])); return [t((a.label.startsWith('Нужная') ? 'ans_g_' : 'ans_a_') + l), a.value, a.shown]; }), 1);
   const u = d.usage;
-  kpis($('#usage'), [[nf.format(u.searches), 'поисков'], [u.searches ? Math.round(u.seconds / u.searches * 1000) + ' мс' : '—', 'среднее время ответа'], [u.searches ? Math.round(u.low_confidence / u.searches * 100) + '%' : '—', 'запросов без надёжной статьи'], [nf.format(d.feedback.up), '👍 отметок'], [nf.format(d.feedback.down), '👎 отметок']]);
-  bars($('#u-lang'), Object.entries(u.by_lang).map(([k, v]) => [{ru: 'Русский', kk: 'Казахский', en: 'Английский'}[k] || k, v, String(v)]), Math.max(1, ...Object.values(u.by_lang)));
-  bars($('#u-mode'), Object.entries(u.by_mode).map(([k, v]) => [{articles: 'Статьи', titles: 'Акты по названию', regimes: 'Сравнение актов', compare: 'Сравнение методов'}[k] || k, v, String(v)]), Math.max(1, ...Object.values(u.by_mode)), 'alt');
-}).catch(e => { document.querySelector('.wrap').prepend(el('div', 'empty', 'Не удалось загрузить данные: ' + e)); });
+  kpis($('#usage'), [[nfm.format(u.searches), t('u_searches')], [u.searches ? Math.round(u.seconds / u.searches * 1000) + ' ' + t('u_ms') : '—', t('u_time')], [u.searches ? Math.round(u.low_confidence / u.searches * 100) + '%' : '—', t('u_low')],
+    [nfm.format(d.feedback.up), t('u_up')], [nfm.format(d.feedback.down), t('u_down')]]);
+  bars($('#u-lang'), Object.entries(u.by_lang).map(([k, v]) => [t('t_' + k), v, String(v)]), Math.max(1, ...Object.values(u.by_lang)));
+  bars($('#u-mode'), Object.entries(u.by_mode).map(([k, v]) => [t('md_' + k), v, String(v)]), Math.max(1, ...Object.values(u.by_mode)), 'alt');
+}
+langSwitcher(render);
+fetch('/api/analytics').then(r => r.json()).then(d => { D = d; render(); }).catch(e => { document.querySelector('.wrap').prepend(el('div', 'empty', t('load_error', e))); });
 </script>
 </body>
 </html>

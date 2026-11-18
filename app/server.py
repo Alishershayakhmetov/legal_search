@@ -188,6 +188,8 @@ class Handler(BaseHTTPRequestHandler):
         path = self.path.split("?", 1)[0]
         if path in ("/", "/index.html"):
             self._send(200, (STATIC / "index.html").read_bytes(), "text/html; charset=utf-8")
+        elif path == "/static/i18n.js":
+            self._send(200, (STATIC / "i18n.js").read_bytes(), "application/javascript; charset=utf-8")
         elif path == "/analytics":
             self._send(200, (STATIC / "analytics.html").read_bytes(), "text/html; charset=utf-8")
         elif path == "/api/analytics":

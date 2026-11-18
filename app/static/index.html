@@ -16,6 +16,7 @@
   .logo b { display:inline-grid; place-items:center; width:30px; height:30px; border-radius:9px; background:linear-gradient(135deg,var(--acc),var(--coral)); color:#fff; font-size:16px; }
   .nav { display:flex; gap:4px; margin-left:auto; } .nav a { padding:7px 14px; border-radius:99px; color:var(--mute); text-decoration:none; font-size:14.5px; font-weight:600; }
   .nav a.on, .nav a:hover { background:var(--acc-soft); color:var(--acc-dark); }
+  .langsw { display:inline-flex; background:var(--soft); border-radius:99px; padding:3px; margin-left:8px; } .langsw button { border:0; background:none; padding:5px 11px; border-radius:99px; font:inherit; font-size:13px; font-weight:700; color:var(--mute); cursor:pointer; } .langsw button.on { background:var(--acc); color:#fff; }
   .hero { background:linear-gradient(180deg,var(--soft),#fff); border-bottom:1px solid var(--line); }
   .hero-in { max-width:1120px; margin:0 auto; padding:34px 24px 22px; }
   h1 { font-size:36px; line-height:1.12; margin:0 0 8px; letter-spacing:-.8px; } h1 span { color:var(--acc); }
@@ -75,65 +76,69 @@
   @media (max-width:760px) { h1 { font-size:27px; } .cols { grid-template-columns:1fr; } .qrow { flex-direction:column; } button.go { padding:13px; } }
 </style>
 </head>
-<body>
+<body data-title="site_title">
 <header class="top"><div class="top-in">
   <a class="logo" href="/"><b>§</b>Zan Search</a>
-  <nav class="nav"><a class="on" href="/">Поиск</a><a href="/analytics">Аналитика</a></nav>
+  <nav class="nav"><a class="on" href="/" data-i18n="nav_search"></a><a href="/analytics" data-i18n="nav_analytics"></a></nav>
+  <div class="langsw" role="group" data-i18n-aria="lang_label"></div>
 </div></header>
 <section class="hero"><div class="hero-in">
-  <h1>Найдите <span>статью закона</span> по своему вопросу</h1>
-  <p class="sub">Спросите на казахском, русском или английском: система найдёт подходящие статьи кодексов и законов Республики Казахстан. Можно сослаться на статью: «статья 1 Конституции РК», «ст. 188 УК».</p>
-  <form class="qrow" id="form"><input id="q" autocomplete="off" placeholder="Например: сколько дней оплачиваемого отпуска мне положено?" aria-label="Ваш вопрос"><button class="go" type="submit">Найти</button></form>
+  <h1 data-i18n-html="h1"></h1>
+  <p class="sub" data-i18n="sub"></p>
+  <form class="qrow" id="form"><input id="q" autocomplete="off" data-i18n-ph="ph" data-i18n-aria="ph_label"><button class="go" type="submit" data-i18n="go"></button></form>
   <div class="tools">
-    <div class="seg" role="radiogroup" aria-label="Режим">
-      <label title="Название акта («Трудовой кодекс») ищется как акт, вопрос — как статьи"><input type="radio" name="mode" value="auto" checked>Авто</label>
-      <label><input type="radio" name="mode" value="articles">Статьи</label>
-      <label><input type="radio" name="mode" value="titles">Акт по названию</label>
-      <label title="Одна лучшая статья из каждого акта: так видно, что говорят разные законы об одном и том же"><input type="radio" name="mode" value="regimes">Сравнить акты</label>
-      <label><input type="radio" name="mode" value="compare">Сравнить методы</label>
+    <div class="seg" role="radiogroup">
+      <label data-i18n-title="hint_auto"><input type="radio" name="mode" value="auto" checked><span data-i18n="m_auto"></span></label>
+      <label><input type="radio" name="mode" value="articles"><span data-i18n="m_articles"></span></label>
+      <label><input type="radio" name="mode" value="titles"><span data-i18n="m_titles"></span></label>
+      <label data-i18n-title="hint_regimes"><input type="radio" name="mode" value="regimes"><span data-i18n="m_regimes"></span></label>
+      <label><input type="radio" name="mode" value="compare"><span data-i18n="m_compare"></span></label>
     </div>
     <div class="chips">
-      <label class="chip"><input type="checkbox" id="only_in_force" checked>Действующие</label>
-      <label class="chip" title="Акты «О проекте …», «Компиляция …» и казахские «жоба»"><input type="checkbox" id="hide_drafts" checked>Без проектов</label>
-      <label class="chip"><input type="checkbox" id="hide_amending" checked>Без актов об изменениях</label>
-      <label class="chip" title="Экспериментально: небольшая надбавка Конституции, кодексам и законам перед подзаконными актами. На тестовом наборе улучшает поиск, но набор состоит в основном из статей кодексов; независимая проверка ещё не проведена."><input type="checkbox" id="force_prior">Приоритет кодексов</label>
-      <button class="more" type="button" id="open-more">⚙ Ещё настройки</button>
+      <label class="chip"><input type="checkbox" id="only_in_force" checked><span data-i18n="c_inforce"></span></label>
+      <label class="chip" data-i18n-title="hint_drafts"><input type="checkbox" id="hide_drafts" checked><span data-i18n="c_nodrafts"></span></label>
+      <label class="chip"><input type="checkbox" id="hide_amending" checked><span data-i18n="c_noamend"></span></label>
+      <label class="chip" data-i18n-title="hint_prior"><input type="checkbox" id="force_prior"><span data-i18n="c_prior"></span></label>
+      <button class="more" type="button" id="open-more" data-i18n="more"></button>
     </div>
   </div>
 </div></section>
 <div class="wrap">
-  <div class="note warn">⚠️ Справочная информация, а не юридическая консультация. Тексты актов — на 01.04.2024; законы меняются, проверяйте действующую редакцию на adilet.zan.kz.</div>
-  <details class="ex" id="exbox"><summary id="exsummary">Примеры запросов</summary>
+  <div class="note warn" data-i18n="warn"></div>
+  <details class="ex" id="exbox"><summary id="exsummary"></summary>
     <div class="tabs" id="extabs"></div><div class="exlist" id="exlist"></div></details>
-  <div id="out"><div class="note info">Введите вопрос или выберите пример.</div></div>
+  <div id="out"></div>
 </div>
 <div class="scrim" id="scrim"></div>
-<aside class="drawer" id="drawer" aria-label="Настройки поиска">
-  <h2>Настройки <button type="button" id="close-more" aria-label="Закрыть">✕</button></h2>
-  <h4>Поиск</h4>
-  <div class="field">Метод</div>
-  <select id="method"><option value="dense">Смысловой (bge-m3)</option><option value="bm25">По словам (BM25)</option><option value="hybrid">Гибрид (смысл + слова)</option></select>
-  <div class="field">Сколько результатов: <b id="kval">8</b></div><input type="range" id="k" min="3" max="20" value="8">
-  <h4>Фильтры</h4>
-  <label class="row"><input type="checkbox" id="include_unlinked" checked title="Для ~6% статей акт в базе метаданных не найден">Включать тексты с неопределённым актом</label>
-  <div class="field">Вид акта (пусто — любой)</div><div class="kinds" id="kinds"></div>
-  <div class="field">Год принятия</div><div class="years"><input type="number" id="year_from" value="1990" min="1900" max="2026"><input type="number" id="year_to" value="2026" min="1900" max="2026"></div>
-  <h4>Приватность</h4>
-  <label class="row"><input type="checkbox" id="consent" title="По умолчанию в файл отметок записывается только короткий хеш запроса и язык">Сохранять текст моих запросов вместе с отметками 👍/👎, чтобы улучшать поиск</label>
+<aside class="drawer" id="drawer">
+  <h2><span data-i18n="drawer_title"></span> <button type="button" id="close-more" data-i18n-aria="close">✕</button></h2>
+  <h4 data-i18n="d_search"></h4>
+  <div class="field" data-i18n="d_method"></div>
+  <select id="method"><option value="dense" data-i18n="o_dense"></option><option value="bm25" data-i18n="o_bm25"></option><option value="hybrid" data-i18n="o_hybrid"></option></select>
+  <div class="field" id="klabel"></div><input type="range" id="k" min="3" max="20" value="8">
+  <h4 data-i18n="d_filters"></h4>
+  <label class="row" data-i18n-title="hint_unlinked"><input type="checkbox" id="include_unlinked" checked><span data-i18n="d_unlinked"></span></label>
+  <div class="field" data-i18n="d_kinds"></div><div class="kinds" id="kinds"></div>
+  <div class="field" data-i18n="d_years"></div><div class="years"><input type="number" id="year_from" value="1990" min="1900" max="2026"><input type="number" id="year_to" value="2026" min="1900" max="2026"></div>
+  <h4 data-i18n="d_privacy"></h4>
+  <label class="row" data-i18n-title="hint_consent"><input type="checkbox" id="consent"><span data-i18n="d_consent"></span></label>
 </aside>
+<script src="/static/i18n.js"></script>
 <script>
 const $ = s => document.querySelector(s);
-const LANG = {ru: 'русский', kk: 'казахский', en: 'английский'};
+const LANG = k => t('lang_' + k);
 const MODES = ['auto', 'articles', 'titles', 'regimes', 'compare'];
+const CMP = {'Смысловой (bge-m3)': 'o_dense', 'По словам (BM25)': 'o_bm25', 'Гибрид (смысл + слова)': 'o_hybrid'};
+let KINDS = [], EXN = 0;
 const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text !== undefined) e.textContent = text; return e; };
 const mode = () => document.querySelector('input[name=mode]:checked').value;
 const kinds = () => [...document.querySelectorAll('#kinds input:checked')].map(i => i.value);
 const filters = () => ({only_in_force: $('#only_in_force').checked, hide_drafts: $('#hide_drafts').checked, hide_amending: $('#hide_amending').checked,
   include_unlinked: $('#include_unlinked').checked, kinds: kinds(), year_from: +$('#year_from').value || 1990, year_to: +$('#year_to').value || 2026,
   force_prior: $('#force_prior').checked ? 0.02 : 0});
-const status = v => v === null ? 'статус не определён' : (v ? 'действует' : 'утратил силу');
+const status = v => v === null ? t('st_unknown') : (v ? t('st_in') : t('st_out'));
 
-function syncPanel() { $('#method').disabled = !['auto', 'articles'].includes(mode()); $('#kval').textContent = $('#k').value; }
+function syncPanel() { $('#method').disabled = !['auto', 'articles'].includes(mode()); $('#klabel').textContent = t('d_k', $('#k').value); }
 document.querySelectorAll('input[name=mode]').forEach(r => r.addEventListener('change', () => { syncPanel(); if ($('#q').value.trim()) run(); }));
 $('#k').addEventListener('input', syncPanel);
 
@@ -155,59 +160,73 @@ function marked(text) {
   for (const m of text.matchAll(FACTS)) {
     if (!m[0].trim()) continue;
     frag.appendChild(document.createTextNode(text.slice(last, m.index)));
-    const mk = el('mark', m.groups.d ? 'd' : 'a', m[0]); mk.title = m.groups.d ? 'срок' : 'сумма, доля или штраф';
+    const mk = el('mark', m.groups.d ? 'd' : 'a', m[0]); mk.title = m.groups.d ? t('mark_d') : t('mark_a');
     frag.appendChild(mk); last = m.index + m[0].length;
   }
   frag.appendChild(document.createTextNode(text.slice(last)));
   return frag;
 }
-const nf = new Intl.NumberFormat('ru-RU');
+const nf = {format: n => numFmt().format(n)};
+const NOTE_MAP = [['Надёжной статьи', 'n_lowconf'], ['Система справочная', 'n_policy'], ['BM25 ищет по словам', 'n_bm25en']];
+function tn(n) {
+  for (const [pre, key] of NOTE_MAP) if (n.startsWith(pre)) return t(key);
+  const m = n.match(/^Запрос набран латиницей и прочитан как русский: «(.*)»\.$/); return m ? t('n_translit', m[1]) : n;
+}
+const ACTION = {'изменено': 'a_changed', 'дополнено': 'a_added', 'новая редакция': 'a_new', 'исключено': 'a_removed', 'өзгертілді': 'a_changed', 'толықтырылды': 'a_added', 'жаңа редакция': 'a_new', 'алып тасталды': 'a_removed'};
+const EFFECT = [[/^с (\d\d\.\d\d\.\d{4})$/, {kk: m => m[1] + ' бастап', en: m => 'from ' + m[1]}], [/^через (\d+) календарных дней после первого официального опубликования$/, {kk: m => 'ресми жарияланған күннен кейін ' + m[1] + ' күнтізбелік күннен соң', en: m => m[1] + ' calendar days after first official publication'}],
+  [/^порядок введения в действие определён отдельной статьёй закона$/, {kk: () => 'күшіне енгізу тәртібі заңның жеке бабында айқындалған', en: () => 'the order of entry into force is set by a separate article of the law'}],
+  [/^после первого официального опубликования$/, {kk: () => 'алғашқы ресми жарияланғаннан кейін', en: () => 'after first official publication'}], [/^со дня первого официального опубликования$/, {kk: () => 'алғашқы ресми жарияланған күннен бастап', en: () => 'from the day of first official publication'}]];
+function eff(s) {
+  if (!s || UI === 'ru') return s;
+  for (const [re, f] of EFFECT) { const m = s.match(re); if (m) return f[UI](m); }
+  return s;
+}
 function mrpLine(text) {
   if (!MRP) return null;
   const seen = new Map();
   for (const m of text.matchAll(MRP_RE)) {
     const n = parseFloat(m[1].replace(/[\s ]/g, '').replace(',', '.'));
-    if (isFinite(n) && !seen.has(n)) seen.set(n, `${nf.format(n)} МРП ≈ ${nf.format(Math.round(n * MRP.value))} ₸`);
+    if (isFinite(n) && !seen.has(n)) seen.set(n, `${nf.format(n)} ${t('mrp_unit')} ≈ ${nf.format(Math.round(n * MRP.value))} ₸`);
   }
   if (!seen.size) return null;
-  const line = el('div', 'facts', [...seen.values()].slice(0, 6).join(' · ') + ` (МРП ${nf.format(MRP.value)} ₸ с ${MRP.from}, `);
-  const a = el('a', '', 'источник'); a.href = MRP.source; a.target = '_blank'; a.rel = 'noopener'; line.append(a, document.createTextNode('; справочно)'));
+  const line = el('div', 'facts', [...seen.values()].slice(0, 6).join(' · ') + ' ' + t('mrp_line', nf.format(MRP.value), MRP.from));
+  const a = el('a', '', t('mrp_source')); a.href = MRP.source; a.target = '_blank'; a.rel = 'noopener'; line.append(a, document.createTextNode('; ' + t('mrp_ref') + ')'));
   return line;
 }
 function articleCard(i, h, query, lang) {
   const c = el('div', 'card');
-  c.appendChild(el('h3', '', `${i}. ${h.title} · ст. ${h.article_no}` + (h.heading ? ` — ${h.heading}` : '')));
-  c.appendChild(el('div', 'chips', chips([h.kind, h.year, status(h.in_force), h.methods.length ? 'найдено: ' + h.methods.join('+') : ''])));
+  c.appendChild(el('h3', '', `${i}. ${h.title} · ${t('art')} ${h.article_no}` + (h.heading ? ` — ${h.heading}` : '')));
+  c.appendChild(el('div', 'chips', chips([kindName(h.kind), h.year, status(h.in_force), h.methods.length ? t('found') + ': ' + h.methods.join('+') : ''])));
   const body = el('p', 'body'); body.appendChild(marked(h.snippet)); c.appendChild(body);
   if (lang === 'en' && h.snippet_lang !== 'en') {
-    const tb = el('button', 'tr', 'Translate to English (machine translation)'); tb.type = 'button';
+    const tb = el('button', 'tr', t('tr_btn')); tb.type = 'button';
     tb.onclick = async () => { tb.disabled = true; tb.textContent = '…'; const r = await post('/api/translate', {text: h.texts[h.snippet_lang] || h.snippet, src: h.snippet_lang, tgt: 'en'});
-      const box = el('div', 'tr-out'); box.appendChild(el('div', 'meta', 'Unofficial machine translation (NLLB-200), may contain errors' + (r.cut ? '; only the beginning is translated' : '') + '; the legal text is the Russian/Kazakh original.')); box.appendChild(el('p', 'body', r.error ? r.error : r.text)); tb.replaceWith(box); };
+      const box = el('div', 'tr-out'); box.appendChild(el('div', 'meta', t('tr_meta', r.cut ? t('tr_cut') : ''))); box.appendChild(el('p', 'body', r.error ? r.error : r.text)); tb.replaceWith(box); };
     c.appendChild(tb);
   }
   const am = h.amendments || {history: [], pending: []};
   for (const p of am.pending.slice(0, 3)) {
-    const text = p.status === 'upcoming' ? `⚠ Изменение ещё не вступило в силу: ${p.effective || ''} — ${p.note}`
-      : p.status === 'in_force_since_snapshot' ? `⚠ Текст приведён на 01.04.2024; ${p.effective ? p.effective + ' вступило в силу' : 'изменение вступило в силу'}, поэтому актуальный текст отличается: ${p.note}`
-      : `⚠ Анонсировано изменение (срок вступления определяется датой опубликования): ${p.note}`;
+    const text = p.status === 'upcoming' ? t('pend_upcoming', eff(p.effective) || '', p.note)
+      : p.status === 'in_force_since_snapshot' ? t('pend_since', p.effective ? t('since_a', eff(p.effective)) : t('since_b'), p.note)
+      : t('pend_unknown', p.note);
     c.appendChild(el('div', 'note warn', text.slice(0, 420)));
   }
   if (am.history.length) {
-    const d = el('details', 'full'); d.appendChild(el('summary', '', `История изменений по сноскам (${am.history.length})`));
+    const d = el('details', 'full'); d.appendChild(el('summary', '', t('hist', am.history.length)));
     const ul = el('ul', 'facts');
-    for (const a of am.history) ul.appendChild(el('li', '', `${a.date} № ${a.number} — ${a.action}` + (a.effective ? ` (${a.effective})` : '')));
-    d.appendChild(ul); d.appendChild(el('div', 'legend', 'Сведения прочитаны из сносок в тексте акта; если сноски нет или она записана нестандартно, история не показывается — это не значит, что статья не менялась.'));
+    for (const a of am.history) ul.appendChild(el('li', '', `${a.date} № ${a.number} — ${ACTION[a.action] ? t(ACTION[a.action]) : a.action}` + (a.effective ? ` (${eff(a.effective)})` : '')));
+    d.appendChild(ul); d.appendChild(el('div', 'legend', t('hist_legend')));
     c.appendChild(d);
   }
-  const ex = el('button', 'tr', 'Показать ключевые предложения'); ex.type = 'button';
+  const ex = el('button', 'tr', t('key_btn')); ex.type = 'button';
   ex.onclick = async () => {
     const lg = h.snippet_lang, full = h.texts[lg] || ''; ex.disabled = true; ex.textContent = '…';
     const r = await post('/api/explain', {query, text: full});
-    const box = el('div', 'tr-out'); box.appendChild(el('div', 'meta', 'Предложения статьи, ближе всего к запросу по смыслу (оценка — косинусная близость); они отмечены синим в полном тексте.'));
+    const box = el('div', 'tr-out'); box.appendChild(el('div', 'meta', t('key_meta')));
     const pre = c.querySelector('details.full pre');
     if (pre && r.sentences && r.sentences.length) {
       const f = document.createDocumentFragment(); let last = 0;
-      for (const s of r.sentences) { f.appendChild(document.createTextNode(full.slice(last, s.start))); const mk = el('mark', 's', full.slice(s.start, s.end)); mk.title = 'близость ' + s.score; f.appendChild(mk); last = s.end; }
+      for (const s of r.sentences) { f.appendChild(document.createTextNode(full.slice(last, s.start))); const mk = el('mark', 's', full.slice(s.start, s.end)); mk.title = t('closeness') + ' ' + s.score; f.appendChild(mk); last = s.end; }
       f.appendChild(document.createTextNode(full.slice(last))); pre.replaceChildren(f);
     }
     const ol = el('ol', 'facts'); (r.sentences || []).slice().sort((a, b) => b.score - a.score).forEach(s => ol.appendChild(el('li', '', `${s.score.toFixed(2)} — ${full.slice(s.start, s.end)}`)));
@@ -216,14 +235,14 @@ function articleCard(i, h, query, lang) {
   c.appendChild(ex);
   const conv = mrpLine(h.texts.ru || h.texts.kk || h.snippet); if (conv) c.appendChild(conv);
   const act = el('div', 'actions');
-  for (const [label, text, tip] of [['up', '👍', 'Эта статья отвечает на запрос'], ['down', '👎', 'Эта статья не подходит']]) {
+  for (const [label, text, tip] of [['up', '👍', t('fb_up')], ['down', '👎', t('fb_down')]]) {
     const b = el('button', '', text); b.title = tip;
     b.onclick = async () => { const r = await post('/api/feedback', {query, title: h.title, article_no: h.article_no, label, consent: $('#consent').checked}); b.textContent = r.saved ? '✓' : '✗'; };
     act.appendChild(b);
   }
-  if (h.url) { const a = el('a', '', 'Открыть акт на adilet.zan.kz'); a.href = h.url; a.target = '_blank'; a.rel = 'noopener'; act.appendChild(a); }
+  if (h.url) { const a = el('a', '', t('open_act')); a.href = h.url; a.target = '_blank'; a.rel = 'noopener'; act.appendChild(a); }
   c.appendChild(act);
-  const d = el('details', 'full'); d.appendChild(el('summary', '', 'Полный текст статьи'));
+  const d = el('details', 'full'); d.appendChild(el('summary', '', t('full_text')));
   for (const [lg, name] of [['ru', 'русский'], ['kk', 'қазақша']]) if (h.texts[lg]) { d.appendChild(el('b', '', name)); const pre = el('pre'); pre.appendChild(marked(h.texts[lg])); d.appendChild(pre); }
   c.appendChild(d);
   return c;
@@ -232,98 +251,103 @@ function articleCard(i, h, query, lang) {
 async function run() {
   const query = $('#q').value.trim(), m = mode();
   const out = $('#out');
-  if (!query) { out.replaceChildren(el('div', 'note info', 'Введите вопрос или выберите пример.')); return; }
-  out.replaceChildren(el('div', 'note info', 'Идёт поиск…'));
+  if (!query) { out.replaceChildren(el('div', 'note info', t('empty_prompt'))); return; }
+  out.replaceChildren(el('div', 'note info', t('searching')));
   history.replaceState(null, '', '?q=' + encodeURIComponent(query) + '&mode=' + m);
   const res = await post('/api/search', {query, mode: m, method: $('#method').value, k: +$('#k').value, filters: filters()});
   const frag = document.createDocumentFragment();
-  if (res.error) { frag.appendChild(el('div', 'note err', 'Ошибка поиска: ' + res.error)); }
+  if (res.error) { frag.appendChild(el('div', 'note err', t('err_search', res.error))); }
   else if (res.mode === 'titles') {
-    if (res.routed) frag.appendChild(el('div', 'note info', 'Запрос похож на название акта, поэтому показан поиск акта по названию. Чтобы искать по тексту статей, выберите «Поиск по статьям».'));
-    frag.appendChild(el('div', 'meta', `Язык запроса: ${LANG[res.lang]} · ${res.seconds.toFixed(2)} с`));
+    if (res.routed) frag.appendChild(el('div', 'note info', t('routed')));
+    frag.appendChild(el('div', 'meta', t('meta_short', LANG(res.lang), res.seconds.toFixed(2))));
     res.results.forEach((r, i) => {
       const c = el('div', 'card'); c.appendChild(el('h3', '', `${i + 1}. ${r.title}`));
       if (r.title_kk) c.appendChild(el('div', 'chips', r.title_kk));
-      c.appendChild(el('div', 'chips', chips([r.kind, r.year, r.in_force ? 'действует' : 'утратил силу'])));
-      if (r.url) { const a = el('a', '', 'Открыть акт на adilet.zan.kz'); a.href = r.url; a.target = '_blank'; a.rel = 'noopener'; c.appendChild(a); }
+      c.appendChild(el('div', 'chips', chips([kindName(r.kind), r.year, r.in_force ? t('st_in') : t('st_out')])));
+      if (r.url) { const a = el('a', '', t('open_act')); a.href = r.url; a.target = '_blank'; a.rel = 'noopener'; c.appendChild(a); }
       frag.appendChild(c);
     });
-    if (!res.results.length) frag.appendChild(el('div', 'note info', 'Ничего не найдено: попробуйте ослабить фильтры.'));
+    if (!res.results.length) frag.appendChild(el('div', 'note info', t('nothing')));
   } else if (res.mode === 'regimes') {
-    frag.appendChild(el('div', 'meta', `Язык запроса: ${LANG[res.lang]} · ${res.seconds.toFixed(2)} с`));
-    frag.appendChild(el('div', 'note info', 'Одна лучшая статья из каждого акта: сравните, как об одном вопросе говорят общий и специальные режимы (например, Трудовой кодекс и закон о службе). Выбор режима, который относится к вам, за вами.'));
-    res.notes.forEach(n => frag.appendChild(el('div', res.low_confidence && n.startsWith('Надёжной') ? 'note warn' : 'note info', n)));
-    const tb = el('table', 'regimes'); const head = el('tr'); ['Акт', 'Статья', 'Что говорит статья', 'Ещё статей'].forEach(t => head.appendChild(el('th', '', t))); tb.appendChild(head);
+    frag.appendChild(el('div', 'meta', t('meta_short', LANG(res.lang), res.seconds.toFixed(2))));
+    frag.appendChild(el('div', 'note info', t('regimes_note')));
+    res.notes.forEach(n => frag.appendChild(el('div', res.low_confidence && n.startsWith('Надёжной') ? 'note warn' : 'note info', tn(n))));
+    const tb = el('table', 'regimes'); const head = el('tr'); ['th_act', 'th_art', 'th_says', 'th_more'].forEach(k => head.appendChild(el('th', '', t(k)))); tb.appendChild(head);
     for (const r of res.rows) {
-      const tr = el('tr'); const a = el('td'); const strong = el('b', '', r.title); a.appendChild(strong); a.appendChild(el('div', 'chips', chips([r.kind, r.year, status(r.in_force)])));
+      const tr = el('tr'); const a = el('td'); const strong = el('b', '', r.title); a.appendChild(strong); a.appendChild(el('div', 'chips', chips([kindName(r.kind), r.year, status(r.in_force)])));
       if (r.url) { const l = el('a', '', 'adilet.zan.kz'); l.href = r.url; l.target = '_blank'; l.rel = 'noopener'; a.appendChild(l); }
-      const art = el('td', '', `ст. ${r.article_no}` + (r.heading ? ` — ${r.heading}` : ''));
+      const art = el('td', '', `${t('art')} ${r.article_no}` + (r.heading ? ` — ${r.heading}` : ''));
       const body = el('td'); body.appendChild(marked(r.snippet.slice(0, 380) + (r.snippet.length > 380 ? '…' : '')));
       const conv = mrpLine(r.snippet); if (conv) body.appendChild(conv);
       tr.append(a, art, body, el('td', '', r.also ? `+${r.also}` : '—')); tb.appendChild(tr);
     }
     frag.appendChild(tb);
-    if (!res.rows.length) frag.appendChild(el('div', 'note info', 'Ничего не найдено: попробуйте ослабить фильтры.'));
+    if (!res.rows.length) frag.appendChild(el('div', 'note info', t('nothing')));
   } else if (res.mode === 'compare') {
     const cols = el('div', 'cols');
     res.columns.forEach(col => {
-      const d = el('div'); d.appendChild(el('h3', '', col.label)); d.appendChild(el('div', 'meta', col.seconds.toFixed(2) + ' с'));
-      col.notes.forEach(n => d.appendChild(el('div', 'meta', n)));
-      const ol = el('ol'); col.hits.forEach(h => { const li = el('li'); li.appendChild(el('b', '', `${h.title}, ст. ${h.article_no}`)); li.appendChild(el('br')); li.appendChild(el('em', '', h.heading)); ol.appendChild(li); });
+      const d = el('div'); d.appendChild(el('h3', '', CMP[col.label] ? t(CMP[col.label]) : col.label)); d.appendChild(el('div', 'meta', col.seconds.toFixed(2) + ' ' + (UI === 'ru' ? 'с' : 's')));
+      col.notes.forEach(n => d.appendChild(el('div', 'meta', tn(n))));
+      const ol = el('ol'); col.hits.forEach(h => { const li = el('li'); li.appendChild(el('b', '', `${h.title}, ${t('art')} ${h.article_no}`)); li.appendChild(el('br')); li.appendChild(el('em', '', h.heading)); ol.appendChild(li); });
       d.appendChild(ol); cols.appendChild(d);
     });
     frag.appendChild(cols);
   } else {
-    frag.appendChild(el('div', 'meta', `Язык запроса: ${LANG[res.lang]} · просмотрено ${res.searched.toLocaleString('ru-RU')} фрагментов · ${res.seconds.toFixed(2)} с`));
-    if (res.hits.length) frag.appendChild(el('div', 'legend', 'В тексте отмечены сроки (жёлтым) и суммы, доли, штрафы (зелёным); суммы в МРП пересчитаны в тенге.'));
-    if (res.direct) frag.appendChild(el('div', 'note info', 'Запрос содержит номер статьи: сначала показана найденная по номеру статья, затем результаты смыслового поиска.'));
-    res.notes.forEach(n => frag.appendChild(el('div', res.low_confidence && n.startsWith('Надёжной') ? 'note warn' : 'note info', n)));
+    frag.appendChild(el('div', 'meta', t('meta_art', LANG(res.lang), nf.format(res.searched), res.seconds.toFixed(2))));
+    if (res.hits.length) frag.appendChild(el('div', 'legend', t('legend_marks')));
+    if (res.direct) frag.appendChild(el('div', 'note info', t('direct')));
+    res.notes.forEach(n => frag.appendChild(el('div', res.low_confidence && n.startsWith('Надёжной') ? 'note warn' : 'note info', tn(n))));
     if (res.hits.length && !res.low_confidence) {
-      const sb = el('button', 'tr', 'Краткая выжимка: главные предложения первых трёх статей'); sb.type = 'button';
+      const sb = el('button', 'tr', t('sum_btn')); sb.type = 'button';
       sb.onclick = async () => {
-        sb.disabled = true; sb.textContent = '…'; const box = el('div', 'card'); box.appendChild(el('h3', '', 'Краткая выжимка (цитаты, не пересказ)'));
+        sb.disabled = true; sb.textContent = '…'; const box = el('div', 'card'); box.appendChild(el('h3', '', t('sum_title')));
         const ul = el('ul');
         for (const h of res.hits.slice(0, 3)) {
           const full = h.texts[h.snippet_lang] || ''; const r = await post('/api/explain', {query, text: full, k: 1});
           const s = (r.sentences || [])[0]; if (!s) continue;
-          const li = el('li'); li.appendChild(el('span', '', '«')); li.appendChild(marked(full.slice(s.start, s.end))); li.appendChild(el('span', '', `» — ${h.title}, ст. ${h.article_no}`)); ul.appendChild(li);
+          const li = el('li'); li.appendChild(el('span', '', '«')); li.appendChild(marked(full.slice(s.start, s.end))); li.appendChild(el('span', '', `» — ${h.title}, ${t('art')} ${h.article_no}`)); ul.appendChild(li);
         }
-        box.appendChild(ul); box.appendChild(el('div', 'legend', 'Каждое предложение дословно взято из статьи, указанной рядом, поэтому выдуманных ссылок здесь быть не может; но выбор предложения автоматический и может быть неточным. Это не юридическая консультация.'));
+        box.appendChild(ul); box.appendChild(el('div', 'legend', t('sum_legend')));
         sb.replaceWith(box);
       };
       frag.appendChild(sb);
-      const ab = el('button', 'tr', 'Ответ с цитатами (языковая модель, 10–20 с)'); ab.type = 'button'; ab.style.marginLeft = '8px';
+      const ab = el('button', 'tr', t('ans_btn')); ab.type = 'button'; ab.style.marginLeft = '8px';
       ab.onclick = async () => {
-        ab.disabled = true; ab.textContent = 'Модель читает статьи…';
+        ab.disabled = true; ab.textContent = t('ans_wait');
         const r = await post('/api/answer', {query, filters: filters()});
-        const box = el('div', 'card'); box.appendChild(el('h3', '', 'Ответ с цитатами'));
+        const box = el('div', 'card'); box.appendChild(el('h3', '', t('ans_title')));
         if (r.status === 'ok') {
           const p = el('p', 'body'); r.sentences.filter(s => s.ok).forEach(s => p.appendChild(document.createTextNode(s.text + ' '))); box.appendChild(p);
-          const sup = el('details', 'full'); sup.appendChild(el('summary', '', 'Опора в статьях: ближайшее предложение статьи к каждому предложению ответа'));
-          const ul0 = el('ul', 'facts'); r.sentences.filter(s => s.ok).forEach(s => ul0.appendChild(el('li', '', `${s.text.replace(/\[[\d,\s]+\]/g, '').trim().slice(0, 90)}… → «${s.support_quote}» (близость ${s.support})`))); sup.appendChild(ul0); box.appendChild(sup);
-          const src = el('div', 'facts', 'Источники: ' + r.excerpts.map(e => `[${e.n}] ${e.title}, ст. ${e.article_no}`).join('; ')); box.appendChild(src);
-          if (r.dropped) box.appendChild(el('div', 'legend', `Проверка удалила предложений: ${r.dropped} (нет ссылки, число не из статьи или смысл не подтверждён).`));
-        } else if (r.status === 'abstain') box.appendChild(el('p', 'body', 'Модель не нашла ответа в найденных статьях. Посмотрите статьи ниже.'));
-        else if (r.status === 'unverified') box.appendChild(el('p', 'body', 'Ответ модели не прошёл проверку ссылок и чисел, поэтому не показан. Воспользуйтесь краткой выжимкой или статьями ниже.'));
-        else if (r.status === 'no_reliable_article') box.appendChild(el('p', 'body', 'Надёжной статьи для этого вопроса не найдено, ответ не строится.'));
-        else box.appendChild(el('p', 'body', r.error || 'Ошибка'));
-        box.appendChild(el('div', 'legend', `Ответ написан моделью ${r.model || 'локальной'} только по найденным статьям; каждое предложение проверено на ссылку, числа и близость к статье, но проверяйте по тексту. Это не юридическая консультация.`));
+          const sup = el('details', 'full'); sup.appendChild(el('summary', '', t('ans_support')));
+          const ul0 = el('ul', 'facts'); r.sentences.filter(s => s.ok).forEach(s => ul0.appendChild(el('li', '', `${s.text.replace(/\[[\d,\s]+\]/g, '').trim().slice(0, 90)}… → «${s.support_quote}» (${t('ans_closeness', s.support)})`))); sup.appendChild(ul0); box.appendChild(sup);
+          const src = el('div', 'facts', t('ans_sources', r.excerpts.map(e => `[${e.n}] ${e.title}, ${t('art')} ${e.article_no}`).join('; '))); box.appendChild(src);
+          if (r.dropped) box.appendChild(el('div', 'legend', t('ans_dropped', r.dropped)));
+        } else if (r.status === 'abstain') box.appendChild(el('p', 'body', t('ans_abstain')));
+        else if (r.status === 'unverified') box.appendChild(el('p', 'body', t('ans_unverified')));
+        else if (r.status === 'no_reliable_article') box.appendChild(el('p', 'body', t('ans_noreliable')));
+        else box.appendChild(el('p', 'body', r.error || t('ans_error')));
+        box.appendChild(el('div', 'legend', t('ans_foot', r.model || t('ans_local'))));
         ab.replaceWith(box);
       };
       frag.appendChild(ab);
     }
     res.hits.forEach((h, i) => frag.appendChild(articleCard(i + 1, h, query, res.lang)));
-    if (!res.hits.length && !res.notes.length) frag.appendChild(el('div', 'note info', 'Ничего не найдено: попробуйте ослабить фильтры.'));
+    if (!res.hits.length && !res.notes.length) frag.appendChild(el('div', 'note info', t('nothing')));
   }
   out.replaceChildren(frag);
 }
 $('#form').addEventListener('submit', e => { e.preventDefault(); run(); });
 
+function buildKinds() {
+  const on = new Set(kinds());
+  $('#kinds').replaceChildren(...KINDS.map(k => { const l = el('label', 'row'); const i = el('input'); i.type = 'checkbox'; i.value = k; i.checked = on.has(k); l.append(i, document.createTextNode(kindName(k))); return l; }));
+}
+function relabel() { syncPanel(); buildKinds(); if (EXN) $('#exsummary').textContent = t('ex_sum', EXN); if ($('#q').value.trim()) run(); else $('#out').replaceChildren(el('div', 'note info', t('empty_prompt'))); }
 async function init() {
   const ex = await (await fetch('/api/examples')).json();
   const names = {ru: 'Русский', kk: 'Қазақша', en: 'English'};
   const tabs = $('#extabs'), list = $('#exlist');
-  $('#exsummary').textContent = `Примеры запросов: ${(ex.ru || []).length} вопроса тестового набора на каждом языке`;
+  EXN = (ex.ru || []).length; $('#exsummary').textContent = t('ex_sum', EXN);
   const show = lang => {
     tabs.querySelectorAll('.tab').forEach(t => t.classList.toggle('on', t.dataset.lang === lang));
     list.replaceChildren(...(ex[lang] || []).map(text => { const b = el('button', 'exbtn', text); b.type = 'button'; b.onclick = () => { $('#q').value = text; run(); }; return b; }));
@@ -332,16 +356,17 @@ async function init() {
   show('ru');
   try { MRP = (await (await fetch('/api/config')).json()).mrp; } catch (e) { MRP = null; }
   const ks = await (await fetch('/api/kinds')).json();
-  $('#kinds').replaceChildren(...ks.map(k => { const l = el('label', 'row'); const i = el('input'); i.type = 'checkbox'; i.value = k; l.append(i, document.createTextNode(k)); return l; }));
+  KINDS = ks; buildKinds();
   const p = new URLSearchParams(location.search);
   if (MODES.includes(p.get('mode'))) document.querySelector(`input[name=mode][value=${p.get('mode')}]`).checked = true;
   syncPanel();
-  if (p.get('q')) { $('#q').value = p.get('q'); run(); }
+  if (p.get('q')) { $('#q').value = p.get('q'); run(); } else $('#out').replaceChildren(el('div', 'note info', t('empty_prompt')));
 }
 const drawer = $('#drawer'), scrim = $('#scrim');
 const setDrawer = on => { drawer.classList.toggle('on', on); scrim.classList.toggle('on', on); };
 $('#open-more').onclick = () => setDrawer(true); $('#close-more').onclick = () => setDrawer(false); scrim.onclick = () => setDrawer(false);
 document.addEventListener('keydown', e => { if (e.key === 'Escape') setDrawer(false); });
+langSwitcher(relabel);
 init();
 </script>
 </body>
