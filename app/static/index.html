@@ -5,85 +5,122 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Поиск по законодательству РК</title>
 <style>
-  :root { --bg:#F7F7F2; --panel:#E9EEE6; --card:#FFFFFF; --ink:#1F2A30; --mute:#5E6C70; --line:#C9D3CA; --acc:#1F7A6D; --acc-ink:#FFFFFF; --warn-bg:#FBF6D5; --warn-ink:#7A5B00; --info-bg:#E1ECF4; --info-ink:#1B4E72; --bad:#9B2C2C; }
+  :root { --bg:#FFFFFF; --soft:#F5F4FF; --card:#FFFFFF; --ink:#16162A; --mute:#6B6B85; --line:#E4E3F5; --acc:#5B4BFF; --acc-dark:#4535D9; --acc-soft:#ECE9FF; --coral:#FF6B5B; --teal:#12B5A0; --sun:#FFB800;
+          --warn-bg:#FFF6DB; --warn-ink:#8A5A00; --info-bg:#E8F0FF; --info-ink:#1F4BB8; --bad:#C0352B; --ok-bg:#DDF7F1; --ok-ink:#0B7A69; }
   * { box-sizing:border-box; }
-  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.55 "Source Sans Pro","Segoe UI",system-ui,sans-serif; }
-  .layout { display:grid; grid-template-columns:minmax(0,1fr) 300px; gap:36px; max-width:1360px; margin:0 auto; padding:32px 28px 60px; }
-  h1 { font-size:34px; line-height:1.15; margin:0 0 8px; }
-  .sub { color:var(--mute); font-size:14px; margin:0 0 16px; }
-  .note { border-radius:8px; padding:12px 16px; margin:12px 0; font-size:15px; }
-  .warn { background:var(--warn-bg); color:var(--warn-ink); } .info { background:var(--info-bg); color:var(--info-ink); } .err { background:#F8E0E0; color:var(--bad); }
-  details.ex { background:var(--card); border:1px solid var(--line); border-radius:8px; margin:12px 0; }
-  details.ex > summary { cursor:pointer; padding:10px 14px; font-size:15px; }
+  html { scroll-behavior:smooth; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.55 "Inter","Segoe UI",system-ui,sans-serif; }
+  .top { position:sticky; top:0; z-index:20; background:rgba(255,255,255,.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); }
+  .top-in { max-width:1120px; margin:0 auto; padding:10px 24px; display:flex; align-items:center; gap:24px; }
+  .logo { font-weight:800; font-size:20px; letter-spacing:-.3px; color:var(--ink); text-decoration:none; display:flex; align-items:center; gap:8px; }
+  .logo b { display:inline-grid; place-items:center; width:30px; height:30px; border-radius:9px; background:linear-gradient(135deg,var(--acc),var(--coral)); color:#fff; font-size:16px; }
+  .nav { display:flex; gap:4px; margin-left:auto; } .nav a { padding:7px 14px; border-radius:99px; color:var(--mute); text-decoration:none; font-size:14.5px; font-weight:600; }
+  .nav a.on, .nav a:hover { background:var(--acc-soft); color:var(--acc-dark); }
+  .hero { background:linear-gradient(180deg,var(--soft),#fff); border-bottom:1px solid var(--line); }
+  .hero-in { max-width:1120px; margin:0 auto; padding:34px 24px 22px; }
+  h1 { font-size:36px; line-height:1.12; margin:0 0 8px; letter-spacing:-.8px; } h1 span { color:var(--acc); }
+  .sub { color:var(--mute); font-size:15.5px; margin:0 0 18px; max-width:760px; }
+  .qrow { display:flex; gap:10px; margin:0 0 12px; }
+  .qrow input { flex:1; padding:15px 18px; font:inherit; font-size:17px; background:#fff; border:2px solid var(--line); border-radius:14px; color:var(--ink); }
+  .qrow input:focus { outline:none; border-color:var(--acc); box-shadow:0 0 0 4px var(--acc-soft); }
+  button.go { background:var(--acc); color:#fff; border:0; border-radius:14px; padding:0 30px; font:inherit; font-weight:700; font-size:16px; cursor:pointer; } button.go:hover { background:var(--acc-dark); }
+  .tools { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; }
+  .seg { display:inline-flex; background:#fff; border:1px solid var(--line); border-radius:99px; padding:3px; }
+  .seg label { padding:6px 14px; border-radius:99px; font-size:14px; font-weight:600; color:var(--mute); cursor:pointer; white-space:nowrap; }
+  .seg input { display:none; } .seg label:has(input:checked) { background:var(--acc); color:#fff; }
+  .chips { display:flex; flex-wrap:wrap; gap:8px; }
+  label.chip { display:inline-flex; align-items:center; gap:6px; padding:6px 12px; border:1px solid var(--line); border-radius:99px; font-size:13.5px; font-weight:600; color:var(--mute); cursor:pointer; background:#fff; }
+  label.chip input { display:none; } label.chip:has(input:checked) { background:var(--acc-soft); border-color:var(--acc); color:var(--acc-dark); }
+  label.chip:has(input:checked)::before { content:"✓"; font-size:12px; }
+  button.more { border:1px dashed var(--acc); background:#fff; color:var(--acc-dark); border-radius:99px; padding:6px 14px; font:inherit; font-size:13.5px; font-weight:700; cursor:pointer; }
+  .wrap { max-width:1120px; margin:0 auto; padding:18px 24px 70px; }
+  .note { border-radius:12px; padding:11px 16px; margin:12px 0; font-size:14.5px; }
+  .warn { background:var(--warn-bg); color:var(--warn-ink); } .info { background:var(--info-bg); color:var(--info-ink); } .err { background:#FDE4E1; color:var(--bad); }
+  .strip { font-size:13px; color:var(--mute); margin:0 0 10px; }
+  details.ex { background:#fff; border:1px solid var(--line); border-radius:12px; margin:12px 0; }
+  details.ex > summary { cursor:pointer; padding:10px 14px; font-size:14.5px; font-weight:600; color:var(--acc-dark); }
   .tabs { display:flex; gap:18px; padding:0 14px; border-bottom:1px solid var(--line); }
-  .tab { background:none; border:0; padding:8px 2px; font:inherit; font-size:15px; color:var(--mute); cursor:pointer; border-bottom:2px solid transparent; }
-  .tab.on { color:var(--acc); border-bottom-color:var(--acc); }
-  .exlist { max-height:330px; overflow:auto; padding:10px 14px; display:flex; flex-direction:column; gap:6px; }
-  .exbtn { text-align:left; background:var(--bg); border:1px solid var(--line); border-radius:8px; padding:7px 12px; font:inherit; font-size:14px; color:var(--ink); cursor:pointer; }
+  .tab { background:none; border:0; padding:8px 2px; font:inherit; font-size:14.5px; color:var(--mute); cursor:pointer; border-bottom:2px solid transparent; }
+  .tab.on { color:var(--acc-dark); border-bottom-color:var(--acc); font-weight:700; }
+  .exlist { max-height:300px; overflow:auto; padding:10px 14px; display:flex; flex-direction:column; gap:6px; }
+  .exbtn { text-align:left; background:var(--soft); border:1px solid transparent; border-radius:10px; padding:7px 12px; font:inherit; font-size:14px; color:var(--ink); cursor:pointer; }
   .exbtn:hover { border-color:var(--acc); }
-  .qrow { display:flex; gap:10px; margin:8px 0 4px; }
-  .qrow input { flex:1; padding:11px 14px; font:inherit; background:var(--panel); border:1px solid transparent; border-radius:8px; color:var(--ink); }
-  .qrow input:focus { outline:2px solid var(--acc); background:#fff; }
-  button.go { background:var(--acc); color:var(--acc-ink); border:0; border-radius:8px; padding:0 22px; font:inherit; font-weight:600; cursor:pointer; }
   .meta { color:var(--mute); font-size:13px; margin:10px 0; }
-  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 18px; margin:12px 0; }
-  .card h3 { font-size:16px; margin:0 0 4px; } .card .chips { color:var(--mute); font-size:13px; margin-bottom:8px; }
+  .card { background:var(--card); border:1px solid var(--line); border-left:4px solid var(--acc); border-radius:14px; padding:16px 20px; margin:14px 0; transition:box-shadow .15s; }
+  .card:hover { box-shadow:0 6px 22px rgba(91,75,255,.10); }
+  .card h3 { font-size:17px; margin:0 0 4px; letter-spacing:-.2px; } .card .chips { color:var(--mute); font-size:13px; margin-bottom:8px; }
   .card p.body { margin:6px 0 10px; white-space:pre-wrap; }
   .actions { display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
-  .actions button { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:4px 12px; cursor:pointer; font-size:15px; }
-  .actions a { color:var(--acc); margin-left:auto; font-size:14px; }
-  details.full { margin-top:10px; } details.full summary { cursor:pointer; color:var(--acc); font-size:14px; }
-  details.full pre { white-space:pre-wrap; font:14px/1.5 inherit; background:var(--bg); padding:10px 12px; border-radius:8px; max-height:420px; overflow:auto; }
+  .actions button { background:#fff; border:1px solid var(--line); border-radius:10px; padding:4px 12px; cursor:pointer; font-size:15px; }
+  .actions a { color:var(--acc-dark); margin-left:auto; font-size:14px; font-weight:600; }
+  details.full { margin-top:10px; } details.full summary { cursor:pointer; color:var(--acc-dark); font-size:14px; font-weight:600; }
+  details.full pre { white-space:pre-wrap; font:14px/1.5 inherit; background:var(--soft); padding:10px 12px; border-radius:10px; max-height:420px; overflow:auto; }
   .cols { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; }
   .cols h3 { font-size:20px; margin:0 0 2px; } .cols ol { padding-left:20px; } .cols li { margin-bottom:10px; } .cols em { color:var(--mute); }
-  aside { position:sticky; top:16px; align-self:start; background:var(--card); border:1px solid var(--line); border-radius:10px; padding:16px 18px; font-size:14.5px; }
-  aside h2 { font-size:16px; margin:0 0 10px; } aside h4 { margin:16px 0 8px; font-size:15px; }
-  aside label.row { display:flex; align-items:flex-start; gap:8px; margin:7px 0; cursor:pointer; }
-  aside input[type=radio], aside input[type=checkbox] { accent-color:var(--acc); margin-top:4px; }
-  aside select, aside input[type=number] { width:100%; padding:8px 10px; font:inherit; background:var(--panel); border:1px solid transparent; border-radius:8px; color:var(--ink); }
-  aside .field { margin:10px 0 4px; color:var(--mute); } aside input[type=range] { width:100%; accent-color:var(--acc); }
-  .years { display:flex; gap:8px; } .kinds { max-height:150px; overflow:auto; background:var(--panel); border-radius:8px; padding:4px 10px; }
-  @media (max-width: 960px) { .layout { grid-template-columns:1fr; } aside { position:static; order:-1; } .cols { grid-template-columns:1fr; } }
-  button.tr { font:inherit; font-size:13px; padding:5px 10px; margin:4px 0 8px; border:1px solid var(--line); border-radius:8px; background:var(--bg); color:var(--ink); cursor:pointer; } button.tr:disabled { opacity:.6; }
-  mark.s { background:#d6e6ff; border-radius:3px; padding:0 2px; }
-  mark.d { background:#fff1c2; border-radius:3px; padding:0 2px; } mark.a { background:#d7f0dc; border-radius:3px; padding:0 2px; }
-  table.regimes { width:100%; border-collapse:collapse; font-size:14px; } table.regimes th, table.regimes td { text-align:left; vertical-align:top; padding:8px 10px; border-bottom:1px solid var(--line); } table.regimes th { color:var(--mute); font-weight:600; }
+  button.tr { font:inherit; font-size:13px; font-weight:600; padding:6px 12px; margin:4px 0 8px; border:1px solid var(--acc); border-radius:99px; background:#fff; color:var(--acc-dark); cursor:pointer; } button.tr:hover { background:var(--acc-soft); } button.tr:disabled { opacity:.6; }
+  mark.s { background:#D6E6FF; border-radius:3px; padding:0 2px; }
+  mark.d { background:#FFE9A8; border-radius:3px; padding:0 2px; } mark.a { background:#C8F2E8; border-radius:3px; padding:0 2px; }
+  table.regimes { width:100%; border-collapse:collapse; font-size:14px; } table.regimes th, table.regimes td { text-align:left; vertical-align:top; padding:9px 10px; border-bottom:1px solid var(--line); } table.regimes th { color:var(--mute); font-weight:700; }
   .facts { font-size:13px; color:var(--mute); margin:0 0 8px; } .legend { font-size:12px; color:var(--mute); margin:6px 0; }
+  .scrim { position:fixed; inset:0; background:rgba(22,22,42,.35); opacity:0; pointer-events:none; transition:opacity .2s; z-index:40; } .scrim.on { opacity:1; pointer-events:auto; }
+  .drawer { position:fixed; top:0; right:0; height:100vh; width:min(380px,92vw); background:#fff; z-index:50; transform:translateX(105%); transition:transform .25s; overflow-y:auto; padding:20px 22px 40px; box-shadow:-12px 0 40px rgba(22,22,42,.15); }
+  .drawer.on { transform:none; }
+  .drawer h2 { font-size:19px; margin:0 0 4px; display:flex; justify-content:space-between; align-items:center; } .drawer h2 button { border:0; background:var(--soft); width:32px; height:32px; border-radius:50%; font-size:16px; cursor:pointer; }
+  .drawer h4 { margin:20px 0 8px; font-size:13px; text-transform:uppercase; letter-spacing:.6px; color:var(--mute); }
+  .drawer label.row { display:flex; align-items:flex-start; gap:8px; margin:8px 0; cursor:pointer; font-size:14.5px; }
+  .drawer input[type=checkbox] { accent-color:var(--acc); margin-top:4px; }
+  .drawer select, .drawer input[type=number] { width:100%; padding:9px 11px; font:inherit; background:var(--soft); border:1px solid var(--line); border-radius:10px; color:var(--ink); }
+  .drawer .field { margin:12px 0 4px; color:var(--mute); font-size:14px; } .drawer input[type=range] { width:100%; accent-color:var(--acc); }
+  .years { display:flex; gap:8px; } .kinds { max-height:170px; overflow:auto; background:var(--soft); border-radius:10px; padding:4px 10px; }
+  @media (max-width:760px) { h1 { font-size:27px; } .cols { grid-template-columns:1fr; } .qrow { flex-direction:column; } button.go { padding:13px; } }
 </style>
 </head>
 <body>
-<div class="layout">
-  <main>
-    <h1>⚖️ Поиск по законодательству Республики Казахстан</h1>
-    <p class="sub">Задайте вопрос своими словами на казахском, русском или английском: система найдёт подходящие статьи кодексов и законов. Можно и сослаться на статью: «статья 1 Конституции РК», «ст. 188 УК».</p>
-    <div class="note warn">⚠️ Справочная информация, а не юридическая консультация. Тексты актов — на 01.04.2024; законы меняются, проверяйте действующую редакцию на adilet.zan.kz. Оценка качества поиска предварительная.</div>
-    <details class="ex" id="exbox"><summary id="exsummary">Примеры запросов</summary>
-      <div class="tabs" id="extabs"></div><div class="exlist" id="exlist"></div></details>
-    <form class="qrow" id="form"><input id="q" autocomplete="off" placeholder="Например: сколько дней оплачиваемого отпуска мне положено?" aria-label="Ваш вопрос"><button class="go" type="submit">Найти</button></form>
-    <div id="out"><div class="note info">Введите вопрос или выберите пример.</div></div>
-  </main>
-  <aside>
-    <h2>Настройки</h2>
-    <label class="row"><input type="radio" name="mode" value="auto" checked title="Название акта («Трудовой кодекс») ищется как акт, вопрос — как статьи">Автоматически</label>
-    <label class="row"><input type="radio" name="mode" value="articles">Поиск по статьям</label>
-    <label class="row"><input type="radio" name="mode" value="titles">Найти акт по названию</label>
-    <label class="row"><input type="radio" name="mode" value="regimes" title="Одна лучшая статья из каждого акта: так видно, что говорят разные законы об одном и том же">Сравнить акты (режимы)</label>
-    <label class="row"><input type="radio" name="mode" value="compare">Сравнить методы</label>
-    <div class="field">Метод</div>
-    <select id="method"><option value="dense">Смысловой (bge-m3)</option><option value="bm25">По словам (BM25)</option><option value="hybrid">Гибрид (смысл + слова)</option></select>
-    <div class="field">Сколько результатов: <b id="kval">8</b></div><input type="range" id="k" min="3" max="20" value="8">
-    <h4>Фильтры</h4>
-    <label class="row"><input type="checkbox" id="only_in_force" checked>Только действующие акты</label>
-    <label class="row"><input type="checkbox" id="hide_drafts" checked title="Акты «О проекте …», «Компиляция …» и казахские «жоба»">Скрыть проекты и компиляции</label>
-    <label class="row"><input type="checkbox" id="hide_amending" checked>Скрыть акты о внесении изменений</label>
-    <label class="row"><input type="checkbox" id="include_unlinked" checked title="Для ~6% статей акт в базе метаданных не найден">Включать тексты с неопределённым актом</label>
-    <label class="row"><input type="checkbox" id="force_prior" title="Экспериментально: небольшая надбавка Конституции, кодексам и законам перед подзаконными актами. На тестовом наборе улучшает поиск, но набор состоит в основном из статей кодексов; независимая проверка ещё не проведена.">Приоритет кодексов и законов (экспериментально)</label>
-    <div class="field">Вид акта (пусто — любой)</div><div class="kinds" id="kinds"></div>
-    <h4>Приватность</h4>
-    <label class="row"><input type="checkbox" id="consent" title="По умолчанию в файл отметок записывается только короткий хеш запроса и язык">Сохранять текст моих запросов вместе с отметками 👍/👎, чтобы улучшать поиск</label>
-    <div class="field">Год принятия</div><div class="years"><input type="number" id="year_from" value="1990" min="1900" max="2026"><input type="number" id="year_to" value="2026" min="1900" max="2026"></div>
-  </aside>
+<header class="top"><div class="top-in">
+  <a class="logo" href="/"><b>§</b>Zan Search</a>
+  <nav class="nav"><a class="on" href="/">Поиск</a><a href="/analytics">Аналитика</a></nav>
+</div></header>
+<section class="hero"><div class="hero-in">
+  <h1>Найдите <span>статью закона</span> по своему вопросу</h1>
+  <p class="sub">Спросите на казахском, русском или английском: система найдёт подходящие статьи кодексов и законов Республики Казахстан. Можно сослаться на статью: «статья 1 Конституции РК», «ст. 188 УК».</p>
+  <form class="qrow" id="form"><input id="q" autocomplete="off" placeholder="Например: сколько дней оплачиваемого отпуска мне положено?" aria-label="Ваш вопрос"><button class="go" type="submit">Найти</button></form>
+  <div class="tools">
+    <div class="seg" role="radiogroup" aria-label="Режим">
+      <label title="Название акта («Трудовой кодекс») ищется как акт, вопрос — как статьи"><input type="radio" name="mode" value="auto" checked>Авто</label>
+      <label><input type="radio" name="mode" value="articles">Статьи</label>
+      <label><input type="radio" name="mode" value="titles">Акт по названию</label>
+      <label title="Одна лучшая статья из каждого акта: так видно, что говорят разные законы об одном и том же"><input type="radio" name="mode" value="regimes">Сравнить акты</label>
+      <label><input type="radio" name="mode" value="compare">Сравнить методы</label>
+    </div>
+    <div class="chips">
+      <label class="chip"><input type="checkbox" id="only_in_force" checked>Действующие</label>
+      <label class="chip" title="Акты «О проекте …», «Компиляция …» и казахские «жоба»"><input type="checkbox" id="hide_drafts" checked>Без проектов</label>
+      <label class="chip"><input type="checkbox" id="hide_amending" checked>Без актов об изменениях</label>
+      <label class="chip" title="Экспериментально: небольшая надбавка Конституции, кодексам и законам перед подзаконными актами. На тестовом наборе улучшает поиск, но набор состоит в основном из статей кодексов; независимая проверка ещё не проведена."><input type="checkbox" id="force_prior">Приоритет кодексов</label>
+      <button class="more" type="button" id="open-more">⚙ Ещё настройки</button>
+    </div>
+  </div>
+</div></section>
+<div class="wrap">
+  <div class="note warn">⚠️ Справочная информация, а не юридическая консультация. Тексты актов — на 01.04.2024; законы меняются, проверяйте действующую редакцию на adilet.zan.kz.</div>
+  <details class="ex" id="exbox"><summary id="exsummary">Примеры запросов</summary>
+    <div class="tabs" id="extabs"></div><div class="exlist" id="exlist"></div></details>
+  <div id="out"><div class="note info">Введите вопрос или выберите пример.</div></div>
 </div>
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Настройки поиска">
+  <h2>Настройки <button type="button" id="close-more" aria-label="Закрыть">✕</button></h2>
+  <h4>Поиск</h4>
+  <div class="field">Метод</div>
+  <select id="method"><option value="dense">Смысловой (bge-m3)</option><option value="bm25">По словам (BM25)</option><option value="hybrid">Гибрид (смысл + слова)</option></select>
+  <div class="field">Сколько результатов: <b id="kval">8</b></div><input type="range" id="k" min="3" max="20" value="8">
+  <h4>Фильтры</h4>
+  <label class="row"><input type="checkbox" id="include_unlinked" checked title="Для ~6% статей акт в базе метаданных не найден">Включать тексты с неопределённым актом</label>
+  <div class="field">Вид акта (пусто — любой)</div><div class="kinds" id="kinds"></div>
+  <div class="field">Год принятия</div><div class="years"><input type="number" id="year_from" value="1990" min="1900" max="2026"><input type="number" id="year_to" value="2026" min="1900" max="2026"></div>
+  <h4>Приватность</h4>
+  <label class="row"><input type="checkbox" id="consent" title="По умолчанию в файл отметок записывается только короткий хеш запроса и язык">Сохранять текст моих запросов вместе с отметками 👍/👎, чтобы улучшать поиск</label>
+</aside>
 <script>
 const $ = s => document.querySelector(s);
 const LANG = {ru: 'русский', kk: 'казахский', en: 'английский'};
@@ -301,6 +338,10 @@ async function init() {
   syncPanel();
   if (p.get('q')) { $('#q').value = p.get('q'); run(); }
 }
+const drawer = $('#drawer'), scrim = $('#scrim');
+const setDrawer = on => { drawer.classList.toggle('on', on); scrim.classList.toggle('on', on); };
+$('#open-more').onclick = () => setDrawer(true); $('#close-more').onclick = () => setDrawer(false); scrim.onclick = () => setDrawer(false);
+document.addEventListener('keydown', e => { if (e.key === 'Escape') setDrawer(false); });
 init();
 </script>
 </body>

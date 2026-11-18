@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Аналитика · Поиск по законодательству РК</title>
+<style>
+  :root { --bg:#FFFFFF; --soft:#F5F4FF; --ink:#16162A; --mute:#6B6B85; --line:#E4E3F5; --acc:#5B4BFF; --acc-dark:#4535D9; --acc-soft:#ECE9FF; --coral:#FF6B5B; --teal:#12B5A0; --sun:#FFB800; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.55 "Inter","Segoe UI",system-ui,sans-serif; }
+  .top { position:sticky; top:0; z-index:20; background:rgba(255,255,255,.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); }
+  .top-in { max-width:1120px; margin:0 auto; padding:10px 24px; display:flex; align-items:center; gap:24px; }
+  .logo { font-weight:800; font-size:20px; letter-spacing:-.3px; color:var(--ink); text-decoration:none; display:flex; align-items:center; gap:8px; }
+  .logo b { display:inline-grid; place-items:center; width:30px; height:30px; border-radius:9px; background:linear-gradient(135deg,var(--acc),var(--coral)); color:#fff; font-size:16px; }
+  .nav { display:flex; gap:4px; margin-left:auto; } .nav a { padding:7px 14px; border-radius:99px; color:var(--mute); text-decoration:none; font-size:14.5px; font-weight:600; }
+  .nav a.on, .nav a:hover { background:var(--acc-soft); color:var(--acc-dark); }
+  .hero { background:linear-gradient(180deg,var(--soft),#fff); border-bottom:1px solid var(--line); }
+  .hero-in, .wrap { max-width:1120px; margin:0 auto; padding:30px 24px 10px; } .wrap { padding-bottom:70px; }
+  h1 { font-size:34px; margin:0 0 6px; letter-spacing:-.8px; } h1 span { color:var(--acc); }
+  .sub { color:var(--mute); margin:0 0 14px; max-width:780px; }
+  h2 { font-size:20px; margin:34px 0 4px; letter-spacing:-.3px; } .lead { color:var(--mute); font-size:14.5px; margin:0 0 14px; }
+  .kpis { display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:14px; margin:6px 0; }
+  .kpi { border:1px solid var(--line); border-radius:16px; padding:16px 18px; background:#fff; } .kpi b { display:block; font-size:30px; letter-spacing:-1px; } .kpi span { color:var(--mute); font-size:13.5px; }
+  .kpi:nth-child(5n+1) b { color:var(--acc); } .kpi:nth-child(5n+2) b { color:var(--coral); } .kpi:nth-child(5n+3) b { color:var(--teal); } .kpi:nth-child(5n+4) b { color:#E09A00; } .kpi:nth-child(5n) b { color:#C23BA8; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(330px,1fr)); gap:18px; }
+  .panel { border:1px solid var(--line); border-radius:16px; padding:18px 20px; background:#fff; } .panel h3 { margin:0 0 12px; font-size:16px; }
+  .bar { display:grid; grid-template-columns:200px 1fr 52px; align-items:center; gap:10px; margin:7px 0; font-size:13.5px; } .bar .t { color:var(--mute); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .bar .rail { height:14px; background:var(--soft); border-radius:99px; overflow:hidden; } .bar .fill { height:100%; border-radius:99px; background:linear-gradient(90deg,var(--acc),#8B7DFF); } .bar .v { text-align:right; font-weight:700; }
+  .bar.alt .fill { background:linear-gradient(90deg,var(--coral),#FFA08F); } .bar.teal .fill { background:linear-gradient(90deg,var(--teal),#6EE0CF); }
+  .tabs { display:inline-flex; background:#fff; border:1px solid var(--line); border-radius:99px; padding:3px; margin-bottom:12px; }
+  .tabs button { border:0; background:none; padding:6px 16px; border-radius:99px; font:inherit; font-size:14px; font-weight:600; color:var(--mute); cursor:pointer; } .tabs button.on { background:var(--acc); color:#fff; }
+  .note { font-size:13px; color:var(--mute); margin-top:10px; } .empty { color:var(--mute); font-size:14px; padding:8px 0; }
+</style>
+</head>
+<body>
+<header class="top"><div class="top-in">
+  <a class="logo" href="/"><b>§</b>Zan Search</a>
+  <nav class="nav"><a href="/">Поиск</a><a class="on" href="/analytics">Аналитика</a></nav>
+</div></header>
+<section class="hero"><div class="hero-in">
+  <h1>Аналитика <span>платформы</span></h1>
+  <p class="sub">Что в базе, насколько хорошо работает поиск и как им пользуются прямо сейчас. Качество измерено на тестовом наборе из 53 потребностей (159 запросов) и пока предварительное.</p>
+  <div class="kpis" id="kpis"></div>
+</div></section>
+<div class="wrap">
+  <h2>Качество поиска</h2>
+  <p class="lead">Какая доля вопросов находит нужную статью среди первых 10 результатов (Success@10) и насколько высоко она стоит (MRR@10).</p>
+  <div class="tabs" id="langtabs"></div>
+  <div class="grid"><div class="panel"><h3>Success@10 по методам</h3><div id="c-s10"></div></div><div class="panel"><h3>MRR@10 по методам</h3><div id="c-mrr"></div></div></div>
+  <div class="note" id="n-ret"></div>
+  <h2>Что улучшает ранжирование</h2>
+  <p class="lead">Варианты поверх bge-m3, заданные заранее (MRR@10, рус / каз / англ).</p>
+  <div class="grid"><div class="panel"><h3>Русский</h3><div id="r-ru"></div></div><div class="panel"><h3>Казахский</h3><div id="r-kk"></div></div><div class="panel"><h3>Английский</h3><div id="r-en"></div></div></div>
+  <h2>Устойчивость к «неидеальным» запросам</h2>
+  <p class="lead">Success@10 для искажённых версий тех же вопросов (русский).</p>
+  <div class="grid"><div class="panel"><h3>Опечатки, латиница, ключевые слова</h3><div id="rob"></div></div><div class="panel"><h3>Ответ языковой модели</h3><div id="ans"></div></div></div>
+  <h2>Использование</h2>
+  <p class="lead">Счётчики с момента запуска сервера и отметки 👍/👎 пользователей.</p>
+  <div class="kpis" id="usage"></div>
+  <div class="grid" style="margin-top:14px"><div class="panel"><h3>Языки запросов</h3><div id="u-lang"></div></div><div class="panel"><h3>Режимы</h3><div id="u-mode"></div></div></div>
+</div>
+<script>
+const $ = s => document.querySelector(s);
+const nf = new Intl.NumberFormat('ru-RU');
+const el = (t, c, x) => { const e = document.createElement(t); if (c) e.className = c; if (x !== undefined) e.textContent = x; return e; };
+function bars(box, rows, max, cls) {
+  box.replaceChildren();
+  if (!rows.length) { box.appendChild(el('div', 'empty', 'Данных пока нет.')); return; }
+  for (const [label, v, shown] of rows) {
+    const r = el('div', 'bar ' + (cls || '')); r.appendChild(el('div', 't', label)); const rail = el('div', 'rail'); const f = el('div', 'fill'); f.style.width = Math.max(0, Math.min(100, v / max * 100)) + '%'; rail.appendChild(f);
+    r.appendChild(rail); r.appendChild(el('div', 'v', shown !== undefined ? shown : v.toFixed(2))); box.appendChild(r);
+  }
+}
+function kpis(box, items) { box.replaceChildren(); for (const [n, c] of items) { const k = el('div', 'kpi'); k.appendChild(el('b', '', n)); k.appendChild(el('span', '', c)); box.appendChild(k); } }
+const METHODS = {'Keyword overlap (baseline), stemming': 'Ключевые слова', 'Keyword overlap (baseline), 5-letter prefix': 'Ключевые слова', 'TF-IDF, stemming': 'TF-IDF', 'TF-IDF, 5-letter prefix': 'TF-IDF', 'BM25, stemming': 'BM25', 'BM25, 5-letter prefix': 'BM25',
+  'Dense e5-small': 'e5-small', 'Dense e5-base': 'e5-base', 'Dense bge-m3': 'bge-m3', 'Hybrid BM25 + bge-m3 (RRF)': 'Гибрид BM25 + bge-m3'};
+const VARIANTS = {base: 'bge-m3 как есть', instr_ru: '+ инструкция к запросу', filters: '+ фильтры по умолчанию', 'filters+force_0.02': '+ фильтры + приоритет кодексов', rr_title: '+ переранжирование', 'filters+rr_title': '+ фильтры + переранжирование'};
+let D = null, lang = 'ru';
+function drawRetrieval() {
+  const rows = D.retrieval.filter(r => r.lang === lang && METHODS[r.method]);
+  bars($('#c-s10'), rows.map(r => [METHODS[r.method], r.s10, r.s10.toFixed(2)]), 1);
+  bars($('#c-mrr'), rows.map(r => [METHODS[r.method], r.mrr, r.mrr.toFixed(3)]), 0.5, 'alt');
+  $('#n-ret').textContent = lang === 'en' ? 'Для английского корпус без английских текстов: работают только смысловые модели и перевод запроса.' : 'Оценки v1, индекс по статьям, 45 потребностей на язык; интервалы широкие (около ±0,1).';
+}
+fetch('/api/analytics').then(r => r.json()).then(d => {
+  D = d;
+  kpis($('#kpis'), [[nf.format(d.corpus.acts), 'актов в метаданных'], [nf.format(d.corpus.articles), 'статей в поисковом индексе'], ['3,12 млн', 'фрагментов текста'], ['159', 'запросов в тестовом наборе'], ['3', 'языка запроса: kk, ru, en']]);
+  const tabs = $('#langtabs');
+  for (const [l, n] of [['ru', 'Русский'], ['kk', 'Казахский'], ['en', 'Английский']]) { const b = el('button', l === lang ? 'on' : '', n); b.onclick = () => { lang = l; tabs.querySelectorAll('button').forEach(x => x.classList.remove('on')); b.classList.add('on'); drawRetrieval(); }; tabs.appendChild(b); }
+  drawRetrieval();
+  for (const l of ['ru', 'kk', 'en']) bars($('#r-' + l), Object.keys(VARIANTS).map(k => { const r = d.ranking.find(x => x.lang === l && x.variant === k); return r ? [VARIANTS[k], r.mrr, r.mrr.toFixed(2)] : null; }).filter(Boolean), 0.9, l === 'kk' ? 'teal' : (l === 'en' ? 'alt' : ''));
+  const rn = {clean: 'Исходный вопрос', typo_light: 'Лёгкие опечатки', typo_heavy: 'Сильные опечатки', nopunct: 'Без знаков препинания', keywords: '4 ключевых слова', translit: 'Латиницей'};
+  bars($('#rob'), Object.keys(rn).map(k => { const r = d.robustness.find(x => x.variant === k && x.lang === 'ru'); return r ? [rn[k], r.s10, r.s10.toFixed(2)] : null; }).filter(Boolean), 1, 'teal');
+  bars($('#ans'), d.answers.map(a => [a.label, a.value, a.shown]), 1);
+  const u = d.usage;
+  kpis($('#usage'), [[nf.format(u.searches), 'поисков'], [u.searches ? Math.round(u.seconds / u.searches * 1000) + ' мс' : '—', 'среднее время ответа'], [u.searches ? Math.round(u.low_confidence / u.searches * 100) + '%' : '—', 'запросов без надёжной статьи'], [nf.format(d.feedback.up), '👍 отметок'], [nf.format(d.feedback.down), '👎 отметок']]);
+  bars($('#u-lang'), Object.entries(u.by_lang).map(([k, v]) => [{ru: 'Русский', kk: 'Казахский', en: 'Английский'}[k] || k, v, String(v)]), Math.max(1, ...Object.values(u.by_lang)));
+  bars($('#u-mode'), Object.entries(u.by_mode).map(([k, v]) => [{articles: 'Статьи', titles: 'Акты по названию', regimes: 'Сравнение актов', compare: 'Сравнение методов'}[k] || k, v, String(v)]), Math.max(1, ...Object.values(u.by_mode)), 'alt');
+}).catch(e => { document.querySelector('.wrap').prepend(el('div', 'empty', 'Не удалось загрузить данные: ' + e)); });
+</script>
+</body>
+</html>

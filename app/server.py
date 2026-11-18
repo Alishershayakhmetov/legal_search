@@ -8,6 +8,8 @@ import json
 import re
 import sys
 import threading
+import time
+from collections import Counter
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
@@ -21,6 +23,7 @@ STATIC = Path(__file__).resolve().parent / "static"
 METHODS = {"dense": "Смысловой (bge-m3)", "bm25": "По словам (BM25)", "hybrid": "Гибрид (смысл + слова)"}
 FIRST_LINE = re.compile(r"^(Статья\s+\S+|\d+(?:-\d+)?\s*-\s*бап)[^\n]*\n", re.I)
 MAX_BODY = 64 * 1024
+STATS_LOCK = threading.Lock()
 LOCK = threading.Lock()  # one search at a time: the encoder and the GPU are shared
 ENGINE = None
 
@@ -44,7 +47,58 @@ def hit_to_dict(hit, lang):
             "snippet": body[:600] + ("…" if len(body) > 600 else ""), "texts": hit.texts}
 
 
+STATS = {"since": time.strftime("%Y-%m-%d %H:%M"), "searches": 0, "seconds": 0.0, "low_confidence": 0, "by_lang": Counter(), "by_mode": Counter()}
+
+
 def run_search(req):
+    """Search plus usage counters for the analytics page (no query text is kept)."""
+    res = _run_search(req)
+    if isinstance(res, dict) and not res.get("error"):
+        with STATS_LOCK:
+            STATS["searches"] += 1
+            STATS["seconds"] += float(res.get("seconds") or 0)
+            STATS["low_confidence"] += bool(res.get("low_confidence"))
+            STATS["by_lang"][res.get("lang", "?")] += 1
+            STATS["by_mode"][res.get("mode", "?")] += 1
+    return res
+
+
+def analytics():
+    """Everything the analytics page shows: stored experiment results plus live counters and the thumbs log."""
+    out = ROOT / "outputs"
+
+    def load(name):
+        try:
+            return json.loads((out / name).read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            return None
+
+    uni, rank, rob, ans = load("unified_comparison.json"), load("rank_experiments.json"), load("robustness.json"), load("answer_eval.json")
+    up = down = 0
+    try:
+        for line in (ROOT / "data" / "app" / "feedback.jsonl").read_text(encoding="utf-8").splitlines():
+            rec = json.loads(line)
+            up += rec.get("label") == "up"
+            down += rec.get("label") == "down"
+    except (OSError, ValueError):
+        pass
+    answers = []
+    if ans:
+        for lang, name in (("ru", "рус."), ("kk", "каз."), ("en", "англ.")):
+            s = ans["summary"].get(lang)
+            if s:
+                answers.append({"label": f"Ответили, {name}", "value": s["answered"] / s["questions"], "shown": f"{s['answered']}/{s['questions']}"})
+                answers.append({"label": f"Нужная статья в выдержках, {name}", "value": s["gold_in_excerpts"] / s["questions"], "shown": f"{s['gold_in_excerpts']}/{s['questions']}"})
+    with STATS_LOCK:
+        usage = {k: (dict(v) if isinstance(v, Counter) else v) for k, v in STATS.items()}
+    return {"corpus": {"acts": int(len(ENGINE.acts)), "articles": int(len(ENGINE.df))},
+            "retrieval": [{"lang": r["lang"], "method": r["method"], "s10": r["success@10"], "mrr": r["mrr@10"]} for r in (uni or {}).get("rows", []) if r["lang"] in ("ru", "kk", "en")],
+            "ranking": [{"lang": r["lang"], "variant": r["variant"], "mrr": r["mrr@10"], "s10": r["success@10"]} for r in (rank or {}).get("summary", [])],
+            "robustness": [{"lang": r["lang"], "variant": r["variant"], "s10": r["s10"]} for r in (rob or {}).get("summary", []) if r["mode"] == "plain"],
+            "answers": answers, "usage": usage, "feedback": {"up": up, "down": down}}
+
+
+def _run_search(req):
     k = max(3, min(int(req.get("k", 8)), 20))
     filters = make_filters(req.get("filters"))
     query = str(req.get("query", "")).strip()
@@ -134,6 +188,10 @@ class Handler(BaseHTTPRequestHandler):
         path = self.path.split("?", 1)[0]
         if path in ("/", "/index.html"):
             self._send(200, (STATIC / "index.html").read_bytes(), "text/html; charset=utf-8")
+        elif path == "/analytics":
+            self._send(200, (STATIC / "analytics.html").read_bytes(), "text/html; charset=utf-8")
+        elif path == "/api/analytics":
+            self._json(analytics())
         elif path == "/api/examples":
             self._json(examples())
         elif path == "/api/config":
